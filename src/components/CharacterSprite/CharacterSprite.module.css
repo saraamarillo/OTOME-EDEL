@@ -1,0 +1,37 @@
+.wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.visible { opacity: 1; }
+.hidden  { opacity: 0; }
+
+.sprite {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 680px;
+  max-width: 600px;
+  user-select: none;
+  vertical-align: bottom;
+}
+
+/* Apolo y criaturas pequeñas */
+.small .sprite {
+  max-height: 220px;
+  max-width: 220px;
+}
+
+.small {
+  bottom: 140px;   /* flota sobre el cuadro de diálogo */
+  left: 62%;       /* ligeramente a la derecha del centro */
+  transform: none;
+}

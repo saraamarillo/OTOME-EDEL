@@ -1,0 +1,10 @@
+.viewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--game-width);
+  height: var(--game-height);
+  overflow: hidden;
+  background: #0a0814;
+  transform-origin: top left;
+}

@@ -1,0 +1,66 @@
+.wrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  z-index: 10;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid var(--ui-border);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.bubble {
+  max-width: 380px;
+  background: var(--ui-bg-thought);
+  border: 1px solid var(--ui-border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  bottom: 18px;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 8px solid var(--ui-bg-thought);
+}
+
+.soledad {
+  background: rgba(160, 85, 10, 0.95);
+  border-color: rgba(160, 85, 10, 0.9);
+}
+
+.soledad::before {
+  border-right-color: rgba(160, 85, 10, 0.95);
+}
+
+.ayla {
+  background: rgba(19, 112, 69, 0.92);
+  border-color: rgba(19, 112, 69, 0.9);
+}
+
+.ayla::before {
+  border-right-color: rgba(19, 112, 69, 0.92);
+}
+
+.text {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.07rem;
+  color: #fff;
+  line-height: 1.5;
+}

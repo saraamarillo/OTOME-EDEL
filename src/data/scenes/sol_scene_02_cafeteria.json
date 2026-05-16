@@ -1,0 +1,215 @@
+{
+  "id": "sol_scene_02_cafeteria",
+  "title": "ColaCao y cosas raras",
+  "background": "campus_noche",
+  "nodes": [
+    {
+      "id": "n_tour_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan acompaña a Soledad y Ayla por el campus. Les enseña las zonas principales, la residencia, las pistas deportivas y varios edificios de clase. Ya es de noche.",
+      "next": "n_tour_02"
+    },
+    {
+      "id": "n_tour_02",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Queréis ir a tomar algo? El café es gratis.",
+      "next": "n_choice_caf"
+    },
+    {
+      "id": "n_choice_caf",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Aceptar. Una bebida caliente no suena nada mal.", "affinityChanges": { "ethan": 5, "ayla": 5 }, "next": "n_caf_01" },
+        { "label": "Aceptar, pero con cautela.", "affinityChanges": {}, "next": "n_caf_01" },
+        { "label": "Decir que solo irá un momento.", "affinityChanges": { "ethan": -5 }, "next": "n_caf_01" }
+      ]
+    },
+    {
+      "id": "n_caf_01",
+      "type": "narration",
+      "character": null,
+      "text": "La cafetería universitaria está iluminada con una luz cálida. Hay pocas personas a esas horas, y el ambiente resulta más tranquilo que el resto del campus.",
+      "next": "n_caf_02",
+      "background": "cafeteria_universidad"
+    },
+    {
+      "id": "n_caf_02",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Qué queréis tomar?",
+      "next": "n_choice_bebida"
+    },
+    {
+      "id": "n_choice_bebida",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Cola Cao caliente.", "affinityChanges": { "ethan": 5, "ayla": 5 }, "next": "n_colacao_01" },
+        { "label": "Café.", "affinityChanges": {}, "next": "n_otra_bebida" },
+        { "label": "Té.", "affinityChanges": { "ayla": 5 }, "next": "n_otra_bebida" },
+        { "label": "Agua.", "affinityChanges": { "ethan": -5 }, "next": "n_otra_bebida" }
+      ]
+    },
+    {
+      "id": "n_colacao_01",
+      "type": "dialogue",
+      "character": null,
+      "text": "Con el frío que hace... creo que me apetece un Cola Cao caliente.",
+      "next": "n_colacao_02"
+    },
+    {
+      "id": "n_colacao_02",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Entonces otro Cola Cao para mí.",
+      "next": "n_colacao_thought"
+    },
+    {
+      "id": "n_colacao_thought",
+      "type": "thought",
+      "character": null,
+      "text": "No debería relajarme tan rápido. Les conozco de hace menos de una hora. Que parezcan amables no significa que deba bajar la guardia.",
+      "next": "n_colacao_cg"
+    },
+    {
+      "id": "n_colacao_cg",
+      "type": "narration",
+      "character": null,
+      "text": "Los dos ColaCaos humeantes sobre la mesa. Soledad tiene que admitir que el ambiente resulta más acogedor de lo esperado.",
+      "next": "n_conv_01",
+      "unlockImage": "ethan_cafeteria"
+    },
+    {
+      "id": "n_otra_bebida",
+      "type": "dialogue",
+      "character": null,
+      "text": "Creo que pediré otra cosa.",
+      "next": "n_otra_thought"
+    },
+    {
+      "id": "n_otra_thought",
+      "type": "thought",
+      "character": null,
+      "text": "No debería relajarme tan rápido. Les conozco de hace menos de una hora. Que parezcan amables no significa que deba bajar la guardia.",
+      "next": "n_conv_01"
+    },
+    {
+      "id": "n_conv_01",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Aquí pasan cosas rarísimas. Fantasmas, cuadros que cambian, casas abandonadas... cosas así.",
+      "next": "n_conv_02"
+    },
+    {
+      "id": "n_conv_02",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Y la gente os cree?",
+      "next": "n_conv_03"
+    },
+    {
+      "id": "n_conv_03",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "En Guadalajara todo el mundo sabe que pasan cosas extrañas.",
+      "next": "n_conv_04"
+    },
+    {
+      "id": "n_conv_04",
+      "type": "narration",
+      "character": null,
+      "text": "Mientras Ethan habla, Soledad mira hacia una zona exterior visible desde la cafetería. Una silueta femenina está apoyada contra un árbol, observándola fijamente.",
+      "next": "n_conv_05",
+      "activeCharacter": "grace",
+      "lookChanges": { "grace": "arc2" }
+    },
+    {
+      "id": "n_conv_05",
+      "type": "thought",
+      "character": null,
+      "text": "¿Me está mirando a mí?",
+      "next": "n_conv_06"
+    },
+    {
+      "id": "n_conv_06",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ayla... ¿has visto a esa chica?",
+      "next": "n_conv_07"
+    },
+    {
+      "id": "n_conv_07",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "¿Qué chica?",
+      "next": "n_conv_08"
+    },
+    {
+      "id": "n_conv_08",
+      "type": "narration",
+      "character": null,
+      "text": "Cuando Soledad vuelve a mirar, la silueta ya no está.",
+      "next": "n_conv_09"
+    },
+    {
+      "id": "n_conv_09",
+      "type": "thought",
+      "character": null,
+      "text": "No ha podido desaparecer tan rápido. No si estaba ahí de verdad.",
+      "next": "n_choice_grace"
+    },
+    {
+      "id": "n_choice_grace",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Insistir en que ha visto a alguien.", "affinityChanges": { "ayla": 5 }, "next": "n_desp_01" },
+        { "label": "Restarle importancia.", "affinityChanges": {}, "next": "n_desp_01" },
+        { "label": "Guardar silencio y observar más.", "affinityChanges": { "ethan": -5 }, "next": "n_desp_01" }
+      ]
+    },
+    {
+      "id": "n_desp_01",
+      "type": "narration",
+      "character": null,
+      "text": "Tras la conversación, Soledad decide marcharse. Es tarde y necesita volver a casa.",
+      "next": "n_desp_02",
+      "background": "campus_noche"
+    },
+    {
+      "id": "n_desp_02",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Ya te vas?",
+      "next": "n_desp_03"
+    },
+    {
+      "id": "n_desp_03",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sí, si no quiero quedarme sin transporte. Gracias por todo.",
+      "next": "n_desp_04"
+    },
+    {
+      "id": "n_desp_04",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Entonces nos vemos mañana.",
+      "next": "n_desp_05"
+    },
+    {
+      "id": "n_desp_05",
+      "type": "thought",
+      "character": null,
+      "text": "No sé si esto ha sido tranquilizador o todo lo contrario.",
+      "next": null,
+      "nextScene": "sol_scene_03_noche"
+    }
+  ]
+}

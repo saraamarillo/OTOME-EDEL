@@ -1,0 +1,647 @@
+{
+  "id": "sol_scene_03_noche",
+  "title": "La primera noche",
+  "background": "campus_noche",
+  "nodes": [
+    {
+      "id": "n_llaves_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad sale del campus y revisa su mochila mientras camina hacia la parada. Busca las llaves. Una vez. Dos veces. Nada.",
+      "next": "n_llaves_02"
+    },
+    {
+      "id": "n_llaves_02",
+      "type": "thought",
+      "character": null,
+      "text": "No. No, no, no. Las llaves no.",
+      "next": "n_llaves_03"
+    },
+    {
+      "id": "n_llaves_03",
+      "type": "narration",
+      "character": null,
+      "text": "Vuelve a revisar cada bolsillo, cada compartimento, el fondo de la mochila. Las llaves no están.",
+      "next": "n_llaves_04"
+    },
+    {
+      "id": "n_llaves_04",
+      "type": "thought",
+      "character": null,
+      "text": "Me he dejado las llaves en casa. Perfecto. Primer día de universidad y oficialmente no tengo forma de entrar en mi propia vida.",
+      "next": "n_llaves_05"
+    },
+    {
+      "id": "n_llaves_05",
+      "type": "narration",
+      "character": null,
+      "text": "Llama a sus padres. Nadie contesta. Vuelve a llamar. Nada. El último autobús está a punto de pasar.",
+      "next": "n_choice_bus"
+    },
+    {
+      "id": "n_choice_bus",
+      "type": "choice",
+      "character": null,
+      "text": "¿Qué hace Soledad?",
+      "choices": [
+        { "label": "Subir al autobús igualmente.", "affinityChanges": {}, "next": "n_final_temprano_01" },
+        { "label": "Dejar pasar el autobús y seguir llamando.", "affinityChanges": {}, "next": "n_ryan_01" },
+        { "label": "Esperar un poco más en el campus.", "affinityChanges": {}, "next": "n_ryan_01" }
+      ]
+    },
+    {
+      "id": "n_final_temprano_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad sube al autobús aunque sabe que no tiene llaves. No tiene ni idea de qué va a hacer cuando llegue. Pero el campus de noche empieza a inquietarla.",
+      "next": "n_final_temprano_02"
+    },
+    {
+      "id": "n_final_temprano_02",
+      "type": "thought",
+      "character": null,
+      "text": "Ya veremos. Algo se me ocurrirá.",
+      "next": null,
+      "endEpisode": true
+    },
+    {
+      "id": "n_ryan_01",
+      "type": "narration",
+      "character": null,
+      "text": "El autobús se aleja. Soledad permanece en el campus, móvil en mano, llamando sin obtener respuesta.",
+      "next": "n_ryan_02"
+    },
+    {
+      "id": "n_ryan_02",
+      "type": "thought",
+      "character": null,
+      "text": "Vale. Sin llaves, sin respuesta, de noche y en una universidad que tiene un Club Paranormal. Todo bien. Todo corporativamente estable.",
+      "next": "n_ryan_03"
+    },
+    {
+      "id": "n_ryan_03",
+      "type": "narration",
+      "character": null,
+      "text": "Una figura aparece corriendo y casi choca con ella. Ryan consigue frenar a tiempo y la sujeta antes de que pierda el equilibrio.",
+      "next": "n_ryan_04"
+    },
+    {
+      "id": "n_ryan_04",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Estás bien? Perdona, iba corriendo como un loco.",
+      "next": "n_ryan_05"
+    },
+    {
+      "id": "n_ryan_05",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sí... creo.",
+      "next": "n_ryan_t01"
+    },
+    {
+      "id": "n_ryan_t01",
+      "type": "thought",
+      "character": null,
+      "text": "Le va el corazón a mil. O tiene mucha prisa o acaba de huir de algo. Ninguna opción me relaja.",
+      "next": "n_ryan_06"
+    },
+    {
+      "id": "n_ryan_06",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Te has quedado sin autobús?",
+      "next": "n_ryan_07"
+    },
+    {
+      "id": "n_ryan_07",
+      "type": "dialogue",
+      "character": null,
+      "text": "El problema no es solo el autobús. Es que no tengo llaves para entrar en casa.",
+      "next": "n_ryan_08"
+    },
+    {
+      "id": "n_ryan_08",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Vaya, con eso no he contado. ¿Tus padres no te contestan?",
+      "next": "n_ryan_09"
+    },
+    {
+      "id": "n_ryan_09",
+      "type": "dialogue",
+      "character": null,
+      "text": "Llevo varias llamadas y nada.",
+      "next": "n_ryan_10"
+    },
+    {
+      "id": "n_ryan_10",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Pues... si quieres vente conmigo. Tengo prisa porque trabajo medio tiempo en un bar, pero puedes acompañarme y luego piensas qué hacer.",
+      "next": "n_choice_ryan"
+    },
+    {
+      "id": "n_choice_ryan",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Aceptar. No tiene muchas más opciones.", "affinityChanges": { "ryan": 5 }, "next": "n_moto_01" },
+        { "label": "Dudar, pero aceptar con cautela.", "affinityChanges": {}, "next": "n_moto_01" },
+        { "label": "Preguntarle por qué ayudaría a una desconocida.", "affinityChanges": { "ryan": -5 }, "next": "n_ryan_insiste_01" }
+      ]
+    },
+    {
+      "id": "n_ryan_insiste_01",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Porque casi te arrollo y porque no voy a dejarte tirada aquí de noche. Además, hay cámaras en el campus. Si desapareces, soy el principal sospechoso. Mal negocio para mí.",
+      "next": "n_ryan_insiste_02"
+    },
+    {
+      "id": "n_ryan_insiste_02",
+      "type": "thought",
+      "character": null,
+      "text": "Eso no es exactamente tranquilizador, pero al menos tiene lógica.",
+      "next": "n_ryan_insiste_03"
+    },
+    {
+      "id": "n_ryan_insiste_03",
+      "type": "dialogue",
+      "character": null,
+      "text": "Vale. Pero solo mientras pienso qué hacer.",
+      "next": "n_moto_01"
+    },
+    {
+      "id": "n_moto_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan la lleva hasta un parking. Allí hay una moto negra bastante grande. Solo tiene un casco, y se lo ofrece a Soledad.",
+      "next": "n_moto_02"
+    },
+    {
+      "id": "n_moto_02",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Espera, espera, jolines, solo llevo un casco. Toma, póntelo tú.",
+      "next": "n_moto_03"
+    },
+    {
+      "id": "n_moto_03",
+      "type": "dialogue",
+      "character": null,
+      "text": "Gracias.",
+      "next": "n_moto_04"
+    },
+    {
+      "id": "n_moto_04",
+      "type": "thought",
+      "character": null,
+      "text": "Vale. O me asesinan hoy o esto acaba convirtiéndose en una anécdota.",
+      "next": "n_moto_05"
+    },
+    {
+      "id": "n_moto_05",
+      "type": "dialogue",
+      "character": null,
+      "text": "Por cierto... ¿cómo te llamas?",
+      "next": "n_moto_06"
+    },
+    {
+      "id": "n_moto_06",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Es verdad. Ni te he dicho mi nombre. Perdona. Soy Ryan. ¿Y tú?",
+      "next": "n_moto_07"
+    },
+    {
+      "id": "n_moto_07",
+      "type": "dialogue",
+      "character": null,
+      "text": "Soledad.",
+      "next": "n_moto_08"
+    },
+    {
+      "id": "n_moto_08",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Encantado, Soledad. Y no te voy a secuestrar ni nada parecido, ¿vale? Ni atracar, ni asesinar. Tengo prisa, pero no tanta.",
+      "next": "n_moto_09"
+    },
+    {
+      "id": "n_moto_09",
+      "type": "thought",
+      "character": null,
+      "text": "Definitivamente habla demasiado cuando intenta tranquilizar a alguien.",
+      "next": "n_moto_10"
+    },
+    {
+      "id": "n_moto_10",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Vas bien?",
+      "next": "n_moto_11"
+    },
+    {
+      "id": "n_moto_11",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sí, sí, voy bien.",
+      "next": "n_moto_12"
+    },
+    {
+      "id": "n_moto_12",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Vale, pues agárrate.",
+      "next": "n_moto_13"
+    },
+    {
+      "id": "n_moto_13",
+      "type": "narration",
+      "character": null,
+      "text": "El motor arranca. El campus queda atrás.",
+      "next": "n_bar_01"
+    },
+    {
+      "id": "n_bar_01",
+      "type": "narration",
+      "character": null,
+      "text": "Llegan al centro de Guadalajara. Entre edificios antiguos y callejuelas, Ryan aparca la moto frente a un bar escondido.",
+      "next": "n_bar_02",
+      "background": "bar_ryan"
+    },
+    {
+      "id": "n_bar_02",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Es por aquí. Aquí todos son callejuelas.",
+      "next": "n_bar_03"
+    },
+    {
+      "id": "n_bar_03",
+      "type": "thought",
+      "character": null,
+      "text": "Esto cada vez suena menos a plan sensato y más a capítulo piloto de mi desaparición.",
+      "next": "n_bar_04"
+    },
+    {
+      "id": "n_bar_04",
+      "type": "narration",
+      "character": null,
+      "text": "Mientras Ryan trabaja, Soledad sigue llamando a sus padres. Nadie contesta. El móvil empieza a quedarse sin batería.",
+      "next": "n_bar_05"
+    },
+    {
+      "id": "n_bar_05",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Tengo que terminar unas cosas. Haz este crucigrama mientras, si quieres.",
+      "next": "n_bar_06"
+    },
+    {
+      "id": "n_bar_06",
+      "type": "thought",
+      "character": null,
+      "text": "Claro. Una noche sin llaves, un desconocido, un bar escondido y ahora un crucigrama. Normalísimo todo.",
+      "next": "n_bar_07"
+    },
+    {
+      "id": "n_bar_07",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad empieza a completar el crucigrama. Algunas respuestas parecen demasiado concretas. Otras, sospechosamente relacionadas con ella.",
+      "next": "n_bar_08"
+    },
+    {
+      "id": "n_bar_08",
+      "type": "thought",
+      "character": null,
+      "text": "Cuero. Ámbar. Panteón. Calzado artesanal. Esto no parece un crucigrama cualquiera.",
+      "next": "n_q1"
+    },
+    {
+      "id": "n_q1",
+      "type": "choice",
+      "character": null,
+      "text": "1 — Herramienta básica en un taller donde se trabaja con cuero.",
+      "choices": [
+        { "label": "Tijera", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Martillo", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Aguja", "affinityChanges": { "ryan": 1 }, "next": "n_q2" },
+        { "label": "Brocha", "affinityChanges": {}, "next": "n_cru_fail" }
+      ]
+    },
+    {
+      "id": "n_q2",
+      "type": "choice",
+      "character": null,
+      "text": "2 — Color que aparece cuando el sol se esconde y tiñe Guadalajara, especialmente en otoño.",
+      "choices": [
+        { "label": "Rosa", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Ámbar", "affinityChanges": { "ryan": 1 }, "next": "n_q3" },
+        { "label": "Cobre", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Dorado", "affinityChanges": {}, "next": "n_cru_fail" }
+      ]
+    },
+    {
+      "id": "n_q3",
+      "type": "choice",
+      "character": null,
+      "text": "3 — Lugar de la ciudad donde se puede ver una cúpula muy conocida.",
+      "choices": [
+        { "label": "Catedral", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Infantado", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Mirador", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Panteón", "affinityChanges": { "ryan": 1 }, "next": "n_q4" }
+      ]
+    },
+    {
+      "id": "n_q4",
+      "type": "choice",
+      "character": null,
+      "text": "4 — Objeto que se usa para unir piezas de material en calzado artesanal.",
+      "choices": [
+        { "label": "Clavo", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Hilo", "affinityChanges": { "ryan": 1 }, "next": "n_q5" },
+        { "label": "Pegamento", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Cuerda", "affinityChanges": {}, "next": "n_cru_fail" }
+      ]
+    },
+    {
+      "id": "n_q5",
+      "type": "choice",
+      "character": null,
+      "text": "5 — Palabra que describe el acto de crear algo con paciencia y manos hábiles.",
+      "choices": [
+        { "label": "Oficio", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Talla", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Arte", "affinityChanges": { "ryan": 1 }, "next": "n_q6" },
+        { "label": "Obra", "affinityChanges": {}, "next": "n_cru_fail" }
+      ]
+    },
+    {
+      "id": "n_q6",
+      "type": "choice",
+      "character": null,
+      "text": "6 — Lo que se abre cuando empiezas de cero.",
+      "choices": [
+        { "label": "Etapa", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Puerta", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Rumbo", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Camino", "affinityChanges": { "ryan": 1 }, "next": "n_q7" }
+      ]
+    },
+    {
+      "id": "n_q7",
+      "type": "choice",
+      "character": null,
+      "text": "7 — Material que se moldea con facilidad y que muchos artistas usan para practicar volumen.",
+      "choices": [
+        { "label": "Yeso", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Arcilla", "affinityChanges": { "ryan": 1 }, "next": "n_q8" },
+        { "label": "Barro", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Cera", "affinityChanges": {}, "next": "n_cru_fail" }
+      ]
+    },
+    {
+      "id": "n_q8",
+      "type": "choice",
+      "character": null,
+      "text": "8 — ¿Cómo se llama la estación de tren de Guadalajara donde suelen llegar muchos estudiantes?",
+      "choices": [
+        { "label": "Yebes", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Henares", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Yunquera", "affinityChanges": { "ryan": 1 }, "next": "n_q9" },
+        { "label": "Alcarreña", "affinityChanges": {}, "next": "n_cru_fail" }
+      ]
+    },
+    {
+      "id": "n_q9",
+      "type": "choice",
+      "character": null,
+      "text": "9 — Pensamiento cuando tienes un plan.",
+      "choices": [
+        { "label": "Meta", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Orden", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Pista", "affinityChanges": {}, "next": "n_cru_fail" },
+        { "label": "Idea", "affinityChanges": { "ryan": 2 }, "next": "n_cru_perfecto_01" }
+      ]
+    },
+    {
+      "id": "n_cru_perfecto_01",
+      "type": "narration",
+      "character": null,
+      "text": "Las respuestas encajan una a una. En las casillas centrales aparece una palabra: SOLEDAD.",
+      "next": "n_cru_perfecto_02"
+    },
+    {
+      "id": "n_cru_perfecto_02",
+      "type": "thought",
+      "character": null,
+      "text": "Vale. Eso sí da miedo.",
+      "next": "n_cru_cg"
+    },
+    {
+      "id": "n_cru_cg",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan se acerca a la barra y ve el crucigrama terminado.",
+      "next": "n_ryan_ok_01",
+      "unlockImage": "ryan_crucigrama"
+    },
+    {
+      "id": "n_ryan_ok_01",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Oye, pues lo has hecho todo bien. ¿Ves? No era tan difícil.",
+      "next": "n_despues_01"
+    },
+    {
+      "id": "n_cru_fail",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad deja algunas casillas sin rellenar. El tiempo pasa igual.",
+      "next": "n_ryan_mal_01"
+    },
+    {
+      "id": "n_ryan_mal_01",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Bueno, tampoco estaba tan fácil.",
+      "next": "n_despues_01"
+    },
+    {
+      "id": "n_despues_01",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Bueno, pues yo ya me voy. ¿Tú qué vas a hacer?",
+      "next": "n_despues_02"
+    },
+    {
+      "id": "n_despues_02",
+      "type": "dialogue",
+      "character": null,
+      "text": "Pues... la verdad, no sé qué hacer. Ahora mismo no tengo casa y no sé a dónde ir.",
+      "next": "n_despues_03"
+    },
+    {
+      "id": "n_despues_03",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Y tus padres no se van a preocupar si no apareces?",
+      "next": "n_despues_04"
+    },
+    {
+      "id": "n_despues_04",
+      "type": "dialogue",
+      "character": null,
+      "text": "Les estoy llamando y no contestan. Son las cuatro de la mañana. Creo que se van a preocupar más si les llamo ahora.",
+      "next": "n_despues_05"
+    },
+    {
+      "id": "n_despues_05",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Mándales un mensaje. Diles que te quedas a dormir en casa de un amigo.",
+      "next": "n_choice_mensaje"
+    },
+    {
+      "id": "n_choice_mensaje",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Decir la verdad: que se queda en casa de Ryan.", "affinityChanges": { "ryan": 5 }, "next": "n_casa_00" },
+        { "label": "Mentir y decir que duerme en casa de una amiga.", "affinityChanges": {}, "next": "n_casa_00" },
+        { "label": "No mandar nada todavía.", "affinityChanges": { "ryan": -5 }, "next": "n_casa_00" }
+      ]
+    },
+    {
+      "id": "n_casa_00",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan termina su turno. Salen del bar y vuelven a la moto. El trayecto queda en silencio.",
+      "next": "n_casa_t01"
+    },
+    {
+      "id": "n_casa_t01",
+      "type": "thought",
+      "character": null,
+      "text": "No sé si estoy confiando en él o simplemente ya no tengo energía para desconfiar con todas mis fuerzas.",
+      "next": "n_casa_01"
+    },
+    {
+      "id": "n_casa_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan abre la puerta de un piso pequeño. Todo está en silencio.",
+      "next": "n_casa_02",
+      "background": "casa_Ryan_noche"
+    },
+    {
+      "id": "n_casa_02",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Venga, adelante.",
+      "next": "n_casa_03"
+    },
+    {
+      "id": "n_casa_03",
+      "type": "dialogue",
+      "character": null,
+      "text": "Con quedarme en el sofá me sirve. Va a ser una noche. No pretendía molestar.",
+      "next": "n_casa_04"
+    },
+    {
+      "id": "n_casa_04",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Como mi madre se entere de que dejé a una chica dormir en el sofá, me mata. Yo duermo en el sofá. Tú puedes usar mi habitación.",
+      "next": "n_casa_05"
+    },
+    {
+      "id": "n_casa_05",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Y no se van a pensar algo raro tus padres o...?",
+      "next": "n_casa_06"
+    },
+    {
+      "id": "n_casa_06",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Vivo solo.",
+      "next": "n_casa_t02"
+    },
+    {
+      "id": "n_casa_t02",
+      "type": "thought",
+      "character": null,
+      "text": "Eso explica algunas cosas. No sé exactamente cuáles, pero algunas.",
+      "next": "n_casa_07"
+    },
+    {
+      "id": "n_casa_07",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "La habitación tiene pestillo, así que puedes echarlo si lo prefieres.",
+      "next": "n_choice_dormir"
+    },
+    {
+      "id": "n_choice_dormir",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Aceptar la habitación y agradecer.", "affinityChanges": { "ryan": 5 }, "next": "n_final_01" },
+        { "label": "Aceptar, pero decir que cerrará el pestillo.", "affinityChanges": {}, "next": "n_final_01" },
+        { "label": "Insistir en dormir en el sofá.", "affinityChanges": { "ryan": -5 }, "next": "n_ryan_hab_01" }
+      ]
+    },
+    {
+      "id": "n_ryan_hab_01",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "No. En serio. Hay clases mañana y necesitas dormir en una cama. Yo estoy bien en el sofá.",
+      "next": "n_ryan_hab_02"
+    },
+    {
+      "id": "n_ryan_hab_02",
+      "type": "thought",
+      "character": null,
+      "text": "Es más terco de lo que parecía. Y eso que parecía bastante terco.",
+      "next": "n_ryan_hab_03"
+    },
+    {
+      "id": "n_ryan_hab_03",
+      "type": "dialogue",
+      "character": null,
+      "text": "Vale. Gracias.",
+      "next": "n_final_01"
+    },
+    {
+      "id": "n_final_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad se queda dormida en una cama desconocida, en una ciudad nueva, con el móvil casi sin batería y demasiadas preguntas sin respuesta.",
+      "next": "n_final_02"
+    },
+    {
+      "id": "n_final_02",
+      "type": "thought",
+      "character": null,
+      "text": "Nuevo curso. Nueva ciudad. Y ni siquiera ha terminado el primer día.",
+      "next": "n_final_03"
+    },
+    {
+      "id": "n_final_03",
+      "type": "narration",
+      "character": null,
+      "text": "Fin — Partida 1 · Camino de Soledad.",
+      "next": null,
+      "endEpisode": true
+    }
+  ]
+}

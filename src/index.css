@@ -1,0 +1,63 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Paleta EDEL */
+  --color-soledad: #e38e1f;       /* naranja */
+  --color-ayla: #137045;          /* verde */
+  --color-ethan: #2C3E6B;         /* azul marino oscuro */
+  --color-ryan: #5B7FA6;          /* azul medio */
+  --color-frey: #7B5EA7;          /* violeta */
+  --color-lydia: #A05C7B;         /* rosa oscuro */
+  --color-grace: #6B8C5E;         /* verde oliva */
+  --color-npc: #666666;           /* gris NPCs */
+  --color-maven: #1B2A4A;         /* azul marino alien/maven */
+  --color-sappire: #5B7EA8;       /* azul pizarra / cabello azul */
+  --color-xavier: #8B1A1A;        /* rojo carmesí */
+  --color-luna: #C8A8C8;          /* malva elegante */
+  --color-aurora: #3A5A8A;        /* azul marino frío */
+  --color-dani: #6AAF7A;          /* verde menta */
+  --color-estrella: #D4A847;      /* dorado rubio */
+  --color-leo: #8AAF5A;           /* verde oliva / dados */
+  --color-noa: #8B2020;           /* rojo oscuro / capa */
+  --color-ona: #1A7A7A;           /* verde azulado Erebo */
+  --color-apolo: #C8A850;         /* dorado divino */
+
+  /* UI */
+  --ui-bg-dialogue: rgba(10, 8, 20, 0.88);
+  --ui-bg-thought: rgba(10, 8, 20, 0.75);
+  --ui-border: rgba(255, 255, 255, 0.12);
+  --ui-text: #F0EBE0;
+  --ui-text-dim: #A89E8C;
+
+  /* Tipografía */
+  --font-display: 'Cinzel', serif;
+  --font-body: 'EB Garamond', serif;
+
+  /* Tamaños base */
+  --game-width: 1280px;
+  --game-height: 720px;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0814;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+}

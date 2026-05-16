@@ -1,0 +1,191 @@
+{
+  "id": "scene_03_cafeteria",
+  "title": "ColaCao y cosas raras",
+  "background": "cafeteria_universidad",
+  "nodes": [
+    {
+      "id": "node_001",
+      "type": "narration",
+      "character": null,
+      "text": "La cafetería universitaria. Son ya las 21:00. Mucha luz, muy amplia. Ethan pide las comandas con naturalidad.",
+      "next": "node_002"
+    },
+    {
+      "id": "node_002",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Qué queréis tomar? El café es gratis.",
+      "next": "node_branch_pedido"
+    },
+
+    {
+      "id": "node_branch_pedido",
+      "type": "protagonistBranch",
+      "branches": {
+        "soledad": "node_sol_pedido",
+        "ayla": "node_ayla_pedido"
+      }
+    },
+
+    { "id": "node_sol_pedido", "type": "dialogue", "character": null,
+      "text": "Sol: Con el frío que hace, me apetece un ColaCao calentito.",
+      "next": "node_pedido_fin" },
+    { "id": "node_ayla_pedido", "type": "dialogue", "character": null,
+      "text": "Ayla: Para mí una botella de agua, gracias.",
+      "next": "node_pedido_fin" },
+
+    {
+      "id": "node_pedido_fin",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan sonríe, pide las comandas y lleva todo a una mesa.",
+      "next": "node_003"
+    },
+    {
+      "id": "node_003",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Cómo es que habéis venido a esta universidad?",
+      "next": "node_004"
+    },
+    {
+      "id": "node_004",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Quería empezar de cero en un sitio nuevo.",
+          "affinityChanges": { "ethan": 3 },
+          "next": "node_005a"
+        },
+        {
+          "label": "Una historia muy larga. Igual empezáis vosotros.",
+          "affinityChanges": {},
+          "next": "node_005b"
+        }
+      ]
+    },
+    {
+      "id": "node_005a",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Empezar de cero tiene su mérito. Bienvenida, en serio.",
+      "next": "node_006"
+    },
+    {
+      "id": "node_005b",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Tranquila, tampoco tienes que contarme nada. Os acabáis de conocer.",
+      "next": "node_006"
+    },
+    {
+      "id": "node_006",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Os habéis enterado de que pasan cosas bastante raras en Guadalajara? El Club Paranormal existe por algo.",
+      "next": "node_007"
+    },
+    {
+      "id": "node_007",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "¿Ah, sí? ¿Como por ejemplo?",
+          "affinityChanges": { "ethan": 5 },
+          "next": "node_008a"
+        },
+        {
+          "label": "¿Y los demás clubs os creen?",
+          "affinityChanges": { "ethan": 2 },
+          "next": "node_008b"
+        }
+      ]
+    },
+    {
+      "id": "node_008a",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Avistamientos de fantasmas, cuadros que cambian solos — los rostros aparecen en poses distintas. Casas abandonadas en las que la gente ni se atreve a volver a construir.",
+      "next": "node_009",
+      "unlockImage": "ethan_cafeteria"
+    },
+    {
+      "id": "node_008b",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Los de periodismo publican lo que encontramos bastante a menudo. Todo el mundo sabe que pasan cosas extrañas aquí. Guadalajara ha pasado por muchas guerras — los restos quedan.",
+      "next": "node_009"
+    },
+    {
+      "id": "node_009",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Os va a gustar. Aunque hayáis entrado obligatorio.",
+      "next": "node_branch_chica"
+    },
+
+    {
+      "id": "node_branch_chica",
+      "type": "protagonistBranch",
+      "branches": {
+        "soledad": "node_sol_chica",
+        "ayla": "node_ayla_sol_aparece"
+      }
+    },
+
+    { "id": "node_ayla_sol_aparece", "type": "narration", "character": "soledad",
+      "text": "En la silla de enfrente hay una chica con el pelo castaño largo y un jersey naranja. Ha pedido un ColaCao. No ha dicho mucho en toda la tarde, pero escucha con atención.",
+      "next": "node_ayla_sol_habla" },
+    { "id": "node_ayla_sol_habla", "type": "dialogue", "character": "soledad",
+      "text": "Sol: Oye... ¿tú eres de Guadalajara?",
+      "next": "node_ayla_sol_resp" },
+    { "id": "node_ayla_sol_resp", "type": "choice", "character": null, "text": null,
+      "choices": [
+        { "label": "No, vengo de fuera. ¿Y tú?", "affinityChanges": { "soledad": 3 }, "next": "node_ayla_sol_fin" },
+        { "label": "¿Por qué lo preguntas?", "affinityChanges": {}, "next": "node_ayla_sol_fin" }
+      ] },
+    { "id": "node_ayla_sol_fin", "type": "dialogue", "character": "soledad",
+      "text": "Sol: Yo tampoco. Qué casualidad.",
+      "next": "node_fin" },
+
+    { "id": "node_sol_chica", "type": "narration", "character": null,
+      "text": "Sol nota algo. En el otro lado de la cristalera, apoyada en un árbol, hay una chica. Pelo negro, ojos oscuros, tez muy pálida. Da la impresión de que mira justo en su dirección. Fijamente.",
+      "next": "node_sol_chica_2" },
+    { "id": "node_sol_chica_2", "type": "thought", "character": null,
+      "text": "¿Me está mirando a mí?",
+      "next": "node_sol_chica_choice" },
+    { "id": "node_sol_chica_choice", "type": "choice", "character": null, "text": null,
+      "choices": [
+        { "label": "Señalársela a Ethan discretamente.", "affinityChanges": { "ethan": 2 }, "next": "node_sol_chica_ethan" },
+        { "label": "Decírselo solo a la otra chica, en voz baja.", "affinityChanges": {}, "next": "node_sol_chica_ayla" }
+      ] },
+    { "id": "node_sol_chica_ethan", "type": "dialogue", "character": "ethan",
+      "text": "¿Quién? ¿Dónde la ves?",
+      "next": "node_sol_chica_desaparece" },
+    { "id": "node_sol_chica_ayla", "type": "dialogue", "character": "ayla",
+      "text": "Sol [en voz baja]: Oye, ¿tú has visto a esa chica de fuera? Me está mirando muy fijamente.",
+      "next": "node_sol_ayla_responde" },
+    { "id": "node_sol_ayla_responde", "type": "dialogue", "character": "ayla",
+      "text": "Ayla: ¿Dónde exactamente?",
+      "next": "node_sol_chica_desaparece" },
+    { "id": "node_sol_chica_desaparece", "type": "narration", "character": null,
+      "text": "Cuando señala la dirección, la chica ya no está.",
+      "next": "node_sol_chica_thought" },
+    { "id": "node_sol_chica_thought", "type": "thought", "character": null,
+      "text": "Tenía el pelo negro y los ojos grises. Tez muy pálida. Me quedé con su cara.",
+      "next": "node_fin" },
+
+    {
+      "id": "node_fin",
+      "type": "narration",
+      "character": null,
+      "text": "La tarde va avanzando. Fuera del campus empieza a refrescar.",
+      "next": null,
+      "nextScene": "scene_04_noche"
+    }
+  ]
+}

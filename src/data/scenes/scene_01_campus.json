@@ -1,0 +1,253 @@
+{
+  "id": "scene_01_campus",
+  "title": "El primer día",
+  "background": "campus_dia",
+  "nodes": [
+    {
+      "id": "node_001",
+      "type": "narration",
+      "character": null,
+      "text": "El campus de la Universidad Somnia despierta con el bullicio habitual del inicio de curso. Situada en la zona alta de Guadalajara, mezcla edificios modernos con otros más antiguos. Desde los puntos más despejados puede verse la cúpula azulada del Panteón.",
+      "next": "node_002"
+    },
+    {
+      "id": "node_002",
+      "type": "narration",
+      "character": null,
+      "text": "Las mesas de inscripción a los clubs ocupan la plaza principal. Desde la cafetería llega el aroma de bollería recién hecha y café caliente. Todo parece empezar como cualquier otro año. Un día más, un curso más.",
+      "next": "node_branch_intro"
+    },
+
+    {
+      "id": "node_branch_intro",
+      "type": "protagonistBranch",
+      "branches": {
+        "soledad": "node_sol_001",
+        "ayla": "node_ayla_001"
+      }
+    },
+
+    {
+      "id": "node_sol_001",
+      "type": "narration",
+      "character": null,
+      "text": "Entre los nuevos rostros del campus se encuentra Soledad Ramírez. Una joven de apariencia tranquila que se mueve con discreción entre los estudiantes. Sus ojos recorren el entorno con curiosidad contenida, observando más de lo que deja ver.",
+      "next": "node_sol_002"
+    },
+    {
+      "id": "node_sol_002",
+      "type": "thought",
+      "character": null,
+      "text": "Este año sí. Este año termino lo que empecé.",
+      "next": "node_sol_003"
+    },
+    {
+      "id": "node_sol_003",
+      "type": "narration",
+      "character": null,
+      "text": "El mensaje de bienvenida dice que es obligatorio apuntarse a un club. Sol decide recorrerse la universidad entera para encontrarlos. Sala de música, escenario, cafetería, gimnasio, secretaría. Sube escaleras. A-15, A-18. Más pasillos. En algún punto de la tercera planta se queda sin aire.",
+      "next": "node_sol_004"
+    },
+    {
+      "id": "node_sol_004",
+      "type": "narration",
+      "character": null,
+      "text": "Se agarra a la barandilla. Los pasillos se nublan un poco. Por suerte, en el bolsillo lateral de la mochila está la botella de agua que cogió esta mañana.",
+      "next": "node_sol_005"
+    },
+    {
+      "id": "node_sol_005",
+      "type": "thought",
+      "character": null,
+      "text": "Bien hecho por acordarte del agua hoy, Soledad.",
+      "next": "node_sol_006"
+    },
+    {
+      "id": "node_sol_006",
+      "type": "narration",
+      "character": null,
+      "text": "Le llega un WhatsApp de la universidad: «Para terminar vuestra matriculación tenéis que presentaros a uno de los clubs. Os aconsejamos que vayáis a secretaría.»",
+      "next": "node_sol_007"
+    },
+    {
+      "id": "node_sol_007",
+      "type": "thought",
+      "character": null,
+      "text": "¿Ahora me lo dicen?",
+      "next": "node_sol_008"
+    },
+    {
+      "id": "node_sol_008",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Ir directamente a secretaría.", "affinityChanges": {}, "next": "node_sol_009a" },
+        { "label": "Volver a los clubs de la entrada.", "affinityChanges": {}, "next": "node_sol_009b" }
+      ]
+    },
+    {
+      "id": "node_sol_009a",
+      "type": "narration",
+      "character": null,
+      "text": "La señora de secretaría la escucha con paciencia y le indica un edificio de ladrillo desgastado detrás de la residencia.",
+      "next": "node_encuentro_sec_sol",
+      "background": "secretaria"
+    },
+    {
+      "id": "node_sol_009b",
+      "type": "narration",
+      "character": null,
+      "text": "En todos los clubs de la entrada hay lista de espera. Una chica que atiende a cuatro personas a la vez le dice que queda sitio en el edificio antiguo, detrás de la residencia.",
+      "next": "node_encuentro_sec_sol",
+      "background": "secretaria"
+    },
+
+    {
+      "id": "node_encuentro_sec_sol",
+      "type": "narration",
+      "character": "ayla",
+      "text": "Mientras Sol espera que la señora de secretaría compruebe el listado, entra por la puerta una chica que lleva una cámara colgada del hombro. Se mueve sin prisa. Mira la sala un momento antes de acercarse al mostrador.",
+      "next": "node_encuentro_sec_sol_2"
+    },
+    {
+      "id": "node_encuentro_sec_sol_2",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Disculpa. ¿Esto es secretaría general o solo para posgrado?",
+      "next": "node_encuentro_sec_sol_3"
+    },
+    {
+      "id": "node_encuentro_sec_sol_3",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sol: General, creo. La señora está mirando lo del edificio viejo. El del club ese... paranormal, o lo que sea.",
+      "next": "node_encuentro_sec_sol_4"
+    },
+    {
+      "id": "node_encuentro_sec_sol_4",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Ah. Entonces somos las dos para lo mismo.",
+      "next": "node_encuentro_sec_sol_5"
+    },
+    {
+      "id": "node_encuentro_sec_sol_5",
+      "type": "thought",
+      "character": null,
+      "text": "Acento nórdico. Cámara de película. No parece que haya llegado aquí por descarte, como yo.",
+      "next": "node_sol_camino_juntas"
+    },
+    {
+      "id": "node_sol_camino_juntas",
+      "type": "narration",
+      "character": null,
+      "text": "La señora les confirma la dirección a las dos. Salen juntas a la calle sin haberlo decidido exactamente. El edificio está detrás de la residencia.",
+      "next": "node_convergencia"
+    },
+
+    {
+      "id": "node_ayla_001",
+      "type": "narration",
+      "character": null,
+      "text": "Entre los nuevos estudiantes se encuentra una joven de porte elegante y mirada serena. Lleva una cámara colgada al hombro y una libreta. Se llama Ayla Solberg. Habla con un ligero acento nórdico y observa todo con calma, como si analizara cada detalle antes de actuar.",
+      "next": "node_ayla_002"
+    },
+    {
+      "id": "node_ayla_002",
+      "type": "thought",
+      "character": null,
+      "text": "Primero el horario, luego el club. Tengo el mapa del campus descargado.",
+      "next": "node_ayla_003"
+    },
+    {
+      "id": "node_ayla_003",
+      "type": "narration",
+      "character": null,
+      "text": "Al abrir el teléfono encuentra el correo de bienvenida con el horario nocturno y la lista de clubs. Es obligatorio inscribirse en uno. Ayla lo sabe perfectamente porque se ha preparado.",
+      "next": "node_ayla_004"
+    },
+    {
+      "id": "node_ayla_004",
+      "type": "narration",
+      "character": null,
+      "text": "Se acerca al club de fotografía. Hay mucho ambiente. Demasiado para el número de plazas disponibles. La lista está llena. Escultura, pintura — mismo resultado: lista de espera.",
+      "next": "node_ayla_005"
+    },
+    {
+      "id": "node_ayla_005",
+      "type": "thought",
+      "character": null,
+      "text": "Esto no tiene solución aquí. Voy a secretaría directamente.",
+      "next": "node_ayla_006"
+    },
+    {
+      "id": "node_ayla_006",
+      "type": "narration",
+      "character": null,
+      "text": "La señora de secretaría le indica un edificio de ladrillo desgastado detrás de la residencia. Tiene plazas libres.",
+      "next": "node_encuentro_sec_ayla",
+      "background": "secretaria"
+    },
+
+    {
+      "id": "node_encuentro_sec_ayla",
+      "type": "narration",
+      "character": "soledad",
+      "text": "Ayla está a punto de salir cuando la señora atiende a otra chica que acaba de llegar. Pelo castaño oscuro, mochila grande, cara de haber subido demasiadas escaleras. Escucha lo que le dicen y asiente con una media sonrisa.",
+      "next": "node_encuentro_sec_ayla_2"
+    },
+    {
+      "id": "node_encuentro_sec_ayla_2",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "¿Tú también vas al edificio ese de detrás de la residencia?",
+      "next": "node_encuentro_sec_ayla_3"
+    },
+    {
+      "id": "node_encuentro_sec_ayla_3",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ayla: Sí. Acaban de decirme lo mismo.",
+      "next": "node_encuentro_sec_ayla_4"
+    },
+    {
+      "id": "node_encuentro_sec_ayla_4",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Pues vamos juntas, si quieres. Que tampoco sé yo muy bien dónde es.",
+      "next": "node_encuentro_sec_ayla_5"
+    },
+    {
+      "id": "node_encuentro_sec_ayla_5",
+      "type": "thought",
+      "character": null,
+      "text": "Directa. Sin rodeos. Me parece bien.",
+      "next": "node_ayla_camino_juntas"
+    },
+    {
+      "id": "node_ayla_camino_juntas",
+      "type": "narration",
+      "character": null,
+      "text": "Salen las dos a la vez. El campus se abre hacia la zona trasera del campus, donde los árboles son más altos y el ruido de la plaza ya no llega.",
+      "next": "node_convergencia"
+    },
+
+    {
+      "id": "node_convergencia",
+      "type": "narration",
+      "character": null,
+      "text": "El edificio de ladrillo parece que lleva años sin usarse. Las ventanas y las puertas siguen en pie, al menos.",
+      "next": "node_fin_thought",
+      "background": "club_paranormal"
+    },
+    {
+      "id": "node_fin_thought",
+      "type": "thought",
+      "character": null,
+      "text": "¿Esto de verdad es habitable?",
+      "next": null,
+      "nextScene": "scene_02_encuentro_ethan"
+    }
+  ]
+}

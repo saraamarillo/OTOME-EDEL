@@ -1,0 +1,76 @@
+.meter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar {
+  width: 10px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.fill {
+  width: 100%;
+  background: linear-gradient(to top, #c94070, #f08ca0);
+  border-radius: 5px;
+  transition: height 0.6s ease;
+  min-height: 3px;
+}
+
+.pulse {
+  animation: fillPulse 0.9s ease;
+}
+
+.pulseBadge {
+  animation: badgePulse 0.9s ease;
+}
+
+@keyframes fillPulse {
+  0%   { filter: brightness(1); }
+  30%  { filter: brightness(2.2) drop-shadow(0 0 6px #f08ca0); }
+  100% { filter: brightness(1); }
+}
+
+@keyframes badgePulse {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.5); }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.heart {
+  font-size: 1rem;
+  color: #e05a7a;
+}
+
+.pct {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  color: var(--ui-text-dim);
+}

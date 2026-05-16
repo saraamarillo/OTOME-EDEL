@@ -1,0 +1,55 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(44, 62, 107, 0.35) 0%, transparent 70%),
+    #0a0814;
+  /* Cuando haya imagen: background-image: url('/assets/backgrounds/title.png') */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #f0ebe0;
+  text-shadow: 0 0 60px rgba(200, 146, 42, 0.4);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ui-text-dim);
+  letter-spacing: 0.12em;
+}
+
+.startBtn {
+  margin-top: 40px;
+  padding: 12px 48px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ui-text);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.startBtn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.5);
+}

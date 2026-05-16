@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\saraa\\\\OneDrive\\\\Escritorio\\\\OTOME_EDEL\\\\public\\\\assets\" -Recurse | Where-Object { $_.Name -ne \".gitkeep\" } | Select-Object FullName, Length)",
+      "PowerShell(\\(Get-ChildItem \"C:\\\\Users\\\\saraa\\\\OneDrive\\\\Escritorio\\\\OTOME_EDEL\\\\public\\\\assets\" -Recurse\\).Count)"
+    ]
+  }
+}

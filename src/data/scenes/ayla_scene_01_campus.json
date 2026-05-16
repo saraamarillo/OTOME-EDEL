@@ -1,0 +1,391 @@
+{
+  "id": "ayla_scene_01_campus",
+  "title": "Nueva Etapa Universitaria — Camino de Ayla",
+  "background": "campus_dia",
+  "nodes": [
+    {
+      "id": "n_intro_01",
+      "type": "narration",
+      "character": null,
+      "text": "Entre los nuevos estudiantes se encuentra una joven de porte elegante y mirada serena. Se llama Ayla Solberg.",
+      "next": "n_intro_02"
+    },
+    {
+      "id": "n_intro_02",
+      "type": "narration",
+      "character": null,
+      "text": "Habla con un ligero acento nórdico y observa todo con calma, como si analizara cada detalle antes de actuar.",
+      "next": "n_intro_03"
+    },
+    {
+      "id": "n_intro_03",
+      "type": "thought",
+      "character": null,
+      "text": "Respira. Nuevo campus. Nueva ciudad. Nueva oportunidad.",
+      "next": "n_intro_04"
+    },
+    {
+      "id": "n_intro_04",
+      "type": "thought",
+      "character": null,
+      "text": "Solo tengo que sobrevivir al primer día sin que nadie note lo perdida que estoy.",
+      "next": "n_intro_05"
+    },
+    {
+      "id": "n_intro_05",
+      "type": "narration",
+      "character": null,
+      "text": "Lleva una cámara colgada al hombro y una libreta pequeña donde apunta detalles constantemente.",
+      "next": "n_intro_06"
+    },
+    {
+      "id": "n_intro_06",
+      "type": "thought",
+      "character": null,
+      "text": "Vale, Ayla. Tienes el mapa descargado. Puedes hacer esto.",
+      "next": "n_foto_01"
+    },
+    {
+      "id": "n_foto_01",
+      "type": "narration",
+      "character": null,
+      "text": "Llega un mensaje al móvil de la Universidad Somnia: «Bienvenida. Recuerda que es obligatorio apuntarse a un club universitario.»",
+      "next": "n_foto_02"
+    },
+    {
+      "id": "n_foto_02",
+      "type": "thought",
+      "character": null,
+      "text": "Perfecto. Primer día y ya hay una obligación social. Maravilloso.",
+      "next": "n_foto_03"
+    },
+    {
+      "id": "n_foto_03",
+      "type": "narration",
+      "character": null,
+      "text": "Ayla decide dirigirse directamente al club de fotografía.",
+      "next": "n_foto_04"
+    },
+    {
+      "id": "n_foto_04",
+      "type": "narration",
+      "character": null,
+      "text": "El responsable del club le explica amablemente que hay demasiadas solicitudes y que puede dejar su nombre por si queda plaza libre.",
+      "next": "n_foto_05"
+    },
+    {
+      "id": "n_foto_05",
+      "type": "thought",
+      "character": null,
+      "text": "Claro. Lista de espera. Porque el universo jamás me iba a dejar tener un primer día sencillo.",
+      "next": "n_choice_foto"
+    },
+    {
+      "id": "n_choice_foto",
+      "type": "choice",
+      "character": null,
+      "text": "¿Cómo reacciona Ayla?",
+      "choices": [
+        { "label": "Apuntarse igualmente y mantener la calma.", "affinityChanges": {}, "next": "n_sec_01" },
+        { "label": "Intentar convencerles de que la acepten.", "affinityChanges": {}, "next": "n_sec_01" },
+        { "label": "Irse decepcionada sin insistir.", "affinityChanges": {}, "next": "n_sec_01" }
+      ]
+    },
+    {
+      "id": "n_sec_01",
+      "type": "narration",
+      "character": null,
+      "text": "Después de recorrer varios clubs sin éxito, Ayla decide ir a secretaría.",
+      "next": "n_sec_02",
+      "background": "secretaria"
+    },
+    {
+      "id": "n_sec_02",
+      "type": "thought",
+      "character": null,
+      "text": "Vale. Plan B. Secretarías universitarias: el lugar donde nacen las crisis administrativas.",
+      "next": "n_sec_03"
+    },
+    {
+      "id": "n_sec_03",
+      "type": "narration",
+      "character": null,
+      "text": "Allí se encuentra con otra estudiante. Morena, discreta y claramente agotada de caminar por el campus.",
+      "next": "n_sec_04"
+    },
+    {
+      "id": "n_sec_04",
+      "type": "thought",
+      "character": null,
+      "text": "Parece igual de perdida que yo. Aunque intenta disimularlo mejor.",
+      "next": "n_sec_05"
+    },
+    {
+      "id": "n_sec_05",
+      "type": "narration",
+      "character": null,
+      "text": "La persona de secretaría les indica que la única opción disponible es el Club Paranormal, en el edificio antiguo detrás de la residencia.",
+      "next": "n_choice_sol"
+    },
+    {
+      "id": "n_choice_sol",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Hablar primero con Soledad.", "affinityChanges": { "soledad": 5 }, "next": "n_camino_01" },
+        { "label": "Esperar a que Soledad diga algo.", "affinityChanges": {}, "next": "n_camino_01" },
+        { "label": "Pensar que el Club Paranormal suena sospechoso.", "affinityChanges": { "soledad": -5 }, "next": "n_camino_01" }
+      ]
+    },
+    {
+      "id": "n_camino_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ayla y Soledad cruzan el campus hacia el edificio antiguo.",
+      "next": "n_camino_02",
+      "background": "campus_dia"
+    },
+    {
+      "id": "n_camino_02",
+      "type": "thought",
+      "character": null,
+      "text": "Vale. Paranormal. Edificio abandonado. Luces parpadeantes. Esto no puede ser legal.",
+      "next": "n_camino_03"
+    },
+    {
+      "id": "n_camino_03",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Entramos o no?",
+      "next": "n_camino_04"
+    },
+    {
+      "id": "n_camino_04",
+      "type": "narration",
+      "character": null,
+      "text": "El edificio está vacío. El pasillo es largo y las luces apenas iluminan.",
+      "next": "n_camino_05"
+    },
+    {
+      "id": "n_camino_05",
+      "type": "thought",
+      "character": null,
+      "text": "Esto parece un escenario de película de terror barata. Si aparece un fantasma me vuelvo a Noruega.",
+      "next": "n_camino_06"
+    },
+    {
+      "id": "n_camino_06",
+      "type": "dialogue",
+      "character": null,
+      "text": "¡Hola! ¿Hay alguien?",
+      "next": "n_camino_07"
+    },
+    {
+      "id": "n_camino_07",
+      "type": "narration",
+      "character": null,
+      "text": "Un chico aparece en el descansillo superior.",
+      "next": "n_ethan_01",
+      "background": "club_paranormal"
+    },
+    {
+      "id": "n_ethan_01",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¡Anda, hola!",
+      "next": "n_ethan_t01"
+    },
+    {
+      "id": "n_ethan_t01",
+      "type": "thought",
+      "character": null,
+      "text": "Vale. No esperaba encontrarme a alguien así aquí.",
+      "next": "n_ethan_t02"
+    },
+    {
+      "id": "n_ethan_t02",
+      "type": "thought",
+      "character": null,
+      "text": "¿Ojos ámbar? ¿Eso existe? Porque parece sacado de Pinterest.",
+      "next": "n_choice_ethan"
+    },
+    {
+      "id": "n_choice_ethan",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Que parece interesante.", "affinityChanges": { "ethan": 5 }, "next": "n_ethan_nombres" },
+        { "label": "Que tiene demasiada energía.", "affinityChanges": {}, "next": "n_ethan_nombres" },
+        { "label": "Que no debería confiar tan rápido en él.", "affinityChanges": { "ethan": -5 }, "next": "n_ethan_nombres" }
+      ]
+    },
+    {
+      "id": "n_ethan_nombres",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Y vosotras? ¿Cómo os llamáis?",
+      "next": "n_ethan_ayla_nombre"
+    },
+    {
+      "id": "n_ethan_ayla_nombre",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ayla.",
+      "next": "n_ethan_sol_nombre"
+    },
+    {
+      "id": "n_ethan_sol_nombre",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Soledad.",
+      "next": "n_ethan_resp_nombre"
+    },
+    {
+      "id": "n_ethan_resp_nombre",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Ethan. ¡Encantado de conoceros!",
+      "next": "n_ethan_c01"
+    },
+    {
+      "id": "n_ethan_c01",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿No habéis visto nunca la universidad? ¡Os tengo que hacer una visita por aquí!",
+      "next": "n_ethan_c02"
+    },
+    {
+      "id": "n_ethan_c02",
+      "type": "thought",
+      "character": null,
+      "text": "Es demasiado sociable. ¿Cómo puede estar tan feliz de tener personas nuevas alrededor?",
+      "next": "n_ethan_c03"
+    },
+    {
+      "id": "n_ethan_c03",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan les enseña el campus mientras habla sin parar.",
+      "next": "n_ethan_c04"
+    },
+    {
+      "id": "n_ethan_c04",
+      "type": "thought",
+      "character": null,
+      "text": "Bueno... al menos parece buena persona.",
+      "next": "n_caf_01",
+      "background": "cafeteria_universidad"
+    },
+    {
+      "id": "n_caf_01",
+      "type": "narration",
+      "character": null,
+      "text": "La cafetería universitaria es enorme y luminosa. El ambiente es cálido y acogedor.",
+      "next": "n_caf_02"
+    },
+    {
+      "id": "n_caf_02",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Qué queréis tomar?",
+      "next": "n_choice_bebida"
+    },
+    {
+      "id": "n_choice_bebida",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Una botella de agua.", "affinityChanges": { "ethan": 5, "soledad": 5 }, "next": "n_cg_caf" },
+        { "label": "Café.", "affinityChanges": {}, "next": "n_sin_cg" },
+        { "label": "Té.", "affinityChanges": { "soledad": 5 }, "next": "n_sin_cg" }
+      ]
+    },
+    {
+      "id": "n_cg_caf",
+      "type": "narration",
+      "character": null,
+      "text": "Ayla apoya la botella de agua sobre la mesa. La luz cálida de la cafetería les envuelve a los tres.",
+      "next": "n_cg_thought",
+      "unlockImage": "ethan_cafeteria"
+    },
+    {
+      "id": "n_cg_thought",
+      "type": "thought",
+      "character": null,
+      "text": "No sé por qué, pero esto se siente... cómodo.",
+      "next": "n_conv_01"
+    },
+    {
+      "id": "n_sin_cg",
+      "type": "dialogue",
+      "character": null,
+      "text": "Creo que pediré otra cosa.",
+      "next": "n_conv_01"
+    },
+    {
+      "id": "n_conv_01",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "En Guadalajara pasan cosas rarísimas.",
+      "next": "n_conv_02"
+    },
+    {
+      "id": "n_conv_02",
+      "type": "thought",
+      "character": null,
+      "text": "Sí, por ejemplo este club entero.",
+      "next": "n_conv_03"
+    },
+    {
+      "id": "n_conv_03",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad menciona haber visto una chica fuera, apoyada en un árbol, que la miraba fijamente.",
+      "next": "n_conv_04"
+    },
+    {
+      "id": "n_conv_04",
+      "type": "thought",
+      "character": null,
+      "text": "No he visto nada... pero Soledad parece realmente alterada.",
+      "next": "n_choice_sol2"
+    },
+    {
+      "id": "n_choice_sol2",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Creerla totalmente.", "affinityChanges": { "soledad": 5 }, "next": "n_desp_01" },
+        { "label": "Pensar que quizás esté cansada.", "affinityChanges": {}, "next": "n_desp_01" },
+        { "label": "Pensar que puede haber imaginado cosas.", "affinityChanges": { "soledad": -5 }, "next": "n_desp_01" }
+      ]
+    },
+    {
+      "id": "n_desp_01",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Bueno, pues nos vemos mañana.",
+      "next": "n_desp_02",
+      "background": "campus_noche"
+    },
+    {
+      "id": "n_desp_02",
+      "type": "thought",
+      "character": null,
+      "text": "Es raro. Acabo de conocerles y ya siento que el día habría sido peor sin ellos.",
+      "next": "n_desp_03"
+    },
+    {
+      "id": "n_desp_03",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad se marcha hacia el autobús. Ayla se dirige a la residencia universitaria.",
+      "next": null,
+      "nextScene": "ayla_scene_02_residencia"
+    }
+  ]
+}

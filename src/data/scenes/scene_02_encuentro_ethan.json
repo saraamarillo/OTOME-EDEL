@@ -1,0 +1,242 @@
+{
+  "id": "scene_02_encuentro_ethan",
+  "title": "El Club Paranormal",
+  "background": "club_paranormal",
+  "nodes": [
+    {
+      "id": "node_001",
+      "type": "narration",
+      "character": null,
+      "text": "El pasillo está vacío. Las luces parpadean con una luz suave e inquietante. Todo huele a polvo de años.",
+      "next": "node_branch_entrada"
+    },
+
+    {
+      "id": "node_branch_entrada",
+      "type": "protagonistBranch",
+      "branches": {
+        "soledad": "node_sol_entrada_001",
+        "ayla": "node_ayla_entrada_001"
+      }
+    },
+
+    {
+      "id": "node_sol_entrada_001",
+      "type": "thought",
+      "character": null,
+      "text": "Si hay alguien aquí, ya puede contestar.",
+      "next": "node_sol_entrada_002"
+    },
+    {
+      "id": "node_sol_entrada_002",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sol: ¡Hola! ¿Hay alguien? ¡Hola, hola! ¿Aquí qué hay?",
+      "next": "node_sol_entrada_003"
+    },
+    {
+      "id": "node_sol_entrada_003",
+      "type": "narration",
+      "character": "ayla",
+      "text": "A su lado, Ayla levanta la vista hacia el techo. Techos altos, pintura descascarada. Lo mira todo con calma, como si estuviera evaluando el espacio.",
+      "next": "node_sol_entrada_004"
+    },
+    {
+      "id": "node_sol_entrada_004",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Igual no hay nadie.",
+      "next": "node_004"
+    },
+
+    {
+      "id": "node_ayla_entrada_001",
+      "type": "thought",
+      "character": null,
+      "text": "Huele a años sin abrir. Podría haber estado aquí cualquier cosa.",
+      "next": "node_ayla_entrada_002"
+    },
+    {
+      "id": "node_ayla_entrada_002",
+      "type": "narration",
+      "character": "soledad",
+      "text": "La chica que ha venido con ella desde secretaría no tiene ningún reparo. Se planta en mitad del pasillo y llama sin más.",
+      "next": "node_ayla_entrada_003"
+    },
+    {
+      "id": "node_ayla_entrada_003",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "¡Hola! ¿Hay alguien? ¡Hola, hola! ¿Aquí qué hay?",
+      "next": "node_ayla_entrada_004"
+    },
+    {
+      "id": "node_ayla_entrada_004",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ayla: Igual no hay nadie.",
+      "next": "node_004"
+    },
+
+    {
+      "id": "node_004",
+      "type": "narration",
+      "character": null,
+      "text": "Se escuchan pasos corriendo en la planta de arriba. En el descansillo de la escalera se asoma un chico. Pelo de un negro azulado, cascos colgados del cuello, ojos de color ámbar. Sonrisa efusiva.",
+      "next": "node_005"
+    },
+    {
+      "id": "node_005",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¡Anda, hola!",
+      "next": "node_006"
+    },
+    {
+      "id": "node_006",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Buscáis el Club Paranormal? ¡Genial! Esperad un momento, que recojo esto.",
+      "next": "node_007"
+    },
+    {
+      "id": "node_007",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan recoge el portátil, guarda todo en la bolsa, cierra con llave la sala. Baja las escaleras. Se le nota que lleva un buen rato solo ahí arriba.",
+      "next": "node_008"
+    },
+    {
+      "id": "node_008",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Tengo que llevar esto a secretaría. ¿Venís? Así os enseño un poco el campus.",
+      "next": "node_009"
+    },
+    {
+      "id": "node_009",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Sí, me vendría bien la visita.",
+          "affinityChanges": { "ethan": 5 },
+          "next": "node_010a"
+        },
+        {
+          "label": "¿Puedo apuntarme rápido y ya está?",
+          "affinityChanges": { "ethan": -2 },
+          "next": "node_010b"
+        }
+      ]
+    },
+    {
+      "id": "node_010a",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¡Genial! Pues venga, vamos. Luego os invito a algo, que el café es gratis.",
+      "next": "node_010a_sec",
+      "background": "secretaria"
+    },
+    {
+      "id": "node_010a_sec",
+      "type": "narration",
+      "character": null,
+      "text": "Secretaría. Una sala pequeña, mostrador de madera y carteles plastificados. Ethan deja los papeles y firma con despreocupación total.",
+      "next": "node_011"
+    },
+    {
+      "id": "node_010b",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Claro, sin problema. Igual luego si queréis os enseño algo, sin compromiso.",
+      "next": "node_010b_sec",
+      "background": "secretaria"
+    },
+    {
+      "id": "node_010b_sec",
+      "type": "narration",
+      "character": null,
+      "text": "Secretaría. Ethan entrega los papeles, firma y hace un comentario amable a la persona del mostrador. Parece que le conocen bien.",
+      "next": "node_011"
+    },
+    {
+      "id": "node_011",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Hoy la gente está más borde de lo habitual. Es el primer día. No os voy a mentir.",
+      "next": "node_012",
+      "background": "campus_dia"
+    },
+    {
+      "id": "node_012",
+      "type": "narration",
+      "character": null,
+      "text": "Según bajan, Ethan mira hacia atrás de vez en cuando para ver si le siguen. Irradia felicidad. Como un niño grande que acaba de hacer amigos.",
+      "next": "node_013"
+    },
+    {
+      "id": "node_013",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿No habéis visto nunca la universidad? ¡Os tengo que hacer una visita completa! Hay rincones muy buenos. Esta es la residencia, y por ahí las canchas de baloncesto. ¿Queréis tomar algo?",
+      "next": "node_branch_telefono"
+    },
+
+    {
+      "id": "node_branch_telefono",
+      "type": "protagonistBranch",
+      "branches": {
+        "soledad": "node_sol_tel",
+        "ayla": "node_ayla_tel"
+      }
+    },
+
+    {
+      "id": "node_sol_tel",
+      "type": "narration",
+      "character": null,
+      "text": "Sol saca el teléfono.",
+      "next": "node_sol_tel_2"
+    },
+    {
+      "id": "node_sol_tel_2",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sol: Oye, te doy el teléfono para que me pongas una llamada perdida. Así también tengo yo el tuyo.",
+      "next": "node_sol_tel_3"
+    },
+    {
+      "id": "node_sol_tel_3",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Gracias, Soledad. Por si nos hace falta alguna cosa.",
+      "next": "node_sol_tel_thought"
+    },
+    {
+      "id": "node_sol_tel_thought",
+      "type": "thought",
+      "character": null,
+      "text": "Una cara conocida. Con eso ya va bien el primer día.",
+      "next": "node_fin"
+    },
+
+    {
+      "id": "node_ayla_tel",
+      "type": "thought",
+      "character": null,
+      "text": "No tengo prisa por dar el teléfono a alguien que acabo de conocer. Pero el club parece interesante.",
+      "next": "node_fin"
+    },
+
+    {
+      "id": "node_fin",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan encabeza el camino hacia la cafetería con paso alegre.",
+      "next": null,
+      "nextScene": "scene_03_cafeteria"
+    }
+  ]
+}

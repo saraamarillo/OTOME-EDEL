@@ -1,0 +1,174 @@
+{
+  "id": "ayla_scene_02_residencia",
+  "title": "La habitación de Lydia",
+  "background": "residencia_habitacion_noche",
+  "nodes": [
+    {
+      "id": "n_hab_01",
+      "type": "narration",
+      "character": null,
+      "text": "La habitación compartida está llena de plantas medicinales, pequeños botes y herramientas de herboristería.",
+      "next": "n_hab_02"
+    },
+    {
+      "id": "n_hab_02",
+      "type": "thought",
+      "character": null,
+      "text": "Vale. O mi compañera de cuarto es herborista... o alquimista.",
+      "next": "n_lydia_01"
+    },
+    {
+      "id": "n_lydia_01",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Bueno, ¿qué tal tu primer día?",
+      "next": "n_ayla_01"
+    },
+    {
+      "id": "n_ayla_01",
+      "type": "dialogue",
+      "character": null,
+      "text": "Caótico.",
+      "next": "n_lydia_02"
+    },
+    {
+      "id": "n_lydia_02",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Siempre pasa el primer día.",
+      "next": "n_choice_plantas"
+    },
+    {
+      "id": "n_choice_plantas",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Preguntar por las plantas.", "affinityChanges": { "lydia": 5 }, "next": "n_pl_01" },
+        { "label": "Decir que está cansada y quiere dormir.", "affinityChanges": {}, "next": "n_sleep_01" },
+        { "label": "Preguntar si conoce a Ethan.", "affinityChanges": { "lydia": 5 }, "next": "n_eth_01" }
+      ]
+    },
+    {
+      "id": "n_pl_01",
+      "type": "dialogue",
+      "character": null,
+      "text": "Tienes muchísimas plantas.",
+      "next": "n_lydia_pl_01"
+    },
+    {
+      "id": "n_lydia_pl_01",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "La mayoría son medicinales.",
+      "next": "n_pl_02"
+    },
+    {
+      "id": "n_pl_02",
+      "type": "thought",
+      "character": null,
+      "text": "Vale. Definitivamente es la compañera más interesante que podía tocarme.",
+      "next": "n_pl_03"
+    },
+    {
+      "id": "n_pl_03",
+      "type": "narration",
+      "character": null,
+      "text": "Lydia le enseña una planta cuya savia funciona como desinfectante natural. El tallo es de un rojo anaranjado muy vivo.",
+      "next": "n_pl_04"
+    },
+    {
+      "id": "n_pl_04",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Le puedo hacer una foto?",
+      "next": "n_lydia_pl_02"
+    },
+    {
+      "id": "n_lydia_pl_02",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Claro.",
+      "next": "n_pl_cg"
+    },
+    {
+      "id": "n_pl_cg",
+      "type": "narration",
+      "character": null,
+      "text": "Ayla saca la cámara y hace una foto. El destello ilumina brevemente la habitación.",
+      "next": "n_pl_thought",
+      "unlockImage": "lydia_plantas"
+    },
+    {
+      "id": "n_pl_thought",
+      "type": "thought",
+      "character": null,
+      "text": "Quizás este sitio no sea tan horrible.",
+      "next": "n_final_01"
+    },
+    {
+      "id": "n_sleep_01",
+      "type": "dialogue",
+      "character": null,
+      "text": "La verdad es que estoy agotada. Creo que me voy a dormir ya.",
+      "next": "n_sleep_02"
+    },
+    {
+      "id": "n_sleep_02",
+      "type": "thought",
+      "character": null,
+      "text": "Mañana será otro día. Y sinceramente... lo necesito.",
+      "next": "n_final_01"
+    },
+    {
+      "id": "n_eth_01",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Conoces mucho a Ethan?",
+      "next": "n_lydia_eth_01"
+    },
+    {
+      "id": "n_lydia_eth_01",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Sí. Es de las mejores personas del campus.",
+      "next": "n_eth_02"
+    },
+    {
+      "id": "n_eth_02",
+      "type": "thought",
+      "character": null,
+      "text": "Eso explica muchas cosas.",
+      "next": "n_eth_03"
+    },
+    {
+      "id": "n_eth_03",
+      "type": "narration",
+      "character": null,
+      "text": "Lydia le habla durante un rato de Ethan y de la universidad. La conversación resulta más fácil de lo esperado.",
+      "next": "n_final_01"
+    },
+    {
+      "id": "n_final_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ayla se queda dormida entre sábanas que no son las suyas, en una habitación llena de plantas medicinales y con demasiadas personas nuevas rondándole la cabeza.",
+      "next": "n_final_02"
+    },
+    {
+      "id": "n_final_02",
+      "type": "thought",
+      "character": null,
+      "text": "Nuevo campus. Nueva ciudad. Y ya siento que algo raro está empezando.",
+      "next": "n_final_03"
+    },
+    {
+      "id": "n_final_03",
+      "type": "narration",
+      "character": null,
+      "text": "Fin — Partida 1 · Camino de Ayla.",
+      "next": null,
+      "endEpisode": true
+    }
+  ]
+}

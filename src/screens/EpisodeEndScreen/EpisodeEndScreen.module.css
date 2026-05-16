@@ -1,0 +1,77 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(80, 40, 120, 0.35) 0%, transparent 65%),
+    #0a0814;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ui-text-dim);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  letter-spacing: 0.15em;
+  color: var(--ui-text);
+  font-weight: 300;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--ui-text-dim);
+  letter-spacing: 0.1em;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  width: 240px;
+}
+
+.btn {
+  padding: 12px 32px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ui-text);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: background 0.25s, border-color 0.25s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btnSecondary {
+  opacity: 0.5;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.btnSecondary:hover {
+  opacity: 0.8;
+}
