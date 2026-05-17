@@ -13,7 +13,7 @@ export default function TitleScreen() {
       {/* ── Contenido principal centrado ────────────────────── */}
       <div className={styles.main}>
         <h1 className={styles.logo}>EDEL</h1>
-        <p className={styles.subtitle}>Universidad Somnia · Guadalajara</p>
+        <p className={styles.subtitle}>Entre Desvelo y Ensueño Latente</p>
 
         <p className={styles.episode}>Episodio Piloto · Ya disponible</p>
 

@@ -25,7 +25,7 @@ export default function LoginScreen() {
     <div className={styles.screen}>
       <div className={styles.card}>
         <h1 className={styles.logo}>EDEL</h1>
-        <p className={styles.tagline}>Universidad Somnia</p>
+        <p className={styles.tagline}>Entre Desvelo y Ensueño Latente</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.field}>
