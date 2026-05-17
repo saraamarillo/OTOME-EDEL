@@ -5,6 +5,34 @@ import { NPC_CHARACTERS } from '../constants/characters'
 const buildAffinityMap = () =>
   Object.fromEntries(NPC_CHARACTERS.map((c) => [c.id, AFFINITY_DEFAULT]))
 
+/** Affinities and encounteredNPCs are stored per protagonist route */
+const buildRouteAffinities = () => ({
+  soledad: buildAffinityMap(),
+  ayla:    buildAffinityMap(),
+  maven:   buildAffinityMap(),
+})
+
+const buildRouteEncountered = () => ({ soledad: [], ayla: [], maven: [] })
+
+/** Migrate old flat-map saves to per-protagonist structure */
+const migrateAffinities = (raw) => {
+  if (!raw) return buildRouteAffinities()
+  // Already per-protagonist (has 'soledad' key)
+  if (raw.soledad !== undefined) return {
+    soledad: { ...buildAffinityMap(), ...raw.soledad },
+    ayla:    { ...buildAffinityMap(), ...raw.ayla    },
+    maven:   { ...buildAffinityMap(), ...raw.maven   },
+  }
+  // Old flat format — discard (development stage)
+  return buildRouteAffinities()
+}
+
+const migrateEncountered = (raw) => {
+  if (!raw) return buildRouteEncountered()
+  if (raw.soledad !== undefined) return { soledad: raw.soledad ?? [], ayla: raw.ayla ?? [], maven: raw.maven ?? [] }
+  return buildRouteEncountered()
+}
+
 const buildSaveKey = (username) => `edel:${username.toLowerCase().trim()}`
 
 export const useGameStore = create((set, get) => ({
@@ -28,8 +56,8 @@ export const useGameStore = create((set, get) => ({
       userName: save.displayName ?? trimmed,
       completedEpisodes: isGuest ? [] : (save.completedEpisodes ?? []),
       unlockedImages:    isGuest ? [] : (save.unlockedImages ?? []),
-      affinities:        { ...buildAffinityMap(), ...(isGuest ? {} : (save.affinities ?? {})) },
-      encounteredNPCs:   isGuest ? [] : (save.encounteredNPCs ?? []),
+      affinities:      isGuest ? buildRouteAffinities() : migrateAffinities(save.affinities),
+      encounteredNPCs: isGuest ? buildRouteEncountered() : migrateEncountered(save.encounteredNPCs),
       currentScreen: 'episodeList',
     })
     return isGuest ? 'guest' : 'ok'
@@ -40,9 +68,9 @@ export const useGameStore = create((set, get) => ({
     currentScreen: 'title',
     protagonistId: null, sceneId: null, nodeIndex: 0,
     activeCharacterId: null, backgroundId: null,
-    affinities: buildAffinityMap(), characterLooks: {},
+    affinities: buildRouteAffinities(), characterLooks: {},
     visitedScenes: [], unlockedImages: [], imageReveal: null,
-    encounteredNPCs: [],
+    encounteredNPCs: buildRouteEncountered(),
   }),
 
   completeEpisode: (epNum) => {
@@ -95,36 +123,55 @@ export const useGameStore = create((set, get) => ({
   activeCharacterId: null,       // qué NPC está visible ahora
   setActiveCharacter: (id) => set({ activeCharacterId: id }),
 
-  // ── NPCs conocidos por la protagonista ──────────────────────
-  encounteredNPCs: [],
+  // ── NPCs conocidos (por ruta/protagonista) ─────────────────
+  encounteredNPCs: buildRouteEncountered(),
   markNpcEncountered: (id) => {
     if (!id) return
-    set((state) => ({
-      encounteredNPCs: state.encounteredNPCs.includes(id)
-        ? state.encounteredNPCs
-        : [...state.encounteredNPCs, id],
-    }))
+    const pid = get().protagonistId
+    if (!pid) return
+    set((state) => {
+      const current = state.encounteredNPCs[pid] ?? []
+      if (current.includes(id)) return state
+      return {
+        encounteredNPCs: {
+          ...state.encounteredNPCs,
+          [pid]: [...current, id],
+        },
+      }
+    })
   },
 
   // ── Fondo ───────────────────────────────────────────────────
   backgroundId: null,            // nombre del PNG en /assets/backgrounds/
   setBackground: (id) => set({ backgroundId: id }),
 
-  // ── Afinidades ──────────────────────────────────────────────
-  affinities: buildAffinityMap(),
+  // ── Afinidades (por ruta/protagonista) ─────────────────────
+  // Estructura: { soledad: { ethan: 5, ... }, ayla: { ethan: 0, ... }, maven: {...} }
+  affinities: buildRouteAffinities(),
   changeAffinity: (characterId, delta) => {
-    set((state) => ({
-      affinities: {
-        ...state.affinities,
-        [characterId]: Math.min(
-          AFFINITY_MAX,
-          Math.max(AFFINITY_MIN, (state.affinities[characterId] ?? AFFINITY_DEFAULT) + delta),
-        ),
-      },
-    }))
+    const pid = get().protagonistId
+    if (!pid) return
+    set((state) => {
+      const routeMap = state.affinities[pid] ?? {}
+      return {
+        affinities: {
+          ...state.affinities,
+          [pid]: {
+            ...routeMap,
+            [characterId]: Math.min(
+              AFFINITY_MAX,
+              Math.max(AFFINITY_MIN, (routeMap[characterId] ?? AFFINITY_DEFAULT) + delta),
+            ),
+          },
+        },
+      }
+    })
     get().saveProgress()
   },
-  getAffinity: (characterId) => get().affinities[characterId] ?? AFFINITY_DEFAULT,
+  getAffinity: (characterId) => {
+    const { protagonistId, affinities } = get()
+    return affinities[protagonistId]?.[characterId] ?? AFFINITY_DEFAULT
+  },
 
   // ── Looks de personaje (cambian según el arco) ─────────────
   // El look 'arc1' es el predeterminado para todos

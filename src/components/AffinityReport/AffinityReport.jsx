@@ -15,9 +15,13 @@ function maskName(name) {
  * - Incluye la compañera protagonista (Ayla en ruta Soledad y viceversa)
  */
 export default function AffinityReport({ onClose }) {
-  const affinities      = useGameStore((s) => s.affinities)
-  const encounteredNPCs = useGameStore((s) => s.encounteredNPCs)
+  const affinitiesAll   = useGameStore((s) => s.affinities)
+  const encounteredAll  = useGameStore((s) => s.encounteredNPCs)
   const protagonistId   = useGameStore((s) => s.protagonistId)
+
+  // Solo la ruta activa
+  const affinities      = affinitiesAll[protagonistId] ?? {}
+  const encounteredNPCs = encounteredAll[protagonistId] ?? []
 
   // Compañera protagonista (aparece como NPC en la ruta contraria)
   const companion = protagonistId === 'soledad'
@@ -41,7 +45,7 @@ export default function AffinityReport({ onClose }) {
     ...companionEntry,
     ...NPC_CHARACTERS.map((npc) => ({ ...npc, isCompanion: false })),
   ].map((entry) => {
-    const value = affinities[entry.id] ?? 0
+    const value = affinities[entry.id] ?? 0          // ya es el mapa plano de la ruta activa
     const pct   = Math.round((value / AFFINITY_MAX) * 100)
     const met   = entry.isCompanion || encounteredNPCs.includes(entry.id)
     return { ...entry, value, pct, met }

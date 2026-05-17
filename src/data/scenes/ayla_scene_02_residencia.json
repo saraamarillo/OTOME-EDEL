@@ -36,6 +36,69 @@
       "type": "dialogue",
       "character": "lydia",
       "text": "Siempre pasa el primer día.",
+      "next": "n_ayla_02"
+    },
+    {
+      "id": "n_ayla_02",
+      "type": "dialogue",
+      "character": null,
+      "text": "Lo más raro fue acabar apuntada a un Club Paranormal. No era exactamente mi plan.",
+      "next": "n_lydia_03"
+    },
+    {
+      "id": "n_lydia_03",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "¿El de Ethan? ¿También te quedaste sin opciones?",
+      "next": "n_ayla_03"
+    },
+    {
+      "id": "n_ayla_03",
+      "type": "dialogue",
+      "character": null,
+      "text": "Exactamente. Yo y otra estudiante llamada Soledad. Ninguna de las dos teníamos muy claro qué hacíamos allí.",
+      "next": "n_lydia_04"
+    },
+    {
+      "id": "n_lydia_04",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Conozco a Ethan desde el año pasado. Es de esas personas que no te dejan en mal momento aunque acaben de conocerte.",
+      "next": "n_thought_ethan"
+    },
+    {
+      "id": "n_thought_ethan",
+      "type": "thought",
+      "character": null,
+      "text": "Eso cuadra exactamente con lo que vi hoy. Demasiado amable para ser real... y sin embargo lo era.",
+      "next": "n_lydia_05"
+    },
+    {
+      "id": "n_lydia_05",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "¿Y esa cámara? ¿La llevas siempre encima o solo en situaciones de emergencia?",
+      "next": "n_ayla_04"
+    },
+    {
+      "id": "n_ayla_04",
+      "type": "dialogue",
+      "character": null,
+      "text": "Especialmente en situaciones de emergencia.",
+      "next": "n_lydia_06"
+    },
+    {
+      "id": "n_lydia_06",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Me gusta. Yo llevo las plantas. Supongo que cada una tiene lo suyo.",
+      "next": "n_narr_silencio"
+    },
+    {
+      "id": "n_narr_silencio",
+      "type": "narration",
+      "character": null,
+      "text": "Se hace un silencio cómodo. Ayla mira a su alrededor: las plantas en el alféizar, las etiquetas escritas a mano, los pequeños botes de vidrio alineados con precisión.",
       "next": "n_choice_plantas"
     },
     {
