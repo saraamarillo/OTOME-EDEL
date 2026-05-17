@@ -157,7 +157,21 @@
       "type": "dialogue",
       "character": null,
       "text": "Perdona... ¿tú también buscas club?",
-      "next": "n_sol_resp"
+      "next": "n_sol_si"
+    },
+    {
+      "id": "n_sol_si",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Sí. Llevo un rato dando vueltas y no he encontrado ninguno libre.",
+      "next": "n_ayla_si"
+    },
+    {
+      "id": "n_ayla_si",
+      "type": "dialogue",
+      "character": null,
+      "text": "Igual. Pensé que sería más sencillo.",
+      "next": "n_pres_pausa"
     },
     {
       "id": "n_hielo_sol",
@@ -177,7 +191,14 @@
       "id": "n_sol_resp",
       "type": "dialogue",
       "character": "soledad",
-      "text": "Igual que yo. El campus es enorme.",
+      "text": "Igual que yo.",
+      "next": "n_pres_pausa"
+    },
+    {
+      "id": "n_pres_pausa",
+      "type": "narration",
+      "character": null,
+      "text": "Un momento de silencio. Las dos miran hacia la ventanilla de secretaría, que sigue cerrada.",
       "next": "n_pres_thought"
     },
     {
@@ -185,34 +206,62 @@
       "type": "thought",
       "character": null,
       "text": "Al menos no soy la única. Aunque ella lo lleva de otra manera.",
+      "next": "n_pres_sol_init"
+    },
+    {
+      "id": "n_pres_sol_init",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Soledad.",
       "next": "n_pres_ayla"
     },
     {
       "id": "n_pres_ayla",
       "type": "dialogue",
       "character": null,
-      "text": "Ayla. ¿Qué estudias?",
-      "next": "n_pres_sol"
+      "text": "Ayla.",
+      "next": "n_estudios_sol_q"
     },
     {
-      "id": "n_pres_sol",
+      "id": "n_estudios_sol_q",
       "type": "dialogue",
       "character": "soledad",
-      "text": "Filosofía. Soledad. Tú no eres de aquí, ¿verdad?",
+      "text": "¿Qué estudias?",
       "next": "n_estudios_ayla"
     },
     {
       "id": "n_estudios_ayla",
       "type": "dialogue",
       "character": null,
-      "text": "Arte y arqueología. Soy de Noruega. Llevo poco en España.",
+      "text": "Arte y arqueología. ¿Y tú?",
+      "next": "n_pres_sol"
+    },
+    {
+      "id": "n_pres_sol",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Filosofía.",
       "next": "n_estudios_thought"
     },
     {
       "id": "n_estudios_thought",
       "type": "thought",
       "character": null,
-      "text": "Directa. Sin filtros. Me gusta.",
+      "text": "Una palabra. Sin más adornos. Me gusta.",
+      "next": "n_sec_q"
+    },
+    {
+      "id": "n_sec_q",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Crees que aquí podrán ayudarnos con lo del club?",
+      "next": "n_sol_sec_01"
+    },
+    {
+      "id": "n_sol_sec_01",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Eso espero. Porque si no, no sé qué más hacer.",
       "next": "n_sec_05"
     },
     {

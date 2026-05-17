@@ -200,27 +200,34 @@
       "type": "dialogue",
       "character": null,
       "text": "Perdona... ¿tú también buscas club?",
-      "next": "n_ayla_resp"
+      "next": "n_ayla_si"
     },
     {
       "id": "n_hielo_ayla",
       "type": "dialogue",
       "character": "ayla",
       "text": "Perdona... ¿también estás buscando club?",
-      "next": "n_sol_resp"
+      "next": "n_sol_si"
     },
     {
-      "id": "n_sol_resp",
+      "id": "n_sol_si",
       "type": "dialogue",
       "character": null,
-      "text": "Sí. He recorrido media universidad y no he encontrado nada.",
-      "next": "n_ayla_resp"
+      "text": "Sí. Llevo un rato dando vueltas y no he encontrado ninguno libre.",
+      "next": "n_ayla_si"
     },
     {
-      "id": "n_ayla_resp",
+      "id": "n_ayla_si",
       "type": "dialogue",
       "character": "ayla",
-      "text": "Igual que yo. El campus es enorme. No encontraba nada.",
+      "text": "Igual. Pensé que sería más sencillo.",
+      "next": "n_pres_pausa"
+    },
+    {
+      "id": "n_pres_pausa",
+      "type": "narration",
+      "character": null,
+      "text": "Un momento de silencio. Las dos miran hacia la ventanilla de secretaría, que sigue cerrada.",
       "next": "n_pres_thought"
     },
     {
@@ -228,6 +235,13 @@
       "type": "thought",
       "character": null,
       "text": "Al menos no soy la única. Aunque ella lo lleva con mucha más calma.",
+      "next": "n_pres_ayla_init"
+    },
+    {
+      "id": "n_pres_ayla_init",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Ayla.",
       "next": "n_pres_sol"
     },
     {
@@ -235,48 +249,48 @@
       "type": "dialogue",
       "character": null,
       "text": "Soledad.",
-      "next": "n_pres_ayla"
+      "next": "n_estudios_ayla_q"
     },
     {
-      "id": "n_pres_ayla",
+      "id": "n_estudios_ayla_q",
       "type": "dialogue",
       "character": "ayla",
-      "text": "Ayla. ¿Qué estudias?",
+      "text": "¿Qué estudias?",
       "next": "n_estudios_sol"
     },
     {
       "id": "n_estudios_sol",
       "type": "dialogue",
       "character": null,
-      "text": "Filosofía. Tú no pareces de aquí, si no te importa que lo diga.",
+      "text": "Filosofía. ¿Y tú?",
       "next": "n_estudios_ayla"
     },
     {
       "id": "n_estudios_ayla",
       "type": "dialogue",
       "character": "ayla",
-      "text": "Arte y arqueología. Y no, soy de Noruega. Llevo poco en España.",
+      "text": "Arte y arqueología. Soy de Noruega, por si el acento no lo dejaba claro.",
       "next": "n_estudios_thought"
     },
     {
       "id": "n_estudios_thought",
       "type": "thought",
       "character": null,
-      "text": "Eso explica algo. O quizás simplemente es así de tranquila.",
+      "text": "Lo ha dicho ella sola. Resulta más fácil hablar con ella de lo que esperaba.",
       "next": "n_ayla_02"
     },
     {
       "id": "n_ayla_02",
       "type": "dialogue",
       "character": "ayla",
-      "text": "Me han dicho que casi todos los clubs están llenos. ¿Tú has encontrado algo?",
+      "text": "¿Crees que aquí podrán ayudarnos con lo del club?",
       "next": "n_sol_sec_01"
     },
     {
       "id": "n_sol_sec_01",
       "type": "dialogue",
       "character": null,
-      "text": "Nada. He venido a secretaría a ver qué opciones quedan.",
+      "text": "Eso espero. Porque si no, no sé qué más hacer.",
       "next": "n_sec_info"
     },
     {
