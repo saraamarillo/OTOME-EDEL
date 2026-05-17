@@ -2,29 +2,35 @@
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background:
     radial-gradient(ellipse at 50% 60%, rgba(44, 62, 107, 0.35) 0%, transparent 70%),
     #0a0814;
-  /* Cuando haya imagen: background-image: url('/assets/backgrounds/title.png') */
+  overflow-y: auto;
+  padding: 40px 24px 28px;
 }
 
-.content {
+/* ── Bloque central ────────────────────────────────────────── */
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   text-align: center;
+  flex: 1;
+  justify-content: center;
 }
 
-.title {
+.logo {
   font-family: var(--font-display);
   font-size: 6rem;
   font-weight: 600;
   letter-spacing: 0.3em;
   color: #f0ebe0;
   text-shadow: 0 0 60px rgba(200, 146, 42, 0.4);
+  margin: 0;
 }
 
 .subtitle {
@@ -33,10 +39,38 @@
   font-size: 1rem;
   color: var(--ui-text-dim);
   letter-spacing: 0.12em;
+  margin: 0;
 }
 
+/* "Episodio Piloto · Ya disponible" */
+.episode {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #38bdf8;          /* sky-blue */
+  letter-spacing: 0.06em;
+  margin: 6px 0 0;
+}
+
+/* Bloque de créditos */
+.credits {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.credits p {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Botón de inicio */
 .startBtn {
-  margin-top: 40px;
+  margin-top: 28px;
   padding: 12px 48px;
   font-family: var(--font-display);
   font-size: 0.85rem;
@@ -47,9 +81,49 @@
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 4px;
   transition: background 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .startBtn:hover {
   background: rgba(255, 255, 255, 0.07);
   border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Parte inferior ────────────────────────────────────────── */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding-top: 20px;
+  width: 100%;
+  max-width: 680px;
+}
+
+.checkrolLine {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 0;
+}
+
+.footerText {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.22);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Enlace morado ────────────────────────────────────────── */
+.link {
+  color: #a855f7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #c084fc;
+  text-decoration: underline;
 }

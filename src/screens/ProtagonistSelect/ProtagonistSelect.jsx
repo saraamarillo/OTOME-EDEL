@@ -3,6 +3,18 @@ import { useGameStore } from '../../store/gameStore'
 import { PROTAGONISTS } from '../../constants/characters'
 import styles from './ProtagonistSelect.module.css'
 
+/** Créditos de autora por personaje (solo protagonistas disponibles) */
+const CREATOR_CREDITS = {
+  soledad: {
+    label: 'saramarillo',
+    url: 'https://www.instagram.com/saramarillo',
+  },
+  ayla: {
+    label: 'isaweakness',
+    url: 'https://www.instagram.com/isaweakness',
+  },
+}
+
 /**
  * Pantalla de selección de protagonista.
  * Muestra las protagonistas disponibles y permite elegir una.
@@ -52,6 +64,33 @@ export default function ProtagonistSelect() {
             {!p.available && <span className={styles.soon}>Próximamente</span>}
           </button>
         ))}
+      </div>
+
+      {/* Créditos de personajes disponibles */}
+      <div className={styles.characterCredits}>
+        <p className={styles.creditsNote}>
+          Personajes originales pertenecientes a sus respectivas creadoras
+          dentro de la campaña de rol «EDEL».
+        </p>
+        <div className={styles.creditsList}>
+          {PROTAGONISTS.filter((p) => p.available && CREATOR_CREDITS[p.id]).map((p) => {
+            const cr = CREATOR_CREDITS[p.id]
+            return (
+              <span key={p.id} className={styles.creditItem}>
+                <span style={{ color: p.color }}>{p.name}</span>
+                {' — '}
+                <a
+                  href={cr.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  {cr.label}
+                </a>
+              </span>
+            )
+          })}
+        </div>
       </div>
 
       <button

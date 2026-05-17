@@ -1,6 +1,6 @@
 {
   "id": "scene_03_cafeteria",
-  "title": "ColaCao y cosas raras",
+  "title": "Chocolate caliente y cosas raras",
   "background": "cafeteria_universidad",
   "nodes": [
     {
@@ -28,7 +28,7 @@
     },
 
     { "id": "node_sol_pedido", "type": "dialogue", "character": null,
-      "text": "Sol: Con el frío que hace, me apetece un ColaCao calentito.",
+      "text": "Sol: Con el frío que hace, me apetece un chocolate caliente.",
       "next": "node_pedido_fin" },
     { "id": "node_ayla_pedido", "type": "dialogue", "character": null,
       "text": "Ayla: Para mí una botella de agua, gracias.",
@@ -138,7 +138,7 @@
     },
 
     { "id": "node_ayla_sol_aparece", "type": "narration", "character": "soledad",
-      "text": "En la silla de enfrente hay una chica con el pelo castaño largo y un jersey naranja. Ha pedido un ColaCao. No ha dicho mucho en toda la tarde, pero escucha con atención.",
+      "text": "En la silla de enfrente hay una chica con el pelo castaño largo y un jersey naranja. Ha pedido un chocolate caliente. No ha dicho mucho en toda la tarde, pero escucha con atención.",
       "next": "node_ayla_sol_habla" },
     { "id": "node_ayla_sol_habla", "type": "dialogue", "character": "soledad",
       "text": "Sol: Oye... ¿tú eres de Guadalajara?",

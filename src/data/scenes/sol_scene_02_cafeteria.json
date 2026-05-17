@@ -1,6 +1,6 @@
 {
   "id": "sol_scene_02_cafeteria",
-  "title": "ColaCao y cosas raras",
+  "title": "Chocolate caliente y cosas raras",
   "background": "campus_noche",
   "nodes": [
     {
@@ -41,6 +41,20 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¿Qué queréis tomar?",
+      "next": "n_pre_bebida"
+    },
+    {
+      "id": "n_pre_bebida",
+      "type": "thought",
+      "character": null,
+      "text": "Café, no. Si tomo café a estas horas luego no duermo. Ya sé de qué va eso.",
+      "next": "n_pre_bebida_2"
+    },
+    {
+      "id": "n_pre_bebida_2",
+      "type": "thought",
+      "character": null,
+      "text": "A ver qué tienen. Algo caliente, con el frío que hace aquí fuera.",
       "next": "n_choice_bebida"
     },
     {
@@ -49,7 +63,7 @@
       "character": null,
       "text": null,
       "choices": [
-        { "label": "Cola Cao caliente.", "affinityChanges": { "ethan": 5, "ayla": 5 }, "next": "n_colacao_01" },
+        { "label": "Chocolate caliente.", "affinityChanges": { "ethan": 5, "ayla": 5 }, "next": "n_colacao_01" },
         { "label": "Café.", "affinityChanges": {}, "next": "n_otra_bebida" },
         { "label": "Té.", "affinityChanges": { "ayla": 5 }, "next": "n_otra_bebida" },
         { "label": "Agua.", "affinityChanges": { "ethan": -5 }, "next": "n_otra_bebida" }
@@ -59,14 +73,14 @@
       "id": "n_colacao_01",
       "type": "dialogue",
       "character": null,
-      "text": "Con el frío que hace... creo que me apetece un Cola Cao caliente.",
+      "text": "Con el frío que hace... creo que me apetece un chocolate caliente.",
       "next": "n_colacao_02"
     },
     {
       "id": "n_colacao_02",
       "type": "dialogue",
       "character": "ethan",
-      "text": "Entonces otro Cola Cao para mí.",
+      "text": "Entonces otro chocolate caliente para mí.",
       "next": "n_colacao_thought"
     },
     {
@@ -80,7 +94,7 @@
       "id": "n_colacao_cg",
       "type": "narration",
       "character": null,
-      "text": "Los dos ColaCaos humeantes sobre la mesa. Soledad tiene que admitir que el ambiente resulta más acogedor de lo esperado.",
+      "text": "Las dos tazas de chocolate caliente humeantes sobre la mesa. Soledad tiene que admitir que el ambiente resulta más acogedor de lo esperado.",
       "next": "n_conv_01",
       "unlockImage": "ethan_cafeteria"
     },
