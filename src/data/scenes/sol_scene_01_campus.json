@@ -167,42 +167,123 @@
       "id": "n_sec_03",
       "type": "narration",
       "character": null,
-      "text": "Soledad vuelve a la entrada y se dirige a secretaría. Allí encuentra a otra estudiante que parece igual de perdida, aunque lo disimula con bastante más elegancia.",
-      "next": "n_ayla_01"
+      "text": "Soledad vuelve a la entrada y se dirige a secretaría. Hay alguien esperando: una chica de porte elegante que revisa algo en su libreta con calma aparente.",
+      "next": "n_sec_silencio"
     },
     {
-      "id": "n_ayla_01",
-      "type": "dialogue",
-      "character": "ayla",
-      "text": "Hola. ¿Tú también vienes por lo de los clubs?",
-      "next": "n_sol_sec_01"
-    },
-    {
-      "id": "n_sol_sec_01",
-      "type": "dialogue",
+      "id": "n_sec_silencio",
+      "type": "narration",
       "character": null,
-      "text": "Sí. He recorrido media universidad y sigo sin tener club.",
-      "next": "n_sol_sec_thought"
+      "text": "Silencio. Las dos esperan. Ninguna dice nada durante unos segundos.",
+      "next": "n_sec_thought_01"
     },
     {
-      "id": "n_sol_sec_thought",
+      "id": "n_sec_thought_01",
       "type": "thought",
       "character": null,
-      "text": "Parece tranquila. Demasiado tranquila para este caos. Ojalá sepa más que yo.",
+      "text": "Parece tranquila. Demasiado tranquila para este caos. Podría preguntarle algo. O no. Tampoco tengo por qué.",
+      "next": "n_choice_hielo"
+    },
+    {
+      "id": "n_choice_hielo",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Romper el hielo: '¿Tú también buscas club?'", "affinityChanges": { "ayla": 5 }, "next": "n_hielo_sol" },
+        { "label": "Esperar a que sea ella quien hable.", "affinityChanges": {}, "next": "n_hielo_ayla" },
+        { "label": "Limitarse a asentir con la cabeza.", "affinityChanges": { "ayla": -5 }, "next": "n_hielo_ayla" }
+      ]
+    },
+    {
+      "id": "n_hielo_sol",
+      "type": "dialogue",
+      "character": null,
+      "text": "Perdona... ¿tú también buscas club?",
+      "next": "n_ayla_resp"
+    },
+    {
+      "id": "n_hielo_ayla",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Perdona... ¿también estás buscando club?",
+      "next": "n_sol_resp"
+    },
+    {
+      "id": "n_sol_resp",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sí. He recorrido media universidad y no he encontrado nada.",
+      "next": "n_ayla_resp"
+    },
+    {
+      "id": "n_ayla_resp",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Igual que yo. El campus es enorme. No encontraba nada.",
+      "next": "n_pres_thought"
+    },
+    {
+      "id": "n_pres_thought",
+      "type": "thought",
+      "character": null,
+      "text": "Al menos no soy la única. Aunque ella lo lleva con mucha más calma.",
+      "next": "n_pres_sol"
+    },
+    {
+      "id": "n_pres_sol",
+      "type": "dialogue",
+      "character": null,
+      "text": "Soledad.",
+      "next": "n_pres_ayla"
+    },
+    {
+      "id": "n_pres_ayla",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Ayla. ¿Qué estudias?",
+      "next": "n_estudios_sol"
+    },
+    {
+      "id": "n_estudios_sol",
+      "type": "dialogue",
+      "character": null,
+      "text": "Filosofía. Tú no pareces de aquí, si no te importa que lo diga.",
+      "next": "n_estudios_ayla"
+    },
+    {
+      "id": "n_estudios_ayla",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Arte y arqueología. Y no, soy de Noruega. Llevo poco en España.",
+      "next": "n_estudios_thought"
+    },
+    {
+      "id": "n_estudios_thought",
+      "type": "thought",
+      "character": null,
+      "text": "Eso explica algo. O quizás simplemente es así de tranquila.",
       "next": "n_ayla_02"
     },
     {
       "id": "n_ayla_02",
       "type": "dialogue",
       "character": "ayla",
-      "text": "A mí me han dicho que ya estaban casi todos llenos. Venía a preguntar qué opciones quedan.",
+      "text": "Me han dicho que casi todos los clubs están llenos. ¿Tú has encontrado algo?",
+      "next": "n_sol_sec_01"
+    },
+    {
+      "id": "n_sol_sec_01",
+      "type": "dialogue",
+      "character": null,
+      "text": "Nada. He venido a secretaría a ver qué opciones quedan.",
       "next": "n_sec_info"
     },
     {
       "id": "n_sec_info",
       "type": "narration",
       "character": null,
-      "text": "La persona de secretaría les indica que la única opción disponible es el Club Paranormal, en el edificio antiguo detrás de la residencia.",
+      "text": "La persona de secretaría les explica con tono neutro: prácticamente todos los clubs están ya al completo. El único con plazas disponibles es el Club Paranormal, en el edificio antiguo detrás de la residencia. Sin ese club, no pueden terminar la matrícula.",
       "next": "n_sec_thought"
     },
     {
@@ -285,7 +366,7 @@
       "id": "n_ethan_t01",
       "type": "thought",
       "character": null,
-      "text": "Pelo negro azulado. Cascos. Sonrisa de persona que sabe exactamente dónde está y aun así no debería estar aquí.",
+      "text": "Pelo negro azulado. Sonrisa de persona que sabe exactamente dónde está y aun así no debería estar aquí.",
       "next": "n_ethan_t02"
     },
     {
@@ -293,6 +374,13 @@
       "type": "thought",
       "character": null,
       "text": "Y esos ojos... ¿ámbar? ¿Existen esos ojos o son lentillas? Porque normal, normal, no es.",
+      "next": "n_ethan_pres"
+    },
+    {
+      "id": "n_ethan_pres",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Soy Ethan. ¿Os habéis perdido o venís al club?",
       "next": "n_choice_ethan"
     },
     {
@@ -301,72 +389,114 @@
       "character": null,
       "text": null,
       "choices": [
-        { "label": "Mirarlo con curiosidad, sin apartar la vista.", "affinityChanges": { "ethan": 5 }, "next": "n_ethan_nombres" },
-        { "label": "Mantenerse seria y esperar a que explique algo.", "affinityChanges": {}, "next": "n_ethan_nombres" },
-        { "label": "Desconfiar abiertamente de su entusiasmo.", "affinityChanges": { "ethan": -5 }, "next": "n_ethan_nombres" }
+        { "label": "Mirarlo con curiosidad, sin apartar la vista.", "affinityChanges": { "ethan": 5 }, "next": "n_ethan_porq" },
+        { "label": "Mantenerse seria y explicar la situación.", "affinityChanges": {}, "next": "n_ethan_porq" },
+        { "label": "Desconfiar abiertamente de su entusiasmo.", "affinityChanges": { "ethan": -5 }, "next": "n_ethan_porq" }
       ]
+    },
+    {
+      "id": "n_ethan_porq",
+      "type": "dialogue",
+      "character": null,
+      "text": "Venimos al club. Secretaría nos dijo que era el único con plazas libres y necesitamos uno para terminar la matrícula.",
+      "next": "n_ethan_porq_02"
+    },
+    {
+      "id": "n_ethan_porq_02",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Básicamente no nos quedaba otra opción.",
+      "next": "n_ethan_reac"
+    },
+    {
+      "id": "n_ethan_reac",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¡Ah, genial! O sea... sé que suena raro decirlo así. Pero llevo semanas prácticamente solo aquí. Me alegra un montón que vengáis.",
+      "next": "n_ethan_reac_t"
+    },
+    {
+      "id": "n_ethan_reac_t",
+      "type": "thought",
+      "character": null,
+      "text": "La ilusión que le ha hecho. No sé si eso es tierno o me da algo de pena.",
+      "next": "n_ethan_nombres"
     },
     {
       "id": "n_ethan_nombres",
       "type": "dialogue",
       "character": "ethan",
-      "text": "¿Y vosotras? ¿Cómo os llamáis?",
+      "text": "Necesito apuntaros. ¿Cómo os llamáis? Nombre y apellido.",
       "next": "n_ethan_sol_nombre"
     },
     {
       "id": "n_ethan_sol_nombre",
       "type": "dialogue",
       "character": null,
-      "text": "Soledad.",
+      "text": "Soledad Ramírez.",
       "next": "n_ethan_ayla_nombre"
     },
     {
       "id": "n_ethan_ayla_nombre",
       "type": "dialogue",
       "character": "ayla",
-      "text": "Ayla.",
+      "text": "Ayla Solberg.",
       "next": "n_ethan_resp_nombre"
     },
     {
       "id": "n_ethan_resp_nombre",
       "type": "dialogue",
       "character": "ethan",
-      "text": "Ethan. ¡Encantado de conoceros!",
+      "text": "¡Perfecto! Ethan Voss. Encantado de conoceros a las dos.",
+      "next": "n_ethan_insc_01"
+    },
+    {
+      "id": "n_ethan_insc_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan saca del bolsillo una hoja de inscripción bastante arrugada. La alisa sobre la primera superficie plana que encuentra y empieza a anotar los nombres con una concentración desproporcionada para la situación.",
+      "next": "n_ethan_insc_02"
+    },
+    {
+      "id": "n_ethan_insc_02",
+      "type": "thought",
+      "character": null,
+      "text": "Es papel del club. Con el membrete escrito a mano. En tinta morada.",
       "next": "n_ethan_c01"
     },
     {
       "id": "n_ethan_c01",
       "type": "dialogue",
       "character": "ethan",
-      "text": "Bueno, por ahora si queréis, voy a dejar esto en secretaría. ¿Queréis venir conmigo? ¿O tenéis que ir a algún sitio?",
+      "text": "Tengo que llevar esto a secretaría para que quedéis oficialmente apuntadas. ¿Venís? De paso os enseño el campus.",
       "next": "n_ethan_c02"
     },
     {
       "id": "n_ethan_c02",
       "type": "dialogue",
       "character": "ayla",
-      "text": "Yo por favor. Acabamos de llegar y no conozco mucho la universidad.",
+      "text": "Encantada. Aún no conozco nada de aquí.",
       "next": "n_ethan_c03"
     },
     {
       "id": "n_ethan_c03",
       "type": "dialogue",
       "character": null,
-      "text": "Sí, yo también voy. Solo necesito apuntarme a un club y dejar de dar vueltas.",
+      "text": "Sí, yo también. Solo necesito apuntarme a algo y dejar de dar vueltas.",
       "next": "n_ethan_c04"
     },
     {
       "id": "n_ethan_c04",
       "type": "dialogue",
       "character": "ethan",
-      "text": "¿No habéis visto nunca la universidad? ¡Buah, os tengo que hacer una visita por aquí!",
+      "text": "¡Genial! Os voy a enseñar los sitios buenos. Y los menos buenos. Bueno, básicamente todo.",
       "next": "n_ethan_c05"
     },
     {
       "id": "n_ethan_c05",
       "type": "thought",
       "character": null,
-      "text": "Este chico tiene demasiada energía para un edificio abandonado.",
+      "text": "Este chico tiene demasiada energía para un edificio que olía a humedad hace treinta segundos. Pero... no parece mala persona.",
       "next": null,
       "nextScene": "sol_scene_02_cafeteria"
     }

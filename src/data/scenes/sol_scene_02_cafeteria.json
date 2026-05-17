@@ -95,7 +95,7 @@
       "type": "narration",
       "character": null,
       "text": "Las dos tazas de chocolate caliente humeantes sobre la mesa. Soledad tiene que admitir que el ambiente resulta más acogedor de lo esperado.",
-      "next": "n_conv_01",
+      "next": "n_pausa_01",
       "unlockImage": "ethan_cafeteria"
     },
     {
@@ -110,6 +110,20 @@
       "type": "thought",
       "character": null,
       "text": "No debería relajarme tan rápido. Les conozco de hace menos de una hora. Que parezcan amables no significa que deba bajar la guardia.",
+      "next": "n_pausa_01"
+    },
+    {
+      "id": "n_pausa_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan apoya los codos en la mesa y empieza a hablar antes de que nadie le dé pie. Como si llevara el tema preparado desde hacía rato.",
+      "next": "n_pausa_02"
+    },
+    {
+      "id": "n_pausa_02",
+      "type": "narration",
+      "character": null,
+      "text": "Ayla le escucha con calma. De vez en cuando mira a Soledad de reojo, como tomando nota en silencio.",
       "next": "n_conv_01"
     },
     {
@@ -131,6 +145,13 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "En Guadalajara todo el mundo sabe que pasan cosas extrañas.",
+      "next": "n_pausa_03"
+    },
+    {
+      "id": "n_pausa_03",
+      "type": "thought",
+      "character": null,
+      "text": "Esto me resulta más cómodo de lo que debería. No conozco a estos dos de nada.",
       "next": "n_conv_04"
     },
     {

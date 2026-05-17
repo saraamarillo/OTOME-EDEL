@@ -82,7 +82,7 @@
       "id": "n_ryan_03",
       "type": "narration",
       "character": null,
-      "text": "Una figura aparece corriendo y casi choca con ella. Ryan consigue frenar a tiempo y la sujeta antes de que pierda el equilibrio.",
+      "text": "Una figura aparece corriendo entre la penumbra y casi choca con ella. Un chico —pelo morado, cascos colgados al cuello— consigue frenar a tiempo y la sujeta antes de que pierda el equilibrio.",
       "next": "n_ryan_04"
     },
     {
@@ -177,7 +177,7 @@
       "id": "n_moto_01",
       "type": "narration",
       "character": null,
-      "text": "Ryan la lleva hasta un parking. Allí hay una moto negra bastante grande. Solo tiene un casco, y se lo ofrece a Soledad.",
+      "text": "El chico la lleva hasta un parking. Allí hay una moto negra bastante grande. Solo tiene un casco, y se lo ofrece a Soledad.",
       "next": "n_moto_02"
     },
     {
@@ -291,27 +291,97 @@
       "type": "narration",
       "character": null,
       "text": "Mientras Ryan trabaja, Soledad sigue llamando a sus padres. Nadie contesta. El móvil empieza a quedarse sin batería.",
+      "next": "n_bar_04b"
+    },
+    {
+      "id": "n_bar_04b",
+      "type": "thought",
+      "character": null,
+      "text": "Necesito hacer algo con las manos. Esto es insoportable.",
+      "next": "n_bar_04c"
+    },
+    {
+      "id": "n_bar_04c",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Oye, ¿tienes algo para entretenerte mientras esperas? Puede que tarde un rato.",
+      "next": "n_bar_04d"
+    },
+    {
+      "id": "n_bar_04d",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad mira en la mochila. Hay un cuaderno. Algo gastado por las esquinas, lleno de notas y pequeños dibujos.",
+      "next": "n_bar_04e"
+    },
+    {
+      "id": "n_bar_04e",
+      "type": "thought",
+      "character": null,
+      "text": "Siempre llevo esto encima. Tomar notas, dibujar, lo que sea. Es un hábito.",
+      "next": "n_bar_04f"
+    },
+    {
+      "id": "n_bar_04f",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Me dejas ese cuaderno un momento?",
+      "next": "n_bar_04g"
+    },
+    {
+      "id": "n_bar_04g",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Para qué?",
+      "next": "n_bar_04h"
+    },
+    {
+      "id": "n_bar_04h",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Para algo.",
+      "next": "n_bar_04i"
+    },
+    {
+      "id": "n_bar_04i",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan coge la libreta, pasa hasta el final, busca una página en blanco. Saca un bolígrafo del bolsillo y empieza a dibujar cuadrículas con rapidez.",
+      "next": "n_bar_04j"
+    },
+    {
+      "id": "n_bar_04j",
+      "type": "thought",
+      "character": null,
+      "text": "¿Está haciendo un crucigrama? En mi cuaderno. Sin pedirme permiso.",
+      "next": "n_bar_04k"
+    },
+    {
+      "id": "n_bar_04k",
+      "type": "narration",
+      "character": null,
+      "text": "Llena las cuadrículas de números con letra pequeña y un poco torcida. No tarda más de tres minutos. Hay dos casillas tachadas y vueltas a hacer.",
       "next": "n_bar_05"
     },
     {
       "id": "n_bar_05",
       "type": "dialogue",
       "character": "ryan",
-      "text": "Tengo que terminar unas cosas. Haz este crucigrama mientras, si quieres.",
+      "text": "Toma. A ver si lo resuelves antes de que acabe mi turno.",
       "next": "n_bar_06"
     },
     {
       "id": "n_bar_06",
       "type": "thought",
       "character": null,
-      "text": "Claro. Una noche sin llaves, un desconocido, un bar escondido y ahora un crucigrama. Normalísimo todo.",
+      "text": "Una noche sin llaves, un desconocido, un bar escondido y ahora un crucigrama improvisado en mi cuaderno. Normalísimo todo.",
       "next": "n_bar_07"
     },
     {
       "id": "n_bar_07",
       "type": "narration",
       "character": null,
-      "text": "Soledad empieza a completar el crucigrama. Algunas respuestas parecen demasiado concretas. Otras, sospechosamente relacionadas con ella.",
+      "text": "Soledad abre el cuaderno. Las cuadrículas son irregulares pero funciona. Las pistas están escritas al margen con letra apretada.",
       "next": "n_bar_08"
     },
     {

@@ -124,7 +124,7 @@
       "id": "n_sec_03",
       "type": "narration",
       "character": null,
-      "text": "Allí se encuentra con otra estudiante. Morena, discreta y claramente agotada de caminar por el campus.",
+      "text": "Allí se encuentra con otra estudiante. Morena, discreta, claramente agotada de caminar por el campus. Tiene un cuaderno en la mano.",
       "next": "n_sec_04"
     },
     {
@@ -132,13 +132,101 @@
       "type": "thought",
       "character": null,
       "text": "Parece igual de perdida que yo. Aunque intenta disimularlo mejor.",
+      "next": "n_sec_silencio"
+    },
+    {
+      "id": "n_sec_silencio",
+      "type": "narration",
+      "character": null,
+      "text": "Silencio incómodo. Las dos esperan turno. Ninguna habla.",
+      "next": "n_choice_hielo"
+    },
+    {
+      "id": "n_choice_hielo",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        { "label": "Romper el hielo: '¿También buscas club?'", "affinityChanges": { "soledad": 5 }, "next": "n_hielo_ayla" },
+        { "label": "Esperar a que sea ella quien hable.", "affinityChanges": {}, "next": "n_hielo_sol" },
+        { "label": "Limitarse a asentir cuando se cruzan las miradas.", "affinityChanges": { "soledad": -5 }, "next": "n_hielo_sol" }
+      ]
+    },
+    {
+      "id": "n_hielo_ayla",
+      "type": "dialogue",
+      "character": null,
+      "text": "Perdona... ¿tú también buscas club?",
+      "next": "n_sol_resp"
+    },
+    {
+      "id": "n_hielo_sol",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Perdona... ¿también estás buscando club?",
+      "next": "n_ayla_resp"
+    },
+    {
+      "id": "n_ayla_resp",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sí. He recorrido todo el campus y no he encontrado nada.",
+      "next": "n_sol_resp"
+    },
+    {
+      "id": "n_sol_resp",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Igual que yo. El campus es enorme.",
+      "next": "n_pres_thought"
+    },
+    {
+      "id": "n_pres_thought",
+      "type": "thought",
+      "character": null,
+      "text": "Al menos no soy la única. Aunque ella lo lleva de otra manera.",
+      "next": "n_pres_ayla"
+    },
+    {
+      "id": "n_pres_ayla",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ayla. ¿Qué estudias?",
+      "next": "n_pres_sol"
+    },
+    {
+      "id": "n_pres_sol",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Filosofía. Soledad. Tú no eres de aquí, ¿verdad?",
+      "next": "n_estudios_ayla"
+    },
+    {
+      "id": "n_estudios_ayla",
+      "type": "dialogue",
+      "character": null,
+      "text": "Arte y arqueología. Soy de Noruega. Llevo poco en España.",
+      "next": "n_estudios_thought"
+    },
+    {
+      "id": "n_estudios_thought",
+      "type": "thought",
+      "character": null,
+      "text": "Directa. Sin filtros. Me gusta.",
       "next": "n_sec_05"
     },
     {
       "id": "n_sec_05",
       "type": "narration",
       "character": null,
-      "text": "La persona de secretaría les indica que la única opción disponible es el Club Paranormal, en el edificio antiguo detrás de la residencia.",
+      "text": "La persona de secretaría les explica con tono neutro: prácticamente todos los clubs están al completo. El único con plazas disponibles es el Club Paranormal, en el edificio antiguo detrás de la residencia. Sin ese club, no pueden terminar la matrícula.",
+      "next": "n_sec_thought"
+    },
+    {
+      "id": "n_sec_thought",
+      "type": "thought",
+      "character": null,
+      "text": "Club Paranormal. No era exactamente lo que esperaba para el primer día.",
       "next": "n_choice_sol"
     },
     {
@@ -147,8 +235,8 @@
       "character": null,
       "text": null,
       "choices": [
-        { "label": "Hablar primero con Soledad.", "affinityChanges": { "soledad": 5 }, "next": "n_camino_01" },
-        { "label": "Esperar a que Soledad diga algo.", "affinityChanges": {}, "next": "n_camino_01" },
+        { "label": "Proponer ir juntas al club.", "affinityChanges": { "soledad": 5 }, "next": "n_camino_01" },
+        { "label": "Esperar a ver qué dice Soledad.", "affinityChanges": {}, "next": "n_camino_01" },
         { "label": "Pensar que el Club Paranormal suena sospechoso.", "affinityChanges": { "soledad": -5 }, "next": "n_camino_01" }
       ]
     },
@@ -222,6 +310,13 @@
       "type": "thought",
       "character": null,
       "text": "¿Ojos ámbar? ¿Eso existe? Porque parece sacado de Pinterest.",
+      "next": "n_ethan_pres"
+    },
+    {
+      "id": "n_ethan_pres",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Soy Ethan. ¿Os habéis perdido o venís al club?",
       "next": "n_choice_ethan"
     },
     {
@@ -230,44 +325,86 @@
       "character": null,
       "text": null,
       "choices": [
-        { "label": "Que parece interesante.", "affinityChanges": { "ethan": 5 }, "next": "n_ethan_nombres" },
-        { "label": "Que tiene demasiada energía.", "affinityChanges": {}, "next": "n_ethan_nombres" },
-        { "label": "Que no debería confiar tan rápido en él.", "affinityChanges": { "ethan": -5 }, "next": "n_ethan_nombres" }
+        { "label": "Responder con curiosidad genuina.", "affinityChanges": { "ethan": 5 }, "next": "n_ethan_porq" },
+        { "label": "Explicar la situación directamente.", "affinityChanges": {}, "next": "n_ethan_porq" },
+        { "label": "Que no debería confiar tan rápido en él.", "affinityChanges": { "ethan": -5 }, "next": "n_ethan_porq" }
       ]
+    },
+    {
+      "id": "n_ethan_porq",
+      "type": "dialogue",
+      "character": null,
+      "text": "Venimos al club. Secretaría nos dijo que era el único con plazas libres y necesitamos uno para terminar la matrícula.",
+      "next": "n_ethan_porq_02"
+    },
+    {
+      "id": "n_ethan_porq_02",
+      "type": "dialogue",
+      "character": "soledad",
+      "text": "Básicamente no nos quedaba otra opción.",
+      "next": "n_ethan_reac"
+    },
+    {
+      "id": "n_ethan_reac",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¡Ah, genial! O sea... sé que suena raro. Pero llevo semanas prácticamente solo aquí. Me alegra un montón que vengáis.",
+      "next": "n_ethan_reac_t"
+    },
+    {
+      "id": "n_ethan_reac_t",
+      "type": "thought",
+      "character": null,
+      "text": "La ilusión que le ha hecho. Es genuina. No hay forma de fingir eso.",
+      "next": "n_ethan_nombres"
     },
     {
       "id": "n_ethan_nombres",
       "type": "dialogue",
       "character": "ethan",
-      "text": "¿Y vosotras? ¿Cómo os llamáis?",
+      "text": "Necesito apuntaros. ¿Cómo os llamáis? Nombre y apellido.",
       "next": "n_ethan_ayla_nombre"
     },
     {
       "id": "n_ethan_ayla_nombre",
       "type": "dialogue",
       "character": null,
-      "text": "Ayla.",
+      "text": "Ayla Solberg.",
       "next": "n_ethan_sol_nombre"
     },
     {
       "id": "n_ethan_sol_nombre",
       "type": "dialogue",
       "character": "soledad",
-      "text": "Soledad.",
+      "text": "Soledad Ramírez.",
       "next": "n_ethan_resp_nombre"
     },
     {
       "id": "n_ethan_resp_nombre",
       "type": "dialogue",
       "character": "ethan",
-      "text": "Ethan. ¡Encantado de conoceros!",
+      "text": "¡Perfecto! Ethan Voss. Encantado de conoceros a las dos.",
+      "next": "n_ethan_insc_01"
+    },
+    {
+      "id": "n_ethan_insc_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan saca del bolsillo una hoja de inscripción bastante arrugada. La alisa sobre la primera superficie plana que encuentra y empieza a anotar los nombres.",
+      "next": "n_ethan_insc_02"
+    },
+    {
+      "id": "n_ethan_insc_02",
+      "type": "thought",
+      "character": null,
+      "text": "Es papel del club. Con el membrete escrito a mano. En tinta morada. Es encantadoramente informal.",
       "next": "n_ethan_c01"
     },
     {
       "id": "n_ethan_c01",
       "type": "dialogue",
       "character": "ethan",
-      "text": "¿No habéis visto nunca la universidad? ¡Os tengo que hacer una visita por aquí!",
+      "text": "Tengo que llevar esto a secretaría para que quedéis oficialmente apuntadas. ¿Venís? De paso os enseño el campus.",
       "next": "n_ethan_c02"
     },
     {
@@ -281,7 +418,7 @@
       "id": "n_ethan_c03",
       "type": "narration",
       "character": null,
-      "text": "Ethan les enseña el campus mientras habla sin parar.",
+      "text": "Ethan les enseña el campus mientras habla sin parar. Explica cada edificio como si fuera un guía turístico que lleva años esperando a alguien a quien contárselo.",
       "next": "n_ethan_c04"
     },
     {
@@ -330,13 +467,20 @@
       "type": "thought",
       "character": null,
       "text": "No sé por qué, pero esto se siente... cómodo.",
-      "next": "n_conv_01"
+      "next": "n_caf_pausa"
     },
     {
       "id": "n_sin_cg",
       "type": "dialogue",
       "character": null,
       "text": "Creo que pediré otra cosa.",
+      "next": "n_caf_pausa"
+    },
+    {
+      "id": "n_caf_pausa",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan apoya los codos en la mesa y empieza a hablar antes de que nadie le dé pie. Soledad da pequeños sorbos a su bebida sin decir mucho.",
       "next": "n_conv_01"
     },
     {
