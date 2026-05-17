@@ -194,7 +194,7 @@
       "id": "n_lydia_eth_01",
       "type": "dialogue",
       "character": "lydia",
-      "text": "Sí. Es de las mejores personas del campus.",
+      "text": "De toda la vida. Crecimos juntos en el mismo barrio.",
       "next": "n_eth_02"
     },
     {

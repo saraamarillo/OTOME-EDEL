@@ -241,14 +241,14 @@
       "id": "n_pres_ayla_init",
       "type": "dialogue",
       "character": "ayla",
-      "text": "Ayla.",
+      "text": "Me llamo Ayla.",
       "next": "n_pres_sol"
     },
     {
       "id": "n_pres_sol",
       "type": "dialogue",
       "character": null,
-      "text": "Soledad.",
+      "text": "Y yo, Soledad.",
       "next": "n_estudios_ayla_q"
     },
     {
@@ -269,14 +269,7 @@
       "id": "n_estudios_ayla",
       "type": "dialogue",
       "character": "ayla",
-      "text": "Arte y arqueología. Soy de Noruega, por si el acento no lo dejaba claro.",
-      "next": "n_estudios_thought"
-    },
-    {
-      "id": "n_estudios_thought",
-      "type": "thought",
-      "character": null,
-      "text": "Lo ha dicho ella sola. Resulta más fácil hablar con ella de lo que esperaba.",
+      "text": "Arte y arqueología.",
       "next": "n_ayla_02"
     },
     {
@@ -461,7 +454,7 @@
       "id": "n_ethan_resp_nombre",
       "type": "dialogue",
       "character": "ethan",
-      "text": "¡Perfecto! Ethan Voss. Encantado de conoceros a las dos.",
+      "text": "¡Perfecto! Ethan Wood. Encantado de conoceros a las dos.",
       "next": "n_ethan_insc_01"
     },
     {

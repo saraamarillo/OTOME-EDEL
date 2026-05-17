@@ -212,14 +212,14 @@
       "id": "n_pres_sol_init",
       "type": "dialogue",
       "character": "soledad",
-      "text": "Soledad.",
+      "text": "Me llamo Soledad.",
       "next": "n_pres_ayla"
     },
     {
       "id": "n_pres_ayla",
       "type": "dialogue",
       "character": null,
-      "text": "Ayla.",
+      "text": "Y yo, Ayla.",
       "next": "n_estudios_sol_q"
     },
     {
@@ -432,7 +432,7 @@
       "id": "n_ethan_resp_nombre",
       "type": "dialogue",
       "character": "ethan",
-      "text": "¡Perfecto! Ethan Voss. Encantado de conoceros a las dos.",
+      "text": "¡Perfecto! Ethan Wood. Encantado de conoceros a las dos.",
       "next": "n_ethan_insc_01"
     },
     {
