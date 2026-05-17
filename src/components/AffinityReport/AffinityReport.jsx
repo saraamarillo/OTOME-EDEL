@@ -3,9 +3,14 @@ import { NPC_CHARACTERS, PROTAGONISTS } from '../../constants/characters'
 import { AFFINITY_MAX } from '../../constants/affinity'
 import styles from './AffinityReport.module.css'
 
-/** Enmascara el nombre: "Et**" si no han sido conocidos */
+/** Enmascara el nombre: "Et***" si no han sido conocidos */
 function maskName(name) {
-  return name.slice(0, 2) + '**'
+  return name.slice(0, 2) + '***'
+}
+
+/** Siempre misterioso: "G..." */
+function mysteryName(name) {
+  return name.charAt(0) + '...'
 }
 
 /**
@@ -31,6 +36,11 @@ export default function AffinityReport({ onClose }) {
     : null
 
   // Lista de NPCs del reparto + compañera al inicio
+  // Filtramos NPCs que solo pertenecen a otra ruta (protagonistOnly)
+  const visibleNPCs = NPC_CHARACTERS.filter(
+    (npc) => !npc.protagonistOnly || npc.protagonistOnly === protagonistId
+  )
+
   const companionEntry = companion
     ? [{
         id: companion.id,
@@ -38,12 +48,13 @@ export default function AffinityReport({ onClose }) {
         role: 'Compañera',
         color: companion.color,
         isCompanion: true,
+        alwaysMystery: false,
       }]
     : []
 
   const allEntries = [
     ...companionEntry,
-    ...NPC_CHARACTERS.map((npc) => ({ ...npc, isCompanion: false })),
+    ...visibleNPCs.map((npc) => ({ ...npc, isCompanion: false })),
   ].map((entry) => {
     const value = affinities[entry.id] ?? 0          // ya es el mapa plano de la ruta activa
     const pct   = Math.round((value / AFFINITY_MAX) * 100)
@@ -79,24 +90,29 @@ export default function AffinityReport({ onClose }) {
         <div className={styles.list}>
           {allEntries.map((entry) => {
             const active      = entry.value > 0
-            const displayName = entry.met ? entry.name : maskName(entry.name)
-            const displayRole = entry.met ? entry.role : '??'
+            const displayName = entry.alwaysMystery
+              ? mysteryName(entry.name)
+              : entry.met ? entry.name : maskName(entry.name)
+            const displayRole = (entry.alwaysMystery || !entry.met) ? '??' : entry.role
+
+            // alwaysMystery: siempre se trata visualmente como desconocido
+            const revealed = entry.met && !entry.alwaysMystery
 
             return (
               <div
                 key={entry.id}
-                className={`${styles.row} ${active ? styles.active : ''} ${!entry.met ? styles.unknown : ''}`}
+                className={`${styles.row} ${active && revealed ? styles.active : ''} ${!revealed ? styles.unknown : ''}`}
               >
                 {/* Inicial */}
                 <div
                   className={styles.avatar}
                   style={{
-                    background:  entry.met && active ? entry.color + '22' : 'rgba(255,255,255,0.04)',
-                    borderColor: entry.met && active ? entry.color       : 'rgba(255,255,255,0.1)',
+                    background:  revealed && active ? entry.color + '22' : 'rgba(255,255,255,0.04)',
+                    borderColor: revealed && active ? entry.color        : 'rgba(255,255,255,0.1)',
                   }}
                 >
-                  <span style={{ color: entry.met && active ? entry.color : 'rgba(255,255,255,0.2)' }}>
-                    {entry.met ? entry.name.charAt(0) : '?'}
+                  <span style={{ color: revealed && active ? entry.color : 'rgba(255,255,255,0.2)' }}>
+                    {revealed ? entry.name.charAt(0) : '?'}
                   </span>
                 </div>
 
@@ -105,7 +121,7 @@ export default function AffinityReport({ onClose }) {
                   <div className={styles.nameRow}>
                     <span
                       className={styles.npcName}
-                      style={{ color: entry.met && active ? entry.color : entry.met ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.22)' }}
+                      style={{ color: revealed && active ? entry.color : revealed ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.22)' }}
                     >
                       {displayName}
                     </span>
@@ -115,8 +131,8 @@ export default function AffinityReport({ onClose }) {
                     <div
                       className={styles.barFill}
                       style={{
-                        width: active ? `${entry.pct}%` : '0%',
-                        background: entry.met && active
+                        width: revealed && active ? `${entry.pct}%` : '0%',
+                        background: revealed && active
                           ? `linear-gradient(to right, ${entry.color}88, ${entry.color})`
                           : 'rgba(255,255,255,0.06)',
                       }}
@@ -127,9 +143,9 @@ export default function AffinityReport({ onClose }) {
                 {/* Porcentaje */}
                 <span
                   className={styles.pct}
-                  style={{ color: entry.met && active ? entry.color : 'rgba(255,255,255,0.18)' }}
+                  style={{ color: revealed && active ? entry.color : 'rgba(255,255,255,0.18)' }}
                 >
-                  {entry.met && entry.pct > 0 ? `${entry.pct}%` : '—'}
+                  {revealed && entry.pct > 0 ? `${entry.pct}%` : '—'}
                 </span>
               </div>
             )

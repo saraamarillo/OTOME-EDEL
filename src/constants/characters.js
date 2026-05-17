@@ -77,6 +77,7 @@ export const NPC_CHARACTERS = [
     role: '???',
     color: 'var(--color-grace)',
     expressions: ['neutral', 'happy', 'worried', 'cheerful'],
+    alwaysMystery: true,
   },
   {
     id: 'sappire',

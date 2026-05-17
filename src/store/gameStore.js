@@ -87,6 +87,7 @@ export const useGameStore = create((set, get) => ({
         completedEpisodes: updated,
         unlockedImages: get().unlockedImages,
         affinities: get().affinities,
+        encounteredNPCs: get().encounteredNPCs,
       }))
     }
   },

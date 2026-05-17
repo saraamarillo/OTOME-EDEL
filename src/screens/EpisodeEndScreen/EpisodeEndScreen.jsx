@@ -6,11 +6,13 @@ import styles from './EpisodeEndScreen.module.css'
 export default function EpisodeEndScreen() {
   const setScreen       = useGameStore((s) => s.setScreen)
   const completeEpisode = useGameStore((s) => s.completeEpisode)
+  const saveProgress    = useGameStore((s) => s.saveProgress)
   const userId          = useGameStore((s) => s.userId)
   const [showAffinity, setShowAffinity] = useState(false)
 
   useEffect(() => {
     completeEpisode(1)
+    saveProgress()
   }, [])
 
   return (

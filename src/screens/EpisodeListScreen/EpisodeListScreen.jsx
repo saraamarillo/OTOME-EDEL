@@ -49,7 +49,7 @@ export default function EpisodeListScreen() {
                 <>
                   <span className={styles.epTitle}>{EP_TITLES[ep] ?? ''}</span>
                   <span className={styles.epStatus}>
-                    {completed ? '✓ Completado' : '▶ Jugar'}
+                    {completed ? '↻ Repetir episodio' : '▶ Jugar'}
                   </span>
                 </>
               ) : (
