@@ -6,7 +6,9 @@ export const PROTAGONISTS = [
   {
     id: 'soledad',
     name: 'Soledad Ramírez',
-    description: '22 años. Joven de apariencia tranquila que retoma sus estudios en la Universidad Somnia. Observa más de lo que deja ver.',
+    age: '22 años',
+    nationality: 'Española',
+    description: 'Joven de apariencia tranquila que retoma sus estudios en la Universidad Somnia. Observa más de lo que deja ver.',
     avatar: '/assets/avatars/soledad_avatar.png',
     color: 'var(--color-soledad)',
     available: true,
@@ -18,7 +20,9 @@ export const PROTAGONISTS = [
   {
     id: 'ayla',
     name: 'Ayla Solberg',
-    description: '21 años. Estudiante de arte y arqueología. Porte elegante, mirada serena y un ligero acento nórdico.',
+    age: '21 años',
+    nationality: 'Noruega',
+    description: 'Estudiante de arte y arqueología. Porte elegante, mirada serena y un ligero acento nórdico.',
     avatar: '/assets/avatars/ayla_avatar.png',
     color: 'var(--color-ayla)',
     available: true,

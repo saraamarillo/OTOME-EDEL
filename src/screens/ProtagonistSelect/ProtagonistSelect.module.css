@@ -81,6 +81,14 @@
   letter-spacing: 0.08em;
 }
 
+.meta {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.42);
+  margin: -6px 0 0;
+}
+
 .desc {
   font-family: var(--font-body);
   font-style: italic;
@@ -158,12 +166,12 @@
 }
 
 .link {
-  color: #a855f7;
+  color: #7c3aed;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: #c084fc;
+  color: #8b5cf6;
   text-decoration: underline;
 }

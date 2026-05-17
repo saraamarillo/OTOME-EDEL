@@ -7,39 +7,11 @@
       "id": "n_campus_intro_01",
       "type": "narration",
       "character": null,
-      "text": "El campus de la Universidad Somnia despierta con el bullicio habitual del inicio de curso. Situada en la zona alta de Guadalajara, mezcla edificios modernos con otros más antiguos que recuerdan, en su arquitectura, a algunos rincones del casco antiguo.",
+      "text": "Universidad Somnia, zona alta de Guadalajara. Sus clases empiezan al caer la tarde y las luces de las facultades permanecen encendidas cuando el resto de la ciudad ya duerme.",
       "next": "n_campus_intro_02"
     },
     {
       "id": "n_campus_intro_02",
-      "type": "narration",
-      "character": null,
-      "text": "Desde los puntos más despejados del campus puede verse la cúpula azulada del Panteón, que destaca entre los tejados de la ciudad.",
-      "next": "n_campus_intro_03"
-    },
-    {
-      "id": "n_campus_intro_03",
-      "type": "narration",
-      "character": null,
-      "text": "Los estudiantes llegan en oleadas desde la estación de autobuses. Las mesas de inscripción a los distintos clubs ocupan la plaza principal, mientras desde la cafetería universitaria llega el aroma de bollería recién hecha y chocolate caliente.",
-      "next": "n_campus_intro_04"
-    },
-    {
-      "id": "n_campus_intro_04",
-      "type": "narration",
-      "character": null,
-      "text": "Todo parece empezar como cualquier otro año, con calma, buena organización y esa mezcla de nervios y expectación tan propia del primer día.",
-      "next": "n_campus_intro_05"
-    },
-    {
-      "id": "n_campus_intro_05",
-      "type": "narration",
-      "character": null,
-      "text": "Sin embargo, a diferencia de la mayoría de estudiantes, muchas de las clases del campus Somnia comienzan al caer la tarde y continúan hasta entrada la noche. Las luces de las facultades permanecen encendidas incluso cuando el resto de Guadalajara empieza a apagarse.",
-      "next": "n_campus_intro_06"
-    },
-    {
-      "id": "n_campus_intro_06",
       "type": "narration",
       "character": null,
       "text": "Un día más. Un curso más.",

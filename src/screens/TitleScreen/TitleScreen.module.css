@@ -7,6 +7,7 @@
   justify-content: space-between;
   background:
     radial-gradient(ellipse at 50% 60%, rgba(44, 62, 107, 0.35) 0%, transparent 70%),
+    url('/assets/backgrounds/home.png') center center / cover no-repeat,
     #0a0814;
   overflow-y: auto;
   padding: 40px 24px 28px;
@@ -47,7 +48,7 @@
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
-  color: #38bdf8;          /* sky-blue */
+  color: #bae6fd;          /* sky-200 — azul claro */
   letter-spacing: 0.06em;
   margin: 6px 0 0;
 }
@@ -116,14 +117,14 @@
   margin: 0;
 }
 
-/* ── Enlace morado ────────────────────────────────────────── */
+/* ── Enlace morado oscuro ─────────────────────────────────── */
 .link {
-  color: #a855f7;
+  color: #7c3aed;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: #c084fc;
+  color: #8b5cf6;
   text-decoration: underline;
 }

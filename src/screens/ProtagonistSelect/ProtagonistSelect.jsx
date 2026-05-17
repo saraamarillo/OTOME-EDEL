@@ -60,6 +60,9 @@ export default function ProtagonistSelect() {
               }
             </div>
             <p className={styles.name} style={{ color: p.color }}>{p.name}</p>
+            {p.age && (
+              <p className={styles.meta}>{p.age} · {p.nationality}</p>
+            )}
             <p className={styles.desc}>{p.description}</p>
             {!p.available && <span className={styles.soon}>Próximamente</span>}
           </button>
