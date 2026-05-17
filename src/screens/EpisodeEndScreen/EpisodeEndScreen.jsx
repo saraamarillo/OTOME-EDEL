@@ -1,11 +1,13 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useGameStore } from '../../store/gameStore'
+import AffinityReport from '../../components/AffinityReport/AffinityReport'
 import styles from './EpisodeEndScreen.module.css'
 
 export default function EpisodeEndScreen() {
-  const setScreen = useGameStore((s) => s.setScreen)
+  const setScreen       = useGameStore((s) => s.setScreen)
   const completeEpisode = useGameStore((s) => s.completeEpisode)
-  const userId = useGameStore((s) => s.userId)
+  const userId          = useGameStore((s) => s.userId)
+  const [showAffinity, setShowAffinity] = useState(false)
 
   useEffect(() => {
     completeEpisode(1)
@@ -19,6 +21,9 @@ export default function EpisodeEndScreen() {
         <p className={styles.subtitle}>Universidad Somnia · Guadalajara</p>
 
         <div className={styles.buttons}>
+          <button className={styles.btn} onClick={() => setShowAffinity(true)}>
+            ♥ Ver vínculos
+          </button>
           <button className={styles.btn} onClick={() => setScreen('gallery')}>
             Ver galería
           </button>
@@ -31,11 +36,13 @@ export default function EpisodeEndScreen() {
               Episodio 2
             </button>
           )}
-          <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={() => setScreen('title')}>
-            Menú principal
+          <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={() => setScreen('protagonistSelect')}>
+            Elegir protagonista
           </button>
         </div>
       </div>
+
+      {showAffinity && <AffinityReport onClose={() => setShowAffinity(false)} />}
     </div>
   )
 }

@@ -12,7 +12,7 @@
 
 .question {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-style: italic;
   color: #fff;
   text-align: center;
@@ -23,29 +23,47 @@
   backdrop-filter: blur(4px);
 }
 
+/* Base de los botones */
 .choice {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 12px 20px;
-  background: var(--ui-bg-dialogue);
-  border: 1px solid var(--ui-border);
-  border-radius: 6px;
+  border-radius: 8px;
   color: #fff;
   font-family: var(--font-body);
-  font-size: 1.13rem;
+  font-size: 1.15rem;
   text-align: left;
-  backdrop-filter: blur(4px);
-  transition: background 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+  transition: backdrop-filter 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 }
 
-.choice:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.28);
+/* Historia de Soledad — naranja */
+.choiceSoledad {
+  background: rgba(120, 52, 5, 0.82);
+  border-color: rgba(227, 142, 31, 0.45);
+}
+
+.choiceSoledad:hover {
+  background: rgba(140, 65, 8, 0.7);
+  border-color: rgba(227, 142, 31, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+/* Historia de Ayla — verde */
+.choiceAyla {
+  background: rgba(5, 60, 32, 0.82);
+  border-color: rgba(19, 112, 69, 0.45);
+}
+
+.choiceAyla:hover {
+  background: rgba(8, 75, 40, 0.7);
+  border-color: rgba(19, 112, 69, 0.75);
+  backdrop-filter: blur(8px);
 }
 
 .bullet {
   font-size: 0.5rem;
-  color: var(--ui-text-dim);
+  color: rgba(255, 255, 255, 0.6);
   flex-shrink: 0;
 }

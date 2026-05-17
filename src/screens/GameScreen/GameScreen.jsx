@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useGameStore } from '../../store/gameStore'
 import { useScene } from '../../hooks/useScene'
 import Background from '../../components/Background/Background'
@@ -14,6 +14,10 @@ export default function GameScreen() {
   const activeCharacterId = useGameStore((s) => s.activeCharacterId)
   const imageReveal = useGameStore((s) => s.imageReveal)
   const clearImageReveal = useGameStore((s) => s.clearImageReveal)
+  const setScreen = useGameStore((s) => s.setScreen)
+  const saveProgress = useGameStore((s) => s.saveProgress)
+  const userId = useGameStore((s) => s.userId)
+  const [confirmMenu, setConfirmMenu] = useState(null) // 'title' | 'episodeList'
   const { currentNode, loading, error, advanceTo, makeChoice } = useScene(sceneId)
 
   const isChoice = !loading && !error && currentNode?.type === 'choice'
@@ -34,8 +38,18 @@ export default function GameScreen() {
   if (error)   return <div className={styles.error}>Error al cargar la escena.</div>
 
   function handleNext() {
-    if (!currentNode || isChoice) return
+    if (!currentNode || isChoice || confirmMenu) return
     advanceTo(currentNode.next ?? null)
+  }
+
+  function handleNavClick(dest) {
+    setConfirmMenu(dest)
+  }
+
+  function handleConfirmNav() {
+    if (userId) saveProgress()
+    setScreen(confirmMenu)
+    setConfirmMenu(null)
   }
 
   return (
@@ -47,6 +61,24 @@ export default function GameScreen() {
       <CharacterSprite characterId={activeCharacterId} visible={!!activeCharacterId} />
 
       <div className={styles.ui}>
+        {/* Botones de navegación — top left */}
+        <div className={styles.navBar} onClick={(e) => e.stopPropagation()}>
+          <button
+            className={styles.navBtn}
+            title="Elegir protagonista"
+            onClick={() => handleNavClick('protagonistSelect')}
+          >
+            🏠
+          </button>
+          <button
+            className={styles.navBtn}
+            title="Lista de episodios"
+            onClick={() => handleNavClick('episodeList')}
+          >
+            ←
+          </button>
+        </div>
+
         {/* Diálogo y narración */}
         <DialogueBox node={currentNode} />
 
@@ -67,6 +99,26 @@ export default function GameScreen() {
           </div>
         )}
       </div>
+
+      {/* Diálogo de confirmación de salida */}
+      {confirmMenu && (
+        <div className={styles.confirmOverlay} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.confirmBox}>
+            <p className={styles.confirmText}>
+              {confirmMenu === 'protagonistSelect'
+                ? '¿Volver a elegir protagonista?'
+                : '¿Volver a la lista de episodios?'}
+            </p>
+            {userId && (
+              <p className={styles.confirmSub}>Tu progreso se guardará.</p>
+            )}
+            <div className={styles.confirmBtns}>
+              <button className={styles.confirmYes} onClick={handleConfirmNav}>Sí, salir</button>
+              <button className={styles.confirmNo} onClick={() => setConfirmMenu(null)}>Cancelar</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {imageReveal && (
         <div

@@ -16,7 +16,8 @@ export default function LoginScreen() {
     setLoading(true)
     const result = login(username, password)
     setLoading(false)
-    if (result === 'empty') setError('Introduce un nombre y contraseña.')
+    if (result === 'empty')     setError('Introduce tu nombre y contraseña.')
+    else if (result === 'not_found')  setError('Usuario no reconocido. Comprueba el nombre.')
     else if (result === 'pass_error') setError('Contraseña incorrecta.')
   }
 
@@ -51,12 +52,12 @@ export default function LoginScreen() {
           </div>
           {error && <p className={styles.error}>{error}</p>}
           <button className={styles.btn} type="submit" disabled={loading}>
-            {loading ? '...' : 'Entrar / Crear cuenta'}
+            {loading ? '...' : 'Entrar'}
           </button>
         </form>
 
         <p className={styles.hint}>
-          Si es tu primera vez, se creará una cuenta nueva con ese nombre y contraseña.
+          Introduce tu nombre tal como te lo han dado y tu contraseña personal.
         </p>
 
         <button className={styles.back} onClick={() => setScreen('title')}>

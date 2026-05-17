@@ -74,7 +74,7 @@ export const NPC_CHARACTERS = [
   {
     id: 'grace',
     name: 'Grace',
-    role: 'Miembro del Club Paranormal',
+    role: '???',
     color: 'var(--color-grace)',
     expressions: ['neutral', 'happy', 'worried', 'cheerful'],
   },

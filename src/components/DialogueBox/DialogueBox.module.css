@@ -10,32 +10,34 @@
   padding: 18px 28px 24px;
   z-index: 10;
   cursor: pointer;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+  will-change: contents;
+  transform: translateZ(0);
 }
 
-/* Burbuja de Soledad — naranja */
+/* Burbuja de Soledad — naranja oscuro */
 .soledad {
-  background: rgba(227, 142, 31, 0.22);
+  background: rgba(100, 45, 5, 0.94);
   border-color: rgba(227, 142, 31, 0.55);
 }
 
-/* Burbuja de Ayla — verde */
+/* Burbuja de Ayla — verde oscuro */
 .ayla {
-  background: rgba(19, 112, 69, 0.22);
+  background: rgba(5, 50, 28, 0.94);
   border-color: rgba(19, 112, 69, 0.55);
 }
 
-/* Burbuja de NPC — gris */
+/* Burbuja de NPC — azul/negro oscuro */
 .npc {
-  background: rgba(200, 200, 215, 0.12);
-  border-color: rgba(200, 200, 215, 0.28);
+  background: rgba(10, 8, 25, 0.96);
+  border-color: rgba(200, 200, 215, 0.22);
 }
 
 .name {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;
   margin-bottom: 8px;
@@ -43,9 +45,9 @@
 
 .text {
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: #fff;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .narration {
@@ -57,7 +59,7 @@
   position: absolute;
   bottom: 8px;
   right: 14px;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: rgba(255, 255, 255, 0.45);
   animation: blink 1.2s infinite;
 }

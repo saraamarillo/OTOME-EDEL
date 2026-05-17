@@ -27,15 +27,15 @@
   --color-apolo: #C8A850;         /* dorado divino */
 
   /* UI */
-  --ui-bg-dialogue: rgba(10, 8, 20, 0.88);
-  --ui-bg-thought: rgba(10, 8, 20, 0.75);
+  --ui-bg-dialogue: rgba(8, 5, 18, 0.96);
+  --ui-bg-thought: rgba(8, 5, 18, 0.94);
   --ui-border: rgba(255, 255, 255, 0.12);
   --ui-text: #F0EBE0;
   --ui-text-dim: #A89E8C;
 
   /* Tipografía */
-  --font-display: 'Cinzel', serif;
-  --font-body: 'EB Garamond', serif;
+  --font-display: 'Rokkitt', serif;
+  --font-body: 'Merriweather', serif;
 
   /* Tamaños base */
   --game-width: 1280px;

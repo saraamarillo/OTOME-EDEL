@@ -29,9 +29,14 @@ export default function ThoughtBox({ node }) {
         draggable={false}
       />
       {isThought && node.text && (
-        <div className={bubbleClass}>
-          <p className={styles.text}>{node.text}</p>
-        </div>
+        <>
+          <div className={styles.dots} data-protagonist={protagonistId}>
+            <span /><span /><span />
+          </div>
+          <div className={bubbleClass}>
+            <p className={styles.text}>{node.text}</p>
+          </div>
+        </>
       )}
     </div>
   )

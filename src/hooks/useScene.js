@@ -8,16 +8,17 @@ export function useScene(sceneId) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const setBackground = useGameStore((s) => s.setBackground)
+  const setBackground      = useGameStore((s) => s.setBackground)
   const setActiveCharacter = useGameStore((s) => s.setActiveCharacter)
-  const changeAffinity = useGameStore((s) => s.changeAffinity)
-  const setCharacterLook = useGameStore((s) => s.setCharacterLook)
-  const markSceneVisited = useGameStore((s) => s.markSceneVisited)
-  const setSceneId = useGameStore((s) => s.setScene)
-  const protagonistId = useGameStore((s) => s.protagonistId)
-  const unlockImage = useGameStore((s) => s.unlockImage)
-  const setImageReveal = useGameStore((s) => s.setImageReveal)
-  const setScreen = useGameStore((s) => s.setScreen)
+  const changeAffinity     = useGameStore((s) => s.changeAffinity)
+  const setCharacterLook   = useGameStore((s) => s.setCharacterLook)
+  const markSceneVisited   = useGameStore((s) => s.markSceneVisited)
+  const markNpcEncountered = useGameStore((s) => s.markNpcEncountered)
+  const setSceneId         = useGameStore((s) => s.setScene)
+  const protagonistId      = useGameStore((s) => s.protagonistId)
+  const unlockImage        = useGameStore((s) => s.unlockImage)
+  const setImageReveal     = useGameStore((s) => s.setImageReveal)
+  const setScreen          = useGameStore((s) => s.setScreen)
 
   useEffect(() => {
     if (!sceneId) return
@@ -40,7 +41,14 @@ export function useScene(sceneId) {
   }, [sceneId])
 
   useEffect(() => {
-    setActiveCharacter(currentNode?.activeCharacter ?? currentNode?.character ?? null)
+    const spriteChar   = currentNode?.activeCharacter ?? null
+    const dialogueChar = currentNode?.character ?? null
+    setActiveCharacter(spriteChar ?? dialogueChar ?? null)
+
+    // Registrar encuentro: sprite y/o personaje del diálogo
+    if (spriteChar)   markNpcEncountered(spriteChar)
+    if (dialogueChar) markNpcEncountered(dialogueChar)
+
     if (currentNode?.background) setBackground(currentNode.background)
     if (currentNode?.unlockImage) {
       unlockImage(currentNode.unlockImage)

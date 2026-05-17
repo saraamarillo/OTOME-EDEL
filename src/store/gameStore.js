@@ -18,23 +18,21 @@ export const useGameStore = create((set, get) => ({
     if (!trimmed || !password) return 'empty'
     const key = buildSaveKey(trimmed)
     const raw = localStorage.getItem(key)
-    if (raw) {
-      const save = JSON.parse(raw)
-      if (save.password !== password) return 'pass_error'
-      set({
-        userId: key,
-        userName: save.displayName ?? trimmed,
-        completedEpisodes: save.completedEpisodes ?? [],
-        unlockedImages: save.unlockedImages ?? [],
-        affinities: { ...buildAffinityMap(), ...(save.affinities ?? {}) },
-        currentScreen: 'episodeList',
-      })
-      return 'ok'
-    }
-    const newSave = { displayName: trimmed, password, completedEpisodes: [], unlockedImages: [], affinities: buildAffinityMap() }
-    localStorage.setItem(key, JSON.stringify(newSave))
-    set({ userId: key, userName: trimmed, completedEpisodes: [], currentScreen: 'episodeList' })
-    return 'new'
+    if (!raw) return 'not_found'          // usuario no existe
+    const save = JSON.parse(raw)
+    if (save.password !== password) return 'pass_error'
+    // Invitado: entra pero sin guardar userId (saveProgress no se ejecutará)
+    const isGuest = save.guest === true
+    set({
+      userId: isGuest ? null : key,
+      userName: save.displayName ?? trimmed,
+      completedEpisodes: isGuest ? [] : (save.completedEpisodes ?? []),
+      unlockedImages:    isGuest ? [] : (save.unlockedImages ?? []),
+      affinities:        { ...buildAffinityMap(), ...(isGuest ? {} : (save.affinities ?? {})) },
+      encounteredNPCs:   isGuest ? [] : (save.encounteredNPCs ?? []),
+      currentScreen: 'episodeList',
+    })
+    return isGuest ? 'guest' : 'ok'
   },
 
   logout: () => set({
@@ -44,6 +42,7 @@ export const useGameStore = create((set, get) => ({
     activeCharacterId: null, backgroundId: null,
     affinities: buildAffinityMap(), characterLooks: {},
     visitedScenes: [], unlockedImages: [], imageReveal: null,
+    encounteredNPCs: [],
   }),
 
   completeEpisode: (epNum) => {
@@ -72,8 +71,9 @@ export const useGameStore = create((set, get) => ({
     localStorage.setItem(state.userId, JSON.stringify({
       ...save,
       completedEpisodes: state.completedEpisodes,
-      unlockedImages: state.unlockedImages,
-      affinities: state.affinities,
+      unlockedImages:    state.unlockedImages,
+      affinities:        state.affinities,
+      encounteredNPCs:   state.encounteredNPCs,
     }))
   },
 
@@ -95,13 +95,24 @@ export const useGameStore = create((set, get) => ({
   activeCharacterId: null,       // qué NPC está visible ahora
   setActiveCharacter: (id) => set({ activeCharacterId: id }),
 
+  // ── NPCs conocidos por la protagonista ──────────────────────
+  encounteredNPCs: [],
+  markNpcEncountered: (id) => {
+    if (!id) return
+    set((state) => ({
+      encounteredNPCs: state.encounteredNPCs.includes(id)
+        ? state.encounteredNPCs
+        : [...state.encounteredNPCs, id],
+    }))
+  },
+
   // ── Fondo ───────────────────────────────────────────────────
   backgroundId: null,            // nombre del PNG en /assets/backgrounds/
   setBackground: (id) => set({ backgroundId: id }),
 
   // ── Afinidades ──────────────────────────────────────────────
   affinities: buildAffinityMap(),
-  changeAffinity: (characterId, delta) =>
+  changeAffinity: (characterId, delta) => {
     set((state) => ({
       affinities: {
         ...state.affinities,
@@ -110,7 +121,9 @@ export const useGameStore = create((set, get) => ({
           Math.max(AFFINITY_MIN, (state.affinities[characterId] ?? AFFINITY_DEFAULT) + delta),
         ),
       },
-    })),
+    }))
+    get().saveProgress()
+  },
   getAffinity: (characterId) => get().affinities[characterId] ?? AFFINITY_DEFAULT,
 
   // ── Looks de personaje (cambian según el arco) ─────────────
@@ -133,12 +146,14 @@ export const useGameStore = create((set, get) => ({
 
   // ── Galería de imágenes desbloqueadas ───────────────────────
   unlockedImages: [],
-  unlockImage: (imageId) =>
+  unlockImage: (imageId) => {
     set((state) => ({
       unlockedImages: state.unlockedImages.includes(imageId)
         ? state.unlockedImages
         : [...state.unlockedImages, imageId],
-    })),
+    }))
+    get().saveProgress()
+  },
 
   // ── Imagen recién desbloqueada (muestra popup en juego) ─────
   imageReveal: null,

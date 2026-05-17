@@ -15,6 +15,37 @@
   pointer-events: auto;
 }
 
+.navBar {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.navBtn {
+  width: 36px;
+  height: 36px;
+  background: rgba(8, 5, 18, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
 .affinityPanel {
   position: absolute;
   top: 20px;
@@ -25,6 +56,79 @@
   gap: 14px;
   pointer-events: none;
 }
+
+/* Overlay de confirmación de salida */
+.confirmOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.confirmBox {
+  background: rgba(8, 5, 18, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 320px;
+}
+
+.confirmText {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: #f0ebe0;
+  text-align: center;
+}
+
+.confirmSub {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--ui-text-dim);
+  font-style: italic;
+}
+
+.confirmBtns {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.confirmYes {
+  padding: 9px 28px;
+  background: rgba(200, 146, 42, 0.2);
+  border: 1px solid rgba(200, 146, 42, 0.5);
+  border-radius: 6px;
+  color: #f0ebe0;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirmYes:hover { background: rgba(200, 146, 42, 0.35); }
+
+.confirmNo {
+  padding: 9px 28px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  color: var(--ui-text-dim);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirmNo:hover { background: rgba(255, 255, 255, 0.06); }
 
 .imageReveal {
   position: absolute;

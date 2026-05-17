@@ -4,7 +4,7 @@
   left: 24px;
   display: flex;
   align-items: flex-end;
-  gap: 12px;
+  gap: 6px;
   z-index: 10;
 }
 
@@ -17,35 +17,50 @@
   flex-shrink: 0;
 }
 
-.bubble {
-  max-width: 380px;
-  background: var(--ui-bg-thought);
-  border: 1px solid var(--ui-border);
-  border-radius: 8px;
-  padding: 10px 16px;
-  backdrop-filter: blur(4px);
-  position: relative;
+/* Tres puntitos entre el avatar y la nube */
+.dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding-bottom: 18px;
+  flex-shrink: 0;
 }
 
-.bubble::before {
-  content: '';
-  position: absolute;
-  bottom: 18px;
-  left: -8px;
-  width: 0;
-  height: 0;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-right: 8px solid var(--ui-bg-thought);
+.dots span {
+  display: block;
+  border-radius: 50%;
+  animation: dotBounce 1.5s ease-in-out infinite;
 }
+
+.dots span:nth-child(1) { width: 5px;  height: 5px;  opacity: 0.55; animation-delay: 0s; }
+.dots span:nth-child(2) { width: 7px;  height: 7px;  opacity: 0.75; animation-delay: 0.2s; }
+.dots span:nth-child(3) { width: 10px; height: 10px; opacity: 1;    animation-delay: 0.4s; }
+
+@keyframes dotBounce {
+  0%, 60%, 100% { transform: translateY(0);   }
+  30%           { transform: translateY(-5px); }
+}
+
+/* Caja de pensamiento — sin flecha, más ancha */
+.bubble {
+  max-width: 560px;
+  background: var(--ui-bg-thought);
+  border: 1px solid var(--ui-border);
+  border-radius: 14px;
+  padding: 12px 20px;
+  position: relative;
+  /* sin ::before — los puntitos hacen la función */
+}
+
+/* Color de puntitos según protagonista */
+.dots[data-protagonist="soledad"] span { background: rgba(160, 85, 10, 0.95); }
+.dots[data-protagonist="ayla"]    span { background: rgba(19, 112, 69, 0.92); }
 
 .soledad {
   background: rgba(160, 85, 10, 0.95);
   border-color: rgba(160, 85, 10, 0.9);
-}
-
-.soledad::before {
-  border-right-color: rgba(160, 85, 10, 0.95);
 }
 
 .ayla {
@@ -53,14 +68,10 @@
   border-color: rgba(19, 112, 69, 0.9);
 }
 
-.ayla::before {
-  border-right-color: rgba(19, 112, 69, 0.92);
-}
-
 .text {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 1.07rem;
+  font-size: 1.18rem;
   color: #fff;
-  line-height: 1.5;
+  line-height: 1.55;
 }
