@@ -63,7 +63,7 @@
       "id": "n_lydia_04",
       "type": "dialogue",
       "character": "lydia",
-      "text": "Somos de la misma ciudad.",
+      "text": "Somos de la misma ciudad. Le conozco desde hace mucho.",
       "next": "n_thought_ethan"
     },
     {
