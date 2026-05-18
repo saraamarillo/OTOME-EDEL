@@ -106,6 +106,10 @@ export const useGameStore = create((set, get) => ({
     }))
   },
 
+  // ── Audio ───────────────────────────────────────────────────
+  volume: 0.45,
+  setVolume: (v) => set({ volume: Math.max(0, Math.min(1, v)) }),
+
   // ── Navegación ──────────────────────────────────────────────
   currentScreen: 'title',       // 'title' | 'login' | 'episodeList' | 'protagonistSelect' | 'game' | 'episodeEnd' | 'comingSoon' | 'gallery'
   setScreen: (screen) => set({ currentScreen: screen }),

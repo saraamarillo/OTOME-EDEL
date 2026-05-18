@@ -40,6 +40,13 @@ export default function ProtagonistSelect() {
 
   return (
     <div className={styles.screen}>
+      <button
+        className={styles.backBtn}
+        onClick={() => setScreen('episodeList')}
+      >
+        ← Episodios
+      </button>
+
       <h2 className={styles.heading}>¿Quién eres?</h2>
 
       <div className={styles.cards}>

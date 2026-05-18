@@ -28,6 +28,7 @@ const SCREENS = {
 
 export default function App() {
   const currentScreen = useGameStore((s) => s.currentScreen)
+  const volume = useGameStore((s) => s.volume)
   const Screen = SCREENS[currentScreen] ?? TitleScreen
   const ref = useRef(null)
   const audioRef = useRef(null)
@@ -36,7 +37,7 @@ export default function App() {
     if (!audioRef.current) {
       const audio = new Audio(MUSIC_SRC)
       audio.loop = true
-      audio.volume = 0.45
+      audio.volume = volume
       audioRef.current = audio
     }
 
@@ -50,6 +51,10 @@ export default function App() {
       audio.currentTime = 0
     }
   }, [currentScreen])
+
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.volume = volume
+  }, [volume])
 
   useEffect(() => {
     function applyScale() {
