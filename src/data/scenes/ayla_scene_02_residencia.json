@@ -63,7 +63,7 @@
       "id": "n_lydia_04",
       "type": "dialogue",
       "character": "lydia",
-      "text": "Le conozco de toda la vida. Somos de la misma ciudad, en Canadá. Es de esas personas que no te dejan en mal momento.",
+      "text": "Somos de la misma ciudad.",
       "next": "n_thought_ethan"
     },
     {
