@@ -590,7 +590,7 @@
       "id": "n_desp_03",
       "type": "narration",
       "character": null,
-      "text": "Soledad se marcha hacia el autobús. Ayla se dirige a la residencia universitaria.",
+      "text": "Soledad se marcha hacia el autobús. Ethan acompaña a Ayla hasta la residencia.",
       "next": null,
       "nextScene": "ayla_scene_02_residencia"
     }

@@ -63,7 +63,7 @@
       "id": "n_lydia_04",
       "type": "dialogue",
       "character": "lydia",
-      "text": "Conozco a Ethan desde el año pasado. Es de esas personas que no te dejan en mal momento aunque acaben de conocerte.",
+      "text": "Le conozco de toda la vida. Somos de la misma ciudad, en Canadá. Es de esas personas que no te dejan en mal momento.",
       "next": "n_thought_ethan"
     },
     {
