@@ -1,0 +1,1217 @@
+{
+  "id": "sol_ep2",
+  "title": "Todo se complica",
+  "background": "casa_Ryan_noche",
+  "nodes": [
+    {
+      "id": "n_s1_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad se despierta.",
+      "next": "n_s1_02",
+      "background": "habitacion_ryan_dia"
+    },
+    {
+      "id": "n_s1_02",
+      "type": "narration",
+      "character": null,
+      "text": "Mira el móvil. Dos llamadas perdidas de su madre.",
+      "next": "n_s1_t01"
+    },
+    {
+      "id": "n_s1_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Eh, ¿Dónde estoy? ¿Qué hago aquí?)",
+      "next": "n_s1_t02"
+    },
+    {
+      "id": "n_s1_t02",
+      "type": "thought",
+      "character": null,
+      "text": "(Ah. Claro. He dormido en la cama de un desconocido con el que me crucé ayer en el campus.)",
+      "next": "n_s1_t03"
+    },
+    {
+      "id": "n_s1_t03",
+      "type": "thought",
+      "character": null,
+      "text": "(¿Ahora cómo salgo de aquí?)",
+      "next": "n_s1_choice"
+    },
+    {
+      "id": "n_s1_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Llamar inmediatamente.",
+          "affinityChanges": {},
+          "next": "n_s2_01"
+        },
+        {
+          "label": "Vestirse antes.",
+          "affinityChanges": {
+            "ryan": 5
+          },
+          "next": "n_s1_vestirse"
+        },
+        {
+          "label": "Curiosear la habitación de Ryan.",
+          "affinityChanges": {
+            "ryan": -5
+          },
+          "next": "n_s1_curiosear"
+        }
+      ]
+    },
+    {
+      "id": "n_s1_vestirse",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad se viste en silencio. Dobla con cuidado el pijama prestado y lo deja sobre la cama, bien doblado.",
+      "next": "n_s2_01"
+    },
+    {
+      "id": "n_s1_curiosear",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad empieza a revisar la habitación con disimulo. Cajones, estantes, papeles sobre la mesa...",
+      "next": "n_s1_curiosear_02"
+    },
+    {
+      "id": "n_s1_curiosear_02",
+      "type": "narration",
+      "character": null,
+      "text": "Se escuchan pasos al otro lado de la puerta.",
+      "next": "n_s1_curiosear_03"
+    },
+    {
+      "id": "n_s1_curiosear_03",
+      "type": "thought",
+      "character": null,
+      "text": "(Se pone nerviosa.)",
+      "next": "n_s1_curiosear_04"
+    },
+    {
+      "id": "n_s1_curiosear_04",
+      "type": "narration",
+      "character": null,
+      "text": "Cierra el cajón de golpe. Demasiado fuerte.",
+      "next": "n_s1_curiosear_05"
+    },
+    {
+      "id": "n_s1_curiosear_05",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Todo bien?",
+      "next": "n_s1_curiosear_06"
+    },
+    {
+      "id": "n_s1_curiosear_06",
+      "type": "dialogue",
+      "character": null,
+      "text": "Sí, sí. Estaba buscando mi móvil.",
+      "next": "n_s1_curiosear_07"
+    },
+    {
+      "id": "n_s1_curiosear_07",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan no dice nada. Pero algo en su expresión indica que lo sabe.",
+      "next": "n_s2_01"
+    },
+    {
+      "id": "n_s2_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad marca el número de su madre.",
+      "next": "n_s2_madre_01"
+    },
+    {
+      "id": "n_s2_madre_01",
+      "type": "dialogue",
+      "character": "madre",
+      "text": "¡Soledad! ¿Dónde estás? ¡Te he llamado dos veces! Con el apagón no tenía cobertura y no sabía nada de ti...",
+      "next": "n_s2_sol_01",
+      "activeCharacter": null
+    },
+    {
+      "id": "n_s2_sol_01",
+      "type": "dialogue",
+      "character": null,
+      "text": "Estoy bien. Un chico que conocí ayer me dejó quedarme a dormir.",
+      "next": "n_s2_t01"
+    },
+    {
+      "id": "n_s2_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Dicho así suena muchísimo peor.)",
+      "next": "n_s2_madre_02"
+    },
+    {
+      "id": "n_s2_madre_02",
+      "type": "dialogue",
+      "character": "madre",
+      "text": "¿Un chico? ¿Qué chico? ¿Le conoces de algo?",
+      "next": "n_s2_sol_02",
+      "activeCharacter": null
+    },
+    {
+      "id": "n_s2_sol_02",
+      "type": "dialogue",
+      "character": null,
+      "text": "Le conocí el mismo día. Hubo un apagón y me quedé sin transporte. Me ayudó.",
+      "next": "n_s2_choice"
+    },
+    {
+      "id": "n_s2_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Preguntar si están bien.",
+          "affinityChanges": {},
+          "next": "n_s2_bienestar"
+        },
+        {
+          "label": "Disculparse primero.",
+          "affinityChanges": {},
+          "next": "n_s2_disculpa"
+        },
+        {
+          "label": "Quitarle importancia.",
+          "affinityChanges": {},
+          "next": "n_s2_quitar"
+        }
+      ]
+    },
+    {
+      "id": "n_s2_bienestar",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Vosotros estáis bien? ¿Cómo lleváis lo del apagón?",
+      "next": "n_s2_madre_03"
+    },
+    {
+      "id": "n_s2_disculpa",
+      "type": "dialogue",
+      "character": null,
+      "text": "Siento no haber avisado. No tenía cobertura y no pude llamar.",
+      "next": "n_s2_madre_03"
+    },
+    {
+      "id": "n_s2_quitar",
+      "type": "dialogue",
+      "character": null,
+      "text": "Mamá, en serio, ha sido una noche rara pero estoy perfectamente.",
+      "next": "n_s2_madre_03"
+    },
+    {
+      "id": "n_s2_madre_03",
+      "type": "dialogue",
+      "character": "madre",
+      "text": "Estamos bien, sí. Pero llámame cuando pasan estas cosas, ¿vale?",
+      "next": "n_s3_01",
+      "activeCharacter": null
+    },
+    {
+      "id": "n_s3_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan aparece en el pasillo, despeinado.",
+      "next": "n_s3_02",
+      "background": "casa_Ryan_dia"
+    },
+    {
+      "id": "n_s3_02",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Ey, buenos días.",
+      "next": "n_s3_t01"
+    },
+    {
+      "id": "n_s3_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(A ver qué le digo yo ahora después de haber dormido en su cama.)",
+      "next": "n_s3_choice"
+    },
+    {
+      "id": "n_s3_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Sonreír ligeramente.",
+          "affinityChanges": {
+            "ryan": 5
+          },
+          "next": "n_s3_sonreir"
+        },
+        {
+          "label": "Mantenerse seria.",
+          "affinityChanges": {},
+          "next": "n_s3_seria"
+        },
+        {
+          "label": "Decir que ya se iba.",
+          "affinityChanges": {
+            "ryan": -5
+          },
+          "next": "n_s3_irse"
+        }
+      ]
+    },
+    {
+      "id": "n_s3_sonreir",
+      "type": "dialogue",
+      "character": null,
+      "text": "Buenos días. Muchas gracias por haberme dejado pasar la noche.",
+      "next": "n_s3_ryan_resp"
+    },
+    {
+      "id": "n_s3_ryan_resp",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "No hay de qué.",
+      "next": "n_s4_01"
+    },
+    {
+      "id": "n_s3_seria",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad se queda paralizada. No contesta. Un silencio incómodo.",
+      "next": "n_s4_01"
+    },
+    {
+      "id": "n_s3_irse",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ya me iba. Tengo prisa. Fue muy amable por tu parte.",
+      "next": "n_s4_01"
+    },
+    {
+      "id": "n_s4_01",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿No te quedas a desayunar? He hecho café.",
+      "next": "n_s4_02"
+    },
+    {
+      "id": "n_s4_02",
+      "type": "narration",
+      "character": null,
+      "text": "El olor a café llega desde la cocina.",
+      "next": "n_s4_choice"
+    },
+    {
+      "id": "n_s4_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Bueno, ya que lo has preparado. Muchas gracias.",
+          "affinityChanges": {},
+          "next": "n_s4_cafe_si"
+        },
+        {
+          "label": "Es muy amable, pero de verdad me tengo que ir.",
+          "affinityChanges": {},
+          "next": "n_s5_01"
+        }
+      ]
+    },
+    {
+      "id": "n_s4_cafe_si",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad se sienta a la mesa.",
+      "next": "n_s4_t01"
+    },
+    {
+      "id": "n_s4_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Esto se siente demasiado normal.)",
+      "next": "n_s4_t02"
+    },
+    {
+      "id": "n_s4_t02",
+      "type": "thought",
+      "character": null,
+      "text": "(No sé por qué me estoy relajando.)",
+      "next": "n_s4_ryan_q"
+    },
+    {
+      "id": "n_s4_ryan_q",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Qué estudias?",
+      "next": "n_s4_sol_carrera"
+    },
+    {
+      "id": "n_s4_sol_carrera",
+      "type": "dialogue",
+      "character": null,
+      "text": "Filosofía. Primero de carrera.",
+      "next": "n_s4_ryan_edad"
+    },
+    {
+      "id": "n_s4_ryan_edad",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Primero? Pensaba que eras más joven. ¿Cuántos años tienes?",
+      "next": "n_s4_sol_edad"
+    },
+    {
+      "id": "n_s4_sol_edad",
+      "type": "dialogue",
+      "character": null,
+      "text": "Veintidós. ¿Y tú?",
+      "next": "n_s4_ryan_edad2"
+    },
+    {
+      "id": "n_s4_ryan_edad2",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "También. Psicología.",
+      "next": "n_s4_carrera_choice"
+    },
+    {
+      "id": "n_s4_carrera_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Sí, se sincera. Dejé otra carrera antes.",
+          "affinityChanges": {
+            "ryan": 5
+          },
+          "next": "n_s4_sincera"
+        },
+        {
+          "label": "Responder por encima.",
+          "affinityChanges": {},
+          "next": "n_s4_encima"
+        },
+        {
+          "label": "Evitar el tema.",
+          "affinityChanges": {
+            "ryan": -5
+          },
+          "next": "n_s5_01"
+        }
+      ]
+    },
+    {
+      "id": "n_s4_sincera",
+      "type": "dialogue",
+      "character": null,
+      "text": "Empecé Medicina antes. No acabó de funcionar. Este año lo intento de nuevo con algo diferente.",
+      "next": "n_s4_sincera_02"
+    },
+    {
+      "id": "n_s4_sincera_02",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Medicina? Vaya cambio.",
+      "next": "n_s4_cg"
+    },
+    {
+      "id": "n_s4_encima",
+      "type": "dialogue",
+      "character": null,
+      "text": "Empecé otra cosa antes. Larga historia.",
+      "next": "n_s4_cg"
+    },
+    {
+      "id": "n_s4_cg",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad rodea la taza con las manos. El café humea.",
+      "next": "n_s5_01",
+      "unlockImage": "ryan_cafe_soledad"
+    },
+    {
+      "id": "n_s5_01",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Pedirle el teléfono directamente.",
+          "affinityChanges": {
+            "ryan": 5
+          },
+          "next": "n_s5_directo"
+        },
+        {
+          "label": "[Sacar el móvil y mirarle sin decir nada]",
+          "affinityChanges": {},
+          "next": "n_s5_indirecto"
+        }
+      ]
+    },
+    {
+      "id": "n_s5_directo",
+      "type": "dialogue",
+      "character": null,
+      "text": "Esto... si no te importa, ¿me das tu teléfono? Por lo que pueda pasar.",
+      "next": "n_s5_intercambio"
+    },
+    {
+      "id": "n_s5_indirecto",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad saca el móvil. Lo mira. Mira a Ryan.",
+      "next": "n_s5_ryan_preg"
+    },
+    {
+      "id": "n_s5_ryan_preg",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Qué pasa, te quedaste sin batería?",
+      "next": "n_s5_sol_pide"
+    },
+    {
+      "id": "n_s5_sol_pide",
+      "type": "dialogue",
+      "character": null,
+      "text": "Esto... si no te importa, ¿me das tu teléfono?",
+      "next": "n_s5_intercambio"
+    },
+    {
+      "id": "n_s5_intercambio",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan asiente. Intercambian el número.",
+      "next": "n_s5_t01"
+    },
+    {
+      "id": "n_s5_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Vale. Esto ya parece una interacción social normal.)",
+      "next": "n_s6_01"
+    },
+    {
+      "id": "n_s6_01",
+      "type": "narration",
+      "character": null,
+      "text": "De vuelta en casa.",
+      "next": "n_s6_padre",
+      "background": "habitacion_Soledad_dia"
+    },
+    {
+      "id": "n_s6_padre",
+      "type": "dialogue",
+      "character": "padre",
+      "text": "El instinto no siempre lleva a algo bueno.",
+      "next": "n_s6_t01",
+      "activeCharacter": null
+    },
+    {
+      "id": "n_s6_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Gracias, papá. Muy tranquilizador.)",
+      "next": "n_s7_01"
+    },
+    {
+      "id": "n_s7_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad entra en su habitación y abre el diario.",
+      "next": "n_s7_t01",
+      "background": "habitacion_Soledad_dia"
+    },
+    {
+      "id": "n_s7_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Si esto acaba siendo el inicio de algo horrible, quiero pruebas.)",
+      "next": "n_s7_t02"
+    },
+    {
+      "id": "n_s7_t02",
+      "type": "thought",
+      "character": null,
+      "text": "(Todo esto parece demasiado raro para haber pasado en dos días.)",
+      "next": "n_s8_01"
+    },
+    {
+      "id": "n_s8_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad revisa el móvil. Dieciséis mensajes de Luna, todos preocupados.",
+      "next": "n_s8_02"
+    },
+    {
+      "id": "n_s8_02",
+      "type": "narration",
+      "character": null,
+      "text": "Intenta responder.",
+      "next": "n_s8_glitch"
+    },
+    {
+      "id": "n_s8_glitch",
+      "type": "narration",
+      "character": null,
+      "text": "Un pitido agudo. La pantalla parpadea. Dolor de cabeza.",
+      "next": "n_s8_t01"
+    },
+    {
+      "id": "n_s8_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(¿Qué demonios...?)",
+      "next": "n_s8_vacio"
+    },
+    {
+      "id": "n_s8_vacio",
+      "type": "narration",
+      "character": null,
+      "text": "El chat está completamente vacío.",
+      "next": "n_s8_t02"
+    },
+    {
+      "id": "n_s8_t02",
+      "type": "thought",
+      "character": null,
+      "text": "(No estaban vacíos hace un segundo.)",
+      "next": "n_s8_choice"
+    },
+    {
+      "id": "n_s8_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Intentar escribir otra vez.",
+          "affinityChanges": {},
+          "next": "n_s9_01"
+        },
+        {
+          "label": "Pensar que el móvil está roto.",
+          "affinityChanges": {},
+          "next": "n_s9_01"
+        },
+        {
+          "label": "Asustarse de verdad.",
+          "affinityChanges": {},
+          "next": "n_s9_01"
+        }
+      ]
+    },
+    {
+      "id": "n_s9_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad recoge sus cosas. Mochila, llaves, cartera, diario, libreta.",
+      "next": "n_s9_t01"
+    },
+    {
+      "id": "n_s9_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Vale. Hoy sí llevo las llaves.)",
+      "next": "n_s10_01"
+    },
+    {
+      "id": "n_s10_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ya en el campus.",
+      "next": "n_s10_ethan",
+      "background": "campus_dia"
+    },
+    {
+      "id": "n_s10_ethan",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Habíamos quedado a las 17:30.",
+      "next": "n_s10_t01"
+    },
+    {
+      "id": "n_s10_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Mira el reloj. Se dirige hacia la entrada de la Universidad.)",
+      "next": "n_s11_01"
+    },
+    {
+      "id": "n_s11_01",
+      "type": "narration",
+      "character": null,
+      "text": "El teléfono vibra. Es Ayla.",
+      "next": "n_s11_ayla"
+    },
+    {
+      "id": "n_s11_ayla",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Soledad. La chica que viste ayer, la del árbol... la estoy viendo. Me está siguiendo. Te mando la ubicación.",
+      "next": "n_s11_t01"
+    },
+    {
+      "id": "n_s11_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(¿Cómo que existe de verdad?)",
+      "next": "n_s11_choice"
+    },
+    {
+      "id": "n_s11_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Decirle que espere.",
+          "affinityChanges": {},
+          "next": "n_s11_espera"
+        },
+        {
+          "label": "Avisar a Ethan e ir donde está ella.",
+          "affinityChanges": {
+            "ethan": 5
+          },
+          "next": "n_s11_ethan_av"
+        },
+        {
+          "label": "Ir inmediatamente tras ella.",
+          "affinityChanges": {
+            "ayla": 5
+          },
+          "next": "n_s11_ir"
+        }
+      ]
+    },
+    {
+      "id": "n_s11_espera",
+      "type": "dialogue",
+      "character": null,
+      "text": "Espera. No te muevas. Voy.",
+      "next": "n_s12_01"
+    },
+    {
+      "id": "n_s11_ethan_av",
+      "type": "dialogue",
+      "character": null,
+      "text": "Voy a avisar a Ethan primero y después voy contigo.",
+      "next": "n_s12_01"
+    },
+    {
+      "id": "n_s11_ir",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ahora voy. Mándame la ubicación ahora mismo.",
+      "next": "n_s12_01"
+    },
+    {
+      "id": "n_s12_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad llega a la ubicación.",
+      "next": "n_s12_02",
+      "background": "callejones_guadalajara_dia"
+    },
+    {
+      "id": "n_s12_02",
+      "type": "narration",
+      "character": null,
+      "text": "Ayla la espera con el móvil en la mano.",
+      "next": "n_s12_ayla"
+    },
+    {
+      "id": "n_s12_ayla",
+      "type": "dialogue",
+      "character": "ayla",
+      "text": "Mira esto.",
+      "next": "n_s12_03"
+    },
+    {
+      "id": "n_s12_03",
+      "type": "narration",
+      "character": null,
+      "text": "Ayla le enseña un artículo. Accidentes. Un símbolo repetido en todos ellos: una media luna.",
+      "next": "n_s12_t01"
+    },
+    {
+      "id": "n_s12_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Esto ya no parece postureo paranormal.)",
+      "next": "n_s12_choice"
+    },
+    {
+      "id": "n_s12_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "No contárselo a Ethan todavía.",
+          "affinityChanges": {},
+          "next": "n_s13_01"
+        },
+        {
+          "label": "Sí deberían contárselo.",
+          "affinityChanges": {},
+          "next": "n_s13_01"
+        },
+        {
+          "label": "Desconfiar aún más de todo esto.",
+          "affinityChanges": {},
+          "next": "n_s13_01"
+        }
+      ]
+    },
+    {
+      "id": "n_s13_01",
+      "type": "narration",
+      "character": null,
+      "text": "El teléfono de Soledad suena. Es Ethan.",
+      "next": "n_s13_ethan"
+    },
+    {
+      "id": "n_s13_ethan",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Estoy en vuestra ubicación y no os veo.",
+      "next": "n_s13_inter"
+    },
+    {
+      "id": "n_s13_inter",
+      "type": "narration",
+      "character": null,
+      "text": "Interferencias. La señal falla.",
+      "next": "n_s13_t01"
+    },
+    {
+      "id": "n_s13_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Dolor de cabeza.)",
+      "next": "n_s13_chica"
+    },
+    {
+      "id": "n_s13_chica",
+      "type": "narration",
+      "character": null,
+      "text": "La chica misteriosa aparece al fondo del callejón. Entra en la fábrica de harina.",
+      "next": "n_s13_choice"
+    },
+    {
+      "id": "n_s13_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Entrar inmediatamente.",
+          "affinityChanges": {},
+          "next": "n_s14_01"
+        },
+        {
+          "label": "Intentar avisar a Ethan antes.",
+          "affinityChanges": {},
+          "next": "n_s14_01"
+        },
+        {
+          "label": "Dudar antes de entrar.",
+          "affinityChanges": {},
+          "next": "n_s14_01"
+        }
+      ]
+    },
+    {
+      "id": "n_s14_01",
+      "type": "narration",
+      "character": null,
+      "text": "Interior de la fábrica. Polvo. Maquinaria rota. La luz apenas entra.",
+      "next": "n_s14_t01",
+      "background": "interior_fabrica_harina"
+    },
+    {
+      "id": "n_s14_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Todo mi cuerpo me dice que salga.)",
+      "next": "n_s14_movil"
+    },
+    {
+      "id": "n_s14_movil",
+      "type": "narration",
+      "character": null,
+      "text": "Intenta enviar un mensaje. Sin cobertura. No se envía.",
+      "next": "n_s14_t02"
+    },
+    {
+      "id": "n_s14_t02",
+      "type": "thought",
+      "character": null,
+      "text": "(Otra vez el móvil.)",
+      "next": "n_s15_01"
+    },
+    {
+      "id": "n_s15_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad sale al exterior a buscar cobertura.",
+      "next": "n_s15_02",
+      "background": "fabrica_abandonada"
+    },
+    {
+      "id": "n_s15_02",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan llega. Está enfadado.",
+      "next": "n_s15_ethan"
+    },
+    {
+      "id": "n_s15_ethan",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "¿Qué hacéis aquí? ¿Sabéis lo que—?",
+      "next": "n_s15_derrumbe"
+    },
+    {
+      "id": "n_s15_derrumbe",
+      "type": "narration",
+      "character": null,
+      "text": "Un crujido sordo. Parte del techo cae.",
+      "next": "n_s15_herido"
+    },
+    {
+      "id": "n_s15_herido",
+      "type": "narration",
+      "character": null,
+      "text": "Ethan está en el suelo. Herido.",
+      "next": "n_s15_t01"
+    },
+    {
+      "id": "n_s15_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Vale. Esto acaba de irse completamente a la mierda.)",
+      "next": "n_s15_choice"
+    },
+    {
+      "id": "n_s15_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Ayudarlo.",
+          "affinityChanges": {
+            "ethan": 5
+          },
+          "next": "n_s16_01"
+        },
+        {
+          "label": "Preguntar si llaman a una ambulancia.",
+          "affinityChanges": {},
+          "next": "n_s16_01"
+        },
+        {
+          "label": "Entrar en pánico.",
+          "affinityChanges": {
+            "ethan": -5
+          },
+          "next": "n_s16_01"
+        }
+      ]
+    },
+    {
+      "id": "n_s16_01",
+      "type": "dialogue",
+      "character": "ethan",
+      "text": "Llama a Ryan.",
+      "next": "n_s16_t01"
+    },
+    {
+      "id": "n_s16_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Espera... ¿se conocen?)",
+      "next": "n_s16_llama"
+    },
+    {
+      "id": "n_s16_llama",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad marca el número de Ryan.",
+      "next": "n_s16_ryan_01"
+    },
+    {
+      "id": "n_s16_ryan_01",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "¿Soledad? No me esperaba que llamaras tan pronto.",
+      "next": "n_s16_sol"
+    },
+    {
+      "id": "n_s16_sol",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ryan, escucha. Ethan está herido. Estamos en la fábrica de harina, necesitamos ayuda.",
+      "next": "n_s16_ryan_02"
+    },
+    {
+      "id": "n_s16_ryan_02",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Ahora voy.",
+      "next": "n_s16_t02"
+    },
+    {
+      "id": "n_s16_t02",
+      "type": "thought",
+      "character": null,
+      "text": "(Eso solo lo hace un buen amigo.)",
+      "next": "n_s17_01"
+    },
+    {
+      "id": "n_s17_01",
+      "type": "narration",
+      "character": null,
+      "text": "El sonido de una moto.",
+      "next": "n_s17_02"
+    },
+    {
+      "id": "n_s17_02",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan llega. Sin preguntas. Ayuda a Ethan. Lo sube a la moto.",
+      "next": "n_s17_toque"
+    },
+    {
+      "id": "n_s17_toque",
+      "type": "narration",
+      "character": null,
+      "text": "Antes de irse, Ryan le da un toque en la frente a Soledad.",
+      "next": "n_s17_t01"
+    },
+    {
+      "id": "n_s17_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(¿Por qué eso ha sido extrañamente tranquilizador?)",
+      "next": "n_s17_vuelve"
+    },
+    {
+      "id": "n_s17_vuelve",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad vuelve a la universidad. Después llama a Ryan.",
+      "next": "n_s17_llama"
+    },
+    {
+      "id": "n_s17_llama",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ryan... Ayla se ha quedado dentro. ¿Me acompañas a la comisaría a denunciar su desaparición?",
+      "next": "n_s17_ryan"
+    },
+    {
+      "id": "n_s17_ryan",
+      "type": "dialogue",
+      "character": "ryan",
+      "text": "Ahora voy para allá.",
+      "next": "n_s18_01"
+    },
+    {
+      "id": "n_s18_01",
+      "type": "narration",
+      "character": null,
+      "text": "Comisaría. Ryan y Soledad esperan su turno.",
+      "next": "n_s18_02",
+      "background": "comisaria"
+    },
+    {
+      "id": "n_s18_02",
+      "type": "narration",
+      "character": null,
+      "text": "Un agente recoge los datos. Nombre, descripción, última ubicación conocida.",
+      "next": "n_s18_frey"
+    },
+    {
+      "id": "n_s18_frey",
+      "type": "dialogue",
+      "character": "frey",
+      "text": "Les llamaremos si tenemos noticias.",
+      "next": "n_s19_01"
+    },
+    {
+      "id": "n_s19_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan acompaña a Soledad a la parada del autobús. Los dos esperan en silencio.",
+      "next": "n_s19_02",
+      "background": "parada_bus_noche"
+    },
+    {
+      "id": "n_s19_02",
+      "type": "narration",
+      "character": null,
+      "text": "El autobús llega.",
+      "next": "n_s19_choice"
+    },
+    {
+      "id": "n_s19_choice",
+      "type": "choice",
+      "character": null,
+      "text": null,
+      "choices": [
+        {
+          "label": "Sentarse y quedarse dormida.",
+          "affinityChanges": {},
+          "next": "n_s19_duerme"
+        },
+        {
+          "label": "Sentarse cerca de la ventana.",
+          "affinityChanges": {},
+          "next": "n_s19_ventana"
+        },
+        {
+          "label": "Sentarse cerca del conductor.",
+          "affinityChanges": {},
+          "next": "n_s19_conductor"
+        }
+      ]
+    },
+    {
+      "id": "n_s19_duerme",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad se sienta y cierra los ojos. El movimiento del autobús la adormece.",
+      "next": "n_s19_ryan_moto"
+    },
+    {
+      "id": "n_s19_conductor",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad se sienta cerca del conductor y le da conversación distraídamente.",
+      "next": "n_s19_ryan_moto"
+    },
+    {
+      "id": "n_s19_ventana",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad busca un asiento junto a la ventana.",
+      "next": "n_s19_ventana_cg"
+    },
+    {
+      "id": "n_s19_ventana_cg",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan sigue en la parada. Apoyado en la moto, sin moverse, esperando a que el autobús se aleje.",
+      "next": "n_s19_t01",
+      "unlockImage": "ryan_moto_parada"
+    },
+    {
+      "id": "n_s19_ryan_moto",
+      "type": "narration",
+      "character": null,
+      "text": "Ryan sigue en la parada, esperando a que el autobús se aleje.",
+      "next": "n_s19_t01"
+    },
+    {
+      "id": "n_s19_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(No entiendo por qué alguien haría tanto por una desconocida.)",
+      "next": "n_s20_01"
+    },
+    {
+      "id": "n_s20_01",
+      "type": "narration",
+      "character": null,
+      "text": "Ya en casa.",
+      "next": "n_s20_frey",
+      "background": "habitacion_Soledad_noche"
+    },
+    {
+      "id": "n_s20_frey",
+      "type": "dialogue",
+      "character": "frey",
+      "text": "Ayla está bien. Está de vuelta en la residencia.",
+      "next": "n_s20_t01"
+    },
+    {
+      "id": "n_s20_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Uf. Qué alivio de que esté bien.)",
+      "next": "n_s20_msg"
+    },
+    {
+      "id": "n_s20_msg",
+      "type": "dialogue",
+      "character": null,
+      "text": "Ryan, Ayla está bien. Ya está en la residencia. Gracias por todo.",
+      "next": "n_s20_narr"
+    },
+    {
+      "id": "n_s20_narr",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad envía el mensaje.",
+      "next": "n_s21_01"
+    },
+    {
+      "id": "n_s21_01",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad llega a casa. Cena sola.",
+      "next": "n_s21_02",
+      "background": "habitacion_Soledad_dia"
+    },
+    {
+      "id": "n_s21_02",
+      "type": "narration",
+      "character": null,
+      "text": "Se mete en la cama.",
+      "next": "n_s21_t01"
+    },
+    {
+      "id": "n_s21_t01",
+      "type": "thought",
+      "character": null,
+      "text": "(Mensajes borrados. Fisuras. Chicas misteriosas.)",
+      "next": "n_s21_t02"
+    },
+    {
+      "id": "n_s21_t02",
+      "type": "thought",
+      "character": null,
+      "text": "(Y mañana tengo Filosofía.)",
+      "next": "n_epilogo_01"
+    },
+    {
+      "id": "n_epilogo_01",
+      "type": "narration",
+      "character": null,
+      "text": "...",
+      "next": "n_epilogo_02"
+    },
+    {
+      "id": "n_epilogo_02",
+      "type": "dialogue",
+      "character": "grace",
+      "text": "Parece que han aparecido nuevas incorporaciones.",
+      "next": null,
+      "endEpisode": true
+    }
+  ]
+}

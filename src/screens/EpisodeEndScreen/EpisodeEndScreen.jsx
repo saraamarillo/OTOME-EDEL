@@ -4,21 +4,22 @@ import AffinityReport from '../../components/AffinityReport/AffinityReport'
 import styles from './EpisodeEndScreen.module.css'
 
 export default function EpisodeEndScreen() {
-  const setScreen       = useGameStore((s) => s.setScreen)
-  const completeEpisode = useGameStore((s) => s.completeEpisode)
-  const saveProgress    = useGameStore((s) => s.saveProgress)
-  const userId          = useGameStore((s) => s.userId)
+  const setScreen         = useGameStore((s) => s.setScreen)
+  const completeEpisode   = useGameStore((s) => s.completeEpisode)
+  const saveProgress      = useGameStore((s) => s.saveProgress)
+  const userId            = useGameStore((s) => s.userId)
+  const selectedEpisode   = useGameStore((s) => s.selectedEpisode)
   const [showAffinity, setShowAffinity] = useState(false)
 
   useEffect(() => {
-    completeEpisode(1)
+    completeEpisode(selectedEpisode)
     saveProgress()
   }, [])
 
   return (
     <div className={styles.screen}>
       <div className={styles.content}>
-        <p className={styles.label}>Episodio 1</p>
+        <p className={styles.label}>Episodio {selectedEpisode}</p>
         <h1 className={styles.title}>Fin</h1>
         <p className={styles.subtitle}>Universidad Somnia · Guadalajara</p>
 
@@ -35,7 +36,7 @@ export default function EpisodeEndScreen() {
             </button>
           ) : (
             <button className={styles.btn} onClick={() => setScreen('comingSoon')}>
-              Episodio 2
+              Episodio {selectedEpisode + 1}
             </button>
           )}
           <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={() => setScreen('protagonistSelect')}>

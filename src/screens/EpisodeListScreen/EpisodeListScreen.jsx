@@ -2,20 +2,23 @@ import { useGameStore } from '../../store/gameStore'
 import styles from './EpisodeListScreen.module.css'
 
 const TOTAL_EPISODES = 20
-const AVAILABLE = [1]
+const AVAILABLE = [1, 2]
 
 const EP_TITLES = {
   1: 'Nueva Etapa Universitaria',
+  2: 'Todo se complica',
 }
 
 export default function EpisodeListScreen() {
-  const setScreen = useGameStore((s) => s.setScreen)
-  const completedEpisodes = useGameStore((s) => s.completedEpisodes)
-  const logout = useGameStore((s) => s.logout)
-  const userName = useGameStore((s) => s.userName)
-  const selectProtagonist = useGameStore((s) => s.selectProtagonist)
+  const setScreen          = useGameStore((s) => s.setScreen)
+  const completedEpisodes  = useGameStore((s) => s.completedEpisodes)
+  const logout             = useGameStore((s) => s.logout)
+  const userName           = useGameStore((s) => s.userName)
+  const selectProtagonist  = useGameStore((s) => s.selectProtagonist)
+  const setSelectedEpisode = useGameStore((s) => s.setSelectedEpisode)
 
   const handlePlay = (ep) => {
+    setSelectedEpisode(ep)
     selectProtagonist(null)
     setScreen('protagonistSelect')
   }

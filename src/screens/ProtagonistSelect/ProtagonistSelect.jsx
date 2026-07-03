@@ -21,20 +21,30 @@ const CREATOR_CREDITS = {
  */
 export default function ProtagonistSelect() {
   const [selected, setSelected] = useState(null)
-  const selectProtagonist = useGameStore((s) => s.selectProtagonist)
-  const setScreen = useGameStore((s) => s.setScreen)
-  const setScene = useGameStore((s) => s.setScene)
+  const selectProtagonist  = useGameStore((s) => s.selectProtagonist)
+  const setScreen          = useGameStore((s) => s.setScreen)
+  const setScene           = useGameStore((s) => s.setScene)
+  const selectedEpisode    = useGameStore((s) => s.selectedEpisode)
 
+  /** Escena de inicio por protagonista y episodio */
   const FIRST_SCENE = {
-    soledad: 'sol_scene_01_campus',
-    ayla: 'ayla_scene_01_campus',
-    maven: 'scene_01_campus',
+    1: {
+      soledad: 'sol_scene_01_campus',
+      ayla:    'ayla_scene_01_campus',
+      maven:   'scene_01_campus',
+    },
+    2: {
+      soledad: 'sol_ep2',
+      ayla:    'ayla_ep2',      // pendiente de crear
+      maven:   'maven_ep2',     // pendiente de crear
+    },
   }
 
   function handleConfirm() {
     if (!selected) return
     selectProtagonist(selected.id)
-    setScene(FIRST_SCENE[selected.id] ?? 'scene_01_campus')
+    const epMap = FIRST_SCENE[selectedEpisode] ?? FIRST_SCENE[1]
+    setScene(epMap[selected.id] ?? 'scene_01_campus')
     setScreen('game')
   }
 

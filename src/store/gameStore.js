@@ -114,6 +114,10 @@ export const useGameStore = create((set, get) => ({
   currentScreen: 'title',       // 'title' | 'login' | 'episodeList' | 'protagonistSelect' | 'game' | 'episodeEnd' | 'comingSoon' | 'gallery'
   setScreen: (screen) => set({ currentScreen: screen }),
 
+  // ── Episodio seleccionado ───────────────────────────────────
+  selectedEpisode: 1,
+  setSelectedEpisode: (ep) => set({ selectedEpisode: ep }),
+
   // ── Protagonista ────────────────────────────────────────────
   protagonistId: null,           // 'soledad' | 'ayla'
   selectProtagonist: (id) => set({ protagonistId: id }),
