@@ -12,6 +12,8 @@ const buildRouteAffinities = () => ({
 })
 
 const buildRouteEncountered = () => ({ soledad: [], ayla: [], maven: [] })
+const buildRouteEpisodes = () => ({ soledad: [], ayla: [], maven: [] })
+const buildRoutePlayCounts = () => ({ soledad: {}, ayla: {}, maven: {} })
 
 const SEED_USERS = [
   { username: 'sara',      displayName: 'Sara',      password: 's0299',  guest: false },
@@ -33,11 +35,17 @@ export function seedUsers() {
     const raw = localStorage.getItem(key)
     if (raw) {
       const existing = JSON.parse(raw)
-      // Migrar affinities al formato per-ruta si están en formato plano
+      // Migrar affinities/episodios al formato per-ruta si están en formato plano
       let affinities = existing.affinities
       if (!affinities?.soledad) affinities = buildRouteAffinities()
       let encounteredNPCs = existing.encounteredNPCs
       if (!encounteredNPCs?.soledad) encounteredNPCs = buildRouteEncountered()
+      let completedEpisodes = existing.completedEpisodes
+      if (!completedEpisodes || Array.isArray(completedEpisodes)) completedEpisodes = buildRouteEpisodes()
+      let unlockedImages = existing.unlockedImages
+      if (!unlockedImages || Array.isArray(unlockedImages)) unlockedImages = buildRouteEpisodes()
+      let episodePlayCounts = existing.episodePlayCounts
+      if (!episodePlayCounts?.soledad) episodePlayCounts = buildRoutePlayCounts()
 
       localStorage.setItem(key, JSON.stringify({
         ...existing,
@@ -46,14 +54,18 @@ export function seedUsers() {
         guest: u.guest,
         affinities,
         encounteredNPCs,
+        completedEpisodes,
+        unlockedImages,
+        episodePlayCounts,
       }))
     } else {
       localStorage.setItem(key, JSON.stringify({
         displayName:    u.displayName,
         password:       u.password,
         guest:          u.guest,
-        completedEpisodes: [],
-        unlockedImages:    [],
+        completedEpisodes: buildRouteEpisodes(),
+        unlockedImages:    buildRouteEpisodes(),
+        episodePlayCounts: buildRoutePlayCounts(),
         affinities:        buildRouteAffinities(),
         encounteredNPCs:   buildRouteEncountered(),
       }))

@@ -14,6 +14,10 @@ const buildRouteAffinities = () => ({
 
 const buildRouteEncountered = () => ({ soledad: [], ayla: [], maven: [] })
 
+/** Episodios completados / imágenes desbloqueadas / veces jugado — por ruta */
+const buildRouteEpisodes = () => ({ soledad: [], ayla: [], maven: [] })
+const buildRoutePlayCounts = () => ({ soledad: {}, ayla: {}, maven: {} })
+
 /** Migrate old flat-map saves to per-protagonist structure */
 const migrateAffinities = (raw) => {
   if (!raw) return buildRouteAffinities()
@@ -33,13 +37,28 @@ const migrateEncountered = (raw) => {
   return buildRouteEncountered()
 }
 
+/** Migrate old flat-array saves (completedEpisodes/unlockedImages) to per-route structure */
+const migrateEpisodeList = (raw) => {
+  if (!raw) return buildRouteEpisodes()
+  if (raw.soledad !== undefined) return { soledad: raw.soledad ?? [], ayla: raw.ayla ?? [], maven: raw.maven ?? [] }
+  // Old flat format — discard (development stage)
+  return buildRouteEpisodes()
+}
+
+const migratePlayCounts = (raw) => {
+  if (!raw) return buildRoutePlayCounts()
+  if (raw.soledad !== undefined) return { soledad: raw.soledad ?? {}, ayla: raw.ayla ?? {}, maven: raw.maven ?? {} }
+  return buildRoutePlayCounts()
+}
+
 const buildSaveKey = (username) => `edel:${username.toLowerCase().trim()}`
 
 export const useGameStore = create((set, get) => ({
   // ── Sesión de usuario ────────────────────────────────────────
   userId: null,
   userName: null,
-  completedEpisodes: [],
+  completedEpisodes: buildRouteEpisodes(),
+  episodePlayCounts: buildRoutePlayCounts(),
 
   login: (username, password) => {
     const trimmed = username.trim()
@@ -54,37 +73,46 @@ export const useGameStore = create((set, get) => ({
     set({
       userId: isGuest ? null : key,
       userName: save.displayName ?? trimmed,
-      completedEpisodes: isGuest ? [] : (save.completedEpisodes ?? []),
-      unlockedImages:    isGuest ? [] : (save.unlockedImages ?? []),
+      completedEpisodes: isGuest ? buildRouteEpisodes() : migrateEpisodeList(save.completedEpisodes),
+      unlockedImages:    isGuest ? buildRouteEpisodes() : migrateEpisodeList(save.unlockedImages),
+      episodePlayCounts: isGuest ? buildRoutePlayCounts() : migratePlayCounts(save.episodePlayCounts),
       affinities:      isGuest ? buildRouteAffinities() : migrateAffinities(save.affinities),
       encounteredNPCs: isGuest ? buildRouteEncountered() : migrateEncountered(save.encounteredNPCs),
-      currentScreen: 'episodeList',
+      currentScreen: 'protagonistSelect',
     })
     return isGuest ? 'guest' : 'ok'
   },
 
   logout: () => set({
-    userId: null, userName: null, completedEpisodes: [],
+    userId: null, userName: null, completedEpisodes: buildRouteEpisodes(),
+    episodePlayCounts: buildRoutePlayCounts(),
     currentScreen: 'title',
     protagonistId: null, sceneId: null, nodeIndex: 0,
     activeCharacterId: null, backgroundId: null,
     affinities: buildRouteAffinities(), characterLooks: {},
-    visitedScenes: [], unlockedImages: [], imageReveal: null,
+    visitedScenes: [], unlockedImages: buildRouteEpisodes(), imageReveal: null,
     encounteredNPCs: buildRouteEncountered(),
   }),
 
   completeEpisode: (epNum) => {
     const state = get()
-    const updated = state.completedEpisodes.includes(epNum)
-      ? state.completedEpisodes
-      : [...state.completedEpisodes, epNum]
-    set({ completedEpisodes: updated })
+    const pid = state.protagonistId
+    if (!pid) return
+    const routeList = state.completedEpisodes[pid] ?? []
+    const updatedList = routeList.includes(epNum) ? routeList : [...routeList, epNum]
+    const routeCounts = state.episodePlayCounts[pid] ?? {}
+    const updatedCounts = { ...routeCounts, [epNum]: (routeCounts[epNum] ?? 0) + 1 }
+    set({
+      completedEpisodes: { ...state.completedEpisodes, [pid]: updatedList },
+      episodePlayCounts: { ...state.episodePlayCounts, [pid]: updatedCounts },
+    })
     if (state.userId) {
       const raw = localStorage.getItem(state.userId)
       const save = raw ? JSON.parse(raw) : {}
       localStorage.setItem(state.userId, JSON.stringify({
         ...save,
-        completedEpisodes: updated,
+        completedEpisodes: get().completedEpisodes,
+        episodePlayCounts: get().episodePlayCounts,
         unlockedImages: get().unlockedImages,
         affinities: get().affinities,
         encounteredNPCs: get().encounteredNPCs,
@@ -100,6 +128,7 @@ export const useGameStore = create((set, get) => ({
     localStorage.setItem(state.userId, JSON.stringify({
       ...save,
       completedEpisodes: state.completedEpisodes,
+      episodePlayCounts: state.episodePlayCounts,
       unlockedImages:    state.unlockedImages,
       affinities:        state.affinities,
       encounteredNPCs:   state.encounteredNPCs,
@@ -111,7 +140,7 @@ export const useGameStore = create((set, get) => ({
   setVolume: (v) => set({ volume: Math.max(0, Math.min(1, v)) }),
 
   // ── Navegación ──────────────────────────────────────────────
-  currentScreen: 'title',       // 'title' | 'login' | 'episodeList' | 'protagonistSelect' | 'game' | 'episodeEnd' | 'comingSoon' | 'gallery'
+  currentScreen: 'title',       // 'title' | 'login' | 'protagonistSelect' | 'landing' | 'episodeList' | 'characters' | 'game' | 'episodeEnd' | 'comingSoon' | 'gallery'
   setScreen: (screen) => set({ currentScreen: screen }),
 
   // ── Episodio seleccionado ───────────────────────────────────
@@ -212,14 +241,16 @@ export const useGameStore = create((set, get) => ({
         : [...state.visitedScenes, sceneId],
     })),
 
-  // ── Galería de imágenes desbloqueadas ───────────────────────
-  unlockedImages: [],
+  // ── Galería de imágenes desbloqueadas (por ruta) ────────────
+  unlockedImages: buildRouteEpisodes(),
   unlockImage: (imageId) => {
-    set((state) => ({
-      unlockedImages: state.unlockedImages.includes(imageId)
-        ? state.unlockedImages
-        : [...state.unlockedImages, imageId],
-    }))
+    const pid = get().protagonistId
+    if (!pid) return
+    set((state) => {
+      const routeList = state.unlockedImages[pid] ?? []
+      if (routeList.includes(imageId)) return state
+      return { unlockedImages: { ...state.unlockedImages, [pid]: [...routeList, imageId] } }
+    })
     get().saveProgress()
   },
 
@@ -227,4 +258,8 @@ export const useGameStore = create((set, get) => ({
   imageReveal: null,
   setImageReveal: (imageId) => set({ imageReveal: imageId }),
   clearImageReveal: () => set({ imageReveal: null }),
+
+  // ── Última elección tomada (para HUD, no se persiste) ───────
+  lastChoice: null,
+  setLastChoice: (choice) => set({ lastChoice: choice }),
 }))

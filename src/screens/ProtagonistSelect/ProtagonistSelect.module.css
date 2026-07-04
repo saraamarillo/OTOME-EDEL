@@ -6,10 +6,30 @@
   align-items: center;
   justify-content: center;
   gap: 36px;
-  background:
-    radial-gradient(120% 100% at 50% 40%, rgba(160,90,150,0.28), rgba(20,12,30,0.88)),
-    url('/assets/backgrounds/home.png') center center / cover no-repeat,
-    #0a0d16;
+  background: #0a0d16;
+  overflow: hidden;
+}
+
+.screen::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: url('/assets/backgrounds/campus_noche.png') center center / cover no-repeat;
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 100% at 50% 40%, rgba(160,90,150,0.3), rgba(12,9,18,0.92));
+  z-index: 1;
+}
+
+.screen > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* ── Botón volver ────────────────────────────────────────── */

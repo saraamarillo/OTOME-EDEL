@@ -15,30 +15,6 @@ export default function TitleScreen() {
         <h1 className={styles.logo}>EDEL</h1>
         <p className={styles.subtitle}>Entre Desvelo y Ensueño Latente</p>
 
-        <p className={styles.episode}>Episodio Piloto · Ya disponible</p>
-
-        <div className={styles.credits}>
-          <p>Esta novela visual interactiva está inspirada en la campaña de rol «EDEL»</p>
-          <p>
-            Diseño y adaptación interactiva por{' '}
-            <a
-              href="https://www.instagram.com/saramarillo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.link}
-            >saramarillo</a>
-          </p>
-          <p>
-            Historia original creada y dirigida por{' '}
-            <a
-              href="https://www.instagram.com/cadia.ink"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.link}
-            >cadia.ink</a>
-          </p>
-        </div>
-
         <button
           className={styles.startBtn}
           onClick={() => setScreen('login')}
@@ -47,40 +23,9 @@ export default function TitleScreen() {
         </button>
       </div>
 
-      {/* ── Parte inferior: @checkrol + footer legal ─────────── */}
+      {/* ── Parte inferior ────────────────────────────────────── */}
       <div className={styles.bottom}>
-        <p className={styles.checkrolLine}>
-          Más rutas, episodios y secretos próximamente.{' '}
-          <a
-            href="https://www.instagram.com/checkrol"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.link}
-          >@checkrol</a>
-        </p>
-
-        <p className={styles.footerText}>
-          © 2026 CheckRol. Todos los derechos reservados.{' '}
-          Proyecto inspirado en la campaña de rol «EDEL», creada por{' '}
-          <a
-            href="https://www.instagram.com/cadia.ink"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.link}
-          >cadia.ink</a>
-          {' '}· Adaptada por{' '}
-          <a
-            href="https://www.instagram.com/saramarillo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.link}
-          >saramarillo</a>
-          {' '}· Fanmade sin fines comerciales.
-          <br />
-          Creado con Claude Code de Anthropic · Imágenes generadas con Adobe Firefly
-          <br />
-          Música creada con Suno AI · Corrección y apoyo de guion con OpenAI
-        </p>
+        <p className={styles.hint}>Toca para continuar</p>
       </div>
 
     </div>

@@ -3,46 +3,85 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 42px 60px 36px;
-  gap: 28px;
   background: linear-gradient(180deg, #fbf7f2, #f4eef6);
   overflow-y: auto;
 }
 
-.header {
+.body {
+  flex: 1;
+  padding: 20px 56px 48px;
+}
+
+.topRow {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
   gap: 16px;
 }
 
 .title {
+  margin: 0;
   font-family: var(--font-display);
-  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: 2.2rem;
   color: #8a4fbf;
 }
 
-.count {
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #9aa0ac;
-  padding: 4px 12px;
-  background: #ede6f7;
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  padding: 8px 20px;
+  border: none;
   border-radius: 999px;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #fff;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.tab:hover:not(:disabled) { filter: brightness(1.1); }
+.tab:disabled { cursor: not-allowed; opacity: 0.6; }
+
+.epHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.epBadge {
+  padding: 10px 22px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #9a7be0, #7d5cc8);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 16px rgba(125, 92, 200, 0.4);
+}
+
+.epCount {
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: #ede6f7;
+  color: #7d5cc8;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 .grid {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 22px;
 }
 
-/* Polaroid-style card */
 .card {
   display: flex;
   flex-direction: column;
@@ -53,6 +92,7 @@
   border-radius: 4px;
   box-shadow: 0 14px 34px rgba(90, 60, 120, 0.22);
   cursor: pointer;
+  border: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -64,10 +104,7 @@
   box-shadow: 0 22px 44px rgba(90, 60, 120, 0.32);
 }
 
-.locked {
-  cursor: default;
-  opacity: 0.9;
-}
+.locked { cursor: pointer; opacity: 0.9; }
 
 .thumb {
   width: 100%;
@@ -84,13 +121,9 @@
   justify-content: center;
   background: linear-gradient(160deg, #e79bb0, #d47e97);
   border-radius: 2px;
-  position: relative;
 }
 
-.lock {
-  font-size: 2.4rem;
-  color: rgba(140, 40, 70, 0.5);
-}
+.lock { font-size: 2.4rem; color: rgba(140, 40, 70, 0.5); }
 
 .cardTitle {
   font-family: var(--font-display);
@@ -111,27 +144,86 @@
   margin-top: 2px;
 }
 
-.back {
-  margin-top: auto;
-  padding: 13px 40px;
-  font-family: var(--font-ui);
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: #fff;
-  background: linear-gradient(180deg, #8fd14f, #6bb42f);
+.epFooter {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.replayBtn {
+  padding: 14px 36px;
   border: none;
   border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(107, 180, 47, 0.4);
   cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(180deg, #8fd14f, #6bb42f);
+  box-shadow: 0 10px 24px rgba(107, 180, 47, 0.4);
   transition: filter 0.2s;
 }
 
-.back:hover {
-  filter: brightness(1.06);
+.replayBtn:hover { filter: brightness(1.05); }
+
+.replayBtnDisabled {
+  padding: 14px 36px;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(180deg, #b9bcc6, #9aa0ac);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  cursor: not-allowed;
 }
 
-/* Lightbox */
+.playCount {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #8a7fa0;
+}
+
+.playCount b { color: #7d5cc8; }
+
+/* ── Episodio bloqueado ───────────────────────────────────── */
+.lockedRow {
+  display: flex;
+  gap: 34px;
+  margin-top: 22px;
+  justify-content: center;
+}
+
+.lockedCard {
+  width: 176px;
+  height: 224px;
+  border-radius: 6px;
+  background: linear-gradient(160deg, #e79bb0, #d47e97);
+  box-shadow: 0 12px 28px rgba(150, 70, 100, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lockedCard:nth-child(1) { transform: rotate(-4deg); }
+.lockedCard:nth-child(2) { transform: rotate(4deg); }
+
+.lockedHeart {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 22px;
+}
+
+.lockedIcon {
+  font-size: 46px;
+  color: rgba(140, 40, 70, 0.55);
+}
+
+/* ── Lightbox ─────────────────────────────────────────────── */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -150,7 +242,7 @@
   max-height: 80%;
   object-fit: contain;
   border-radius: 6px;
-  box-shadow: 0 0 60px rgba(255,255,255,0.06);
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.06);
 }
 
 .lightboxHint {
@@ -161,3 +253,70 @@
   color: rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
 }
+
+/* ── Modal "imagen no conseguida" ─────────────────────────── */
+.lockedOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 10, 20, 0.66);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.lockedModal {
+  width: 420px;
+  padding: 34px 30px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.lockedModalIcon {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: #f0f1f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  color: #b7bcc7;
+}
+
+.lockedModalTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #4a4f5c;
+}
+
+.lockedModalText {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: #9aa0ac;
+  max-width: 320px;
+}
+
+.lockedModalBtn {
+  margin-top: 10px;
+  padding: 13px 40px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #fff;
+  background: linear-gradient(180deg, #8b8f9c, #6d7280);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  transition: filter 0.2s;
+}
+
+.lockedModalBtn:hover { filter: brightness(1.06); }

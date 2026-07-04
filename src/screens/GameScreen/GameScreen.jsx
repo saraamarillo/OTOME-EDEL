@@ -9,6 +9,7 @@ import ChoicePanel from '../../components/ChoicePanel/ChoicePanel'
 import AffinityMeter from '../../components/AffinityMeter/AffinityMeter'
 import PhoneCallOverlay from '../../components/PhoneCallOverlay/PhoneCallOverlay'
 import ChatMessageOverlay from '../../components/ChatMessageOverlay/ChatMessageOverlay'
+import { getGalleryImage } from '../../constants/galleryImages'
 import styles from './GameScreen.module.css'
 
 export default function GameScreen() {
@@ -199,23 +200,40 @@ export default function GameScreen() {
       )}
 
       {/* ── Imagen desbloqueada ───────────────────────────── */}
-      {imageReveal && (
-        <div
-          className={styles.imageReveal}
-          onClick={(e) => { e.stopPropagation(); clearImageReveal() }}
-        >
-          <div className={styles.revealCard}>
-            <p className={styles.revealLabel}>♥ Recuerdo desbloqueado ♥</p>
-            <p className={styles.revealTitle}>¡Imagen desbloqueada!</p>
-            <img
-              src={`/assets/gallery/${imageReveal}.png`}
-              alt=""
-              className={styles.revealImg}
-            />
-            <p className={styles.revealHint}>· Toca para continuar ·</p>
+      {imageReveal && (() => {
+        const meta = getGalleryImage(imageReveal)
+        return (
+          <div className={styles.imageReveal} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.revealCard}>
+              <p className={styles.revealLabel}>♥ Recuerdo desbloqueado ♥</p>
+              <div className={styles.revealImgWrap}>
+                <img
+                  src={`/assets/gallery/${imageReveal}.png`}
+                  alt=""
+                  className={styles.revealImg}
+                />
+                {meta && (
+                  <div className={styles.revealCaption}>
+                    <p className={styles.revealCaptionTitle}>{meta.title}</p>
+                    <p className={styles.revealCaptionSub}>{meta.subtitle}</p>
+                  </div>
+                )}
+              </div>
+              <div className={styles.revealActions}>
+                <button
+                  className={styles.revealBtnGhost}
+                  onClick={() => { clearImageReveal(); setScreen('gallery') }}
+                >
+                  Ver en galería
+                </button>
+                <button className={styles.revealBtn} onClick={clearImageReveal}>
+                  Continuar
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      })()}
     </div>
   )
 }

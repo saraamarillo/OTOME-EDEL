@@ -57,33 +57,6 @@
   flex-shrink: 0;
 }
 
-/* "Episodio Piloto · Ya disponible" */
-.episode {
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #ff9ec4;
-  margin: 4px 0 0;
-}
-
-/* Bloque de créditos */
-.credits {
-  margin-top: 2px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.credits p {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  color: rgba(255, 224, 238, 0.45);
-  margin: 0;
-  line-height: 1.6;
-}
-
 /* Botón de inicio */
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
@@ -116,35 +89,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   text-align: center;
-  padding-top: 20px;
+  padding-bottom: 26px;
   width: 100%;
-  max-width: 680px;
 }
 
-.checkrolLine {
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  color: rgba(255, 224, 238, 0.4);
+.hint {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 224, 238, 0.6);
   margin: 0;
-}
-
-.footerText {
-  font-family: var(--font-body);
-  font-size: 0.66rem;
-  color: rgba(255, 224, 238, 0.22);
-  line-height: 1.7;
-  margin: 0;
-}
-
-.link {
-  color: rgba(255, 158, 196, 0.7);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.link:hover {
-  color: #ff9ec4;
-  text-decoration: underline;
 }

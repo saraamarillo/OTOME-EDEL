@@ -1,103 +1,94 @@
-/* ── Fondo ──────────────────────────────────────────────── */
+/* ── Fondo atenuado (deja ver la escena detrás) ──────────── */
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.88);
+  background: rgba(10, 12, 22, 0.55);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.6rem;
   z-index: 20;
   cursor: pointer;
   overflow: hidden;
 }
 
-/* ── Sección central: círculo + nombre + burbuja ────────── */
-.callerSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+/* ── Icono esquina superior izquierda ────────────────────── */
+.iconRow {
+  position: absolute;
+  top: 22px;
+  left: 22px;
 }
 
-/* ── Círculo del llamante — centrado en pantalla ─────────
-   Muestra el avatar (imagen de cara/busto) sin transform.
-   object-position: center 15% sube el foco hacia la cara.  */
-.callerCircle {
-  width: 240px;
-  height: 240px;
+.iconBtn {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.22);
-  box-shadow:
-    0 0 0 10px rgba(255, 255, 255, 0.04),
-    0 0 60px rgba(0, 0, 0, 0.8);
-  background: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.callerImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-}
-
-.phoneIconFallback {
-  width: 72px;
-  height: 72px;
-  opacity: 0.45;
-  object-fit: contain;
-}
-
-/* ── Burbuja de diálogo — centrada debajo del círculo ───── */
-.bubble {
-  background: rgba(14, 14, 26, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 1.4rem 2rem;
-  width: 80%;
-  max-width: 420px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.callLabel {
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
-  margin: 0 0 0.35rem;
-}
-
-.callerName {
-  font-size: 1.15rem;
-  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   color: #fff;
-  letter-spacing: 0.04em;
-  margin: 0 0 0.75rem;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+/* ── Tarjeta centrada ─────────────────────────────────────── */
+.card {
+  width: 480px;
+  max-width: 82%;
+  padding: 30px 34px;
+  border-radius: 24px;
+  background: var(--ui-bg-light);
+  border-top: 4px solid;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 22px 54px rgba(10, 12, 22, 0.45);
+  color: var(--ui-text-dark);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.iconInline {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.speaker {
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.remoteLabel {
+  margin-left: auto;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9aa0ac;
 }
 
 .text {
-  font-size: 0.91rem;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.65;
-  margin: 0 0 0.75rem;
-}
-
-.hint {
-  font-size: 0.54rem;
-  letter-spacing: 0.14em;
-  color: rgba(255, 255, 255, 0.2);
   margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.6;
 }
 
-/* ── Cara protagonista — esquina inferior-izquierda ──────
-   Usa el sprite completo con zoom para mostrar solo la cara. */
+/* ── Cara protagonista — esquina inferior-izquierda ──────── */
 .protagCircle {
   position: absolute;
   bottom: 20px;
@@ -106,15 +97,13 @@
   height: 130px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  border: 3px solid #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 28px rgba(10, 12, 22, 0.5);
   z-index: 2;
   isolation: isolate;
 }
 
-/* Posición directa: imagen 3× el ancho del círculo, centrada,
-   pegada al top → el clip circular muestra solo la zona de la cara */
 .protagImg {
   position: absolute;
   width: 300%;

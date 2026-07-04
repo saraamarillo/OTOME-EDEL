@@ -28,8 +28,9 @@ export default function AffinityMeter({ characterId }) {
       <div className={styles.bar}>
         <div className={`${styles.fill} ${pulsing ? styles.pulse : ''}`} style={{ height: `${pct}%` }} />
       </div>
-      <div className={`${styles.badge} ${pulsing ? styles.pulseBadge : ''}`}>
-        <span className={styles.heart}>♥</span>
+      <div className={`${styles.heartWrap} ${pulsing ? styles.pulseBadge : ''}`}>
+        <span className={styles.heartOutline}>♥</span>
+        <span className={styles.heartFill}>♥</span>
         <span className={styles.pct}>{pct}%</span>
       </div>
     </div>

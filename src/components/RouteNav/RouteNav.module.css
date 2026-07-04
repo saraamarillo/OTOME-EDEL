@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 56px 0;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  color: #182449;
+}
+
+.links {
+  display: flex;
+  gap: 30px;
+}
+
+.link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #7d5cc8;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #5c3fa8;
+}
+
+.active {
+  color: #182449;
+}

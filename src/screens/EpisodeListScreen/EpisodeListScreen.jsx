@@ -1,72 +1,122 @@
 import { useGameStore } from '../../store/gameStore'
+import { PROTAGONISTS } from '../../constants/characters'
+import { AVAILABLE_EPISODES, TOTAL_EPISODES, EPISODES, getFirstScene } from '../../constants/episodes'
+import RouteNav from '../../components/RouteNav/RouteNav'
 import styles from './EpisodeListScreen.module.css'
 
-const TOTAL_EPISODES = 20
-const AVAILABLE = [1, 2]
-
-const EP_TITLES = {
-  1: 'Nueva Etapa Universitaria',
-  2: 'Todo se complica',
+const COVERS = {
+  1: '/assets/backgrounds/campus_dia.png',
+  2: '/assets/backgrounds/residencia_habitacion_noche.png',
 }
 
 export default function EpisodeListScreen() {
-  const setScreen          = useGameStore((s) => s.setScreen)
-  const completedEpisodes  = useGameStore((s) => s.completedEpisodes)
-  const logout             = useGameStore((s) => s.logout)
-  const userName           = useGameStore((s) => s.userName)
-  const selectProtagonist  = useGameStore((s) => s.selectProtagonist)
-  const setSelectedEpisode = useGameStore((s) => s.setSelectedEpisode)
+  const setScreen           = useGameStore((s) => s.setScreen)
+  const setScene            = useGameStore((s) => s.setScene)
+  const setSelectedEpisode  = useGameStore((s) => s.setSelectedEpisode)
+  const selectProtagonist   = useGameStore((s) => s.selectProtagonist)
+  const protagonistId       = useGameStore((s) => s.protagonistId)
+  const completedAll        = useGameStore((s) => s.completedEpisodes)
+  const playCountsAll       = useGameStore((s) => s.episodePlayCounts)
+  const logout              = useGameStore((s) => s.logout)
+  const userName            = useGameStore((s) => s.userName)
 
-  const handlePlay = (ep) => {
+  const completed   = completedAll[protagonistId] ?? []
+  const playCounts  = playCountsAll[protagonistId] ?? {}
+
+  const currentEpisode = AVAILABLE_EPISODES.find((ep) => !completed.includes(ep))
+  const completedList  = AVAILABLE_EPISODES.filter((ep) => completed.includes(ep))
+  const noMoreEpisodes = !currentEpisode && AVAILABLE_EPISODES.length < TOTAL_EPISODES
+
+  function handlePlay(ep) {
     setSelectedEpisode(ep)
-    selectProtagonist(null)
-    setScreen('protagonistSelect')
+    setScene(getFirstScene(ep, protagonistId))
+    setScreen('game')
+  }
+
+  function renderCard(ep, { completed: isCompleted }) {
+    const meta = EPISODES[ep]
+    const timesPlayed = playCounts[ep] ?? 0
+    return (
+      <div key={ep} className={styles.epRow}>
+        <div className={styles.epImageCard}>
+          <div className={styles.epImageTape} />
+          <img src={COVERS[ep]} alt="" className={styles.epImage} />
+        </div>
+        <div className={styles.epInfo}>
+          <div className={styles.epHeading}>
+            <span className={styles.epNumber}>Episodio {ep}</span> · {meta?.title}
+          </div>
+          <p className={styles.epSynopsis}>{meta?.synopsis}</p>
+          <div className={styles.epProgressRow}>
+            <div className={styles.progressTrack}>
+              <div className={styles.progressFill} style={{ width: isCompleted ? '100%' : '0%' }} />
+            </div>
+            <span className={styles.progressPct}>{isCompleted ? '100 %' : '0 %'}</span>
+          </div>
+          <div className={styles.epFooter}>
+            <button
+              className={`${styles.playBtn} ${isCompleted ? styles.replayBtn : ''}`}
+              onClick={() => handlePlay(ep)}
+            >
+              {isCompleted ? 'Volver a jugar el episodio' : 'Comenzar episodio'}
+            </button>
+            {isCompleted && (
+              <span className={styles.playCount}>
+                Episodio jugado <b>{timesPlayed} {timesPlayed === 1 ? 'vez' : 'veces'}</b>
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
     <div className={styles.screen}>
-      <div className={styles.header}>
-        <h1 className={styles.logo}>EDEL</h1>
-        <div className={styles.userRow}>
-          <span className={styles.userName}>♥ {userName}</span>
-          <button className={styles.logoutBtn} onClick={logout}>Salir</button>
+      <RouteNav active="episodeList" />
+
+      <div className={styles.body}>
+        <div className={styles.topRow}>
+          <div className={styles.tabs}>
+            {PROTAGONISTS.map((p) => (
+              <button
+                key={p.id}
+                className={styles.tab}
+                style={{ background: p.id === protagonistId ? p.color : 'rgba(150,150,160,0.5)' }}
+                disabled={!p.available}
+                onClick={() => selectProtagonist(p.id)}
+              >
+                {p.name.split(' ')[0]}
+              </button>
+            ))}
+          </div>
+          <div className={styles.userRow}>
+            <span className={styles.userName}>♥ {userName}</span>
+            <button className={styles.logoutBtn} onClick={logout}>Salir</button>
+          </div>
         </div>
-      </div>
 
-      <p className={styles.sectionTitle}>Episodios</p>
+        {currentEpisode && (
+          <>
+            <div className={styles.sectionLabel}>Resumen del episodio actual</div>
+            {renderCard(currentEpisode, { completed: false })}
+          </>
+        )}
 
-      <div className={styles.grid}>
-        {Array.from({ length: TOTAL_EPISODES }, (_, i) => {
-          const ep = i + 1
-          const available = AVAILABLE.includes(ep)
-          const completed = completedEpisodes.includes(ep)
+        {noMoreEpisodes && (
+          <div className={styles.emptyState}>
+            <div className={styles.emptyIcon}>♥</div>
+            <h2 className={styles.emptyTitle}>No hay más episodios disponibles por ahora</h2>
+            <p className={styles.emptyText}>Vuelve pronto para continuar la historia.</p>
+          </div>
+        )}
 
-          return (
-            <div
-              key={ep}
-              className={`${styles.card} ${available ? styles.available : styles.locked} ${completed ? styles.completed : ''}`}
-              onClick={() => available && handlePlay(ep)}
-            >
-              <span className={styles.epNum}>Ep. {ep}</span>
-              {available ? (
-                <>
-                  <span className={styles.epTitle}>{EP_TITLES[ep] ?? ''}</span>
-                  <span className={styles.epStatus}>
-                    {completed ? '↻ Repetir episodio' : '▶ Jugar'}
-                  </span>
-                </>
-              ) : (
-                <span className={styles.comingSoon}>Próximamente</span>
-              )}
-            </div>
-          )
-        })}
-      </div>
-
-      <div className={styles.footer}>
-        <button className={styles.galleryBtn} onClick={() => setScreen('gallery')}>
-          Ver galería
-        </button>
+        {completedList.length > 0 && (
+          <>
+            <div className={styles.sectionLabel} style={{ marginTop: 34 }}>Episodios terminados</div>
+            {completedList.map((ep) => renderCard(ep, { completed: true }))}
+          </>
+        )}
       </div>
     </div>
   )

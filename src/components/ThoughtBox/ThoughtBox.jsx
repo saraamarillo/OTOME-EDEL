@@ -22,12 +22,14 @@ export default function ThoughtBox({ node }) {
 
   return (
     <div className={styles.wrapper}>
-      <img
-        className={styles.avatar}
-        src={protagonist.avatar}
-        alt={protagonist.name}
-        draggable={false}
-      />
+      <div className={styles.avatarRing} data-protagonist={protagonistId}>
+        <img
+          className={styles.avatar}
+          src={protagonist.avatar}
+          alt={protagonist.name}
+          draggable={false}
+        />
+      </div>
       {isThought && node.text && (
         <>
           <div className={styles.dots} data-protagonist={protagonistId}>

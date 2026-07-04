@@ -8,14 +8,26 @@
   z-index: 10;
 }
 
-.avatar {
-  width: 140px;
-  height: 140px;
+.avatarRing {
+  width: 148px;
+  height: 148px;
   border-radius: 50%;
-  border: 4px solid #ffffff;
-  object-fit: cover;
+  padding: 4px;
   flex-shrink: 0;
+  background: linear-gradient(180deg, #c9d3e6, #aeb9d0);
   box-shadow: 0 10px 28px rgba(10, 12, 22, 0.5);
+}
+
+.avatarRing[data-protagonist="soledad"] { background: linear-gradient(180deg, #fbdca0, #f3c467); }
+.avatarRing[data-protagonist="ayla"]    { background: linear-gradient(180deg, #bfe3cd, #8fcaa6); }
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  object-fit: cover;
+  display: block;
 }
 
 /* Tres puntitos entre el avatar y la nube */

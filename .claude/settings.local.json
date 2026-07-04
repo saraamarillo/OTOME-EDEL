@@ -3,7 +3,13 @@
     "allow": [
       "mcp__Claude_Preview__preview_start",
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\saraa\\\\OneDrive\\\\Escritorio\\\\OTOME_EDEL\\\\public\\\\assets\" -Recurse | Where-Object { $_.Name -ne \".gitkeep\" } | Select-Object FullName, Length)",
-      "PowerShell(\\(Get-ChildItem \"C:\\\\Users\\\\saraa\\\\OneDrive\\\\Escritorio\\\\OTOME_EDEL\\\\public\\\\assets\" -Recurse\\).Count)"
+      "PowerShell(\\(Get-ChildItem \"C:\\\\Users\\\\saraa\\\\OneDrive\\\\Escritorio\\\\OTOME_EDEL\\\\public\\\\assets\" -Recurse\\).Count)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh pr create --title 'feat: per-route affinities, companion meter & expanded Lydia scene' --body ' *)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\\\\GitHub CLI\\\\gh.exe\" -ErrorAction SilentlyContinue; Get-ChildItem \"C:\\\\Users\\\\saraa\\\\AppData\\\\Local\\\\Programs\\\\GitHub CLI\\\\\" -ErrorAction SilentlyContinue)",
+      "Bash(node -e \"const s=require\\('C:/Users/saraa/OneDrive/Escritorio/OTOME_EDEL/src/data/scenes/sol_ep2.json'\\); const nodes=Object.values\\(s.nodes\\); console.log\\(JSON.stringify\\(nodes.slice\\(0,4\\),null,2\\)\\); console.log\\('---last---'\\); console.log\\(JSON.stringify\\(nodes.slice\\(-3\\),null,2\\)\\)\")"
     ]
   }
 }

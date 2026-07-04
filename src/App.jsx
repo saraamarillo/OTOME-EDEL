@@ -4,6 +4,8 @@ import TitleScreen from './screens/TitleScreen/TitleScreen'
 import LoginScreen from './screens/LoginScreen/LoginScreen'
 import EpisodeListScreen from './screens/EpisodeListScreen/EpisodeListScreen'
 import ProtagonistSelect from './screens/ProtagonistSelect/ProtagonistSelect'
+import LandingScreen from './screens/LandingScreen/LandingScreen'
+import CharactersScreen from './screens/CharactersScreen/CharactersScreen'
 import GameScreen from './screens/GameScreen/GameScreen'
 import EpisodeEndScreen from './screens/EpisodeEndScreen/EpisodeEndScreen'
 import ComingSoonScreen from './screens/ComingSoonScreen/ComingSoonScreen'
@@ -18,8 +20,10 @@ const GAME_H = 720
 const SCREENS = {
   title: TitleScreen,
   login: LoginScreen,
-  episodeList: EpisodeListScreen,
   protagonistSelect: ProtagonistSelect,
+  landing: LandingScreen,
+  episodeList: EpisodeListScreen,
+  characters: CharactersScreen,
   game: GameScreen,
   episodeEnd: EpisodeEndScreen,
   comingSoon: ComingSoonScreen,

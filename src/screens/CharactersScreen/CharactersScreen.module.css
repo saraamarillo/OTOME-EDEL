@@ -1,0 +1,122 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fbf7f2, #f4eef6);
+  overflow-y: auto;
+}
+
+.body {
+  flex: 1;
+  padding: 20px 56px 48px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #182449;
+}
+
+.hint {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: #9a8fae;
+}
+
+.empty {
+  margin-top: 40px;
+  font-family: var(--font-body);
+  font-style: italic;
+  color: #8a7fa0;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-top: 30px;
+}
+
+.card {
+  width: 300px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(90, 60, 120, 0.14);
+  overflow: hidden;
+  border-top: 5px solid;
+  padding: 22px 22px 22px;
+}
+
+.cardHead {
+  display: flex;
+  gap: 16px;
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #182449;
+}
+
+.role {
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.affinityRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 18px 0 6px;
+}
+
+.affinityLabel {
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9aa0ac;
+}
+
+.affinityPct {
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.barTrack {
+  height: 10px;
+  border-radius: 999px;
+  background: #eceaf2;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}

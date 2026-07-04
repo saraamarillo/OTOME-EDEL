@@ -123,11 +123,11 @@
 /* ── Medidor de afinidad ─────────────────────────────────── */
 .affinityPanel {
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 64px;
+  right: 30px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 14px;
   pointer-events: none;
 }
@@ -332,31 +332,83 @@
   color: #ff9ec4;
 }
 
-.revealTitle {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #fdf3f7;
-  margin: 0;
-}
-
-.revealImg {
-  width: 100%;
-  height: 310px;
-  object-fit: cover;
+.revealImgWrap {
+  position: relative;
   border-radius: 14px;
+  overflow: hidden;
   border: 3px solid rgba(255, 158, 196, 0.75);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
-.revealHint {
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: rgba(255, 224, 238, 0.4);
-  text-transform: uppercase;
+.revealImg {
+  display: block;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
 }
+
+.revealCaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px 18px 12px;
+  text-align: left;
+  background: linear-gradient(180deg, transparent, rgba(8, 10, 20, 0.85));
+}
+
+.revealCaptionTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.revealCaptionSub {
+  margin: 2px 0 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(255, 224, 238, 0.75);
+}
+
+.revealActions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.revealBtn {
+  padding: 13px 40px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #fff;
+  background: linear-gradient(180deg, #ff89b6, #e85a92);
+  box-shadow: 0 10px 24px rgba(232, 90, 146, 0.45);
+  transition: filter 0.2s;
+}
+
+.revealBtn:hover { filter: brightness(1.06); }
+
+.revealBtnGhost {
+  padding: 13px 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 224, 238, 0.45);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fdf3f7;
+  transition: background 0.2s;
+}
+
+.revealBtnGhost:hover { background: rgba(255, 255, 255, 0.08); }
 
 @keyframes fadeReveal {
   from { opacity: 0; }
