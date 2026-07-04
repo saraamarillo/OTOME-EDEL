@@ -131,6 +131,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Aquí pasan cosas rarísimas. Fantasmas, cuadros que cambian, casas abandonadas... cosas así.",
+      "expression": "happy",
       "next": "n_conv_02"
     },
     {
@@ -161,13 +162,15 @@
       "text": "Mientras Ethan habla, Soledad mira hacia una zona exterior visible desde la cafetería. Una silueta femenina está apoyada contra un árbol, observándola fijamente.",
       "next": "n_conv_05",
       "activeCharacter": "grace",
-      "lookChanges": { "grace": "arc2" }
+      "lookChanges": { "grace": "arc2" },
+      "protagonistExpression": "surprised"
     },
     {
       "id": "n_conv_05",
       "type": "thought",
       "character": null,
       "text": "¿Me está mirando a mí?",
+      "protagonistExpression": "surprised",
       "next": "n_conv_06"
     },
     {
@@ -196,6 +199,7 @@
       "type": "thought",
       "character": null,
       "text": "No ha podido desaparecer tan rápido. No si estaba ahí de verdad.",
+      "protagonistExpression": "surprised",
       "next": "n_choice_grace"
     },
     {
@@ -222,6 +226,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¿Ya te vas?",
+      "expression": "sad",
       "next": "n_desp_03"
     },
     {

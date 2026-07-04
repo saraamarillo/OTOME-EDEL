@@ -6,9 +6,9 @@
   align-items: center;
   justify-content: space-between;
   background:
-    radial-gradient(ellipse at 50% 60%, rgba(44, 62, 107, 0.35) 0%, transparent 70%),
+    radial-gradient(120% 100% at 50% 20%, rgba(255,190,220,0.18), rgba(90,50,110,0.38) 55%, rgba(18,12,28,0.88)),
     url('/assets/backgrounds/home.png') center center / cover no-repeat,
-    #0a0814;
+    #0a0d16;
   overflow-y: auto;
   padding: 40px 24px 28px;
 }
@@ -26,31 +26,46 @@
 
 .logo {
   font-family: var(--font-display);
-  font-size: 6rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  color: #f0ebe0;
-  text-shadow: 0 0 60px rgba(200, 146, 42, 0.4);
+  font-size: 11rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #fdf3f7;
+  text-shadow: 0 6px 44px rgba(255,120,180,0.4), 0 2px 30px rgba(0,0,0,0.5);
   margin: 0;
+  line-height: 0.9;
+  padding-left: 0.18em;
 }
 
 .subtitle {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 1rem;
-  color: var(--ui-text-dim);
-  letter-spacing: 0.12em;
+  font-size: 1.2rem;
+  color: #ffe3ef;
+  letter-spacing: 0.04em;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.subtitle::before,
+.subtitle::after {
+  content: '';
+  width: 46px;
+  height: 1px;
+  background: rgba(255, 180, 210, 0.8);
+  flex-shrink: 0;
 }
 
 /* "Episodio Piloto · Ya disponible" */
 .episode {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
   font-weight: 700;
-  color: #bae6fd;          /* sky-200 — azul claro */
-  letter-spacing: 0.06em;
-  margin: 6px 0 0;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ff9ec4;
+  margin: 4px 0 0;
 }
 
 /* Bloque de créditos */
@@ -64,30 +79,36 @@
 .credits p {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 224, 238, 0.45);
   margin: 0;
   line-height: 1.6;
 }
 
 /* Botón de inicio */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
 .startBtn {
-  margin-top: 28px;
-  padding: 12px 48px;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ui-text);
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  margin-top: 36px;
+  padding: 18px 62px;
+  font-family: var(--font-ui);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: linear-gradient(180deg, #ff89b6, #e85a92);
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 14px 34px rgba(232, 90, 146, 0.5);
   cursor: pointer;
+  animation: floaty 3.4s ease-in-out infinite;
+  transition: filter 0.2s;
 }
 
 .startBtn:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.5);
+  filter: brightness(1.08);
 }
 
 /* ── Parte inferior ────────────────────────────────────────── */
@@ -104,27 +125,26 @@
 
 .checkrolLine {
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.76rem;
+  color: rgba(255, 224, 238, 0.4);
   margin: 0;
 }
 
 .footerText {
   font-family: var(--font-body);
-  font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.22);
+  font-size: 0.66rem;
+  color: rgba(255, 224, 238, 0.22);
   line-height: 1.7;
   margin: 0;
 }
 
-/* ── Enlace morado oscuro ─────────────────────────────────── */
 .link {
-  color: #7c3aed;
+  color: rgba(255, 158, 196, 0.7);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: #8b5cf6;
+  color: #ff9ec4;
   text-decoration: underline;
 }

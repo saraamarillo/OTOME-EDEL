@@ -50,6 +50,7 @@
       "type": "dialogue",
       "character": "lydia",
       "text": "¿El de Ethan? ¿También te quedaste sin opciones?",
+      "expression": "neutral",
       "next": "n_ayla_03"
     },
     {
@@ -78,6 +79,7 @@
       "type": "dialogue",
       "character": "lydia",
       "text": "¿Y esa cámara? ¿La llevas siempre encima o solo en situaciones de emergencia?",
+      "expression": "neutral",
       "next": "n_ayla_04"
     },
     {
@@ -92,6 +94,7 @@
       "type": "dialogue",
       "character": "lydia",
       "text": "Me gusta. Yo llevo las plantas. Supongo que cada una tiene lo suyo.",
+      "expression": "neutral",
       "next": "n_narr_silencio"
     },
     {
@@ -131,6 +134,7 @@
       "type": "thought",
       "character": null,
       "text": "Vale. Definitivamente es la compañera más interesante que podía tocarme.",
+      "protagonistExpression": "happy",
       "next": "n_pl_03"
     },
     {
@@ -167,6 +171,7 @@
       "type": "thought",
       "character": null,
       "text": "Quizás este sitio no sea tan horrible.",
+      "protagonistExpression": "happy",
       "next": "n_final_01"
     },
     {
@@ -195,6 +200,7 @@
       "type": "dialogue",
       "character": "lydia",
       "text": "De toda la vida. Crecimos juntos en el mismo barrio.",
+      "expression": "happy",
       "next": "n_eth_02"
     },
     {
@@ -223,6 +229,7 @@
       "type": "thought",
       "character": null,
       "text": "Nuevo campus. Nueva ciudad. Y ya siento que algo raro está empezando.",
+      "protagonistExpression": "neutral",
       "next": "n_final_03"
     },
     {

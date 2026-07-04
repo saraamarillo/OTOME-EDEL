@@ -1,7 +1,7 @@
 {
   "id": "scene_02_encuentro_ethan",
   "title": "El Club Paranormal",
-  "background": "club_paranormal",
+  "background": "club_paranormal_tarde",
   "nodes": [
     {
       "id": "node_001",
@@ -137,7 +137,7 @@
       "character": "ethan",
       "text": "¡Genial! Pues venga, vamos. Luego os invito a algo, que el café es gratis.",
       "next": "node_010a_sec",
-      "background": "secretaria"
+      "background": "secretaria_tarde"
     },
     {
       "id": "node_010a_sec",
@@ -152,7 +152,7 @@
       "character": "ethan",
       "text": "Claro, sin problema. Igual luego si queréis os enseño algo, sin compromiso.",
       "next": "node_010b_sec",
-      "background": "secretaria"
+      "background": "secretaria_tarde"
     },
     {
       "id": "node_010b_sec",

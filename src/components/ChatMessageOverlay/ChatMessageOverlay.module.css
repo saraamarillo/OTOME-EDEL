@@ -1,0 +1,111 @@
+.wrapper {
+  position: absolute;
+  bottom: 160px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 15;
+  cursor: pointer;
+  overflow: visible;
+}
+
+/* ── Cara del remitente ─────────────────────────────────────
+   Gran círculo esquina superior-izquierda, poco cortado.
+   Solo se ve la cara (zoom agresivo).                       */
+.senderCircle {
+  position: absolute;
+  top: -200px;
+  left: -30px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 0 0 8px rgba(255, 255, 255, 0.04),
+    0 0 50px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.senderImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.9);
+  transform-origin: center 22%;
+}
+
+.senderInitial {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Burbuja de mensaje ───────────────────────────────────── */
+.bubble {
+  position: relative;
+  width: 82%;
+  max-width: 500px;
+  background: rgba(14, 14, 26, 0.93);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px 18px 18px 4px;
+  padding: 1rem 4.5rem 1rem 1.2rem;  /* espacio derecha para cara protagonista */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  min-height: 80px;
+  z-index: 2;
+}
+
+.name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+}
+
+.text {
+  font-size: 0.91rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Cara protagonista: dentro de la burbuja, derecha ──────── */
+.protagCircle {
+  position: absolute;
+  right: -20px;
+  bottom: -18px;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.protagImg {
+  position: absolute;
+  width: 300%;
+  height: auto;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hint {
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0.25rem 0 0;
+}

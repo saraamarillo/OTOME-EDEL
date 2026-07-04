@@ -89,9 +89,9 @@
     },
     {
       "id": "n_s1_curiosear_03",
-      "type": "thought",
+      "type": "narration",
       "character": null,
-      "text": "(Se pone nerviosa.)",
+      "text": "Se queda paralizada.",
       "next": "n_s1_curiosear_04"
     },
     {
@@ -106,6 +106,8 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "¿Todo bien?",
+      "expression": "neutral",
+      "protagonistExpression": "neutral",
       "next": "n_s1_curiosear_06"
     },
     {
@@ -131,11 +133,11 @@
     },
     {
       "id": "n_s2_madre_01",
-      "type": "dialogue",
+      "type": "phone",
       "character": "madre",
       "text": "¡Soledad! ¿Dónde estás? ¡Te he llamado dos veces! Con el apagón no tenía cobertura y no sabía nada de ti...",
-      "next": "n_s2_sol_01",
-      "activeCharacter": null
+      "protagonistExpression": "neutral",
+      "next": "n_s2_sol_01"
     },
     {
       "id": "n_s2_sol_01",
@@ -153,11 +155,11 @@
     },
     {
       "id": "n_s2_madre_02",
-      "type": "dialogue",
+      "type": "phone",
       "character": "madre",
       "text": "¿Un chico? ¿Qué chico? ¿Le conoces de algo?",
-      "next": "n_s2_sol_02",
-      "activeCharacter": null
+      "protagonistExpression": "neutral",
+      "next": "n_s2_sol_02"
     },
     {
       "id": "n_s2_sol_02",
@@ -212,25 +214,26 @@
     },
     {
       "id": "n_s2_madre_03",
-      "type": "dialogue",
+      "type": "phone",
       "character": "madre",
       "text": "Estamos bien, sí. Pero llámame cuando pasan estas cosas, ¿vale?",
-      "next": "n_s3_01",
-      "activeCharacter": null
+      "protagonistExpression": "neutral",
+      "next": "n_s3_01"
     },
     {
       "id": "n_s3_01",
       "type": "narration",
       "character": null,
-      "text": "Ryan aparece en el pasillo, despeinado.",
+      "text": "Ryan aparece en el pasillo, todavía despeinado.",
       "next": "n_s3_02",
-      "background": "casa_Ryan_dia"
+      "background": "habitacion_ryan_dia"
     },
     {
       "id": "n_s3_02",
       "type": "dialogue",
       "character": "ryan",
       "text": "Ey, buenos días.",
+      "expression": "neutral",
       "next": "n_s3_t01"
     },
     {
@@ -279,6 +282,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "No hay de qué.",
+      "expression": "neutral",
       "next": "n_s4_01"
     },
     {
@@ -300,6 +304,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "¿No te quedas a desayunar? He hecho café.",
+      "expression": "neutral",
       "next": "n_s4_02"
     },
     {
@@ -422,6 +427,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "¿Medicina? Vaya cambio.",
+      "expression": "surprised",
       "next": "n_s4_cg"
     },
     {
@@ -513,7 +519,7 @@
       "id": "n_s6_padre",
       "type": "dialogue",
       "character": "padre",
-      "text": "El instinto no siempre lleva a algo bueno.",
+      "text": "El instinto no siempre lleva a algo bueno, Soledad.",
       "next": "n_s6_t01",
       "activeCharacter": null
     },
@@ -521,7 +527,7 @@
       "id": "n_s6_t01",
       "type": "thought",
       "character": null,
-      "text": "(Gracias, papá. Muy tranquilizador.)",
+      "text": "(Gracias, papá. Muy tranquilizador como siempre.)",
       "next": "n_s7_01"
     },
     {
@@ -637,14 +643,14 @@
       "id": "n_s10_ethan",
       "type": "dialogue",
       "character": "ethan",
-      "text": "Habíamos quedado a las 17:30.",
+      "text": "Ey, habíamos quedado a las 17:30. Llevo diez minutos aquí.",
       "next": "n_s10_t01"
     },
     {
       "id": "n_s10_t01",
       "type": "thought",
       "character": null,
-      "text": "(Mira el reloj. Se dirige hacia la entrada de la Universidad.)",
+      "text": "(Mira el reloj. Llega exactamente a tiempo, pero Ethan siempre llega antes.)",
       "next": "n_s11_01"
     },
     {
@@ -656,16 +662,18 @@
     },
     {
       "id": "n_s11_ayla",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ayla",
-      "text": "Soledad. La chica que viste ayer, la del árbol... la estoy viendo. Me está siguiendo. Te mando la ubicación.",
+      "text": "Soledad. La chica que viste ayer, la del árbol... la estoy viendo. La he seguido hasta los callejones del centro. Te mando la ubicación.",
+      "expression": "neutral",
+      "protagonistExpression": "surprised",
       "next": "n_s11_t01"
     },
     {
       "id": "n_s11_t01",
       "type": "thought",
       "character": null,
-      "text": "(¿Cómo que existe de verdad?)",
+      "text": "(¿La ha seguido sola? Esa chica...)",
       "next": "n_s11_choice"
     },
     {
@@ -736,6 +744,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Mira esto.",
+      "expression": "neutral",
       "next": "n_s12_03"
     },
     {
@@ -749,7 +758,7 @@
       "id": "n_s12_t01",
       "type": "thought",
       "character": null,
-      "text": "(Esto ya no parece postureo paranormal.)",
+      "text": "(Accidentes. Todos con el mismo símbolo. Esto ya no parece casualidad.)",
       "next": "n_s12_choice"
     },
     {
@@ -800,7 +809,7 @@
       "id": "n_s13_t01",
       "type": "thought",
       "character": null,
-      "text": "(Dolor de cabeza.)",
+      "text": "(Otra vez ese pitido. Otro dolor de cabeza.)",
       "next": "n_s13_chica"
     },
     {
@@ -808,6 +817,7 @@
       "type": "narration",
       "character": null,
       "text": "La chica misteriosa aparece al fondo del callejón. Entra en la fábrica de harina.",
+      "protagonistExpression": "surprised",
       "next": "n_s13_choice"
     },
     {
@@ -846,6 +856,7 @@
       "type": "thought",
       "character": null,
       "text": "(Todo mi cuerpo me dice que salga.)",
+      "protagonistExpression": "sad",
       "next": "n_s14_movil"
     },
     {
@@ -859,7 +870,7 @@
       "id": "n_s14_t02",
       "type": "thought",
       "character": null,
-      "text": "(Otra vez el móvil.)",
+      "text": "(Sin cobertura. Claro. En el peor momento posible.)",
       "next": "n_s15_01"
     },
     {
@@ -881,7 +892,8 @@
       "id": "n_s15_ethan",
       "type": "dialogue",
       "character": "ethan",
-      "text": "¿Qué hacéis aquí? ¿Sabéis lo que—?",
+      "text": "¿Qué hacéis aquí solas? Os he estado buscando por todo el campus, ¿sabéis lo que—?",
+      "expression": "angry",
       "next": "n_s15_derrumbe"
     },
     {
@@ -896,6 +908,7 @@
       "type": "narration",
       "character": null,
       "text": "Ethan está en el suelo. Herido.",
+      "protagonistExpression": "sad",
       "next": "n_s15_t01"
     },
     {
@@ -937,6 +950,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Llama a Ryan.",
+      "expression": "sad",
       "next": "n_s16_t01"
     },
     {
@@ -955,9 +969,11 @@
     },
     {
       "id": "n_s16_ryan_01",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ryan",
       "text": "¿Soledad? No me esperaba que llamaras tan pronto.",
+      "expression": "surprised",
+      "protagonistExpression": "sad",
       "next": "n_s16_sol"
     },
     {
@@ -969,16 +985,18 @@
     },
     {
       "id": "n_s16_ryan_02",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ryan",
       "text": "Ahora voy.",
+      "expression": "neutral",
+      "protagonistExpression": "sad",
       "next": "n_s16_t02"
     },
     {
       "id": "n_s16_t02",
       "type": "thought",
       "character": null,
-      "text": "(Eso solo lo hace un buen amigo.)",
+      "text": "(Sin preguntas. Solo: ahora voy.)",
       "next": "n_s17_01"
     },
     {
@@ -999,7 +1017,8 @@
       "id": "n_s17_toque",
       "type": "narration",
       "character": null,
-      "text": "Antes de irse, Ryan le da un toque en la frente a Soledad.",
+      "text": "Antes de arrancar, Ryan se para un segundo. Le da un toque suave en la frente con dos dedos.",
+      "protagonistExpression": "blush",
       "next": "n_s17_t01"
     },
     {
@@ -1013,7 +1032,7 @@
       "id": "n_s17_vuelve",
       "type": "narration",
       "character": null,
-      "text": "Soledad vuelve a la universidad. Después llama a Ryan.",
+      "text": "Soledad se aleja de la fábrica buscando cobertura. Cuando le vuelve la señal, llama a Ryan.",
       "next": "n_s17_llama"
     },
     {
@@ -1025,9 +1044,11 @@
     },
     {
       "id": "n_s17_ryan",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ryan",
       "text": "Ahora voy para allá.",
+      "expression": "neutral",
+      "protagonistExpression": "sad",
       "next": "n_s18_01"
     },
     {
@@ -1036,7 +1057,7 @@
       "character": null,
       "text": "Comisaría. Ryan y Soledad esperan su turno.",
       "next": "n_s18_02",
-      "background": "comisaria"
+      "background": "comisaria_tarde"
     },
     {
       "id": "n_s18_02",
@@ -1049,7 +1070,7 @@
       "id": "n_s18_frey",
       "type": "dialogue",
       "character": "frey",
-      "text": "Les llamaremos si tenemos noticias.",
+      "text": "Queda registrado. Les avisamos.",
       "next": "n_s19_01"
     },
     {
@@ -1143,16 +1164,18 @@
     },
     {
       "id": "n_s20_frey",
-      "type": "dialogue",
+      "type": "phone",
       "character": "frey",
-      "text": "Ayla está bien. Está de vuelta en la residencia.",
+      "text": "Ayla está bien. Ha aparecido en la residencia hace media hora.",
+      "expression": "neutral",
+      "protagonistExpression": "happy",
       "next": "n_s20_t01"
     },
     {
       "id": "n_s20_t01",
       "type": "thought",
       "character": null,
-      "text": "(Uf. Qué alivio de que esté bien.)",
+      "text": "(Está bien. Respira.)",
       "next": "n_s20_msg"
     },
     {
@@ -1175,7 +1198,7 @@
       "character": null,
       "text": "Soledad llega a casa. Cena sola.",
       "next": "n_s21_02",
-      "background": "habitacion_Soledad_dia"
+      "background": "habitacion_Soledad_noche"
     },
     {
       "id": "n_s21_02",
@@ -1210,6 +1233,9 @@
       "type": "dialogue",
       "character": "grace",
       "text": "Parece que han aparecido nuevas incorporaciones.",
+      "expression": "neutral",
+      "background": "pantalla_negra",
+      "lookChanges": { "grace": "arc1_silueta" },
       "next": null,
       "endEpisode": true
     }

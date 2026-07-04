@@ -191,6 +191,18 @@ export const useGameStore = create((set, get) => ({
     })),
   getCharacterLook: (characterId) => get().characterLooks[characterId] ?? 'arc1',
 
+  // ── Expresión manual de NPC (sobreescribe la de afinidad) ──
+  // Se establece por nodo; null = usar la de afinidad
+  characterExpressions: {},
+  setCharacterExpression: (characterId, expression) =>
+    set((state) => ({
+      characterExpressions: { ...state.characterExpressions, [characterId]: expression },
+    })),
+
+  // ── Expresión de la protagonista (para burbujas y reacciones) ─
+  protagonistExpression: 'neutral',
+  setProtagonistExpression: (expression) => set({ protagonistExpression: expression }),
+
   // ── Historial de escenas visitadas ─────────────────────────
   visitedScenes: [],
   markSceneVisited: (sceneId) =>

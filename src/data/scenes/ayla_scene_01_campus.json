@@ -111,7 +111,7 @@
       "character": null,
       "text": "Después de recorrer varios clubs sin éxito, Ayla decide ir a secretaría.",
       "next": "n_sec_02",
-      "background": "secretaria"
+      "background": "secretaria_tarde"
     },
     {
       "id": "n_sec_02",
@@ -338,13 +338,14 @@
       "character": null,
       "text": "Un chico aparece en el descansillo superior.",
       "next": "n_ethan_01",
-      "background": "club_paranormal"
+      "background": "club_paranormal_tarde"
     },
     {
       "id": "n_ethan_01",
       "type": "dialogue",
       "character": "ethan",
       "text": "¡Anda, hola!",
+      "expression": "neutral",
       "next": "n_ethan_t01"
     },
     {
@@ -352,6 +353,7 @@
       "type": "thought",
       "character": null,
       "text": "Vale. No esperaba encontrarme a alguien así aquí.",
+      "protagonistExpression": "neutral",
       "next": "n_ethan_t02"
     },
     {
@@ -359,6 +361,7 @@
       "type": "thought",
       "character": null,
       "text": "¿Ojos ámbar? ¿Eso existe? Porque parece sacado de Pinterest.",
+      "protagonistExpression": "blush",
       "next": "n_ethan_pres"
     },
     {
@@ -398,6 +401,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¡Ah, genial! O sea... sé que suena raro. Pero llevo semanas prácticamente solo aquí. Me alegra un montón que vengáis.",
+      "expression": "happy",
       "next": "n_ethan_reac_t"
     },
     {
@@ -405,6 +409,7 @@
       "type": "thought",
       "character": null,
       "text": "La ilusión que le ha hecho. Es genuina. No hay forma de fingir eso.",
+      "protagonistExpression": "happy",
       "next": "n_ethan_nombres"
     },
     {
@@ -461,6 +466,7 @@
       "type": "thought",
       "character": null,
       "text": "Es demasiado sociable. ¿Cómo puede estar tan feliz de tener personas nuevas alrededor?",
+      "protagonistExpression": "neutral",
       "next": "n_ethan_c03"
     },
     {
@@ -558,6 +564,7 @@
       "type": "thought",
       "character": null,
       "text": "No he visto nada... pero Soledad parece realmente alterada.",
+      "protagonistExpression": "neutral",
       "next": "n_choice_sol2"
     },
     {
@@ -584,6 +591,7 @@
       "type": "thought",
       "character": null,
       "text": "Es raro. Acabo de conocerles y ya siento que el día habría sido peor sin ellos.",
+      "protagonistExpression": "happy",
       "next": "n_desp_03"
     },
     {

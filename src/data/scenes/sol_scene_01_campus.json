@@ -154,7 +154,7 @@
       "character": null,
       "text": "Llega un mensaje al móvil de la Universidad Somnia: «Bienvenidos, os recordamos que para terminar vuestra matriculación tenéis que presentaros a uno de los clubs. Os aconsejamos que habléis con los clubs de la entrada o vayáis a secretaría.»",
       "next": "n_sec_02",
-      "background": "secretaria"
+      "background": "secretaria_tarde"
     },
     {
       "id": "n_sec_02",
@@ -221,6 +221,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Igual. Pensé que sería más sencillo.",
+      "expression": "sad",
       "next": "n_pres_pausa"
     },
     {
@@ -360,13 +361,14 @@
       "character": null,
       "text": "Se escuchan pasos rápidos en la planta superior. Alguien se asoma desde el descansillo.",
       "next": "n_ethan_01",
-      "background": "club_paranormal"
+      "background": "club_paranormal_tarde"
     },
     {
       "id": "n_ethan_01",
       "type": "dialogue",
       "character": "ethan",
       "text": "¡Anda, hola!",
+      "expression": "surprised",
       "next": "n_ethan_t01"
     },
     {
@@ -420,6 +422,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¡Ah, genial! O sea... sé que suena raro decirlo así. Pero llevo semanas prácticamente solo aquí. Me alegra un montón que vengáis.",
+      "expression": "happy",
       "next": "n_ethan_reac_t"
     },
     {
@@ -427,6 +430,7 @@
       "type": "thought",
       "character": null,
       "text": "La ilusión que le ha hecho. No sé si eso es tierno o me da algo de pena.",
+      "protagonistExpression": "sad",
       "next": "n_ethan_nombres"
     },
     {
@@ -455,6 +459,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¡Perfecto! Ethan Wood. Encantado de conoceros a las dos.",
+      "expression": "happy",
       "next": "n_ethan_insc_01"
     },
     {
@@ -497,6 +502,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¡Genial! Os voy a enseñar los sitios buenos. Y los menos buenos. Bueno, básicamente todo.",
+      "expression": "happy",
       "next": "n_ethan_c05"
     },
     {

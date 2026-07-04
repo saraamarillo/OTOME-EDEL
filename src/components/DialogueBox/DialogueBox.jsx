@@ -31,7 +31,7 @@ export default function DialogueBox({ node }) {
   const labelColor = npcChar?.color ?? protagonistChar?.color
 
   return (
-    <div className={boxClass}>
+    <div className={boxClass} style={{ borderTopColor: labelColor || 'rgba(200,150,180,0.55)' }}>
       {labelName && node.character && (
         <p className={styles.name} style={{ color: labelColor }}>
           {labelName}

@@ -25,6 +25,7 @@
   --color-noa: #8B2020;           /* rojo oscuro / capa */
   --color-ona: #1A7A7A;           /* verde azulado Erebo */
   --color-apolo: #C8A850;         /* dorado divino */
+  --color-lucas: #A0522D;         /* siena cálido */
 
   /* UI */
   --ui-bg-dialogue: rgba(8, 5, 18, 0.96);
@@ -34,8 +35,14 @@
   --ui-text-dim: #A89E8C;
 
   /* Tipografía */
-  --font-display: 'Rokkitt', serif;
-  --font-body: 'Merriweather', serif;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Gelasio', Georgia, serif;
+  --font-ui: 'Nunito', sans-serif;
+
+  /* UI — light surfaces */
+  --ui-bg-light: rgba(246, 247, 250, 0.92);
+  --ui-text-dark: #2b2f3a;
+  --ui-text-muted: #5a5f6c;
 
   /* Tamaños base */
   --game-width: 1280px;

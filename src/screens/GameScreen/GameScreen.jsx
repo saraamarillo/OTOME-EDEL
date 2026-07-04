@@ -7,6 +7,8 @@ import DialogueBox from '../../components/DialogueBox/DialogueBox'
 import ThoughtBox from '../../components/ThoughtBox/ThoughtBox'
 import ChoicePanel from '../../components/ChoicePanel/ChoicePanel'
 import AffinityMeter from '../../components/AffinityMeter/AffinityMeter'
+import PhoneCallOverlay from '../../components/PhoneCallOverlay/PhoneCallOverlay'
+import ChatMessageOverlay from '../../components/ChatMessageOverlay/ChatMessageOverlay'
 import styles from './GameScreen.module.css'
 
 export default function GameScreen() {
@@ -26,6 +28,8 @@ export default function GameScreen() {
 
   const { currentNode, loading, error, advanceTo, makeChoice } = useScene(sceneId)
   const isChoice = !loading && !error && currentNode?.type === 'choice'
+  const isPhone  = !loading && !error && currentNode?.type === 'phone'
+  const isChat   = !loading && !error && currentNode?.type === 'chat'
 
   useEffect(() => {
     function onKey(e) {
@@ -68,8 +72,8 @@ export default function GameScreen() {
       {/* Fondo */}
       <Background />
 
-      {/* Sprite del personaje activo */}
-      <CharacterSprite characterId={activeCharacterId} visible={!!activeCharacterId} />
+      {/* Sprite del personaje activo — oculto en llamadas/chats */}
+      <CharacterSprite characterId={activeCharacterId} visible={!!activeCharacterId && !isPhone && !isChat} />
 
       <div className={styles.ui}>
 
@@ -112,8 +116,16 @@ export default function GameScreen() {
         )}
 
         {/* ── Diálogo, narración y pensamiento ─────────────── */}
-        <DialogueBox node={currentNode} />
-        <ThoughtBox node={currentNode} />
+        {!isPhone && !isChat && <DialogueBox node={currentNode} />}
+        {!isPhone && !isChat && <ThoughtBox node={currentNode} />}
+
+        {/* ── Chat y llamada ────────────────────────────────── */}
+        {isChat && (
+          <ChatMessageOverlay
+            node={currentNode}
+            onAdvance={() => advanceTo(currentNode.next ?? null)}
+          />
+        )}
 
         {/* ── Panel de elecciones ───────────────────────────── */}
         {isChoice && (
@@ -178,18 +190,30 @@ export default function GameScreen() {
         </div>
       )}
 
+      {/* ── Llamada telefónica ───────────────────────────── */}
+      {isPhone && (
+        <PhoneCallOverlay
+          node={currentNode}
+          onAdvance={() => advanceTo(currentNode.next ?? null)}
+        />
+      )}
+
       {/* ── Imagen desbloqueada ───────────────────────────── */}
       {imageReveal && (
         <div
           className={styles.imageReveal}
           onClick={(e) => { e.stopPropagation(); clearImageReveal() }}
         >
-          <img
-            src={`/assets/gallery/${imageReveal}.png`}
-            alt=""
-            className={styles.revealImg}
-          />
-          <p className={styles.revealHint}>✦ Imagen desbloqueada · Toca para continuar</p>
+          <div className={styles.revealCard}>
+            <p className={styles.revealLabel}>♥ Recuerdo desbloqueado ♥</p>
+            <p className={styles.revealTitle}>¡Imagen desbloqueada!</p>
+            <img
+              src={`/assets/gallery/${imageReveal}.png`}
+              alt=""
+              className={styles.revealImg}
+            />
+            <p className={styles.revealHint}>· Toca para continuar ·</p>
+          </div>
         </div>
       )}
     </div>

@@ -15,7 +15,9 @@ import styles from './CharacterSprite.module.css'
  * spriteSize 'small': escala reducida (Apolo).
  */
 export default function CharacterSprite({ characterId, visible = true }) {
-  const { expression } = useCharacterAffinity(characterId)
+  const { expression: affinityExpression } = useCharacterAffinity(characterId)
+  const expressionOverride = useGameStore((s) => s.characterExpressions?.[characterId] ?? null)
+  const expression = expressionOverride ?? affinityExpression
   const protagonistId = useGameStore((s) => s.protagonistId)
   const look = useGameStore((s) => s.characterLooks[characterId] ?? 'arc1')
   const [useFallback, setUseFallback] = useState(false)

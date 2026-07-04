@@ -8,17 +8,19 @@ export function useScene(sceneId) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const setBackground      = useGameStore((s) => s.setBackground)
-  const setActiveCharacter = useGameStore((s) => s.setActiveCharacter)
-  const changeAffinity     = useGameStore((s) => s.changeAffinity)
-  const setCharacterLook   = useGameStore((s) => s.setCharacterLook)
-  const markSceneVisited   = useGameStore((s) => s.markSceneVisited)
-  const markNpcEncountered = useGameStore((s) => s.markNpcEncountered)
-  const setSceneId         = useGameStore((s) => s.setScene)
-  const protagonistId      = useGameStore((s) => s.protagonistId)
-  const unlockImage        = useGameStore((s) => s.unlockImage)
-  const setImageReveal     = useGameStore((s) => s.setImageReveal)
-  const setScreen          = useGameStore((s) => s.setScreen)
+  const setBackground            = useGameStore((s) => s.setBackground)
+  const setActiveCharacter       = useGameStore((s) => s.setActiveCharacter)
+  const changeAffinity           = useGameStore((s) => s.changeAffinity)
+  const setCharacterLook         = useGameStore((s) => s.setCharacterLook)
+  const setCharacterExpression   = useGameStore((s) => s.setCharacterExpression)
+  const setProtagonistExpression = useGameStore((s) => s.setProtagonistExpression)
+  const markSceneVisited         = useGameStore((s) => s.markSceneVisited)
+  const markNpcEncountered       = useGameStore((s) => s.markNpcEncountered)
+  const setSceneId               = useGameStore((s) => s.setScene)
+  const protagonistId            = useGameStore((s) => s.protagonistId)
+  const unlockImage              = useGameStore((s) => s.unlockImage)
+  const setImageReveal           = useGameStore((s) => s.setImageReveal)
+  const setScreen                = useGameStore((s) => s.setScreen)
 
   useEffect(() => {
     if (!sceneId) return
@@ -45,7 +47,6 @@ export function useScene(sceneId) {
     const dialogueChar = currentNode?.character ?? null
     setActiveCharacter(spriteChar ?? dialogueChar ?? null)
 
-    // Registrar encuentro: sprite y/o personaje del diálogo
     if (spriteChar)   markNpcEncountered(spriteChar)
     if (dialogueChar) markNpcEncountered(dialogueChar)
 
@@ -58,6 +59,17 @@ export function useScene(sceneId) {
       for (const [charId, look] of Object.entries(currentNode.lookChanges)) {
         setCharacterLook(charId, look)
       }
+    }
+
+    // Expresión manual de NPC (sobreescribe la afinidad en este nodo)
+    if (currentNode?.expression !== undefined) {
+      const targetChar = currentNode.activeCharacter ?? currentNode.character
+      if (targetChar) setCharacterExpression(targetChar, currentNode.expression)
+    }
+
+    // Emoción de la protagonista (cara en burbujas de llamada/chat)
+    if (currentNode?.protagonistExpression !== undefined) {
+      setProtagonistExpression(currentNode.protagonistExpression)
     }
   }, [currentNode])
 
@@ -72,7 +84,6 @@ export function useScene(sceneId) {
       const next = findNode(scene, nodeId)
       if (!next) return
 
-      // Nodo de bifurcación por protagonista: saltar directamente al ramal correcto
       if (next.type === 'protagonistBranch') {
         const branchId = next.branches?.[protagonistId]
         if (branchId) {

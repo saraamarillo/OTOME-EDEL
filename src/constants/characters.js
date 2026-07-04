@@ -1,7 +1,3 @@
-/**
- * Personajes jugables (protagonistas).
- * Cada uno tiene un id, nombre, descripción y ruta a su avatar.
- */
 export const PROTAGONISTS = [
   {
     id: 'soledad',
@@ -9,7 +5,7 @@ export const PROTAGONISTS = [
     age: '22 años',
     nationality: 'Española',
     description: 'Joven de apariencia tranquila que retoma sus estudios en la Universidad Somnia. Observa más de lo que deja ver.',
-    avatar: '/assets/avatars/soledad_avatar.png',
+    avatar: '/assets/avatars/Soledad_peloLargo.png',
     color: 'var(--color-soledad)',
     available: true,
     looks: [
@@ -23,7 +19,7 @@ export const PROTAGONISTS = [
     age: '21 años',
     nationality: 'Noruega',
     description: 'Estudiante de arte y arqueología. Porte elegante, mirada serena y un ligero acento nórdico.',
-    avatar: '/assets/avatars/ayla_avatar.png',
+    avatar: '/assets/avatars/Ayla.png',
     color: 'var(--color-ayla)',
     available: true,
   },
@@ -31,24 +27,20 @@ export const PROTAGONISTS = [
     id: 'maven',
     name: 'Maven',
     description: '???',
-    avatar: '/assets/avatars/maven_avarar.png',
+    avatar: '/assets/avatars/Maven.png',
     color: 'var(--color-maven)',
     available: false,
   },
 ]
 
-/**
- * Personajes NPC con los que se puede subir afinidad.
- * Las expresiones disponibles por personaje se listan en sus
- * carpetas de sprites: /assets/sprites/<id>/<expression>.png
- */
 export const NPC_CHARACTERS = [
   {
     id: 'ethan',
     name: 'Ethan',
     role: 'Líder del Club Paranormal',
+    avatar: '/assets/avatars/Ethan_peloAzul.png',
     color: 'var(--color-ethan)',
-    expressions: ['neutral', 'happy', 'serious', 'surprised', 'cold'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
     looks: [
       { id: 'arc1', description: 'Pelo azul azabache', episodes: '1–12' },
       { id: 'arc2', description: 'Pelo negro (cambio de look ep. 13)', episodes: '13+' },
@@ -58,102 +50,124 @@ export const NPC_CHARACTERS = [
     id: 'ryan',
     name: 'Ryan',
     role: 'Trabajador de bar',
+    avatar: '/assets/avatars/Ryan.png',
     color: 'var(--color-ryan)',
-    expressions: ['neutral', 'happy', 'shy', 'worried', 'amused'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'lydia',
     name: 'Lydia',
     role: 'Compañera de cuarto de Ayla',
+    avatar: '/assets/avatars/Lydia.png',
     color: 'var(--color-lydia)',
-    expressions: ['neutral', 'happy', 'curious', 'annoyed'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'frey',
     name: 'Frey',
     role: 'Policía',
+    avatar: '/assets/avatars/Frey.png',
     color: 'var(--color-frey)',
-    expressions: ['neutral', 'happy', 'serious', 'suspicious', 'distant'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'grace',
     name: 'Grace',
     role: '???',
+    avatar: '/assets/avatars/Grace.png',
     color: 'var(--color-grace)',
-    expressions: ['neutral', 'happy', 'worried', 'cheerful'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'angry', 'silueta'],
     alwaysMystery: true,
   },
   {
     id: 'sappire',
     name: 'Sappire',
     role: 'Compañera de cuarto de Maven',
+    avatar: '/assets/avatars/Shapphire.png',
     color: 'var(--color-sappire)',
-    expressions: ['neutral', 'happy', 'curious', 'worried'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'xavier',
     name: 'Xavier de Crimson',
     role: '???',
+    avatar: '/assets/avatars/Xavier.png',
     color: 'var(--color-xavier)',
-    expressions: ['neutral', 'cold', 'serious', 'threatening'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'luna',
     name: 'Luna',
     role: 'Astraea',
+    avatar: '/assets/avatars/Luna.png',
     color: 'var(--color-luna)',
-    expressions: ['neutral', 'cold', 'serious', 'commanding'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'aurora',
     name: 'Aurora',
     role: '???',
+    avatar: '/assets/avatars/Aurora.png',
     color: 'var(--color-aurora)',
-    expressions: ['neutral', 'cold', 'serious', 'distant'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'dani',
     name: 'Dani',
     role: '???',
+    avatar: '/assets/avatars/Dani.png',
     color: 'var(--color-dani)',
-    expressions: ['neutral', 'happy', 'surprised', 'calm'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'estrella',
     name: 'Estrella',
     role: '???',
+    avatar: '/assets/avatars/Estrella.png',
     color: 'var(--color-estrella)',
-    expressions: ['neutral', 'happy', 'flirty', 'serious'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'angry'],
   },
   {
     id: 'leo',
     name: 'Leo',
     role: '???',
+    avatar: '/assets/avatars/Leo.png',
     color: 'var(--color-leo)',
-    expressions: ['neutral', 'amused', 'smug', 'serious'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'noa',
     name: 'Noa',
     role: 'Abre portales — compañero de Frey',
+    avatar: '/assets/avatars/Noa.png',
     color: 'var(--color-noa)',
-    expressions: ['neutral', 'serious', 'focused', 'scared'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
     isChild: true,
   },
   {
     id: 'ona',
     name: 'Ona',
     role: 'Facción de Erebo',
+    avatar: '/assets/avatars/Ona.png',
     color: 'var(--color-ona)',
-    expressions: ['neutral', 'cold', 'threatening', 'amused'],
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
   {
     id: 'apolo',
     name: 'Apolo',
     role: 'Dios — solo perceptible por Soledad',
+    avatar: '/assets/avatars/Apolo.png',
     color: 'var(--color-apolo)',
-    expressions: ['neutral', 'wise', 'amused', 'serious'],
-    protagonistOnly: 'soledad',  // no aparece en rutas de Ayla ni Maven
-    spriteSize: 'small',         // criatura pequeña, escala reducida en pantalla
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
+    protagonistOnly: 'soledad',
+    spriteSize: 'small',
+  },
+  {
+    id: 'lucas',
+    name: 'Lucas',
+    role: '???',
+    avatar: '/assets/avatars/Lucas.png',
+    color: 'var(--color-lucas)',
+    expressions: ['neutral', 'happy', 'blush', 'sad', 'surprised', 'angry'],
   },
 ]

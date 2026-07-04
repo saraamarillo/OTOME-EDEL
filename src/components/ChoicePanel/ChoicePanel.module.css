@@ -1,69 +1,71 @@
 .panel {
   position: absolute;
-  bottom: 130px;
+  bottom: 110px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 640px;
+  align-items: center;
+  gap: 12px;
+  width: 680px;
   z-index: 10;
+}
+
+.decideLabel {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
 
 .question {
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   font-style: italic;
-  color: #fff;
+  color: #f3ede0;
   text-align: center;
-  padding: 10px 18px;
-  background: var(--ui-bg-dialogue);
-  border: 1px solid var(--ui-border);
-  border-radius: 6px;
-  backdrop-filter: blur(4px);
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.55;
 }
 
-/* Base de los botones */
 .choice {
+  width: 620px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  color: #fff;
+  gap: 14px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(248, 249, 252, 0.95);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+  color: var(--ui-text-dark);
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   text-align: left;
-  border: 1px solid transparent;
-  transition: backdrop-filter 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.15s ease;
 }
 
-/* Historia de Soledad — naranja */
-.choiceSoledad {
-  background: rgba(120, 52, 5, 0.82);
-  border-color: rgba(227, 142, 31, 0.45);
+.choice:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
-.choiceSoledad:hover {
-  background: rgba(140, 65, 8, 0.7);
-  border-color: rgba(227, 142, 31, 0.75);
-  backdrop-filter: blur(8px);
-}
-
-/* Historia de Ayla — verde */
-.choiceAyla {
-  background: rgba(5, 60, 32, 0.82);
-  border-color: rgba(19, 112, 69, 0.45);
-}
-
-.choiceAyla:hover {
-  background: rgba(8, 75, 40, 0.7);
-  border-color: rgba(19, 112, 69, 0.75);
-  backdrop-filter: blur(8px);
-}
-
-.bullet {
-  font-size: 0.5rem;
-  color: rgba(255, 255, 255, 0.6);
+.letterBadge {
   flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #fff;
 }

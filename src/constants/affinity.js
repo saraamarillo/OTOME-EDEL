@@ -7,12 +7,12 @@ export const AFFINITY_DEFAULT = 0
  * Umbrales que determinan qué expresión muestra un personaje.
  * El sprite que se carga es: /assets/sprites/<id>/<expression>.png
  */
+// sad y angry solo se activan manualmente por nodo ("expression": "sad")
+// La afinidad solo cambia el sprite entre neutral / happy / blush
 export const AFFINITY_THRESHOLDS = {
-  veryHigh: { min: 80, expression: 'happy' },
-  high:     { min: 60, expression: 'neutral' },  // expression positiva
-  neutral:  { min: 40, expression: 'neutral' },
-  low:      { min: 20, expression: 'serious' },
-  veryLow:  { min: 0,  expression: 'cold' },
+  veryHigh: { min: 80, expression: 'blush' },
+  high:     { min: 60, expression: 'happy' },
+  neutral:  { min: 0,  expression: 'neutral' },
 }
 
 /** Cuántos corazones se muestran en el medidor (UI). */

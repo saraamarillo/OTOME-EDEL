@@ -4,7 +4,7 @@
   left: 24px;
   display: flex;
   align-items: flex-end;
-  gap: 6px;
+  gap: 8px;
   z-index: 10;
 }
 
@@ -12,9 +12,10 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 2px solid var(--ui-border);
+  border: 4px solid #ffffff;
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: 0 10px 28px rgba(10, 12, 22, 0.5);
 }
 
 /* Tres puntitos entre el avatar y la nube */
@@ -43,35 +44,26 @@
   30%           { transform: translateY(-5px); }
 }
 
-/* Caja de pensamiento — sin flecha, más ancha */
+/* Caja de pensamiento — light, sin flecha */
 .bubble {
-  max-width: 560px;
-  background: var(--ui-bg-thought);
-  border: 1px solid var(--ui-border);
-  border-radius: 14px;
-  padding: 12px 20px;
+  max-width: 520px;
+  background: var(--ui-bg-light);
+  border-radius: 20px;
+  padding: 14px 22px;
   position: relative;
-  /* sin ::before — los puntitos hacen la función */
+  box-shadow: 0 12px 30px rgba(10, 12, 22, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 /* Color de puntitos según protagonista */
-.dots[data-protagonist="soledad"] span { background: rgba(160, 85, 10, 0.95); }
-.dots[data-protagonist="ayla"]    span { background: rgba(19, 112, 69, 0.92); }
-
-.soledad {
-  background: rgba(160, 85, 10, 0.95);
-  border-color: rgba(160, 85, 10, 0.9);
-}
-
-.ayla {
-  background: rgba(19, 112, 69, 0.92);
-  border-color: rgba(19, 112, 69, 0.9);
-}
+.dots[data-protagonist="soledad"] span { background: var(--color-soledad); }
+.dots[data-protagonist="ayla"]    span { background: var(--color-ayla); }
 
 .text {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 1.18rem;
-  color: #fff;
+  font-size: 1.08rem;
+  color: var(--ui-text-dark);
   line-height: 1.55;
 }
