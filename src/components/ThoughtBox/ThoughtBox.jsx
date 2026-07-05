@@ -15,31 +15,23 @@ export default function ThoughtBox({ node }) {
 
   const isThought = node?.type === 'thought'
 
-  const bubbleClass = [
-    styles.bubble,
-    protagonistId === 'soledad' ? styles.soledad : styles.ayla,
-  ].join(' ')
-
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.avatarRing} data-protagonist={protagonistId}>
-        <img
-          className={styles.avatar}
-          src={protagonist.avatar}
-          alt={protagonist.name}
-          draggable={false}
-        />
+    <>
+      <div className={styles.avatarWrap}>
+        <div className={styles.avatarRing} data-protagonist={protagonistId}>
+          <img
+            className={styles.avatar}
+            src={protagonist.avatar}
+            alt={protagonist.name}
+            draggable={false}
+          />
+        </div>
       </div>
       {isThought && node.text && (
-        <>
-          <div className={styles.dots} data-protagonist={protagonistId}>
-            <span /><span /><span />
-          </div>
-          <div className={bubbleClass}>
-            <p className={styles.text}>{node.text}</p>
-          </div>
-        </>
+        <div className={styles.bubble}>
+          <p className={styles.text}>{node.text}</p>
+        </div>
       )}
-    </div>
+    </>
   )
 }

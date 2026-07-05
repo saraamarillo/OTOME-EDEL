@@ -39,6 +39,7 @@
   --font-body: 'Gelasio', Georgia, serif;
   --font-ui: 'Nunito', sans-serif;
   --font-hand: 'Caveat', cursive;
+  --font-scene: 'Arvo', serif;
 
   /* UI — light surfaces */
   --ui-bg-light: rgba(246, 247, 250, 0.92);

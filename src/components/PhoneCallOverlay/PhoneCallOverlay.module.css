@@ -2,7 +2,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 12, 22, 0.55);
+  background: rgba(10, 12, 22, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,8 +19,8 @@
 }
 
 .iconBtn {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -31,43 +31,41 @@
 }
 
 .icon {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   display: block;
 }
 
 /* ── Tarjeta centrada ─────────────────────────────────────── */
 .card {
-  width: 480px;
+  width: 520px;
   max-width: 82%;
-  padding: 30px 34px;
-  border-radius: 24px;
-  background: var(--ui-bg-light);
+  padding: 34px 38px;
+  border-radius: 28px;
+  background: rgba(248, 249, 252, 0.94);
   border-top: 4px solid;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 22px 54px rgba(10, 12, 22, 0.45);
-  color: var(--ui-text-dark);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5);
+  color: #2b2f3a;
 }
 
 .cardHead {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .iconInline {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
 }
 
 .speaker {
   font-family: var(--font-ui);
   font-weight: 800;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 14px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -75,17 +73,17 @@
   margin-left: auto;
   font-family: var(--font-ui);
   font-weight: 700;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #9aa0ac;
 }
 
 .text {
   margin: 0;
-  font-family: var(--font-body);
-  font-size: 1.08rem;
-  line-height: 1.6;
+  font-family: var(--font-scene);
+  font-size: 22px;
+  line-height: 1.55;
 }
 
 /* ── Cara protagonista — esquina inferior-izquierda ──────── */
