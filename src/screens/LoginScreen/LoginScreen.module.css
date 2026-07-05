@@ -4,10 +4,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(ellipse at 50% 60%, rgba(44, 62, 107, 0.35) 0%, transparent 70%),
-    url('/assets/backgrounds/home.png') center center / cover no-repeat,
-    #0a0814;
+  background: #0a0814;
+  overflow: hidden;
+}
+
+.screen::before {
+  content: '';
+  position: fixed;
+  inset: -20px;
+  background: url('/assets/backgrounds/campus_noche.png') center center / cover no-repeat;
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(44, 62, 107, 0.35) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.screen > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card {

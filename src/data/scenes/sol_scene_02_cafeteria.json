@@ -95,6 +95,7 @@
       "type": "narration",
       "character": null,
       "text": "Las dos tazas de chocolate caliente humeantes sobre la mesa. Soledad tiene que admitir que el ambiente resulta más acogedor de lo esperado.",
+      "protagonistExpression": "happy",
       "next": "n_pausa_01",
       "unlockImage": "ethan_cafeteria"
     },
@@ -153,6 +154,7 @@
       "type": "thought",
       "character": null,
       "text": "Esto me resulta más cómodo de lo que debería. No conozco a estos dos de nada.",
+      "protagonistExpression": "neutral",
       "next": "n_conv_04"
     },
     {
@@ -218,6 +220,7 @@
       "type": "narration",
       "character": null,
       "text": "Tras la conversación, Soledad decide marcharse. Es tarde y necesita volver a casa.",
+      "protagonistExpression": "neutral",
       "next": "n_desp_02",
       "background": "campus_noche"
     },

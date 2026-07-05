@@ -20,6 +20,20 @@ export const GALLERY_IMAGES = [
     routes: ['ayla'],
     episode: 1,
   },
+  {
+    id: 'lydia_ayla_desayunoResidencia',
+    title: 'Desayuno con Lydia',
+    subtitle: 'en la residencia',
+    routes: ['ayla'],
+    episode: 2,
+  },
+  {
+    id: 'frey_ayla_rescate',
+    title: 'El rescate',
+    subtitle: 'con Frey',
+    routes: ['ayla'],
+    episode: 2,
+  },
 ]
 
 export function getGalleryImage(id) {

@@ -16,7 +16,7 @@
   font-family: var(--font-scene);
 }
 
-/* Speech bubble tail — diamond at bottom-right */
+/* Cola de bocadillo — diamante en la esquina inferior derecha */
 .box::after {
   content: '';
   position: absolute;
@@ -46,11 +46,6 @@
   line-height: 1.55;
 }
 
-.narration {
-  font-style: italic;
-  color: var(--ui-text-muted);
-}
-
 .arrow {
   position: absolute;
   bottom: 10px;
@@ -63,4 +58,80 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.15; }
+}
+
+/* ── Narración / voz propia de la protagonista — misma barra inferior ─
+   (la narración se distingue por estar en cursiva y entre paréntesis,
+   sin oscurecer el fondo) ──────────────────────────────────────── */
+.ownVoiceBox {
+  position: absolute;
+  bottom: 24px;
+  left: 230px;
+  right: 24px;
+  padding: 14px 36px;
+  border-top: 4px solid var(--accent);
+  border-radius: 22px;
+  background: rgba(246, 247, 250, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 14px 34px rgba(10, 12, 22, 0.35);
+  cursor: pointer;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Rectángulo de hover: ancho del contenedor, más estrecho que la caja */
+.ownVoiceBox::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10px;
+  bottom: 10px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ownVoiceBox:hover::before {
+  opacity: 0.9;
+}
+
+.ownVoiceText {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--font-scene);
+  font-size: 19px;
+  line-height: 1.6;
+  color: #2b2f3a;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.narrationText {
+  font-style: italic;
+  color: #4a4f5c;
+}
+
+.ownVoiceBox:hover .ownVoiceText {
+  color: #ffffff;
+}
+
+.ownVoiceArrow {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 6px;
+  text-align: right;
+  font-size: 0.65rem;
+  color: rgba(43, 47, 58, 0.35);
+  animation: blink 1.2s infinite;
+  transition: color 0.2s ease;
+}
+
+.ownVoiceBox:hover .ownVoiceArrow {
+  color: rgba(255, 255, 255, 0.75);
 }

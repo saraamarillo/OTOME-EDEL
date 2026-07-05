@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCharacterAffinity } from '../../hooks/useAffinity'
 import { useGameStore } from '../../store/gameStore'
 import { NPC_CHARACTERS } from '../../constants/characters'
@@ -22,13 +22,16 @@ export default function CharacterSprite({ characterId, visible = true }) {
   const look = useGameStore((s) => s.characterLooks[characterId] ?? 'arc1')
   const [useFallback, setUseFallback] = useState(false)
 
+  const primarySrc  = characterId ? `/assets/sprites/${characterId}/${look}_${expression}.png` : null
+
+  useEffect(() => { setUseFallback(false) }, [primarySrc])
+
   if (!characterId) return null
 
   const charData = NPC_CHARACTERS.find((c) => c.id === characterId)
 
   if (charData?.protagonistOnly && charData.protagonistOnly !== protagonistId) return null
 
-  const primarySrc  = `/assets/sprites/${characterId}/${look}_${expression}.png`
   const fallbackSrc = `/assets/sprites/${characterId}/${look}.png`
   const src = useFallback ? fallbackSrc : primarySrc
 

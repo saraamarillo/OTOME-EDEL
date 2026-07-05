@@ -24,7 +24,6 @@ export default function AffinityMeter({ characterId }) {
 
   return (
     <div className={styles.meter}>
-      <p className={styles.name} style={{ color: character.color }}>{character.name}</p>
       <div className={styles.bar}>
         <div className={`${styles.fill} ${pulsing ? styles.pulse : ''}`} style={{ height: `${pct}%` }} />
       </div>

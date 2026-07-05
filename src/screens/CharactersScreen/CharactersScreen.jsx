@@ -1,6 +1,7 @@
 import { useGameStore } from '../../store/gameStore'
 import { NPC_CHARACTERS, PROTAGONISTS } from '../../constants/characters'
 import { AFFINITY_MAX } from '../../constants/affinity'
+import { ROUTE_BG } from '../../constants/theme'
 import RouteNav from '../../components/RouteNav/RouteNav'
 import styles from './CharactersScreen.module.css'
 
@@ -35,7 +36,7 @@ export default function CharactersScreen() {
     })
 
   return (
-    <div className={styles.screen}>
+    <div className={styles.screen} style={{ background: ROUTE_BG[protagonistId] }}>
       <RouteNav active="characters" />
 
       <div className={styles.body}>
@@ -51,7 +52,9 @@ export default function CharactersScreen() {
             {metCharacters.map((ch) => (
               <div key={ch.id} className={styles.card} style={{ borderTopColor: ch.color }}>
                 <div className={styles.cardHead}>
-                  <img src={ch.avatar} alt={ch.name} className={styles.avatar} />
+                  <div className={styles.avatarClip}>
+                    <img src={ch.avatar} alt={ch.name} />
+                  </div>
                   <div>
                     <div className={styles.name}>{ch.name}</div>
                     <div className={styles.role} style={{ color: ch.color }}>{ch.role}</div>

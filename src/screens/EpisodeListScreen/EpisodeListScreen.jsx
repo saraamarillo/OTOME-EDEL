@@ -1,13 +1,9 @@
 import { useGameStore } from '../../store/gameStore'
 import { PROTAGONISTS } from '../../constants/characters'
-import { AVAILABLE_EPISODES, TOTAL_EPISODES, EPISODES, getFirstScene } from '../../constants/episodes'
+import { AVAILABLE_EPISODES, TOTAL_EPISODES, EPISODES, EPISODE_COVERS, getFirstScene } from '../../constants/episodes'
+import { ROUTE_BG } from '../../constants/theme'
 import RouteNav from '../../components/RouteNav/RouteNav'
 import styles from './EpisodeListScreen.module.css'
-
-const COVERS = {
-  1: '/assets/backgrounds/campus_dia.png',
-  2: '/assets/backgrounds/residencia_habitacion_noche.png',
-}
 
 export default function EpisodeListScreen() {
   const setScreen           = useGameStore((s) => s.setScreen)
@@ -15,6 +11,7 @@ export default function EpisodeListScreen() {
   const setSelectedEpisode  = useGameStore((s) => s.setSelectedEpisode)
   const selectProtagonist   = useGameStore((s) => s.selectProtagonist)
   const protagonistId       = useGameStore((s) => s.protagonistId)
+  const protagonist         = PROTAGONISTS.find((p) => p.id === protagonistId)
   const completedAll        = useGameStore((s) => s.completedEpisodes)
   const playCountsAll       = useGameStore((s) => s.episodePlayCounts)
   const logout              = useGameStore((s) => s.logout)
@@ -40,7 +37,7 @@ export default function EpisodeListScreen() {
       <div key={ep} className={styles.epRow}>
         <div className={styles.epImageCard}>
           <div className={styles.epImageTape} />
-          <img src={COVERS[ep]} alt="" className={styles.epImage} />
+          <img src={EPISODE_COVERS[protagonistId]?.[ep] ?? EPISODE_COVERS.default[ep]} alt="" className={styles.epImage} />
         </div>
         <div className={styles.epInfo}>
           <div className={styles.epHeading}>
@@ -72,7 +69,7 @@ export default function EpisodeListScreen() {
   }
 
   return (
-    <div className={styles.screen}>
+    <div className={styles.screen} style={{ background: ROUTE_BG[protagonistId], '--accent': protagonist?.color }}>
       <RouteNav active="episodeList" />
 
       <div className={styles.body}>

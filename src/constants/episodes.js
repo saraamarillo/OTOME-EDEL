@@ -26,3 +26,19 @@ export const EPISODES = {
 export function getFirstScene(epNum, protagonistId) {
   return EPISODES[epNum]?.firstScene?.[protagonistId] ?? 'scene_01_campus'
 }
+
+/** Portada de cada episodio: el fondo que más aparece en las escenas de esa ruta. */
+export const EPISODE_COVERS = {
+  default: {
+    1: '/assets/backgrounds/campus_dia.png',
+    2: '/assets/backgrounds/residencia_habitacion_noche.png',
+  },
+  soledad: {
+    1: '/assets/backgrounds/campus_dia.png',
+    2: '/assets/backgrounds/comisaria_tarde.png',
+  },
+  ayla: {
+    1: '/assets/backgrounds/campus_dia.png',
+    2: '/assets/backgrounds/interior_fabrica_harina.png',
+  },
+}

@@ -26,6 +26,10 @@
   --color-ona: #1A7A7A;           /* verde azulado Erebo */
   --color-apolo: #C8A850;         /* dorado divino */
   --color-lucas: #A0522D;         /* siena cálido */
+  --color-madre: #B5657A;         /* rosa malva */
+  --color-padre: #4A6572;         /* azul acero */
+  --color-hermana-luna: #6FA88F;  /* verde agua */
+  --color-policia: #5A6472;       /* gris pizarra */
 
   /* UI */
   --ui-bg-dialogue: rgba(8, 5, 18, 0.96);

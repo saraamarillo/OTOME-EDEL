@@ -276,6 +276,7 @@
       "type": "thought",
       "character": null,
       "text": "Club Paranormal. No era exactamente lo que esperaba para el primer día.",
+      "protagonistExpression": "surprised",
       "next": "n_choice_sol"
     },
     {
@@ -294,6 +295,7 @@
       "type": "narration",
       "character": null,
       "text": "Ayla y Soledad cruzan el campus hacia el edificio antiguo.",
+      "protagonistExpression": "neutral",
       "next": "n_camino_02",
       "background": "campus_dia"
     },
@@ -316,13 +318,15 @@
       "type": "narration",
       "character": null,
       "text": "El edificio está vacío. El pasillo es largo y las luces apenas iluminan.",
-      "next": "n_camino_05"
+      "next": "n_camino_05",
+      "background": "pasillo_club_tarde"
     },
     {
       "id": "n_camino_05",
       "type": "thought",
       "character": null,
       "text": "Esto parece un escenario de película de terror barata. Si aparece un fantasma me vuelvo a Noruega.",
+      "protagonistExpression": "surprised",
       "next": "n_camino_06"
     },
     {
@@ -467,6 +471,14 @@
       "character": null,
       "text": "Es demasiado sociable. ¿Cómo puede estar tan feliz de tener personas nuevas alrededor?",
       "protagonistExpression": "neutral",
+      "next": "n_camino_salida"
+    },
+    {
+      "id": "n_camino_salida",
+      "type": "narration",
+      "character": null,
+      "text": "Salen del club. Fuera ya ha oscurecido; el pasillo se ve distinto de noche.",
+      "background": "pasillo_club_noche",
       "next": "n_ethan_c03"
     },
     {
@@ -474,6 +486,7 @@
       "type": "narration",
       "character": null,
       "text": "Ethan les enseña el campus mientras habla sin parar. Explica cada edificio como si fuera un guía turístico que lleva años esperando a alguien a quien contárselo.",
+      "background": "campus_dia",
       "next": "n_ethan_c04"
     },
     {

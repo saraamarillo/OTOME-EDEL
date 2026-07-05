@@ -7,9 +7,10 @@ import DialogueBox from '../../components/DialogueBox/DialogueBox'
 import ThoughtBox from '../../components/ThoughtBox/ThoughtBox'
 import ChoicePanel from '../../components/ChoicePanel/ChoicePanel'
 import AffinityMeter from '../../components/AffinityMeter/AffinityMeter'
-import PhoneCallOverlay from '../../components/PhoneCallOverlay/PhoneCallOverlay'
-import ChatMessageOverlay from '../../components/ChatMessageOverlay/ChatMessageOverlay'
+import PhoneCallOverlay, { PhoneIcon } from '../../components/PhoneCallOverlay/PhoneCallOverlay'
+import ChatMessageOverlay, { ChatIcon } from '../../components/ChatMessageOverlay/ChatMessageOverlay'
 import { getGalleryImage } from '../../constants/galleryImages'
+import { PROTAGONISTS } from '../../constants/characters'
 import styles from './GameScreen.module.css'
 
 export default function GameScreen() {
@@ -22,6 +23,10 @@ export default function GameScreen() {
   const userId             = useGameStore((s) => s.userId)
   const volume             = useGameStore((s) => s.volume)
   const setVolume          = useGameStore((s) => s.setVolume)
+  const phoneCallActive    = useGameStore((s) => s.phoneCallActive)
+  const chatActive         = useGameStore((s) => s.chatActive)
+  const protagonistId      = useGameStore((s) => s.protagonistId)
+  const accent             = PROTAGONISTS.find((p) => p.id === protagonistId)?.color ?? '#e38e1f'
 
   const [confirmMenu, setConfirmMenu] = useState(null)   // 'protagonistSelect' | 'episodeList'
   const [menuOpen,    setMenuOpen]    = useState(false)
@@ -76,6 +81,9 @@ export default function GameScreen() {
       {/* Sprite del personaje activo — oculto en llamadas/chats */}
       <CharacterSprite characterId={activeCharacterId} visible={!!activeCharacterId && !isPhone && !isChat} />
 
+      {/* Oscurece el fondo para que la decisión se lea mejor */}
+      {isChoice && <div className={styles.choiceScrim} />}
+
       <div className={styles.ui}>
 
         {/* ── Hamburger (top-left) ──────────────────────────── */}
@@ -91,6 +99,18 @@ export default function GameScreen() {
 
         {/* ── Título centrado (top-center) ──────────────────── */}
         <p className={styles.gameTitle}>EDEL</p>
+
+        {/* ── Icono de llamada/chat persistente (líneas propias intermedias) ─ */}
+        {phoneCallActive && !isPhone && (
+          <div className={styles.commBadge} style={{ background: accent }} title="Llamada en curso">
+            <PhoneIcon className={styles.commBadgeIcon} />
+          </div>
+        )}
+        {chatActive && !isChat && (
+          <div className={styles.commBadge} style={{ background: accent }} title="Conversación en curso">
+            <ChatIcon className={styles.commBadgeIcon} />
+          </div>
+        )}
 
         {/* ── Drawer lateral izquierdo ──────────────────────── */}
         {menuOpen && (
@@ -204,7 +224,7 @@ export default function GameScreen() {
         const meta = getGalleryImage(imageReveal)
         return (
           <div className={styles.imageReveal} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.revealCard}>
+            <div className={styles.revealCard} style={{ '--accent': accent }}>
               <p className={styles.revealLabel}>♥ Recuerdo desbloqueado ♥</p>
               <div className={styles.revealImgWrap}>
                 <img

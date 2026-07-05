@@ -6,27 +6,25 @@
 }
 
 .avatarRing {
-  width: 148px;
-  height: 148px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
-  padding: 4px;
-  background: linear-gradient(180deg, #c9d3e6, #aeb9d0);
-  box-shadow: 0 10px 28px rgba(10, 12, 22, 0.5);
+  overflow: hidden;
+  border: 5px solid #ffffff;
+  background: #f0f1f5;
+  box-shadow: 0 12px 30px rgba(10, 12, 22, 0.5);
 }
-
-.avatarRing[data-protagonist="soledad"] { background: linear-gradient(180deg, #fbdca0, #f3c467); }
-.avatarRing[data-protagonist="ayla"]    { background: linear-gradient(180deg, #bfe3cd, #8fcaa6); }
 
 .avatar {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
   object-fit: cover;
+  object-position: center 25%;
   display: block;
 }
 
-/* Caja de pensamiento — burbuja flotante con cola de dos círculos */
+/* Caja de pensamiento — burbuja flotante con cola de dos círculos,
+   teñida del color de énfasis de la protagonista activa */
 .bubble {
   position: absolute;
   left: 543px;
@@ -35,9 +33,7 @@
   width: 620px;
   padding: 26px 34px;
   border-radius: 34px;
-  background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 16px 40px rgba(10, 12, 22, 0.3);
-  color: #3a3f4c;
   z-index: 10;
 }
 
@@ -49,7 +45,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.96);
+  background: inherit;
 }
 
 .bubble::after {
@@ -60,7 +56,8 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: inherit;
+  opacity: 0.85;
 }
 
 .text {

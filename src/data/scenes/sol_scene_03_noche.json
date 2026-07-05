@@ -38,6 +38,7 @@
       "type": "narration",
       "character": null,
       "text": "Llama a sus padres. Nadie contesta. Vuelve a llamar. Nada. El último autobús está a punto de pasar.",
+      "protagonistExpression": "neutral",
       "next": "n_choice_bus"
     },
     {
@@ -85,6 +86,7 @@
       "type": "narration",
       "character": null,
       "text": "Una figura aparece corriendo entre la penumbra y casi choca con ella. Un chico —pelo morado, cascos colgados al cuello— consigue frenar a tiempo y la sujeta antes de que pierda el equilibrio.",
+      "protagonistExpression": "surprised",
       "next": "n_ryan_04"
     },
     {
@@ -107,6 +109,7 @@
       "type": "thought",
       "character": null,
       "text": "Le va el corazón a mil. O tiene mucha prisa o acaba de huir de algo. Ninguna opción me relaja.",
+      "protagonistExpression": "neutral",
       "next": "n_ryan_06"
     },
     {
@@ -702,6 +705,7 @@
       "type": "dialogue",
       "character": null,
       "text": "Vale. Gracias.",
+      "protagonistExpression": "neutral",
       "next": "n_final_01"
     },
     {
@@ -716,6 +720,7 @@
       "type": "thought",
       "character": null,
       "text": "Nuevo curso. Nueva ciudad. Y ni siquiera ha terminado el primer día.",
+      "protagonistExpression": "sad",
       "next": "n_final_03"
     },
     {

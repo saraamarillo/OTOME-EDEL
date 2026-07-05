@@ -21,6 +21,10 @@ export function useScene(sceneId) {
   const unlockImage              = useGameStore((s) => s.unlockImage)
   const setImageReveal           = useGameStore((s) => s.setImageReveal)
   const setScreen                = useGameStore((s) => s.setScreen)
+  const setPhoneCallActive       = useGameStore((s) => s.setPhoneCallActive)
+  const setRingtonePlayed        = useGameStore((s) => s.setRingtonePlayed)
+  const setChatActive            = useGameStore((s) => s.setChatActive)
+  const setCallFrozenExpression  = useGameStore((s) => s.setCallFrozenExpression)
 
   useEffect(() => {
     if (!sceneId) return
@@ -33,6 +37,10 @@ export function useScene(sceneId) {
         setCurrentNode(data.nodes[0] ?? null)
         setBackground(data.background ?? null)
         markSceneVisited(sceneId)
+        setPhoneCallActive(false)
+        setRingtonePlayed(false)
+        setChatActive(false)
+        setCallFrozenExpression(null)
         setLoading(false)
       })
       .catch((err) => {
@@ -71,6 +79,34 @@ export function useScene(sceneId) {
     if (currentNode?.protagonistExpression !== undefined) {
       setProtagonistExpression(currentNode.protagonistExpression)
     }
+
+    // Llamada / chat en curso: un nodo "phone" o "chat" los activa; los
+    // propios diálogos/pensamientos de la protagonista los mantienen;
+    // cualquier otro tipo (narración, elección) los da por terminados.
+    const state = useGameStore.getState()
+    const wasPhoneActive = state.phoneCallActive
+    const wasChatActive = state.chatActive
+    let nextPhoneActive = wasPhoneActive
+    let nextChatActive = wasChatActive
+
+    if (currentNode?.type === 'phone') {
+      nextPhoneActive = true
+      nextChatActive = false
+    } else if (currentNode?.type === 'chat') {
+      nextChatActive = true
+      nextPhoneActive = false
+    } else if (currentNode?.type !== 'dialogue' && currentNode?.type !== 'thought') {
+      nextPhoneActive = false
+      nextChatActive = false
+    }
+
+    if (nextPhoneActive && !wasPhoneActive) {
+      setRingtonePlayed(false)
+      setCallFrozenExpression(useGameStore.getState().protagonistExpression)
+    }
+
+    setPhoneCallActive(nextPhoneActive)
+    setChatActive(nextChatActive)
   }, [currentNode])
 
   const advanceTo = useCallback(

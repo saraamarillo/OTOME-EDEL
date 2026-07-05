@@ -318,7 +318,7 @@
       "character": null,
       "text": "Soledad y Ayla salen de secretaría y caminan hacia el edificio antiguo. El pasillo interior está vacío. Las luces parpadean. No hay rastro de estudiantes.",
       "next": "n_camino_02",
-      "background": "campus_dia"
+      "background": "pasillo_club_tarde"
     },
     {
       "id": "n_camino_02",
@@ -369,6 +369,7 @@
       "character": "ethan",
       "text": "¡Anda, hola!",
       "expression": "surprised",
+      "protagonistExpression": "surprised",
       "next": "n_ethan_t01"
     },
     {
@@ -438,6 +439,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Necesito apuntaros. ¿Cómo os llamáis? Nombre y apellido.",
+      "protagonistExpression": "neutral",
       "next": "n_ethan_sol_nombre"
     },
     {
@@ -510,6 +512,15 @@
       "type": "thought",
       "character": null,
       "text": "Este chico tiene demasiada energía para un edificio que olía a humedad hace treinta segundos. Pero... no parece mala persona.",
+      "protagonistExpression": "happy",
+      "next": "n_camino_salida"
+    },
+    {
+      "id": "n_camino_salida",
+      "type": "narration",
+      "character": null,
+      "text": "Salen del club. Fuera ya ha oscurecido; el pasillo se ve distinto de noche.",
+      "background": "pasillo_club_noche",
       "next": null,
       "nextScene": "sol_scene_02_cafeteria"
     }

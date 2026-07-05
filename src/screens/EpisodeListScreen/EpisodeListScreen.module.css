@@ -3,7 +3,6 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #fbf7f2, #f4eef6);
   overflow-y: auto;
 }
 
@@ -61,9 +60,9 @@
 
 .logoutBtn {
   background: none;
-  border: 1px solid rgba(122, 92, 200, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.18);
   border-radius: 999px;
-  color: #7d5cc8;
+  color: var(--accent);
   font-family: var(--font-ui);
   font-size: 0.75rem;
   font-weight: 700;
@@ -73,8 +72,8 @@
 }
 
 .logoutBtn:hover {
-  background: rgba(122, 92, 200, 0.08);
-  border-color: #7d5cc8;
+  background: rgba(0, 0, 0, 0.06);
+  border-color: var(--accent);
 }
 
 .sectionLabel {
@@ -84,8 +83,8 @@
   margin-top: 22px;
   padding: 10px 24px;
   border-radius: 10px;
-  background: linear-gradient(180deg, #9a7be0, #7d5cc8);
-  box-shadow: 0 6px 16px rgba(125, 92, 200, 0.4);
+  background: var(--accent);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.4rem;
@@ -141,7 +140,7 @@
 }
 
 .epNumber {
-  color: #7d5cc8;
+  color: var(--accent);
 }
 
 .epSynopsis {
@@ -168,7 +167,7 @@
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, #8fd14f, #6bb42f);
+  background: var(--accent);
   transition: width 0.6s ease;
 }
 
@@ -176,7 +175,7 @@
   font-family: var(--font-ui);
   font-weight: 800;
   font-size: 1rem;
-  color: #6bb42f;
+  color: var(--accent);
 }
 
 .epFooter {
@@ -197,8 +196,8 @@
   font-weight: 800;
   font-size: 1.05rem;
   color: #fff;
-  background: linear-gradient(180deg, #4f9fe0, #2f7fb8);
-  box-shadow: 0 10px 24px rgba(47, 127, 184, 0.4);
+  background: var(--accent);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
   transition: filter 0.2s;
 }
 
@@ -207,8 +206,8 @@
 }
 
 .replayBtn {
-  background: linear-gradient(180deg, #8fd14f, #6bb42f);
-  box-shadow: 0 10px 24px rgba(107, 180, 47, 0.4);
+  background: var(--accent);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
 }
 
 .playCount {
@@ -218,7 +217,7 @@
 }
 
 .playCount b {
-  color: #7d5cc8;
+  color: var(--accent);
 }
 
 .emptyState {
@@ -234,12 +233,12 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #ede6f7;
+  background: rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 34px;
-  color: #7d5cc8;
+  color: var(--accent);
   margin-bottom: 22px;
 }
 

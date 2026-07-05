@@ -31,7 +31,7 @@ export default function LandingScreen() {
 
   return (
     <div className={styles.screen}>
-      <RouteNav active="landing" />
+      <RouteNav active="landing" showLinks={false} />
 
       <div className={styles.content}>
         <div className={styles.textCol}>
@@ -44,12 +44,12 @@ export default function LandingScreen() {
             </div>
           )}
 
-          <p className={styles.bio}>{protagonist.landingBio ?? protagonist.description}</p>
+          <p className={styles.bio} style={{ color: protagonist.color }}>{protagonist.landingBio ?? protagonist.description}</p>
 
           <div className={styles.actions}>
-            <button className={styles.pill} onClick={() => setScreen('episodeList')}>Episodios</button>
-            <button className={styles.pill} onClick={() => setScreen('characters')}>Personajes</button>
-            <button className={styles.pill} onClick={() => setScreen('gallery')}>Galería</button>
+            <button className={styles.pill} style={{ background: protagonist.color }} onClick={() => setScreen('episodeList')}>Episodios</button>
+            <button className={styles.pill} style={{ background: protagonist.color }} onClick={() => setScreen('characters')}>Personajes</button>
+            <button className={styles.pill} style={{ background: protagonist.color }} onClick={() => setScreen('gallery')}>Galería</button>
             <button
               className={styles.heartBtn}
               style={{ color: protagonist.color }}

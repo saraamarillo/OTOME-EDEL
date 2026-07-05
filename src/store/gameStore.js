@@ -262,4 +262,20 @@ export const useGameStore = create((set, get) => ({
   // ── Última elección tomada (para HUD, no se persiste) ───────
   lastChoice: null,
   setLastChoice: (choice) => set({ lastChoice: choice }),
+
+  // ── Llamada telefónica en curso (persiste durante las réplicas
+  // propias de la protagonista entre nodos "phone") ──────────
+  phoneCallActive: false,
+  setPhoneCallActive: (active) => set({ phoneCallActive: active }),
+  ringtonePlayed: false,
+  setRingtonePlayed: (played) => set({ ringtonePlayed: played }),
+
+  // ── Chat en curso (misma idea que la llamada, para el icono) ─
+  chatActive: false,
+  setChatActive: (active) => set({ chatActive: active }),
+
+  // ── Expresión de la protagonista congelada al inicio de la
+  // llamada, para que su círculo no cambie de cara mientras dura ─
+  callFrozenExpression: null,
+  setCallFrozenExpression: (expression) => set({ callFrozenExpression: expression }),
 }))

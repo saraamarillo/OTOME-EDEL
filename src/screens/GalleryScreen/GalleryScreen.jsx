@@ -3,6 +3,7 @@ import { useGameStore } from '../../store/gameStore'
 import { PROTAGONISTS } from '../../constants/characters'
 import { EPISODES, getFirstScene } from '../../constants/episodes'
 import { GALLERY_IMAGES as ALL_IMAGES } from '../../constants/galleryImages'
+import { ROUTE_BG } from '../../constants/theme'
 import RouteNav from '../../components/RouteNav/RouteNav'
 import styles from './GalleryScreen.module.css'
 
@@ -14,6 +15,7 @@ export default function GalleryScreen() {
   const unlockedAll        = useGameStore((s) => s.unlockedImages)
   const playCountsAll      = useGameStore((s) => s.episodePlayCounts)
   const protagonistId      = useGameStore((s) => s.protagonistId)
+  const protagonist        = PROTAGONISTS.find((p) => p.id === protagonistId)
   const [viewing, setViewing] = useState(null)
   const [showLocked, setShowLocked] = useState(false)
 
@@ -21,7 +23,6 @@ export default function GalleryScreen() {
   const playCounts     = playCountsAll[protagonistId] ?? {}
 
   const items = ALL_IMAGES.filter((img) => img.routes.includes(protagonistId))
-  const episode1Items = items.filter((i) => i.episode === 1)
 
   function handlePlayEpisode(ep) {
     setSelectedEpisode(ep)
@@ -29,38 +30,48 @@ export default function GalleryScreen() {
     setScreen('game')
   }
 
-  return (
-    <div className={styles.screen}>
-      <RouteNav active="gallery" />
+  function renderEpisodeSection(ep) {
+    const epItems = items.filter((i) => i.episode === ep)
+    const meta = EPISODES[ep]
+    const marginTop = ep === Number(Object.keys(EPISODES)[0]) ? 0 : 40
 
-      <div className={styles.body}>
-        <div className={styles.topRow}>
-          <h2 className={styles.title}>Mis recuerdos</h2>
-          <div className={styles.tabs}>
-            {PROTAGONISTS.map((p) => (
-              <button
-                key={p.id}
-                className={styles.tab}
-                style={{ background: p.id === protagonistId ? p.color : 'rgba(150,150,160,0.5)' }}
-                disabled={!p.available}
-                onClick={() => selectProtagonist(p.id)}
-              >
-                {p.name.split(' ')[0]}
-              </button>
+    if (epItems.length === 0) {
+      return (
+        <div key={ep}>
+          <div className={styles.epHeader} style={{ marginTop }}>
+            <span className={styles.epBadge}>Episodio {ep} · {meta.title}</span>
+            <span className={styles.epCount}>0 / 2</span>
+          </div>
+          <div className={styles.lockedRow}>
+            {[0, 1].map((i) => (
+              <div key={i} className={styles.lockedCard}>
+                <span className={styles.lockedHeart} style={{ top: 16, left: 18 }}>♥</span>
+                <span className={styles.lockedHeart} style={{ bottom: 18, right: 20 }}>♥</span>
+                <span className={styles.lockedIcon}>🔒</span>
+              </div>
             ))}
           </div>
+          <div className={styles.epFooter}>
+            <button className={styles.replayBtnDisabled} disabled>Volver a jugar el episodio</button>
+            <div className={styles.playCount}>
+              Episodio jugado <b>{playCounts[ep] ?? 0} veces</b>
+            </div>
+          </div>
         </div>
+      )
+    }
 
-        {/* ── Episodio 1 ─────────────────────────────────────── */}
-        <div className={styles.epHeader}>
-          <span className={styles.epBadge}>Episodio 1 · {EPISODES[1].title}</span>
+    return (
+      <div key={ep}>
+        <div className={styles.epHeader} style={{ marginTop }}>
+          <span className={styles.epBadge}>Episodio {ep} · {meta.title}</span>
           <span className={styles.epCount}>
-            {unlockedImages.filter((id) => episode1Items.some((i) => i.id === id)).length} / {episode1Items.length}
+            {unlockedImages.filter((id) => epItems.some((i) => i.id === id)).length} / {epItems.length}
           </span>
         </div>
 
         <div className={styles.grid}>
-          {episode1Items.map((item) => {
+          {epItems.map((item) => {
             const unlocked = unlockedImages.includes(item.id)
             return (
               <button
@@ -83,38 +94,40 @@ export default function GalleryScreen() {
         </div>
 
         <div className={styles.epFooter}>
-          <button className={styles.replayBtn} onClick={() => handlePlayEpisode(1)}>
+          <button className={styles.replayBtn} onClick={() => handlePlayEpisode(ep)}>
             Volver a jugar el episodio
           </button>
           <div className={styles.playCount}>
-            Episodio jugado <b>{playCounts[1] ?? 0} {(playCounts[1] ?? 0) === 1 ? 'vez' : 'veces'}</b>
+            Episodio jugado <b>{playCounts[ep] ?? 0} {(playCounts[ep] ?? 0) === 1 ? 'vez' : 'veces'}</b>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className={styles.screen} style={{ background: ROUTE_BG[protagonistId], '--accent': protagonist?.color }}>
+      <RouteNav active="gallery" />
+
+      <div className={styles.body}>
+        <div className={styles.topRow}>
+          <h2 className={styles.title}>Mis recuerdos</h2>
+          <div className={styles.tabs}>
+            {PROTAGONISTS.map((p) => (
+              <button
+                key={p.id}
+                className={styles.tab}
+                style={{ background: p.id === protagonistId ? p.color : 'rgba(150,150,160,0.5)' }}
+                disabled={!p.available}
+                onClick={() => selectProtagonist(p.id)}
+              >
+                {p.name.split(' ')[0]}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* ── Episodio 2 (sin recuerdos todavía) ───────────────── */}
-        {EPISODES[2] && (
-          <>
-            <div className={styles.epHeader} style={{ marginTop: 40 }}>
-              <span className={styles.epBadge}>Episodio 2 · {EPISODES[2].title}</span>
-              <span className={styles.epCount}>0 / 2</span>
-            </div>
-            <div className={styles.lockedRow}>
-              {[0, 1].map((i) => (
-                <div key={i} className={styles.lockedCard}>
-                  <span className={styles.lockedHeart} style={{ top: 16, left: 18 }}>♥</span>
-                  <span className={styles.lockedHeart} style={{ bottom: 18, right: 20 }}>♥</span>
-                  <span className={styles.lockedIcon}>🔒</span>
-                </div>
-              ))}
-            </div>
-            <div className={styles.epFooter}>
-              <button className={styles.replayBtnDisabled} disabled>Volver a jugar el episodio</button>
-              <div className={styles.playCount}>
-                Episodio jugado <b>{playCounts[2] ?? 0} veces</b>
-              </div>
-            </div>
-          </>
-        )}
+        {Object.keys(EPISODES).map(Number).map(renderEpisodeSection)}
       </div>
 
       {viewing && (

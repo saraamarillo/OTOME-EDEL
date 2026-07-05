@@ -1,7 +1,7 @@
 {
   "id": "scene_02_encuentro_ethan",
   "title": "El Club Paranormal",
-  "background": "club_paranormal_tarde",
+  "background": "pasillo_club_tarde",
   "nodes": [
     {
       "id": "node_001",
@@ -136,14 +136,22 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¡Genial! Pues venga, vamos. Luego os invito a algo, que el café es gratis.",
-      "next": "node_010a_sec",
-      "background": "secretaria_tarde"
+      "next": "node_010a_salida",
+      "background": "pasillo_club_noche"
+    },
+    {
+      "id": "node_010a_salida",
+      "type": "narration",
+      "character": null,
+      "text": "Salen del club. Fuera ya ha oscurecido; el pasillo se ve distinto de noche.",
+      "next": "node_010a_sec"
     },
     {
       "id": "node_010a_sec",
       "type": "narration",
       "character": null,
       "text": "Secretaría. Una sala pequeña, mostrador de madera y carteles plastificados. Ethan deja los papeles y firma con despreocupación total.",
+      "background": "secretaria_tarde",
       "next": "node_011"
     },
     {
@@ -151,14 +159,22 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Claro, sin problema. Igual luego si queréis os enseño algo, sin compromiso.",
-      "next": "node_010b_sec",
-      "background": "secretaria_tarde"
+      "next": "node_010b_salida",
+      "background": "pasillo_club_noche"
+    },
+    {
+      "id": "node_010b_salida",
+      "type": "narration",
+      "character": null,
+      "text": "Salen del club. Fuera ya ha oscurecido; el pasillo se ve distinto de noche.",
+      "next": "node_010b_sec"
     },
     {
       "id": "node_010b_sec",
       "type": "narration",
       "character": null,
       "text": "Secretaría. Ethan entrega los papeles, firma y hace un comentario amable a la persona del mostrador. Parece que le conocen bien.",
+      "background": "secretaria_tarde",
       "next": "node_011"
     },
     {

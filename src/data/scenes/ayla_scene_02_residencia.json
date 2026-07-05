@@ -8,6 +8,7 @@
       "type": "narration",
       "character": null,
       "text": "La habitación compartida está llena de plantas medicinales, pequeños botes y herramientas de herboristería.",
+      "protagonistExpression": "neutral",
       "next": "n_hab_02"
     },
     {
@@ -72,6 +73,7 @@
       "type": "thought",
       "character": null,
       "text": "Eso cuadra exactamente con lo que vi hoy. Demasiado amable para ser real... y sin embargo lo era.",
+      "protagonistExpression": "happy",
       "next": "n_lydia_05"
     },
     {
@@ -80,6 +82,7 @@
       "character": "lydia",
       "text": "¿Y esa cámara? ¿La llevas siempre encima o solo en situaciones de emergencia?",
       "expression": "neutral",
+      "protagonistExpression": "neutral",
       "next": "n_ayla_04"
     },
     {

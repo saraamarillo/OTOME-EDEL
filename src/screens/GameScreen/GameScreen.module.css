@@ -10,6 +10,15 @@
   pointer-events: none;
 }
 
+/* ── Oscurecimiento de fondo en decisiones ────────────────── */
+.choiceScrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* Restaurar pointer-events en hijos interactivos directos */
 .ui > * {
   pointer-events: auto;
@@ -123,13 +132,38 @@
 /* ── Medidor de afinidad ─────────────────────────────────── */
 .affinityPanel {
   position: absolute;
-  top: 64px;
+  top: 50%;
   right: 30px;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
   pointer-events: none;
+}
+
+/* ── Icono de llamada/chat persistente — misma posición y tamaño
+   que el icono de PhoneCallOverlay/ChatMessageOverlay (top:22/left:22) ─ */
+.commBadge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.commBadgeIcon {
+  width: 30px;
+  height: 30px;
 }
 
 /* ── Control de volumen (bottom-right) ───────────────────── */
@@ -316,7 +350,7 @@
   border-radius: 26px;
   text-align: center;
   background: linear-gradient(180deg, #2a1c2e, #1c1422);
-  border: 1px solid rgba(255, 158, 196, 0.45);
+  border: 1px solid var(--accent, rgba(255, 158, 196, 0.45));
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -329,14 +363,14 @@
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #ff9ec4;
+  color: var(--accent, #ff9ec4);
 }
 
 .revealImgWrap {
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  border: 3px solid rgba(255, 158, 196, 0.75);
+  border: 3px solid var(--accent, rgba(255, 158, 196, 0.75));
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -388,8 +422,8 @@
   font-weight: 800;
   font-size: 0.95rem;
   color: #fff;
-  background: linear-gradient(180deg, #ff89b6, #e85a92);
-  box-shadow: 0 10px 24px rgba(232, 90, 146, 0.45);
+  background: var(--accent, #e85a92);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   transition: filter 0.2s;
 }
 
