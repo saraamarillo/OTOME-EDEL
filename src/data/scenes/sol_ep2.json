@@ -605,7 +605,7 @@
       "id": "n_s1_padre_02",
       "type": "dialogue",
       "character": "padre",
-      "text": "Es instinto. No sabemos adónde te va a llevar, si a algo bueno o algo malo.",
+      "text": "Ese instinto. No sabemos adónde te va a llevar, si a algo bueno o algo malo.",
       "next": "n_s1_padre_02_b",
       "expression": "neutral"
     },
@@ -872,21 +872,24 @@
       "type": "chat",
       "character": "ethan",
       "text": "Pero si habíamos quedado a y media.",
-      "next": "n_s2_ayla_01"
+      "next": "n_s2_ayla_01",
+      "isGroup": true
     },
     {
       "id": "n_s2_ayla_01",
       "type": "chat",
       "character": "ayla",
       "text": "Estoy en la Biblioteca ahora voy de camino y os aviso cuando esté allí.",
-      "next": "n_s2_ethan_02"
+      "next": "n_s2_ethan_02",
+      "isGroup": true
     },
     {
       "id": "n_s2_ethan_02",
       "type": "chat",
       "character": "ethan",
       "text": "Yo estoy terminando unas cosas y ahora voy, nos vemos en el club. ¿Sabéis llegar?",
-      "next": "n_s2_ayla_02"
+      "next": "n_s2_ayla_02",
+      "isGroup": true
     },
     {
       "id": "n_s2_ayla_02",
@@ -1428,7 +1431,7 @@
       "id": "n_s3_15",
       "type": "narration",
       "character": null,
-      "text": "Soledad le retira las piedras que tenga encima. Pesan bastante. Tiene raspones por todas partes. No puede levantarse.",
+      "text": "Soledad le retira las piedras que tenía encima. Pesan bastante. Ethan le ayuda como puede a retirarlas. Tiene raspones por todas partes. No puede levantarse.",
       "next": "n_s3_ethan_11"
     },
     {
@@ -2154,7 +2157,7 @@
       "id": "n_s6_ryan_chat_01b_b",
       "type": "chat",
       "character": "ryan",
-      "text": "que con tanto lío no me he enterado y me he quedado algo preocupada.",
+      "text": "que con tanto lío no me he enterado y me he quedado algo preocupado.",
       "next": "n_s6_03"
     },
     {

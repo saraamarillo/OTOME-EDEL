@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGameStore } from '../../store/gameStore'
 import { NPC_CHARACTERS, PROTAGONISTS } from '../../constants/characters'
 import styles from './PhoneCallOverlay.module.css'
@@ -24,6 +24,7 @@ export default function PhoneCallOverlay({ node, onAdvance }) {
   const volume                = useGameStore((s) => s.volume)
   const ringtonePlayed        = useGameStore((s) => s.ringtonePlayed)
   const setRingtonePlayed     = useGameStore((s) => s.setRingtonePlayed)
+  const audioRef              = useRef(null)
 
   useEffect(() => {
     if (ringtonePlayed) return
@@ -31,9 +32,15 @@ export default function PhoneCallOverlay({ node, onAdvance }) {
     const audio = new Audio('/assets/music/ringtone.mp3')
     audio.loop   = false
     audio.volume = Math.max(0, Math.min(1, volume))
+    audioRef.current = audio
     audio.play().catch(() => {})
     return () => { audio.pause(); audio.currentTime = 0 }
   }, [])
+
+  function stopRingtone() {
+    const audio = audioRef.current
+    if (audio) { audio.pause(); audio.currentTime = 0 }
+  }
 
   const characterId  = node.character
   const allChars     = [...NPC_CHARACTERS, ...PROTAGONISTS]
@@ -47,7 +54,7 @@ export default function PhoneCallOverlay({ node, onAdvance }) {
   const theme         = protagData?.color ?? '#2f7fb8'
 
   return (
-    <div className={styles.overlay} onClick={(e) => { e.stopPropagation(); onAdvance() }}>
+    <div className={styles.overlay} onClick={(e) => { e.stopPropagation(); stopRingtone(); onAdvance() }}>
 
       <div className={styles.iconRow}>
         <div className={styles.iconBtn} style={{ background: theme }}>
