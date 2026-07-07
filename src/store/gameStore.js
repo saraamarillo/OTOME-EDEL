@@ -1,6 +1,8 @@
 import { create } from 'zustand'
 import { AFFINITY_DEFAULT, AFFINITY_MIN, AFFINITY_MAX } from '../constants/affinity'
 import { NPC_CHARACTERS } from '../constants/characters'
+import { supabase } from '../lib/supabaseClient'
+import { getCachedEmail, cacheEmail } from '../utils/usernameCache'
 
 const buildAffinityMap = () =>
   Object.fromEntries(NPC_CHARACTERS.map((c) => [c.id, AFFINITY_DEFAULT]))
@@ -51,48 +53,115 @@ const migratePlayCounts = (raw) => {
   return buildRoutePlayCounts()
 }
 
-const buildSaveKey = (username) => `edel:${username.toLowerCase().trim()}`
-
 export const useGameStore = create((set, get) => ({
-  // ── Sesión de usuario ────────────────────────────────────────
+  // ── Sesión de usuario (Supabase Auth + tabla game_saves) ──────
   userId: null,
   userName: null,
+  authLoading: true,          // true mientras se comprueba si ya hay sesión activa
   completedEpisodes: buildRouteEpisodes(),
   episodePlayCounts: buildRoutePlayCounts(),
 
-  login: (username, password) => {
-    const trimmed = username.trim()
-    if (!trimmed || !password) return 'empty'
-    const key = buildSaveKey(trimmed)
-    const raw = localStorage.getItem(key)
-    if (!raw) return 'not_found'          // usuario no existe
-    const save = JSON.parse(raw)
-    if (save.password !== password) return 'pass_error'
-    // Invitado: entra pero sin guardar userId (saveProgress no se ejecutará)
-    const isGuest = save.guest === true
+  /** Aplica una fila de game_saves + sesión de Supabase al estado local. */
+  _hydrateFromSave: (session, save) => {
     set({
-      userId: isGuest ? null : key,
-      userName: save.displayName ?? trimmed,
-      completedEpisodes: isGuest ? buildRouteEpisodes() : migrateEpisodeList(save.completedEpisodes),
-      unlockedImages:    isGuest ? buildRouteEpisodes() : migrateEpisodeList(save.unlockedImages),
-      episodePlayCounts: isGuest ? buildRoutePlayCounts() : migratePlayCounts(save.episodePlayCounts),
-      affinities:      isGuest ? buildRouteAffinities() : migrateAffinities(save.affinities),
-      encounteredNPCs: isGuest ? buildRouteEncountered() : migrateEncountered(save.encounteredNPCs),
-      currentScreen: 'protagonistSelect',
+      userId: session.user.id,
+      userName: save?.display_name ?? session.user.email,
+      completedEpisodes: migrateEpisodeList(save?.completed_episodes),
+      unlockedImages:    migrateEpisodeList(save?.unlocked_images),
+      episodePlayCounts: migratePlayCounts(save?.episode_play_counts),
+      affinities:      migrateAffinities(save?.affinities),
+      encounteredNPCs: migrateEncountered(save?.encountered_npcs),
     })
-    return isGuest ? 'guest' : 'ok'
   },
 
-  logout: () => set({
-    userId: null, userName: null, completedEpisodes: buildRouteEpisodes(),
+  /** Comprueba al arrancar la app si ya hay una sesión guardada (Supabase la persiste sola). */
+  initSession: async () => {
+    const { data: { session } } = await supabase.auth.getSession()
+    if (!session) { set({ authLoading: false }); return }
+    const { data: save } = await supabase
+      .from('game_saves')
+      .select('*')
+      .eq('user_id', session.user.id)
+      .single()
+    get()._hydrateFromSave(session, save)
+    set({ authLoading: false, currentScreen: 'protagonistSelect' })
+  },
+
+  signUp: async (username, email, password) => {
+    const trimmedUsername = username.trim()
+    const trimmedEmail = email.trim()
+    if (!trimmedUsername || !trimmedEmail || !password) return { status: 'empty' }
+
+    const { data: available, error: checkError } = await supabase.rpc('username_available', {
+      p_username: trimmedUsername,
+    })
+    if (checkError) return { status: 'error', message: checkError.message }
+    if (!available) return { status: 'username_taken' }
+
+    const { data, error } = await supabase.auth.signUp({
+      email: trimmedEmail,
+      password,
+      options: { data: { username: trimmedUsername, display_name: trimmedUsername } },
+    })
+    if (error) return { status: 'error', message: error.message }
+    cacheEmail(trimmedUsername, trimmedEmail)
+    if (!data.session) return { status: 'confirm_email' }
+    // Confirmación de email desactivada: entra directamente
+    const { data: save } = await supabase
+      .from('game_saves')
+      .select('*')
+      .eq('user_id', data.session.user.id)
+      .single()
+    get()._hydrateFromSave(data.session, save)
+    set({ currentScreen: 'protagonistSelect' })
+    return { status: 'ok' }
+  },
+
+  login: async (username, password, emailHint) => {
+    const trimmedUsername = username.trim()
+    if (!trimmedUsername || !password) return { status: 'empty' }
+
+    const email = emailHint?.trim() || getCachedEmail(trimmedUsername)
+    if (!email) return { status: 'need_email' }
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) return { status: 'error', message: error.message }
+    cacheEmail(trimmedUsername, email)
+    const { data: save } = await supabase
+      .from('game_saves')
+      .select('*')
+      .eq('user_id', data.session.user.id)
+      .single()
+    get()._hydrateFromSave(data.session, save)
+    set({ currentScreen: 'protagonistSelect' })
+    return { status: 'ok' }
+  },
+
+  /** Modo invitado: juega sin cuenta ni guardado (nada se persiste). */
+  loginAsGuest: () => set({
+    userId: null,
+    userName: 'Invitada',
+    completedEpisodes: buildRouteEpisodes(),
     episodePlayCounts: buildRoutePlayCounts(),
-    currentScreen: 'title',
-    protagonistId: null, sceneId: null, nodeIndex: 0,
-    activeCharacterId: null, backgroundId: null,
-    affinities: buildRouteAffinities(), characterLooks: {},
-    visitedScenes: [], unlockedImages: buildRouteEpisodes(), imageReveal: null,
+    unlockedImages: buildRouteEpisodes(),
+    affinities: buildRouteAffinities(),
     encounteredNPCs: buildRouteEncountered(),
+    currentScreen: 'protagonistSelect',
   }),
+
+  logout: async () => {
+    if (get().userId) await supabase.auth.signOut()
+    set({
+      userId: null, userName: null, completedEpisodes: buildRouteEpisodes(),
+      episodePlayCounts: buildRoutePlayCounts(),
+      currentScreen: 'title',
+      protagonistId: null, sceneId: null, nodeIndex: 0,
+      activeCharacterId: null, backgroundId: null,
+      affinities: buildRouteAffinities(), characterLooks: {},
+      visitedScenes: [], unlockedImages: buildRouteEpisodes(), imageReveal: null,
+      encounteredNPCs: buildRouteEncountered(),
+    })
+  },
 
   completeEpisode: (epNum) => {
     const state = get()
@@ -106,33 +175,19 @@ export const useGameStore = create((set, get) => ({
       completedEpisodes: { ...state.completedEpisodes, [pid]: updatedList },
       episodePlayCounts: { ...state.episodePlayCounts, [pid]: updatedCounts },
     })
-    if (state.userId) {
-      const raw = localStorage.getItem(state.userId)
-      const save = raw ? JSON.parse(raw) : {}
-      localStorage.setItem(state.userId, JSON.stringify({
-        ...save,
-        completedEpisodes: get().completedEpisodes,
-        episodePlayCounts: get().episodePlayCounts,
-        unlockedImages: get().unlockedImages,
-        affinities: get().affinities,
-        encounteredNPCs: get().encounteredNPCs,
-      }))
-    }
+    get().saveProgress()
   },
 
-  saveProgress: () => {
+  saveProgress: async () => {
     const state = get()
     if (!state.userId) return
-    const raw = localStorage.getItem(state.userId)
-    const save = raw ? JSON.parse(raw) : {}
-    localStorage.setItem(state.userId, JSON.stringify({
-      ...save,
-      completedEpisodes: state.completedEpisodes,
-      episodePlayCounts: state.episodePlayCounts,
-      unlockedImages:    state.unlockedImages,
-      affinities:        state.affinities,
-      encounteredNPCs:   state.encounteredNPCs,
-    }))
+    await supabase.from('game_saves').update({
+      completed_episodes: state.completedEpisodes,
+      episode_play_counts: state.episodePlayCounts,
+      unlocked_images: state.unlockedImages,
+      affinities: state.affinities,
+      encountered_npcs: state.encounteredNPCs,
+    }).eq('user_id', state.userId)
   },
 
   // ── Audio ───────────────────────────────────────────────────

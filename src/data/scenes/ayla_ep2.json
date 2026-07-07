@@ -266,14 +266,16 @@
       "type": "chat",
       "character": "soledad",
       "text": "Hola, ya he llegado.",
-      "next": "n_a4_ethan_chat_01"
+      "next": "n_a4_ethan_chat_01",
+      "isGroup": true
     },
     {
       "id": "n_a4_ethan_chat_01",
       "type": "chat",
       "character": "ethan",
       "text": "Pero si habíamos quedado a y media.",
-      "next": "n_a4_ayla_01"
+      "next": "n_a4_ayla_01",
+      "isGroup": true
     },
     {
       "id": "n_a4_ayla_01",

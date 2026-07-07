@@ -98,6 +98,19 @@
   align-items: stretch;
 }
 
+.epRowLocked {
+  opacity: 0.55;
+  filter: grayscale(0.6);
+}
+
+.lockedNote {
+  align-self: flex-start;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #7a7f8c;
+}
+
 .epImageCard {
   flex-shrink: 0;
   width: 340px;

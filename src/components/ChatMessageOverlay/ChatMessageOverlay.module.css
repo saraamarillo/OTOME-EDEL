@@ -78,6 +78,14 @@
   color: #9aa0ac;
 }
 
+.groupTag {
+  margin: -6px 0 10px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 11px;
+  color: #9aa0ac;
+}
+
 .text {
   margin: 0;
   font-family: var(--font-scene);

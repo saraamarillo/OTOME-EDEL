@@ -58,6 +58,7 @@ export default function ChatMessageOverlay({ node, onAdvance }) {
           <span className={styles.speaker} style={{ color: theme }}>{displayName}</span>
           <span className={styles.remoteLabel}>Mensaje nuevo</span>
         </div>
+        {node.isGroup && <p className={styles.groupTag}>Grupo Club Paranormal</p>}
         {node.text && <p className={styles.text}>{node.text}</p>}
       </div>
 

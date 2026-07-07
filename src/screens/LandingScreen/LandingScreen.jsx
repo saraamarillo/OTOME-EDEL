@@ -60,6 +60,10 @@ export default function LandingScreen() {
         </div>
 
         <div className={styles.portraitWrap}>
+          <div
+            className={styles.portraitGlow}
+            style={{ background: `linear-gradient(to top, color-mix(in srgb, ${protagonist.color} 65%, black) 0%, transparent 60%)` }}
+          />
           <img
             className={styles.portrait}
             src={`/assets/sprites/${protagonist.id}/arc1.png`}
