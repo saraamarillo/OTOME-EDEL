@@ -33,9 +33,15 @@ const SCREENS = {
 export default function App() {
   const currentScreen = useGameStore((s) => s.currentScreen)
   const volume = useGameStore((s) => s.volume)
+  const authLoading = useGameStore((s) => s.authLoading)
+  const initSession = useGameStore((s) => s.initSession)
   const Screen = SCREENS[currentScreen] ?? TitleScreen
   const ref = useRef(null)
   const audioRef = useRef(null)
+
+  useEffect(() => {
+    initSession()
+  }, [initSession])
 
   useEffect(() => {
     if (!audioRef.current) {
@@ -72,6 +78,8 @@ export default function App() {
     window.addEventListener('resize', applyScale)
     return () => window.removeEventListener('resize', applyScale)
   }, [])
+
+  if (authLoading) return <div className={styles.viewport} />
 
   return (
     <div ref={ref} className={styles.viewport}>
