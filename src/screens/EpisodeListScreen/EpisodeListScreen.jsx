@@ -20,9 +20,9 @@ export default function EpisodeListScreen() {
   const completed   = completedAll[protagonistId] ?? []
   const playCounts  = playCountsAll[protagonistId] ?? {}
 
-  const currentEpisode = AVAILABLE_EPISODES.find((ep) => !completed.includes(ep))
-  const completedList  = AVAILABLE_EPISODES.filter((ep) => completed.includes(ep))
-  const noMoreEpisodes = !currentEpisode && AVAILABLE_EPISODES.length < TOTAL_EPISODES
+  const pendingList     = AVAILABLE_EPISODES.filter((ep) => !completed.includes(ep))
+  const completedList   = AVAILABLE_EPISODES.filter((ep) => completed.includes(ep))
+  const noMoreEpisodes  = pendingList.length === 0 && AVAILABLE_EPISODES.length < TOTAL_EPISODES
 
   function handlePlay(ep) {
     setSelectedEpisode(ep)
@@ -93,10 +93,10 @@ export default function EpisodeListScreen() {
           </div>
         </div>
 
-        {currentEpisode && (
+        {pendingList.length > 0 && (
           <>
-            <div className={styles.sectionLabel}>Resumen del episodio actual</div>
-            {renderCard(currentEpisode, { completed: false })}
+            <div className={styles.sectionLabel}>Episodios disponibles</div>
+            {pendingList.map((ep) => renderCard(ep, { completed: false }))}
           </>
         )}
 
