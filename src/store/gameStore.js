@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import { AFFINITY_DEFAULT, AFFINITY_MIN, AFFINITY_MAX } from '../constants/affinity'
 import { NPC_CHARACTERS } from '../constants/characters'
 import { supabase } from '../lib/supabaseClient'
+import { getCachedEmail, cacheEmail } from '../utils/usernameCache'
 
 const buildAffinityMap = () =>
   Object.fromEntries(NPC_CHARACTERS.map((c) => [c.id, AFFINITY_DEFAULT]))
@@ -86,16 +87,24 @@ export const useGameStore = create((set, get) => ({
     set({ authLoading: false, currentScreen: 'protagonistSelect' })
   },
 
-  signUp: async (email, password, displayName) => {
+  signUp: async (username, email, password) => {
+    const trimmedUsername = username.trim()
     const trimmedEmail = email.trim()
-    const trimmedName = displayName.trim()
-    if (!trimmedEmail || !password || !trimmedName) return { status: 'empty' }
+    if (!trimmedUsername || !trimmedEmail || !password) return { status: 'empty' }
+
+    const { data: available, error: checkError } = await supabase.rpc('username_available', {
+      p_username: trimmedUsername,
+    })
+    if (checkError) return { status: 'error', message: checkError.message }
+    if (!available) return { status: 'username_taken' }
+
     const { data, error } = await supabase.auth.signUp({
       email: trimmedEmail,
       password,
-      options: { data: { display_name: trimmedName } },
+      options: { data: { username: trimmedUsername, display_name: trimmedUsername } },
     })
     if (error) return { status: 'error', message: error.message }
+    cacheEmail(trimmedUsername, trimmedEmail)
     if (!data.session) return { status: 'confirm_email' }
     // Confirmación de email desactivada: entra directamente
     const { data: save } = await supabase
@@ -108,11 +117,16 @@ export const useGameStore = create((set, get) => ({
     return { status: 'ok' }
   },
 
-  login: async (email, password) => {
-    const trimmedEmail = email.trim()
-    if (!trimmedEmail || !password) return { status: 'empty' }
-    const { data, error } = await supabase.auth.signInWithPassword({ email: trimmedEmail, password })
+  login: async (username, password, emailHint) => {
+    const trimmedUsername = username.trim()
+    if (!trimmedUsername || !password) return { status: 'empty' }
+
+    const email = emailHint?.trim() || getCachedEmail(trimmedUsername)
+    if (!email) return { status: 'need_email' }
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) return { status: 'error', message: error.message }
+    cacheEmail(trimmedUsername, email)
     const { data: save } = await supabase
       .from('game_saves')
       .select('*')
@@ -123,8 +137,20 @@ export const useGameStore = create((set, get) => ({
     return { status: 'ok' }
   },
 
+  /** Modo invitado: juega sin cuenta ni guardado (nada se persiste). */
+  loginAsGuest: () => set({
+    userId: null,
+    userName: 'Invitada',
+    completedEpisodes: buildRouteEpisodes(),
+    episodePlayCounts: buildRoutePlayCounts(),
+    unlockedImages: buildRouteEpisodes(),
+    affinities: buildRouteAffinities(),
+    encounteredNPCs: buildRouteEncountered(),
+    currentScreen: 'protagonistSelect',
+  }),
+
   logout: async () => {
-    await supabase.auth.signOut()
+    if (get().userId) await supabase.auth.signOut()
     set({
       userId: null, userName: null, completedEpisodes: buildRouteEpisodes(),
       episodePlayCounts: buildRoutePlayCounts(),

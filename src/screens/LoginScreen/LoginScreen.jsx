@@ -5,11 +5,13 @@ import styles from './LoginScreen.module.css'
 export default function LoginScreen() {
   const login = useGameStore((s) => s.login)
   const signUp = useGameStore((s) => s.signUp)
+  const loginAsGuest = useGameStore((s) => s.loginAsGuest)
   const setScreen = useGameStore((s) => s.setScreen)
   const [mode, setMode] = useState('login')   // 'login' | 'signup'
-  const [displayName, setDisplayName] = useState('')
+  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [needsEmail, setNeedsEmail] = useState(false)
   const [error, setError] = useState('')
   const [info, setInfo] = useState('')
   const [loading, setLoading] = useState(false)
@@ -20,6 +22,7 @@ export default function LoginScreen() {
     setMode(isSignup ? 'login' : 'signup')
     setError('')
     setInfo('')
+    setNeedsEmail(false)
   }
 
   async function handleSubmit(e) {
@@ -28,17 +31,23 @@ export default function LoginScreen() {
     setInfo('')
     setLoading(true)
     const result = isSignup
-      ? await signUp(email, password, displayName)
-      : await login(email, password)
+      ? await signUp(username, email, password)
+      : await login(username, password, needsEmail ? email : undefined)
     setLoading(false)
 
     if (result.status === 'empty') {
-      setError(isSignup ? 'Rellena tu nombre, email y contraseña.' : 'Introduce tu email y contraseña.')
+      setError(isSignup ? 'Rellena tu nombre de usuario, email y contraseña.' : 'Introduce tu nombre de usuario y contraseña.')
+    } else if (result.status === 'username_taken') {
+      setError('Ese nombre de usuario ya está en uso. Prueba con otro.')
+    } else if (result.status === 'need_email') {
+      setNeedsEmail(true)
+      setInfo('Es la primera vez que inicias sesión en este dispositivo: confirma tu email una vez.')
     } else if (result.status === 'error') {
       setError(traducirError(result.message))
     } else if (result.status === 'confirm_email') {
       setInfo('Te hemos enviado un correo de confirmación. Confírmalo y luego inicia sesión.')
       setMode('login')
+      setNeedsEmail(false)
     }
   }
 
@@ -49,30 +58,30 @@ export default function LoginScreen() {
         <p className={styles.tagline}>Entre Desvelo y Ensueño Latente</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
-          {isSignup && (
+          <div className={styles.field}>
+            <label className={styles.label}>Nombre de usuario</label>
+            <input
+              className={styles.input}
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Cómo quieres que te llamemos"
+              autoComplete="username"
+            />
+          </div>
+          {(isSignup || needsEmail) && (
             <div className={styles.field}>
-              <label className={styles.label}>Nombre</label>
+              <label className={styles.label}>Email</label>
               <input
                 className={styles.input}
-                type="text"
-                value={displayName}
-                onChange={(e) => setDisplayName(e.target.value)}
-                placeholder="Cómo quieres que te llamemos"
-                autoComplete="nickname"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="tu@email.com"
+                autoComplete="email"
               />
             </div>
           )}
-          <div className={styles.field}>
-            <label className={styles.label}>Email</label>
-            <input
-              className={styles.input}
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="tu@email.com"
-              autoComplete="email"
-            />
-          </div>
           <div className={styles.field}>
             <label className={styles.label}>Contraseña</label>
             <input
@@ -95,6 +104,10 @@ export default function LoginScreen() {
           {isSignup ? '¿Ya tienes cuenta? Inicia sesión' : '¿Primera vez? Crea tu cuenta'}
         </button>
 
+        <button className={styles.back} onClick={loginAsGuest}>
+          Jugar como invitada
+        </button>
+
         <button className={styles.back} onClick={() => setScreen('title')}>
           ← Volver
         </button>
@@ -105,7 +118,7 @@ export default function LoginScreen() {
 
 function traducirError(message) {
   if (!message) return 'Algo ha ido mal. Inténtalo de nuevo.'
-  if (message.includes('Invalid login credentials')) return 'Email o contraseña incorrectos.'
+  if (message.includes('Invalid login credentials')) return 'Usuario, email o contraseña incorrectos.'
   if (message.includes('User already registered')) return 'Ya existe una cuenta con ese email.'
   if (message.includes('Password should be at least')) return 'La contraseña debe tener al menos 6 caracteres.'
   return message
