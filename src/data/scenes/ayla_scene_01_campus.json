@@ -495,7 +495,7 @@
       "character": null,
       "text": "Bueno... al menos parece buena persona.",
       "next": "n_caf_01",
-      "background": "cafeteria_universidad"
+      "background": "cafeteria_universidad_dia"
     },
     {
       "id": "n_caf_01",

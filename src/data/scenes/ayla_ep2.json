@@ -187,7 +187,7 @@
       "type": "narration",
       "character": null,
       "text": "Comen juntas en la cafetería: Ayla coge pizza, Lydia un flanecito.",
-      "background": "cafeteria_universidad",
+      "background": "cafeteria_universidad_dia",
       "next": "n_a2_06"
     },
     {

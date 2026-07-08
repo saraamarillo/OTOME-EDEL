@@ -34,7 +34,7 @@
       "character": null,
       "text": "La cafetería universitaria está iluminada con una luz cálida. Hay pocas personas a esas horas, y el ambiente resulta más tranquilo que el resto del campus.",
       "next": "n_caf_02",
-      "background": "cafeteria_universidad"
+      "background": "cafeteria_universidad_noche"
     },
     {
       "id": "n_caf_02",
