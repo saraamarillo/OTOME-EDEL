@@ -26,7 +26,7 @@ export const EPISODES = {
     synopsis: 'Una fiesta universitaria en un fuerte abandonado promete ser la noche perfecta para estrenar vestido... hasta que las luces se apagan y nada vuelve a ser igual.',
     firstScene: {
       soledad: 'sol_ep3',
-      ayla:    'ayla_ep3',      // pendiente de crear
+      ayla:    'ayla_ep3',
       maven:   'maven_ep3',     // pendiente de crear
     },
   },
@@ -51,5 +51,6 @@ export const EPISODE_COVERS = {
   ayla: {
     1: '/assets/backgrounds/campus_dia.png',
     2: '/assets/backgrounds/interior_fabrica_harina.png',
+    3: '/assets/backgrounds/fuerte_san_francisco.png',
   },
 }

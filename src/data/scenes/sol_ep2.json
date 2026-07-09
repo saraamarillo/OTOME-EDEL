@@ -2082,7 +2082,14 @@
       "id": "n_s5_ventana",
       "type": "narration",
       "character": null,
-      "text": "Se sienta cerca de la ventana. Al mirar por la ventana, ve que Ryan sigue en su moto, en el parking, observando. Solo cuando el autobús arranca, Ryan se pone el casco y se va.",
+      "text": "Se sienta cerca de la ventana. El autobús tarda un poco en arrancar.",
+      "next": "n_s5_ventana_ryan"
+    },
+    {
+      "id": "n_s5_ventana_ryan",
+      "type": "narration",
+      "character": null,
+      "text": "Al mirar por la ventana, ve que Ryan sigue en su moto, en el parking, observando. Solo cuando el autobús arranca, Ryan se pone el casco y se va.",
       "unlockImage": "ryan_moto_parada",
       "next": "n_s5_llegada"
     },

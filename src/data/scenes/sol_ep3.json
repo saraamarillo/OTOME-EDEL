@@ -124,7 +124,7 @@
     { "id": "n_e3_s11_01", "type": "narration", "character": null, "text": "Suben a la segunda planta. Lydia corre a pillar unos sillones libres junto a la terraza.", "background": "fuerte_san_francisco", "next": "n_e3_s11_02" },
     { "id": "n_e3_s11_02", "type": "narration", "character": null, "text": "Se sientan y avisan a los chicos. Ryan responde que suben.", "next": "n_e3_s11_03" },
     { "id": "n_e3_s11_03", "type": "narration", "character": null, "text": "Llegan Ethan, medio borracho y apoyado en Ryan, y se sientan.", "next": "n_e3_s11_04" },
-    { "id": "n_e3_s11_04", "type": "dialogue", "character": "ethan", "text": "¿Habéis visto qué noche más bonita? ¡Cuántas estrellas! Estáis muy guapas.", "expression": "happy", "next": "n_e3_s11_05" },
+    { "id": "n_e3_s11_04", "type": "dialogue", "character": "ethan", "text": "¿Habéis visto qué noche más bonita? ¡Cuántas estrellas! Estáis muy guapas.", "expression": "blush", "next": "n_e3_s11_05" },
     { "id": "n_e3_s11_05", "type": "dialogue", "character": "ryan", "text": "No sé qué le pasa. No le he visto beber tanto.", "expression": "sad", "next": "n_e3_s11_06" },
     { "id": "n_e3_s11_06", "type": "narration", "character": null, "activeCharacter": "lydia", "text": "Lydia le toma el pulso a Ethan, preocupada.", "next": "n_e3_s11_07" },
     { "id": "n_e3_s11_07", "type": "narration", "character": null, "protagonistExpression": "surprised", "text": "De repente, Soledad ve al mismo chico que las empujó antes, corriendo por otro lado.", "next": "n_e3_s11_08" },
@@ -137,7 +137,7 @@
     { "id": "n_e3_s12_05", "type": "dialogue", "character": "ayla", "text": "Están... están muertos. Todos.", "expression": "sad", "next": "n_e3_s12_06" },
     { "id": "n_e3_s12_06", "type": "narration", "character": null, "text": "Ambas distinguen la viscosidad verde brillando en la oscuridad.", "next": "n_e3_s12_07" },
     { "id": "n_e3_s12_07", "type": "narration", "character": null, "activeCharacter": "grace", "expression": "neutral", "protagonistExpression": "surprised", "text": "Soledad se fija en algo extraño en Grace, la DJ: desde la mesa de mezclas, de sus manos parecen salir unos hilos finos y transparentes con destellos azules, aunque podría ser efecto de las luces.", "next": "n_e3_s12_08" },
-    { "id": "n_e3_s12_08", "type": "narration", "character": null, "text": "Soledad intenta llamar a Ryan: no hay cobertura. Los mensajes no se envían.", "next": "n_e3_s13_01" },
+    { "id": "n_e3_s12_08", "type": "narration", "character": null, "text": "Soledad intenta llamar a Ryan: no hay cobertura. Los mensajes no se envían.", "unlockImage": "el_liquido_verde_y_los_cuerpos", "next": "n_e3_s13_01" },
 
     { "id": "n_e3_s13_01", "type": "narration", "character": null, "text": "Escuchan golpes detrás de la barra: alguien golpea desde dentro de una nevera, cerrada con candado.", "background": "discoteca", "next": "n_e3_s13_02" },
     { "id": "n_e3_s13_02", "type": "narration", "character": null, "text": "Ayla consigue romper el candado con una cachimba. Dentro está Grace, casi sin aire.", "next": "n_e3_s13_03" },
@@ -160,9 +160,16 @@
     { "id": "n_e3_s16_01", "type": "narration", "character": null, "text": "La comisaria les explica el procedimiento: declaración en unos días, piso franco mientras tanto.", "background": "comisaria_noche", "next": "n_e3_s16_02" },
     { "id": "n_e3_s16_02", "type": "narration", "character": null, "text": "Ryan se ofrece a llevar a Soledad a su casa para que haga la maleta.", "next": "n_e3_s16_03" },
     { "id": "n_e3_s16_03", "type": "narration", "character": null, "activeCharacter": "ryan", "text": "En la puerta de casa, Ryan baja las maletas y se despide.", "background": "callejones_guadalajara_noche", "next": "n_e3_s16_04" },
-    { "id": "n_e3_s16_04", "type": "dialogue", "character": "ryan", "text": "Cualquier cosa me dices, ¿vale?", "expression": "blush", "next": "n_e3_s16_05" },
-    { "id": "n_e3_s16_05", "type": "narration", "character": null, "text": "Le coge la mano, la lleva hasta sus labios y le deja un beso. Se aleja hacia la moto.", "next": "n_e3_s16_06" },
+    { "id": "n_e3_s16_04", "type": "dialogue", "character": "ryan", "text": "Cualquier cosa me dices, ¿vale?", "expression": "blush", "next": "n_e3_c4" },
+    { "id": "n_e3_c4", "type": "choice", "character": null, "text": null, "choices": [
+      { "label": "Dejarle ver que está asustada.", "affinityChanges": { "ryan": 5 }, "next": "n_e3_s16_vulnerable" },
+      { "label": "Restarle importancia y hacerse la fuerte.", "affinityChanges": {}, "next": "n_e3_s16_fuerte" }
+    ] },
+    { "id": "n_e3_s16_vulnerable", "type": "dialogue", "character": null, "text": "No... no sé qué decir. Se me ha acelerado el pulso solo con que me digas eso.", "protagonistExpression": "blush", "next": "n_e3_s16_05" },
+    { "id": "n_e3_s16_05", "type": "narration", "character": null, "text": "Le coge la mano, la lleva hasta sus labios y le deja un beso. Se aleja hacia la moto.", "unlockImage": "el_beso_en_la_mano", "next": "n_e3_s16_06" },
     { "id": "n_e3_s16_06", "type": "thought", "character": null, "text": "Vale. Eso... no me lo esperaba.", "protagonistExpression": "blush", "next": "n_e3_s16_07" },
+    { "id": "n_e3_s16_fuerte", "type": "dialogue", "character": null, "text": "Tranquilo, no te vas a librar de mí tan fácilmente.", "protagonistExpression": "happy", "next": "n_e3_s16_fuerte_02" },
+    { "id": "n_e3_s16_fuerte_02", "type": "narration", "character": null, "text": "Ryan sonríe, le da un golpecito cariñoso en el hombro y se despide sin más. Se aleja hacia la moto.", "next": "n_e3_s16_07" },
     { "id": "n_e3_s16_07", "type": "narration", "character": null, "text": "La madre de Soledad abre la puerta. Un policía llega y explica la situación; la madre se preocupa, pero el policía la tranquiliza.", "next": "n_e3_s16_08" },
     { "id": "n_e3_s16_08", "type": "narration", "character": null, "text": "Soledad hace la maleta, se despide y el policía la lleva al piso franco.", "next": "n_e3_s17_01" },
 

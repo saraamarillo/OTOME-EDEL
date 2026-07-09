@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useGameStore } from '../../store/gameStore'
 import { NPC_CHARACTERS, PROTAGONISTS } from '../../constants/characters'
+import { useProtagonistFace } from '../../hooks/useProtagonistFace'
 import styles from './PhoneCallOverlay.module.css'
 
 const PHONE_PATH = 'M450.2,922.2l-20.3-1.1c-55.1-4.4-108.4-17.8-158.8-40.5-9.7-4.4-19.6-5.7-29.9-2l-165.6,58.7c-8.2,2.9-17.3-.4-20.9-8.2s-1.3-9.7.2-14.4l37.1-123.3,8.3-30.7c1.3-9.5-4.3-17.4-9.7-24.6C37.5,665.1,7.1,580.6,1,492.6l-.6-15.9c-.4-10.6-.6-20.5,0-31l1.1-22.2c8.4-100,48-196.2,115.1-270.9l28.7-29.4c49.4-46.1,107.8-80.1,172.3-100.6,32.5-10.3,65.3-16.7,99.2-20.4l13.9-1.1,19.4-.8c7.3-.3,15.1-.6,22.6-.2l19.1,1c49.2,2.5,103.8,16.1,149.8,34.9,50.1,20.4,94.9,49.9,134.6,86.2l29.1,29.9c13.6,14,24.7,29.1,35.8,45.4,46.2,67.7,73.7,146.4,79.9,228.1l1,20.2c.5,9.2,1.5,18,.2,27.2l-.8,21.5c-2.9,39.7-10,77.9-23,115.8-14.2,41.3-33.6,79.7-58.3,115.6s-22.8,32-36.7,46.3l-24.3,25c-37,34.6-78.7,63.2-125.3,83.7-46.7,20.6-95.6,34.6-146.3,39.1l-12.8,1.1-19.1,1h-25.4Z'
@@ -49,9 +50,12 @@ export default function PhoneCallOverlay({ node, onAdvance }) {
 
   const protagData    = PROTAGONISTS.find((p) => p.id === protagonistId)
   const expr          = callFrozenExpression ?? protagonistExpression ?? 'neutral'
-  const protagSprite  = protagonistId ? `/assets/sprites/${protagonistId}/arc1_${expr}.png` : null
-  const protagAvatar  = protagData?.avatar ?? null
-  const theme         = protagData?.color ?? '#2f7fb8'
+  const face          = useProtagonistFace(protagonistId, expr, protagData?.avatar ?? null)
+
+  // node.phoneTheme permite mostrar la llamada con el color de otra protagonista
+  // (p. ej. es el móvil de Soledad en manos libres, aunque se juegue la ruta de Ayla).
+  const themeData = PROTAGONISTS.find((p) => p.id === (node.phoneTheme ?? protagonistId))
+  const theme     = themeData?.color ?? '#2f7fb8'
 
   return (
     <div className={styles.overlay} onClick={(e) => { e.stopPropagation(); stopRingtone(); onAdvance() }}>
@@ -75,10 +79,10 @@ export default function PhoneCallOverlay({ node, onAdvance }) {
       {protagonistId && (
         <div className={styles.protagCircle}>
           <img
-            src={protagSprite ?? protagAvatar}
+            src={face.src}
             alt={protagonistId}
             className={styles.protagImg}
-            onError={(e) => { if (protagAvatar) e.currentTarget.src = protagAvatar }}
+            onError={face.onError}
           />
         </div>
       )}

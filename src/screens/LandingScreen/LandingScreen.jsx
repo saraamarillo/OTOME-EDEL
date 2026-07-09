@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useGameStore } from '../../store/gameStore'
 import { PROTAGONISTS } from '../../constants/characters'
 import RouteNav from '../../components/RouteNav/RouteNav'
+import { useProtagonistFace } from '../../hooks/useProtagonistFace'
 import styles from './LandingScreen.module.css'
 
 const ROUTE_ICONS = {
@@ -27,6 +28,7 @@ export default function LandingScreen() {
   const [showCopyright, setShowCopyright] = useState(false)
 
   const protagonist = PROTAGONISTS.find((p) => p.id === protagonistId)
+  const face = useProtagonistFace(protagonistId, 'neutral', protagonist?.avatar)
   if (!protagonist) return null
 
   return (
@@ -66,9 +68,10 @@ export default function LandingScreen() {
           />
           <img
             className={styles.portrait}
-            src={`/assets/sprites/${protagonist.id}/arc1.png`}
+            src={face.src}
             alt={protagonist.name}
             draggable={false}
+            onError={face.onError}
           />
         </div>
       </div>
