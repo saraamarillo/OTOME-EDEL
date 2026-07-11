@@ -207,6 +207,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Perdona... ¿también estás buscando club?",
+      "expression": "neutral",
       "next": "n_sol_si"
     },
     {
@@ -221,7 +222,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Igual. Pensé que sería más sencillo.",
-      "expression": "sad",
+      "expression": "neutral",
       "next": "n_pres_pausa"
     },
     {
@@ -243,6 +244,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Me llamo Ayla.",
+      "expression": "happy",
       "next": "n_pres_sol"
     },
     {
@@ -257,6 +259,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "¿Qué estudias?",
+      "expression": "neutral",
       "next": "n_estudios_sol"
     },
     {
@@ -271,6 +274,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Arte y arqueología.",
+      "expression": "neutral",
       "next": "n_ayla_02"
     },
     {
@@ -278,6 +282,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "¿Crees que aquí podrán ayudarnos con lo del club?",
+      "expression": "neutral",
       "next": "n_sol_sec_01"
     },
     {
@@ -332,6 +337,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "¿Entramos o llamamos primero?",
+      "expression": "neutral",
       "next": "n_camino_04"
     },
     {
@@ -353,6 +359,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "¡Hola! ¿Hay alguien? ¡Hola, hola! ¿Aquí qué hay?",
+      "expression": "surprised",
       "next": "n_camino_07"
     },
     {
@@ -391,6 +398,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Soy Ethan. ¿Os habéis perdido o venís al club?",
+      "expression": "happy",
       "next": "n_choice_ethan"
     },
     {
@@ -416,6 +424,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Básicamente no nos quedaba otra opción.",
+      "expression": "neutral",
       "next": "n_ethan_reac"
     },
     {
@@ -439,6 +448,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Necesito apuntaros. ¿Cómo os llamáis? Nombre y apellido.",
+      "expression": "neutral",
       "protagonistExpression": "neutral",
       "next": "n_ethan_sol_nombre"
     },
@@ -454,6 +464,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Ayla Solberg.",
+      "expression": "neutral",
       "next": "n_ethan_resp_nombre"
     },
     {
@@ -483,6 +494,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Tengo que llevar esto a secretaría para que quedéis oficialmente apuntadas. ¿Venís? De paso os enseño el campus.",
+      "expression": "happy",
       "next": "n_ethan_c02"
     },
     {
@@ -490,6 +502,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "Encantada. Aún no conozco nada de aquí.",
+      "expression": "happy",
       "next": "n_ethan_c03"
     },
     {

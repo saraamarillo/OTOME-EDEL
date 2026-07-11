@@ -8,11 +8,11 @@
     { "id": "n_e3_s1_03", "type": "narration", "character": null, "text": "Revisa redes sociales y busca noticias recientes de Guadalajara: hubo otro apagón de dos horas durante la noche, en dos zonas — una cerca de su vecindario y otra cerca de la universidad.", "next": "n_e3_s1_04" },
     { "id": "n_e3_s1_04", "type": "thought", "character": null, "text": "Otro apagón. Cerca de casa y cerca de la universidad. Eso no es casualidad.", "protagonistExpression": "surprised", "next": "n_e3_s1_05" },
     { "id": "n_e3_s1_05", "type": "dialogue", "character": null, "text": "Ryan, ¿sabes algo de Ethan? Ayer hubo otro apagón cerca del hospital y me he quedado preocupada.", "protagonistExpression": "neutral", "next": "n_e3_s1_06" },
-    { "id": "n_e3_s1_06", "type": "chat", "character": "ryan", "text": "Tranquila, esta tarde le dan el alta. Voy a recogerlo yo mismo, no te preocupes.", "next": "n_e3_s1_07" },
+    { "id": "n_e3_s1_06", "type": "chat", "character": "ryan", "text": "Tranquila, esta tarde le dan el alta. Voy a recogerlo yo mismo, no te preocupes.", "expression": "happy", "next": "n_e3_s1_07" },
     { "id": "n_e3_s1_07", "type": "dialogue", "character": null, "text": "Menos mal. Avísame cuando esté en casa, ¿vale?", "protagonistExpression": "happy", "next": "n_e3_s1_08" },
     { "id": "n_e3_s1_08", "type": "narration", "character": null, "text": "Se lo cuenta a Ayla por mensaje.", "next": "n_e3_s1_09" },
     { "id": "n_e3_s1_09", "type": "dialogue", "character": null, "text": "Ayla, buenas noticias: a Ethan le dan el alta hoy. Ryan va a por él.", "next": "n_e3_s1_10" },
-    { "id": "n_e3_s1_10", "type": "chat", "character": "ayla", "text": "¡Qué alivio! Con las ganas que tengo de verlo ya recuperado.", "next": "n_e3_s1_11" },
+    { "id": "n_e3_s1_10", "type": "chat", "character": "ayla", "text": "¡Qué alivio! Con las ganas que tengo de verlo ya recuperado.", "expression": "happy", "next": "n_e3_s1_11" },
     { "id": "n_e3_s1_11", "type": "narration", "character": null, "text": "Ambas van a clase. Las clases duran hasta la una. Soledad vuelve en autobús, cena lo que le dejó su madre y repasa apuntes antes de dormir.", "next": "n_e3_s2_01" },
 
     { "id": "n_e3_s2_01", "type": "narration", "character": null, "text": "Jueves. Soledad se despierta y desayuna con el portátil delante: se pone a investigar por su cuenta sobre el Club Paranormal.", "background": "habitacion_Soledad_dia", "next": "n_e3_s2_02" },
@@ -20,9 +20,9 @@
     { "id": "n_e3_s2_03", "type": "thought", "character": null, "text": "Nada que no supiéramos ya. Aun así... no me gusta nada de esto.", "protagonistExpression": "neutral", "next": "n_e3_s2_04" },
     { "id": "n_e3_s2_04", "type": "narration", "character": null, "text": "Sale de casa y llega a la universidad sobre las cuatro. Se toma un café en la cafetería mientras dibuja en su diario.", "background": "cafeteria_universidad_dia", "next": "n_e3_s2_05" },
     { "id": "n_e3_s2_05", "type": "narration", "character": null, "text": "Después visita la biblioteca por primera vez.", "background": "biblioteca_universidad", "next": "n_e3_s2_06" },
-    { "id": "n_e3_s2_06", "type": "chat", "character": "ayla", "text": "¿Dónde andas? Llevo un rato buscándote.", "next": "n_e3_s2_07" },
+    { "id": "n_e3_s2_06", "type": "chat", "character": "ayla", "text": "¿Dónde andas? Llevo un rato buscándote.", "expression": "neutral", "next": "n_e3_s2_07" },
     { "id": "n_e3_s2_07", "type": "dialogue", "character": null, "text": "En el hall del primer edificio. La verdad es que ni me acuerdo de cómo se llega al club.", "next": "n_e3_s2_08" },
-    { "id": "n_e3_s2_08", "type": "chat", "character": "ayla", "text": "Jajaja, tranquila, yo tampoco del todo. Voy para allá y lo miramos juntas.", "next": "n_e3_s2_09" },
+    { "id": "n_e3_s2_08", "type": "chat", "character": "ayla", "text": "Jajaja, tranquila, yo tampoco del todo. Voy para allá y lo miramos juntas.", "expression": "happy", "next": "n_e3_s2_09" },
     { "id": "n_e3_s2_09", "type": "narration", "character": null, "text": "Quedan en el hall.", "next": "n_e3_s3_01" },
 
     { "id": "n_e3_s3_01", "type": "narration", "character": null, "text": "Soledad espera en el hall de entrada del edificio principal.", "background": "campus_dia", "next": "n_e3_s3_02" },
@@ -32,7 +32,7 @@
     { "id": "n_e3_s3_05", "type": "dialogue", "character": null, "text": "Bueno, por suerte hoy volvemos a ver a Ethan. ¿Sabes cómo se iba al edificio antiguo?", "next": "n_e3_s3_06" },
     { "id": "n_e3_s3_06", "type": "dialogue", "character": "ayla", "text": "No, solo sé que era el edificio abandonado.", "expression": "neutral", "next": "n_e3_s3_07" },
     { "id": "n_e3_s3_07", "type": "narration", "character": null, "text": "Escriben a Ethan por el grupo.", "next": "n_e3_s3_08" },
-    { "id": "n_e3_s3_08", "type": "chat", "character": "ethan", "text": "El edificio antiguo con hiedra, detrás de la residencia. Segunda planta, puerta del fondo a la izquierda.", "isGroup": true, "next": "n_e3_s4_01" },
+    { "id": "n_e3_s3_08", "type": "chat", "character": "ethan", "text": "El edificio antiguo con hiedra, detrás de la residencia. Segunda planta, puerta del fondo a la izquierda.", "expression": "neutral", "isGroup": true, "next": "n_e3_s4_01" },
 
     { "id": "n_e3_s4_01", "type": "narration", "character": null, "text": "Al llegar, Soledad y Ayla escuchan a Ethan y Ryan discutiendo desde fuera.", "background": "club_paranormal_tarde", "next": "n_e3_s4_02" },
     { "id": "n_e3_s4_02", "type": "narration", "character": null, "text": "Ethan, con muletas, ha intentado subirse a una silla para alcanzar un archivador, y Ryan le regaña. Entran y lo ven escayolado del tobillo, con las muletas apoyadas en la mesa, y a Ryan a su lado con una caja.", "next": "n_e3_s4_03" },
@@ -88,7 +88,7 @@
     { "id": "n_e3_s7_01", "type": "narration", "character": null, "text": "Sábado por la noche. Soledad se prepara toda la tarde: se ducha, se maquilla y se pone el vestido amarillo de Luna, con zapatos blancos de tacón, medias transparentes y un lacito en el pelo.", "background": "habitacion_Soledad_noche", "next": "n_e3_s7_02" },
     { "id": "n_e3_s7_02", "type": "narration", "character": null, "text": "A las once, Ryan llama al timbre.", "background": "callejones_guadalajara_noche", "next": "n_e3_s7_03" },
     { "id": "n_e3_s7_03", "type": "dialogue", "character": "ryan", "text": "Ey, estoy en la puerta de tu casa. Y esta vez traje otro casco.", "expression": "happy", "next": "n_e3_s7_04" },
-    { "id": "n_e3_s7_04", "type": "narration", "character": null, "activeCharacter": "ryan", "lookChanges": { "ryan": "arc2" }, "text": "Soledad baja. Ryan está apoyado en la moto, ya vestido para la fiesta. Al verla, se sonroja.", "next": "n_e3_s7_05" },
+    { "id": "n_e3_s7_04", "type": "narration", "character": null, "activeCharacter": "ryan", "expression": "blush", "lookChanges": { "ryan": "arc2" }, "text": "Soledad baja. Ryan está apoyado en la moto, ya vestido para la fiesta. Al verla, se sonroja.", "next": "n_e3_s7_05" },
     { "id": "n_e3_s7_05", "type": "dialogue", "character": "ryan", "text": "Buenas noches. Estás muy guapa.", "expression": "blush", "next": "n_e3_s7_06" },
     { "id": "n_e3_s7_06", "type": "dialogue", "character": null, "text": "Gracias. Tú también.", "protagonistExpression": "blush", "next": "n_e3_s7_07" },
     { "id": "n_e3_s7_07", "type": "narration", "character": null, "text": "Ryan le da un casco nuevo, abierto por delante para no arruinarle el peinado. Se lo coloca con cuidado, muy cerca de su rostro. Suben juntos en la moto.", "next": "n_e3_s8_01" },
@@ -96,7 +96,7 @@
     { "id": "n_e3_s8_01", "type": "narration", "character": null, "lookChanges": { "ayla": "arc2", "ethan": "arc2", "lydia": "arc2", "grace": "arc2" }, "text": "Llegan al Fuerte de San Francisco. En la entrada están Ethan, Ayla y una chica de pelo violeta a la que no conoce.", "background": "fuerte_san_francisco", "next": "n_e3_s8_02" },
     { "id": "n_e3_s8_02", "type": "dialogue", "character": "ethan", "text": "¡Qué elegante, Ryan! ¿Dónde vas así?", "expression": "happy", "next": "n_e3_s8_03" },
     { "id": "n_e3_s8_03", "type": "dialogue", "character": "ryan", "text": "Lo dice el que va con camisa, chaleco y corbata.", "expression": "happy", "next": "n_e3_s8_04" },
-    { "id": "n_e3_s8_04", "type": "narration", "character": null, "activeCharacter": "lydia", "text": "Lydia se acerca a Ryan y le da un abrazo. Él la llama «pequeñaja» y le revuelve el pelo.", "next": "n_e3_s8_05" },
+    { "id": "n_e3_s8_04", "type": "narration", "character": null, "activeCharacter": "lydia", "expression": "happy", "text": "Lydia se acerca a Ryan y le da un abrazo. Él la llama «pequeñaja» y le revuelve el pelo.", "next": "n_e3_s8_05" },
     { "id": "n_e3_s8_05", "type": "dialogue", "character": null, "text": "Lydia, esta es mi compañera del Club Paranormal. Lydia es mi compañera de cuarto en la residencia.", "protagonistExpression": "happy", "next": "n_e3_s8_06" },
     { "id": "n_e3_s8_06", "type": "narration", "character": null, "text": "Soledad nota que Lydia se queda un momento rezagada en la entrada, escribiendo en el móvil.", "next": "n_e3_s9_01" },
 
@@ -117,7 +117,7 @@
 
     { "id": "n_e3_s10_01", "type": "narration", "character": null, "text": "Mientras bailan, alguien las empuja desde atrás hacia Lydia, que casi derrama su bebida.", "next": "n_e3_s10_02" },
     { "id": "n_e3_s10_02", "type": "narration", "character": null, "text": "Al girarse, ven a una persona corriendo entre la multitud, abriéndose paso a empujones.", "next": "n_e3_s10_03" },
-    { "id": "n_e3_s10_03", "type": "dialogue", "character": "lydia", "text": "¿Estáis bien? ¿Qué ha pasado?", "expression": "sad", "next": "n_e3_s10_04" },
+    { "id": "n_e3_s10_03", "type": "dialogue", "character": "lydia", "text": "¿Estáis bien? ¿Qué ha pasado?", "expression": "surprised", "next": "n_e3_s10_04" },
     { "id": "n_e3_s10_04", "type": "dialogue", "character": "ayla", "text": "Una persona ha venido corriendo. Algún borracho.", "expression": "neutral", "next": "n_e3_s10_05" },
     { "id": "n_e3_s10_05", "type": "dialogue", "character": "lydia", "text": "Quizá deberíamos alejarnos de la pista. Subimos arriba a los sillones.", "expression": "neutral", "next": "n_e3_s11_01" },
 
@@ -126,7 +126,7 @@
     { "id": "n_e3_s11_03", "type": "narration", "character": null, "text": "Llegan Ethan, medio borracho y apoyado en Ryan, y se sientan.", "next": "n_e3_s11_04" },
     { "id": "n_e3_s11_04", "type": "dialogue", "character": "ethan", "text": "¿Habéis visto qué noche más bonita? ¡Cuántas estrellas! Estáis muy guapas.", "expression": "blush", "next": "n_e3_s11_05" },
     { "id": "n_e3_s11_05", "type": "dialogue", "character": "ryan", "text": "No sé qué le pasa. No le he visto beber tanto.", "expression": "sad", "next": "n_e3_s11_06" },
-    { "id": "n_e3_s11_06", "type": "narration", "character": null, "activeCharacter": "lydia", "text": "Lydia le toma el pulso a Ethan, preocupada.", "next": "n_e3_s11_07" },
+    { "id": "n_e3_s11_06", "type": "narration", "character": null, "activeCharacter": "lydia", "expression": "sad", "text": "Lydia le toma el pulso a Ethan, preocupada.", "next": "n_e3_s11_07" },
     { "id": "n_e3_s11_07", "type": "narration", "character": null, "protagonistExpression": "surprised", "text": "De repente, Soledad ve al mismo chico que las empujó antes, corriendo por otro lado.", "next": "n_e3_s11_08" },
     { "id": "n_e3_s11_08", "type": "narration", "character": null, "text": "Inmediatamente después, se apagan todas las luces. La gente empieza a gritar.", "next": "n_e3_s12_01" },
 
@@ -141,7 +141,7 @@
 
     { "id": "n_e3_s13_01", "type": "narration", "character": null, "text": "Escuchan golpes detrás de la barra: alguien golpea desde dentro de una nevera, cerrada con candado.", "background": "discoteca", "next": "n_e3_s13_02" },
     { "id": "n_e3_s13_02", "type": "narration", "character": null, "text": "Ayla consigue romper el candado con una cachimba. Dentro está Grace, casi sin aire.", "next": "n_e3_s13_03" },
-    { "id": "n_e3_s13_03", "type": "dialogue", "character": "grace", "text": "¡Chicas, gracias a Dios! Me empujaron dentro de la nevera mientras hablaba con el camarero.", "expression": "sad", "next": "n_e3_s13_04" },
+    { "id": "n_e3_s13_03", "type": "dialogue", "character": "grace", "text": "¡Chicas, gracias a Dios! Me empujaron dentro de la nevera mientras hablaba con el camarero.", "expression": "happy", "next": "n_e3_s13_04" },
     { "id": "n_e3_s13_04", "type": "narration", "character": null, "text": "Grace ve los cadáveres y se alarma. Intenta despertar a Lydia y a Ethan: están fríos pero respiran. No se despiertan.", "next": "n_e3_s14_01" },
 
     { "id": "n_e3_s14_01", "type": "narration", "character": null, "text": "Ayla carga con Ethan, con una fuerza que sorprende a todas. Soledad y Grace llevan a Lydia entre las dos.", "background": "fuerte_san_francisco", "next": "n_e3_s14_02" },
@@ -150,7 +150,7 @@
     { "id": "n_e3_s14_04", "type": "narration", "character": null, "protagonistExpression": "surprised", "text": "Fuera las espera la policía.", "next": "n_e3_s15_01" },
 
     { "id": "n_e3_s15_01", "type": "narration", "character": null, "text": "Varios policías se acercan. Llaman a la ambulancia para Ethan y Lydia.", "next": "n_e3_s15_02" },
-    { "id": "n_e3_s15_02", "type": "narration", "character": null, "activeCharacter": "frey", "text": "Un chico rubio de incógnito está junto a un coche policial: Frey.", "next": "n_e3_s15_03" },
+    { "id": "n_e3_s15_02", "type": "narration", "character": null, "activeCharacter": "frey", "expression": "neutral", "text": "Un chico rubio de incógnito está junto a un coche policial: Frey.", "next": "n_e3_s15_03" },
     { "id": "n_e3_s15_03", "type": "dialogue", "character": "policia", "text": "Nos han informado de un problema con una droga. Hay varios cadáveres. Ahora mismo sois las principales sospechosas. Tendréis que venir a comisaría.", "expression": "neutral", "next": "n_e3_s15_03b" },
     { "id": "n_e3_s15_03b", "type": "dialogue", "character": "policia", "text": "Vais a tener que declarar y permanecer en un piso franco bajo vigilancia.", "next": "n_e3_s15_04" },
     { "id": "n_e3_s15_04", "type": "narration", "character": null, "protagonistExpression": "sad", "text": "Les llegan todos los mensajes de golpe: Ryan estaba preocupado buscándolas.", "next": "n_e3_s15_05" },
@@ -159,7 +159,7 @@
 
     { "id": "n_e3_s16_01", "type": "narration", "character": null, "text": "La comisaria les explica el procedimiento: declaración en unos días, piso franco mientras tanto.", "background": "comisaria_noche", "next": "n_e3_s16_02" },
     { "id": "n_e3_s16_02", "type": "narration", "character": null, "text": "Ryan se ofrece a llevar a Soledad a su casa para que haga la maleta.", "next": "n_e3_s16_03" },
-    { "id": "n_e3_s16_03", "type": "narration", "character": null, "activeCharacter": "ryan", "text": "En la puerta de casa, Ryan baja las maletas y se despide.", "background": "callejones_guadalajara_noche", "next": "n_e3_s16_04" },
+    { "id": "n_e3_s16_03", "type": "narration", "character": null, "activeCharacter": "ryan", "expression": "sad", "text": "En la puerta de casa, Ryan baja las maletas y se despide.", "background": "callejones_guadalajara_noche", "next": "n_e3_s16_04" },
     { "id": "n_e3_s16_04", "type": "dialogue", "character": "ryan", "text": "Cualquier cosa me dices, ¿vale?", "expression": "blush", "next": "n_e3_c4" },
     { "id": "n_e3_c4", "type": "choice", "character": null, "text": null, "choices": [
       { "label": "Dejarle ver que está asustada.", "affinityChanges": { "ryan": 5 }, "next": "n_e3_s16_vulnerable" },

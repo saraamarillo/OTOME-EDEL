@@ -117,6 +117,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "¿Te has quedado sin autobús?",
+      "expression": "neutral",
       "next": "n_ryan_07"
     },
     {
@@ -223,6 +224,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Es verdad. Ni te he dicho mi nombre. Perdona. Soy Ryan. ¿Y tú?",
+      "expression": "happy",
       "next": "n_moto_07"
     },
     {
@@ -252,6 +254,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "¿Vas bien?",
+      "expression": "neutral",
       "next": "n_moto_11"
     },
     {
@@ -266,6 +269,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Vale, pues agárrate.",
+      "expression": "happy",
       "next": "n_moto_13"
     },
     {
@@ -288,6 +292,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Es por aquí. Aquí todos son callejuelas.",
+      "expression": "neutral",
       "next": "n_bar_03"
     },
     {
@@ -316,6 +321,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Oye, ¿tienes algo para entretenerte mientras esperas? Puede que tarde un rato.",
+      "expression": "neutral",
       "next": "n_bar_04d"
     },
     {
@@ -337,6 +343,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "¿Me dejas ese cuaderno un momento?",
+      "expression": "happy",
       "next": "n_bar_04g"
     },
     {
@@ -351,6 +358,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Para algo.",
+      "expression": "happy",
       "next": "n_bar_04i"
     },
     {
@@ -379,6 +387,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Toma. A ver si lo resuelves antes de que acabe mi turno.",
+      "expression": "happy",
       "next": "n_bar_06"
     },
     {
@@ -554,6 +563,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Bueno, tampoco estaba tan fácil.",
+      "expression": "happy",
       "next": "n_despues_01"
     },
     {
@@ -561,6 +571,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Bueno, pues yo ya me voy. ¿Tú qué vas a hacer?",
+      "expression": "neutral",
       "next": "n_despues_02"
     },
     {
@@ -575,6 +586,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "¿Y tus padres no se van a preocupar si no apareces?",
+      "expression": "neutral",
       "next": "n_despues_04"
     },
     {
@@ -589,6 +601,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Mándales un mensaje. Diles que te quedas a dormir en casa de un amigo.",
+      "expression": "neutral",
       "next": "n_choice_mensaje"
     },
     {
@@ -629,6 +642,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Venga, adelante.",
+      "expression": "happy",
       "next": "n_casa_03"
     },
     {
@@ -658,6 +672,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "Vivo solo.",
+      "expression": "neutral",
       "next": "n_casa_t02"
     },
     {
@@ -672,6 +687,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "La habitación tiene pestillo, así que puedes echarlo si lo prefieres.",
+      "expression": "neutral",
       "next": "n_choice_dormir"
     },
     {
@@ -690,6 +706,7 @@
       "type": "dialogue",
       "character": "ryan",
       "text": "No. En serio. Hay clases mañana y necesitas dormir en una cama. Yo estoy bien en el sofá.",
+      "expression": "neutral",
       "next": "n_ryan_hab_02"
     },
     {

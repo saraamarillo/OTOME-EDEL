@@ -15,6 +15,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¿Queréis ir a tomar algo? El café es gratis.",
+      "expression": "happy",
       "next": "n_choice_caf"
     },
     {
@@ -41,6 +42,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¿Qué queréis tomar?",
+      "expression": "happy",
       "next": "n_pre_bebida"
     },
     {
@@ -81,6 +83,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Entonces otro chocolate caliente para mí.",
+      "expression": "happy",
       "next": "n_colacao_thought"
     },
     {
@@ -147,6 +150,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "En Guadalajara todo el mundo sabe que pasan cosas extrañas.",
+      "expression": "happy",
       "next": "n_pausa_03"
     },
     {
@@ -164,7 +168,7 @@
       "text": "Mientras Ethan habla, Soledad mira hacia una zona exterior visible desde la cafetería. Una silueta femenina está apoyada contra un árbol, observándola fijamente.",
       "next": "n_conv_05",
       "activeCharacter": "grace",
-      "lookChanges": { "grace": "arc2" },
+      "expression": "silueta",
       "protagonistExpression": "surprised"
     },
     {
@@ -187,6 +191,7 @@
       "type": "dialogue",
       "character": "ayla",
       "text": "¿Qué chica?",
+      "expression": "surprised",
       "next": "n_conv_08"
     },
     {
@@ -244,6 +249,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Entonces nos vemos mañana.",
+      "expression": "happy",
       "next": "n_desp_05"
     },
     {
