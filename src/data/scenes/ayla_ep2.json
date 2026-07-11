@@ -46,6 +46,30 @@
       "character": null,
       "text": "Qué va, estaba muy cansada y ahora estoy descansada.",
       "protagonistExpression": "neutral",
+      "next": "n_a1_t01"
+    },
+    {
+      "id": "n_a1_t01",
+      "type": "thought",
+      "character": null,
+      "text": "Qué raro despertar y encontrarte a alguien ya trabajando con matraces de cristal antes de las once. Definitivamente no es una compañera de cuarto cualquiera.",
+      "protagonistExpression": "surprised",
+      "next": "n_a1_ayla_madruga"
+    },
+    {
+      "id": "n_a1_ayla_madruga",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿Siempre te levantas tan temprano para esto?",
+      "protagonistExpression": "neutral",
+      "next": "n_a1_lydia_madruga"
+    },
+    {
+      "id": "n_a1_lydia_madruga",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Casi siempre. Las plantas no esperan a que una se despierte del todo.",
+      "expression": "neutral",
       "next": "n_a1_lydia_02"
     },
     {
@@ -70,6 +94,62 @@
       "character": "lydia",
       "text": "Sí, por supuesto. Las plantas tienen un montón de propiedades curativas.",
       "expression": "happy",
+      "next": "n_a1_t02"
+    },
+    {
+      "id": "n_a1_t02",
+      "type": "thought",
+      "character": null,
+      "text": "Apunto mentalmente: si alguna vez me hago daño en el Club Paranormal, sé a quién pedirle ayuda antes que a la enfermería.",
+      "protagonistExpression": "happy",
+      "next": "n_a1_ayla_origen"
+    },
+    {
+      "id": "n_a1_ayla_origen",
+      "type": "dialogue",
+      "character": null,
+      "text": "¿De dónde sacas las plantas? No creo que las vendan en cualquier sitio.",
+      "protagonistExpression": "neutral",
+      "next": "n_a1_lydia_origen"
+    },
+    {
+      "id": "n_a1_lydia_origen",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Algunas las traigo de mi pueblo. Otras las consigo por... otros medios. Prefiero no dar detalles.",
+      "expression": "neutral",
+      "next": "n_a1_t03"
+    },
+    {
+      "id": "n_a1_t03",
+      "type": "thought",
+      "character": null,
+      "text": "Eso suena a que debería dejar de preguntar. O a que debería preguntar mucho más. Con Lydia nunca sé cuál de las dos opciones es la correcta.",
+      "protagonistExpression": "surprised",
+      "next": "n_a1_ayla_arte"
+    },
+    {
+      "id": "n_a1_ayla_arte",
+      "type": "dialogue",
+      "character": null,
+      "text": "Los botecitos son preciosos, por cierto. Con esas motas doradas parecen piezas de museo.",
+      "protagonistExpression": "happy",
+      "next": "n_a1_lydia_arte"
+    },
+    {
+      "id": "n_a1_lydia_arte",
+      "type": "dialogue",
+      "character": "lydia",
+      "text": "Los hago yo misma. Si algo va a acabar en un estante, más vale que sea bonito.",
+      "expression": "happy",
+      "next": "n_a1_t04"
+    },
+    {
+      "id": "n_a1_t04",
+      "type": "thought",
+      "character": null,
+      "text": "Una alquimista con sentido estético. Empiezo a entender por qué la universidad la puso conmigo y no con cualquiera.",
+      "protagonistExpression": "happy",
       "next": "n_a1_lydia_03_b"
     },
     {
@@ -120,6 +200,14 @@
       "character": "lydia",
       "text": "Hoy tenemos club. Los martes y jueves todos tenemos clubs.",
       "expression": "neutral",
+      "next": "n_a1_t05"
+    },
+    {
+      "id": "n_a1_t05",
+      "type": "thought",
+      "character": null,
+      "text": "Llevo un día en esta ciudad y ya tengo una compañera de cuarto que hace pociones caseras y me sirve el té en porcelana con flores pintadas. Empiezo a pensar que esto va a ser interesante, para bien o para mal.",
+      "protagonistExpression": "happy",
       "next": "n_a1_unlock"
     },
     {
@@ -151,6 +239,14 @@
       "character": "lydia",
       "text": "Hoy tenemos club. Los martes y jueves todos tenemos clubs.",
       "expression": "neutral",
+      "next": "n_a1_cafe_t01"
+    },
+    {
+      "id": "n_a1_cafe_t01",
+      "type": "thought",
+      "character": null,
+      "text": "Llevo un día en esta ciudad y ya tengo una compañera de cuarto que hace pociones caseras. Empiezo a pensar que esto va a ser interesante, para bien o para mal.",
+      "protagonistExpression": "happy",
       "next": "n_a2_01"
     },
     {
@@ -187,7 +283,7 @@
       "type": "narration",
       "character": null,
       "text": "Comen juntas en la cafetería: Ayla coge pizza, Lydia un flanecito.",
-      "background": "cafeteria_universidad",
+      "background": "cafeteria_universidad_dia",
       "next": "n_a2_06"
     },
     {
@@ -527,14 +623,14 @@
       "id": "n_a5_04",
       "type": "narration",
       "character": null,
-      "text": "Suena el teléfono de Soledad: es Ethan.",
+      "text": "Suena el teléfono de Soledad: es Ethan. Soledad contesta.",
       "next": "n_a5_ethan_01"
     },
     {
       "id": "n_a5_ethan_01",
-      "type": "dialogue",
-      "character": "ethan",
-      "text": "Llevo media hora en esta ubicación. ¿Dónde estáis?",
+      "type": "narration",
+      "character": null,
+      "text": "Por el auricular se oye la voz apresurada de Ethan: «Llevo media hora en esta ubicación. ¿Dónde estáis?»",
       "next": "n_a5_sol_06"
     },
     {
@@ -542,8 +638,15 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "¿Cómo? (Se dirige a Ayla) Dice que está encima. Ayla, ¿tú lo ves? Yo no lo veo.",
-      "next": "n_a5_ayla_06",
+      "next": "n_a5_manoslibres",
       "expression": "neutral"
+    },
+    {
+      "id": "n_a5_manoslibres",
+      "type": "narration",
+      "character": null,
+      "text": "Soledad activa el manos libres para que Ayla pueda oír a Ethan también.",
+      "next": "n_a5_ayla_06"
     },
     {
       "id": "n_a5_ayla_06",
@@ -555,8 +658,9 @@
     },
     {
       "id": "n_a5_ethan_02",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ethan",
+      "phoneTheme": "soledad",
       "text": "Chicas, no os veo.",
       "next": "n_a5_sol_07"
     },
@@ -570,15 +674,17 @@
     },
     {
       "id": "n_a5_ethan_03",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ethan",
+      "phoneTheme": "soledad",
       "text": "Pues, a ver, llevo vaqueros, una sudadera verde oscura, unas zapatillas.",
       "next": "n_a5_ethan_03_b"
     },
     {
       "id": "n_a5_ethan_03_b",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ethan",
+      "phoneTheme": "soledad",
       "text": "¿Dónde estáis? Aquí no hay nadie.",
       "next": "n_a5_sol_08"
     },
@@ -592,15 +698,17 @@
     },
     {
       "id": "n_a5_ethan_04",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ethan",
+      "phoneTheme": "soledad",
       "text": "Sí, en la esquina, que enfrente hay una barbería,",
       "next": "n_a5_ethan_04_b"
     },
     {
       "id": "n_a5_ethan_04_b",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ethan",
+      "phoneTheme": "soledad",
       "text": "y está el edificio este antiguo de la fábrica de harina. ¿Dónde estáis?",
       "next": "n_a5_sol_09"
     },
@@ -614,8 +722,9 @@
     },
     {
       "id": "n_a5_ethan_05",
-      "type": "dialogue",
+      "type": "phone",
       "character": "ethan",
+      "phoneTheme": "soledad",
       "text": "Yo no estoy bromeando la verdad. Las que parecéis bromear sois vosotras.",
       "next": "n_a5_05"
     },
@@ -926,15 +1035,23 @@
       "id": "n_a6_frey_09",
       "type": "dialogue",
       "character": "frey",
-      "text": "¿Puedes darme la mano? Prometo no hacer nada malo.",
-      "next": "n_a6_11",
+      "text": "¿Confías en mí? Dame la mano. Prometo no hacer nada raro.",
+      "next": "n_a6_ayla_confia",
       "expression": "blush"
+    },
+    {
+      "id": "n_a6_ayla_confia",
+      "type": "dialogue",
+      "character": null,
+      "text": "No te conozco de nada... pero tampoco es que tenga muchas más opciones. Vale, confío en ti.",
+      "protagonistExpression": "blush",
+      "next": "n_a6_11"
     },
     {
       "id": "n_a6_11",
       "type": "narration",
       "character": null,
-      "text": "Ayla le da la mano. Frey le dice que cierre los ojos.",
+      "text": "Ayla le da la mano. Frey se la aprieta con suavidad y le pide que cierre los ojos.",
       "protagonistExpression": "blush",
       "next": "n_a6_12"
     },
@@ -942,8 +1059,7 @@
       "id": "n_a6_12",
       "type": "narration",
       "character": null,
-      "text": "Siente que la atrae hacia él, su pecho contra el suyo, una presión... y de repente una brisa suave le acaricia el cuello y le mueve el pelo.",
-      "unlockImage": "frey_ayla_rescate",
+      "text": "Siente que la atrae hacia él, su pecho contra el suyo, una presión extraña en el estómago... y de repente una brisa suave le acaricia el cuello y le mueve el pelo.",
       "next": "n_a6_frey_10"
     },
     {
@@ -958,16 +1074,25 @@
       "id": "n_a6_13",
       "type": "narration",
       "character": null,
-      "text": "Ayla abre los ojos: está en el balcón de su habitación de la residencia.",
+      "text": "Ayla abre los ojos: está en el balcón de su habitación, en la residencia. Todo sigue exactamente donde lo dejó, como si nunca se hubiera ido.",
       "background": "residencia_habitacion_noche",
+      "unlockImage": "frey_ayla_rescate",
       "next": "n_a6_ayla_15"
     },
     {
       "id": "n_a6_ayla_15",
       "type": "dialogue",
       "character": null,
-      "text": "¿Cómo has hecho esto?",
+      "text": "¿Cómo has hecho esto? Hace un segundo estábamos en la fábrica y ahora... esto es mi habitación.",
       "protagonistExpression": "happy",
+      "next": "n_a6_frey_11"
+    },
+    {
+      "id": "n_a6_frey_11",
+      "type": "dialogue",
+      "character": "frey",
+      "text": "Ya te lo dije: tengo mis trucos. Es más fácil de lo que parece cuando llevas tiempo practicando.",
+      "expression": "happy",
       "next": "n_a7_01"
     },
     {

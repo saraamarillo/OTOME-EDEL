@@ -34,6 +34,20 @@ export const GALLERY_IMAGES = [
     routes: ['ayla'],
     episode: 2,
   },
+  {
+    id: 'ryan_cafe_soledad',
+    title: 'El café',
+    subtitle: 'con Ryan',
+    routes: ['soledad'],
+    episode: 2,
+  },
+  {
+    id: 'ryan_moto_parada',
+    title: 'Parada en moto',
+    subtitle: 'con Ryan',
+    routes: ['soledad'],
+    episode: 2,
+  },
 ]
 
 export function getGalleryImage(id) {

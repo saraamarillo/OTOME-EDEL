@@ -1,7 +1,7 @@
 {
   "id": "scene_03_cafeteria",
   "title": "Chocolate caliente y cosas raras",
-  "background": "cafeteria_universidad",
+  "background": "cafeteria_universidad_noche",
   "nodes": [
     {
       "id": "node_001",

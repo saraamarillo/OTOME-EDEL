@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useGameStore } from '../../store/gameStore'
 import { NPC_CHARACTERS, PROTAGONISTS } from '../../constants/characters'
+import { useProtagonistFace } from '../../hooks/useProtagonistFace'
 import styles from './ChatMessageOverlay.module.css'
 
 const CHAT_PATH = 'M450,954.9c-59.9-3.7-127.2-22.6-180.8-48.8-5-2.5-9.5-4.7-15.4-2.9l-157,48.5c-8.7,2.7-16.9-2.2-21.8-9.3-3.6-5.3-2.5-12.2-.8-18.2l7.3-25,14.3-49.3,13.3-52.8c.9-3.7,3.3-9.7.5-13.1-19.7-24.6-37.6-49.6-52.6-77.5-30.3-56.4-48.4-118.2-54.7-181.8l-1.2-15.8L0,489.7v-27s1-17.1,1-17.1c.3-5,.8-9.6,1.3-14.8,5.2-56.8,20.6-111.7,45.2-163.3,19.7-41.3,45-78.7,75.7-112.3l30.6-30.6C234.1,51.5,336.4,9.5,444.6,1.2c9.2-.7,17.2-1.3,26.2-1.1l35.9.6,11.2.7c53.3,3.3,105.1,17.1,154.5,37.9,47.4,20,90.3,47.3,128.9,80.9l15.4,14.7,12.5,12.5,11.7,12.4c66,74.4,105.7,168.2,116.4,267.1l1.1,13.9,1,18v36.1s-1,19-1,19l-1.2,14.7c-9.2,89-43.4,172.7-98.7,242.9-15.9,20.2-32.8,38.8-51.9,56.1-39.8,36.1-84.1,65.9-133.5,87.5s-93.1,32.7-142.3,38.5l-14,1.1-15,1h-39s-12.7-.8-12.7-.8Z'
@@ -39,9 +40,12 @@ export default function ChatMessageOverlay({ node, onAdvance }) {
 
   const protagData    = PROTAGONISTS.find((p) => p.id === protagonistId)
   const expr          = protagonistExpression ?? 'neutral'
-  const protagSprite  = protagonistId ? `/assets/sprites/${protagonistId}/arc1_${expr}.png` : null
-  const protagAvatar  = protagData?.avatar ?? null
-  const theme         = protagData?.color ?? '#7d5cc8'
+  const face          = useProtagonistFace(protagonistId, expr, protagData?.avatar ?? null)
+
+  // node.chatTheme permite mostrar el chat con el color de otra protagonista
+  // (p. ej. es el móvil de otra persona, aunque se juegue otra ruta).
+  const themeData = PROTAGONISTS.find((p) => p.id === (node.chatTheme ?? protagonistId))
+  const theme     = themeData?.color ?? '#7d5cc8'
 
   return (
     <div className={styles.overlay} onClick={(e) => { e.stopPropagation(); onAdvance() }}>
@@ -66,10 +70,10 @@ export default function ChatMessageOverlay({ node, onAdvance }) {
       {protagonistId && (
         <div className={styles.protagCircle}>
           <img
-            src={protagSprite ?? protagAvatar}
+            src={face.src}
             alt={protagonistId}
             className={styles.protagImg}
-            onError={(e) => { if (protagAvatar) e.currentTarget.src = protagAvatar }}
+            onError={face.onError}
           />
         </div>
       )}

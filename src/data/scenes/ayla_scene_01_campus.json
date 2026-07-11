@@ -164,6 +164,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "Sí. Llevo un rato dando vueltas y no he encontrado ninguno libre.",
+      "expression": "neutral",
       "next": "n_ayla_si"
     },
     {
@@ -178,6 +179,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "Perdona... ¿también estás buscando club?",
+      "expression": "neutral",
       "next": "n_ayla_resp"
     },
     {
@@ -192,6 +194,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "Igual que yo.",
+      "expression": "neutral",
       "next": "n_pres_pausa"
     },
     {
@@ -213,6 +216,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "Me llamo Soledad.",
+      "expression": "neutral",
       "next": "n_pres_ayla"
     },
     {
@@ -227,6 +231,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "¿Qué estudias?",
+      "expression": "neutral",
       "next": "n_estudios_ayla"
     },
     {
@@ -241,6 +246,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "Filosofía.",
+      "expression": "neutral",
       "next": "n_estudios_thought"
     },
     {
@@ -262,6 +268,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "Eso espero. Porque si no, no sé qué más hacer.",
+      "expression": "sad",
       "next": "n_sec_05"
     },
     {
@@ -373,6 +380,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Soy Ethan. ¿Os habéis perdido o venís al club?",
+      "expression": "happy",
       "next": "n_choice_ethan"
     },
     {
@@ -398,6 +406,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "Básicamente no nos quedaba otra opción.",
+      "expression": "neutral",
       "next": "n_ethan_reac"
     },
     {
@@ -421,6 +430,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Necesito apuntaros. ¿Cómo os llamáis? Nombre y apellido.",
+      "expression": "neutral",
       "next": "n_ethan_ayla_nombre"
     },
     {
@@ -435,6 +445,7 @@
       "type": "dialogue",
       "character": "soledad",
       "text": "Soledad Ramírez.",
+      "expression": "neutral",
       "next": "n_ethan_resp_nombre"
     },
     {
@@ -442,6 +453,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¡Perfecto! Ethan Wood. Encantado de conoceros a las dos.",
+      "expression": "happy",
       "next": "n_ethan_insc_01"
     },
     {
@@ -463,6 +475,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Tengo que llevar esto a secretaría para que quedéis oficialmente apuntadas. ¿Venís? De paso os enseño el campus.",
+      "expression": "happy",
       "next": "n_ethan_c02"
     },
     {
@@ -495,7 +508,7 @@
       "character": null,
       "text": "Bueno... al menos parece buena persona.",
       "next": "n_caf_01",
-      "background": "cafeteria_universidad"
+      "background": "cafeteria_universidad_dia"
     },
     {
       "id": "n_caf_01",
@@ -509,6 +522,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "¿Qué queréis tomar?",
+      "expression": "happy",
       "next": "n_choice_bebida"
     },
     {
@@ -556,6 +570,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "En Guadalajara pasan cosas rarísimas.",
+      "expression": "neutral",
       "next": "n_conv_02"
     },
     {
@@ -596,6 +611,7 @@
       "type": "dialogue",
       "character": "ethan",
       "text": "Bueno, pues nos vemos mañana.",
+      "expression": "happy",
       "next": "n_desp_02",
       "background": "campus_noche"
     },
