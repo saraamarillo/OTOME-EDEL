@@ -1,8 +1,28 @@
 import { create } from 'zustand'
 import { AFFINITY_DEFAULT, AFFINITY_MIN, AFFINITY_MAX } from '../constants/affinity'
 import { NPC_CHARACTERS } from '../constants/characters'
-import { supabase } from '../lib/supabaseClient'
-import { getCachedEmail, cacheEmail } from '../utils/usernameCache'
+
+// ── Cuenta única, sin backend: usuario y contraseña fijos ─────
+const VALID_USERNAME = 'EDEL25'
+const VALID_PASSWORD = 'otome1999'
+const AUTH_KEY = 'edel:loggedIn'
+const SAVE_KEY = 'edel:save'
+
+function readSave() {
+  try {
+    return JSON.parse(localStorage.getItem(SAVE_KEY) || 'null')
+  } catch {
+    return null
+  }
+}
+
+function writeSave(save) {
+  try {
+    localStorage.setItem(SAVE_KEY, JSON.stringify(save))
+  } catch {
+    // almacenamiento no disponible (modo privado, cuota llena, etc.) — se ignora
+  }
+}
 
 const buildAffinityMap = () =>
   Object.fromEntries(NPC_CHARACTERS.map((c) => [c.id, AFFINITY_DEFAULT]))
@@ -54,90 +74,47 @@ const migratePlayCounts = (raw) => {
 }
 
 export const useGameStore = create((set, get) => ({
-  // ── Sesión de usuario (Supabase Auth + tabla game_saves) ──────
+  // ── Sesión de usuario (cuenta única fija, guardado en localStorage) ─
   userId: null,
   userName: null,
   authLoading: true,          // true mientras se comprueba si ya hay sesión activa
   completedEpisodes: buildRouteEpisodes(),
   episodePlayCounts: buildRoutePlayCounts(),
 
-  /** Aplica una fila de game_saves + sesión de Supabase al estado local. */
-  _hydrateFromSave: (session, save) => {
+  /** Aplica un guardado local al estado. */
+  _hydrateFromSave: (save) => {
     set({
-      userId: session.user.id,
-      userName: save?.display_name ?? session.user.email,
-      completedEpisodes: migrateEpisodeList(save?.completed_episodes),
-      unlockedImages:    migrateEpisodeList(save?.unlocked_images),
-      episodePlayCounts: migratePlayCounts(save?.episode_play_counts),
+      userId: 'edel25',
+      userName: VALID_USERNAME,
+      completedEpisodes: migrateEpisodeList(save?.completedEpisodes),
+      unlockedImages:    migrateEpisodeList(save?.unlockedImages),
+      episodePlayCounts: migratePlayCounts(save?.episodePlayCounts),
       affinities:      migrateAffinities(save?.affinities),
-      encounteredNPCs: migrateEncountered(save?.encountered_npcs),
+      encounteredNPCs: migrateEncountered(save?.encounteredNPCs),
     })
   },
 
-  /** Comprueba al arrancar la app si ya hay una sesión guardada (Supabase la persiste sola). */
-  initSession: async () => {
-    const { data: { session } } = await supabase.auth.getSession()
-    if (!session) { set({ authLoading: false }); return }
-    const { data: save } = await supabase
-      .from('game_saves')
-      .select('*')
-      .eq('user_id', session.user.id)
-      .single()
-    get()._hydrateFromSave(session, save)
+  /** Comprueba al arrancar la app si ya había una sesión guardada en este dispositivo. */
+  initSession: () => {
+    const loggedIn = localStorage.getItem(AUTH_KEY) === '1'
+    if (!loggedIn) { set({ authLoading: false }); return }
+    get()._hydrateFromSave(readSave())
     set({ authLoading: false, currentScreen: 'protagonistSelect' })
   },
 
-  signUp: async (username, email, password) => {
-    const trimmedUsername = username.trim()
-    const trimmedEmail = email.trim()
-    if (!trimmedUsername || !trimmedEmail || !password) return { status: 'empty' }
-
-    const { data: available, error: checkError } = await supabase.rpc('username_available', {
-      p_username: trimmedUsername,
-    })
-    if (checkError) return { status: 'error', message: checkError.message }
-    if (!available) return { status: 'username_taken' }
-
-    const { data, error } = await supabase.auth.signUp({
-      email: trimmedEmail,
-      password,
-      options: { data: { username: trimmedUsername, display_name: trimmedUsername } },
-    })
-    if (error) return { status: 'error', message: error.message }
-    cacheEmail(trimmedUsername, trimmedEmail)
-    if (!data.session) return { status: 'confirm_email' }
-    // Confirmación de email desactivada: entra directamente
-    const { data: save } = await supabase
-      .from('game_saves')
-      .select('*')
-      .eq('user_id', data.session.user.id)
-      .single()
-    get()._hydrateFromSave(data.session, save)
-    set({ currentScreen: 'protagonistSelect' })
-    return { status: 'ok' }
-  },
-
-  login: async (username, password, emailHint) => {
+  login: (username, password) => {
     const trimmedUsername = username.trim()
     if (!trimmedUsername || !password) return { status: 'empty' }
-
-    const email = emailHint?.trim() || getCachedEmail(trimmedUsername)
-    if (!email) return { status: 'need_email' }
-
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
-    if (error) return { status: 'error', message: error.message }
-    cacheEmail(trimmedUsername, email)
-    const { data: save } = await supabase
-      .from('game_saves')
-      .select('*')
-      .eq('user_id', data.session.user.id)
-      .single()
-    get()._hydrateFromSave(data.session, save)
+    if (trimmedUsername !== VALID_USERNAME || password !== VALID_PASSWORD) {
+      return { status: 'error', message: 'Usuario o contraseña incorrectos.' }
+    }
+    localStorage.setItem(AUTH_KEY, '1')
+    get()._hydrateFromSave(readSave())
     set({ currentScreen: 'protagonistSelect' })
     return { status: 'ok' }
   },
 
-  /** Modo invitado: juega sin cuenta ni guardado (nada se persiste). */
+  /** Modo invitado: juega sin guardar el progreso. */
   loginAsGuest: () => set({
     userId: null,
     userName: 'Invitada',
@@ -149,8 +126,8 @@ export const useGameStore = create((set, get) => ({
     currentScreen: 'protagonistSelect',
   }),
 
-  logout: async () => {
-    if (get().userId) await supabase.auth.signOut()
+  logout: () => {
+    localStorage.removeItem(AUTH_KEY)
     set({
       userId: null, userName: null, completedEpisodes: buildRouteEpisodes(),
       episodePlayCounts: buildRoutePlayCounts(),
@@ -178,16 +155,16 @@ export const useGameStore = create((set, get) => ({
     get().saveProgress()
   },
 
-  saveProgress: async () => {
+  saveProgress: () => {
     const state = get()
     if (!state.userId) return
-    await supabase.from('game_saves').update({
-      completed_episodes: state.completedEpisodes,
-      episode_play_counts: state.episodePlayCounts,
-      unlocked_images: state.unlockedImages,
+    writeSave({
+      completedEpisodes: state.completedEpisodes,
+      episodePlayCounts: state.episodePlayCounts,
+      unlockedImages: state.unlockedImages,
       affinities: state.affinities,
-      encountered_npcs: state.encounteredNPCs,
-    }).eq('user_id', state.userId)
+      encounteredNPCs: state.encounteredNPCs,
+    })
   },
 
   // ── Audio ───────────────────────────────────────────────────

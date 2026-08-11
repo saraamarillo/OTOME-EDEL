@@ -23,7 +23,6 @@ export default function EpisodeListScreen() {
   const pendingList     = AVAILABLE_EPISODES.filter((ep) => !completed.includes(ep))
   const completedList   = AVAILABLE_EPISODES.filter((ep) => completed.includes(ep))
   const noMoreEpisodes  = pendingList.length === 0 && AVAILABLE_EPISODES.length < TOTAL_EPISODES
-  const nextUnlockedEpisode = pendingList[0] ?? null
 
   function handlePlay(ep) {
     setSelectedEpisode(ep)
@@ -31,11 +30,11 @@ export default function EpisodeListScreen() {
     setScreen('game')
   }
 
-  function renderCard(ep, { completed: isCompleted, locked }) {
+  function renderCard(ep, { completed: isCompleted }) {
     const meta = EPISODES[ep]
     const timesPlayed = playCounts[ep] ?? 0
     return (
-      <div key={ep} className={`${styles.epRow} ${locked ? styles.epRowLocked : ''}`}>
+      <div key={ep} className={styles.epRow}>
         <div className={styles.epImageCard}>
           <div className={styles.epImageTape} />
           <img src={EPISODE_COVERS[protagonistId]?.[ep] ?? EPISODE_COVERS.default[ep]} alt="" className={styles.epImage} />
@@ -52,16 +51,12 @@ export default function EpisodeListScreen() {
             <span className={styles.progressPct}>{isCompleted ? '100 %' : '0 %'}</span>
           </div>
           <div className={styles.epFooter}>
-            {locked ? (
-              <span className={styles.lockedNote}>🔒 Termina el episodio anterior para desbloquearlo</span>
-            ) : (
-              <button
-                className={`${styles.playBtn} ${isCompleted ? styles.replayBtn : ''}`}
-                onClick={() => handlePlay(ep)}
-              >
-                {isCompleted ? 'Volver a jugar el episodio' : 'Comenzar episodio'}
-              </button>
-            )}
+            <button
+              className={`${styles.playBtn} ${isCompleted ? styles.replayBtn : ''}`}
+              onClick={() => handlePlay(ep)}
+            >
+              {isCompleted ? 'Volver a jugar el episodio' : 'Comenzar episodio'}
+            </button>
             {isCompleted && (
               <span className={styles.playCount}>
                 Episodio jugado <b>{timesPlayed} {timesPlayed === 1 ? 'vez' : 'veces'}</b>
@@ -101,7 +96,7 @@ export default function EpisodeListScreen() {
         {pendingList.length > 0 && (
           <>
             <div className={styles.sectionLabel}>Episodios disponibles</div>
-            {pendingList.map((ep) => renderCard(ep, { completed: false, locked: ep !== nextUnlockedEpisode }))}
+            {pendingList.map((ep) => renderCard(ep, { completed: false }))}
           </>
         )}
 

@@ -69,7 +69,7 @@ export default function App() {
   useEffect(() => {
     function applyScale() {
       if (!ref.current) return
-      const scale = Math.min(window.innerWidth / GAME_W, window.innerHeight / GAME_H)
+      const scale = Math.max(window.innerWidth / GAME_W, window.innerHeight / GAME_H)
       const offsetX = (window.innerWidth - GAME_W * scale) / 2
       const offsetY = (window.innerHeight - GAME_H * scale) / 2
       ref.current.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`
@@ -79,11 +79,9 @@ export default function App() {
     return () => window.removeEventListener('resize', applyScale)
   }, [])
 
-  if (authLoading) return <div className={styles.viewport} />
-
   return (
     <div ref={ref} className={styles.viewport}>
-      <Screen />
+      {!authLoading && <Screen />}
     </div>
   )
 }
