@@ -3,1217 +3,432 @@
   "title": "Todo se complica",
   "background": "residencia_habitacion_dia",
   "nodes": [
-    {
-      "id": "n_a1_01",
-      "type": "narration",
-      "character": null,
-      "text": "Son las 11 de la mañana. Ayla se despierta en la residencia. Los muelles de la cama chirriaban, pero ha dormido profundamente.",
-      "background": "residencia_habitacion_dia",
-      "next": "n_a1_02"
-    },
-    {
-      "id": "n_a1_02",
-      "type": "narration",
-      "character": null,
-      "text": "Ve una pequeña luz en el escritorio de Lydia, apuntando a una planta. Lydia está de espaldas, concentrada, cortando hojas y ramas.",
-      "next": "n_a1_03"
-    },
-    {
-      "id": "n_a1_03",
-      "type": "narration",
-      "character": null,
-      "text": "De ellas extrae una savia rojiza con motas doradas, como purpurina, que vierte en pequeños botecitos de cristal con corcho.",
-      "next": "n_a1_04"
-    },
-    {
-      "id": "n_a1_04",
-      "type": "narration",
-      "character": null,
-      "text": "Lydia se da cuenta de que Ayla está despierta, guarda los botecitos en un cajón y se gira sonriendo.",
-      "next": "n_a1_lydia_01"
-    },
-    {
-      "id": "n_a1_lydia_01",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Buenos días. ¿Te he despertado?",
-      "expression": "happy",
-      "next": "n_a1_ayla_01"
-    },
-    {
-      "id": "n_a1_ayla_01",
-      "type": "dialogue",
-      "character": null,
-      "text": "Qué va, estaba muy cansada y ahora estoy descansada.",
-      "protagonistExpression": "neutral",
-      "next": "n_a1_t01"
-    },
-    {
-      "id": "n_a1_t01",
-      "type": "thought",
-      "character": null,
-      "text": "Qué raro despertar y encontrarte a alguien ya trabajando con matraces de cristal antes de las once. Definitivamente no es una compañera de cuarto cualquiera.",
-      "protagonistExpression": "surprised",
-      "next": "n_a1_ayla_madruga"
-    },
-    {
-      "id": "n_a1_ayla_madruga",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Siempre te levantas tan temprano para esto?",
-      "protagonistExpression": "neutral",
-      "next": "n_a1_lydia_madruga"
-    },
-    {
-      "id": "n_a1_lydia_madruga",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Casi siempre. Las plantas no esperan a que una se despierte del todo.",
-      "expression": "neutral",
-      "next": "n_a1_lydia_02"
-    },
-    {
-      "id": "n_a1_lydia_02",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Es una planta cuya savia funciona como el betadine. Si te haces un corte, ayuda a curar.",
-      "expression": "neutral",
-      "next": "n_a1_ayla_02"
-    },
-    {
-      "id": "n_a1_ayla_02",
-      "type": "dialogue",
-      "character": null,
-      "text": "Interesante. ¿Lo has probado contigo misma?",
-      "next": "n_a1_lydia_03",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a1_lydia_03",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Sí, por supuesto. Las plantas tienen un montón de propiedades curativas.",
-      "expression": "happy",
-      "next": "n_a1_t02"
-    },
-    {
-      "id": "n_a1_t02",
-      "type": "thought",
-      "character": null,
-      "text": "Apunto mentalmente: si alguna vez me hago daño en el Club Paranormal, sé a quién pedirle ayuda antes que a la enfermería.",
-      "protagonistExpression": "happy",
-      "next": "n_a1_ayla_origen"
-    },
-    {
-      "id": "n_a1_ayla_origen",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿De dónde sacas las plantas? No creo que las vendan en cualquier sitio.",
-      "protagonistExpression": "neutral",
-      "next": "n_a1_lydia_origen"
-    },
-    {
-      "id": "n_a1_lydia_origen",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Algunas las traigo de mi pueblo. Otras las consigo por... otros medios. Prefiero no dar detalles.",
-      "expression": "neutral",
-      "next": "n_a1_t03"
-    },
-    {
-      "id": "n_a1_t03",
-      "type": "thought",
-      "character": null,
-      "text": "Eso suena a que debería dejar de preguntar. O a que debería preguntar mucho más. Con Lydia nunca sé cuál de las dos opciones es la correcta.",
-      "protagonistExpression": "surprised",
-      "next": "n_a1_ayla_arte"
-    },
-    {
-      "id": "n_a1_ayla_arte",
-      "type": "dialogue",
-      "character": null,
-      "text": "Los botecitos son preciosos, por cierto. Con esas motas doradas parecen piezas de museo.",
-      "protagonistExpression": "happy",
-      "next": "n_a1_lydia_arte"
-    },
-    {
-      "id": "n_a1_lydia_arte",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Los hago yo misma. Si algo va a acabar en un estante, más vale que sea bonito.",
-      "expression": "happy",
-      "next": "n_a1_t04"
-    },
-    {
-      "id": "n_a1_t04",
-      "type": "thought",
-      "character": null,
-      "text": "Una alquimista con sentido estético. Empiezo a entender por qué la universidad la puso conmigo y no con cualquiera.",
-      "protagonistExpression": "happy",
-      "next": "n_a1_lydia_03_b"
-    },
-    {
-      "id": "n_a1_lydia_03_b",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "¿Quieres una infusión? Tengo un hervidor de agua.",
-      "next": "n_a1_choice"
-    },
-    {
-      "id": "n_a1_choice",
-      "type": "choice",
-      "character": null,
-      "text": null,
-      "choices": [
-        {
-          "label": "Vale, prepárame un té.",
-          "affinityChanges": {
-            "lydia": 5
-          },
-          "next": "n_a1_te_01"
-        },
-        {
-          "label": "No, gracias, prefiero un café.",
-          "affinityChanges": {},
-          "next": "n_a1_cafe_01"
-        }
-      ]
-    },
-    {
-      "id": "n_a1_te_01",
-      "type": "narration",
-      "character": null,
-      "text": "Lydia saca un juego de té de porcelana precioso con dibujos de flores. Le sirve una infusión de frutos rojos.",
-      "next": "n_a1_te_clases"
-    },
-    {
-      "id": "n_a1_te_clases",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Hoy tienes clases?",
-      "next": "n_a1_te_lydia",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a1_te_lydia",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Hoy tenemos club. Los martes y jueves todos tenemos clubs.",
-      "expression": "neutral",
-      "next": "n_a1_t05"
-    },
-    {
-      "id": "n_a1_t05",
-      "type": "thought",
-      "character": null,
-      "text": "Llevo un día en esta ciudad y ya tengo una compañera de cuarto que hace pociones caseras y me sirve el té en porcelana con flores pintadas. Empiezo a pensar que esto va a ser interesante, para bien o para mal.",
-      "protagonistExpression": "happy",
-      "next": "n_a1_unlock"
-    },
-    {
-      "id": "n_a1_unlock",
-      "type": "narration",
-      "character": null,
-      "text": "Ambas terminan su té con calma antes de empezar el día.",
-      "unlockImage": "lydia_ayla_desayunoResidencia",
-      "next": "n_a2_01"
-    },
-    {
-      "id": "n_a1_cafe_01",
-      "type": "narration",
-      "character": null,
-      "text": "Lydia le prepara un café en su lugar, algo decepcionada de no poder compartir su ritual del té.",
-      "next": "n_a1_cafe_clases"
-    },
-    {
-      "id": "n_a1_cafe_clases",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Hoy tienes clases?",
-      "next": "n_a1_cafe_lydia",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a1_cafe_lydia",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Hoy tenemos club. Los martes y jueves todos tenemos clubs.",
-      "expression": "neutral",
-      "next": "n_a1_cafe_t01"
-    },
-    {
-      "id": "n_a1_cafe_t01",
-      "type": "thought",
-      "character": null,
-      "text": "Llevo un día en esta ciudad y ya tengo una compañera de cuarto que hace pociones caseras. Empiezo a pensar que esto va a ser interesante, para bien o para mal.",
-      "protagonistExpression": "happy",
-      "next": "n_a2_01"
-    },
-    {
-      "id": "n_a2_01",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla le pide a Lydia que le enseñe las instalaciones. Se prepara: cartera, llaves, móvil, cuaderno, boli y portátil en una bandolera. Lydia le hace un tour completo.",
-      "next": "n_a2_02"
-    },
-    {
-      "id": "n_a2_02",
-      "type": "narration",
-      "character": null,
-      "text": "La residencia tiene: planta de chicas con dormitorios compartidos e individuales; planta de arriba para chicos; planta baja con zona de cine y videojuegos, zona de ocio con sofás, cocina comunitaria, gimnasio pequeño, piscina y baños en todas las plantas.",
-      "next": "n_a2_03"
-    },
-    {
-      "id": "n_a2_03",
-      "type": "narration",
-      "character": null,
-      "text": "Lydia le explica que los profesores pasan a revisar las habitaciones por la noche para comprobar que cada una está en su cuarto.",
-      "next": "n_a2_04"
-    },
-    {
-      "id": "n_a2_04",
-      "type": "narration",
-      "character": null,
-      "text": "Después recorren la universidad: la cafetería grande con menú tipo bandeja, las aulas, los edificios conectados por pasarelas de cristal.",
-      "background": "campus_dia",
-      "next": "n_a2_05"
-    },
-    {
-      "id": "n_a2_05",
-      "type": "narration",
-      "character": null,
-      "text": "Comen juntas en la cafetería: Ayla coge pizza, Lydia un flanecito.",
-      "background": "cafeteria_universidad_dia",
-      "next": "n_a2_06"
-    },
-    {
-      "id": "n_a2_06",
-      "type": "narration",
-      "character": null,
-      "text": "Se despiden a las 4:30. Lydia va al trastero a preparar material de jardinería. Ayla se dirige a la biblioteca.",
-      "next": "n_a3_01"
-    },
-    {
-      "id": "n_a3_01",
-      "type": "narration",
-      "character": null,
-      "text": "En la biblioteca, Ayla abre su portátil y busca «Club Paranormal Universidad Somnia».",
-      "background": "biblioteca_universidad",
-      "next": "n_a3_02"
-    },
-    {
-      "id": "n_a3_02",
-      "type": "narration",
-      "character": null,
-      "text": "Encuentra el blog del club de periodismo de la universidad: un artículo del año pasado sobre cómo el Club Paranormal estuvo a punto de cerrar por múltiples accidentes entre sus miembros.",
-      "next": "n_a3_03"
-    },
-    {
-      "id": "n_a3_03",
-      "type": "narration",
-      "character": null,
-      "text": "Varios acabaron heridos y hospitalizados; algunos ni siquiera recordaban lo que les había pasado. La universidad dio un ultimátum y los miembros optaron por abandonar el club sin dar explicaciones.",
-      "next": "n_a3_04"
-    },
-    {
-      "id": "n_a3_04",
-      "type": "narration",
-      "character": null,
-      "text": "Quedó inactivo hasta que Ethan lo reabrió recientemente.",
-      "next": "n_a3_t01"
-    },
-    {
-      "id": "n_a3_t01",
-      "type": "thought",
-      "character": null,
-      "text": "(¿Qué les pasó realmente?)",
-      "next": "n_a3_05"
-    },
-    {
-      "id": "n_a3_05",
-      "type": "narration",
-      "character": null,
-      "text": "En las imágenes del artículo, Ayla ve fotos de los antiguos miembros —no reconoce a Ethan entre ellos—, una foto posando delante de un edificio antiguo, otra recibiendo un diploma del Ayuntamiento... y un símbolo extraño: una media luna.",
-      "next": "n_a3_06"
-    },
-    {
-      "id": "n_a3_06",
-      "type": "narration",
-      "character": null,
-      "text": "Hace capturas de todo con el móvil.",
-      "next": "n_a3_07"
-    },
-    {
-      "id": "n_a3_07",
-      "type": "narration",
-      "character": null,
-      "text": "Busca más sobre el diploma: el Ayuntamiento les dio un reconocimiento por avisar de un problema estructural en unos pasadizos antiguos de la guerra, permitiendo evacuar a personas antes de un derrumbe.",
-      "next": "n_a4_01"
-    },
-    {
-      "id": "n_a4_01",
-      "type": "narration",
-      "character": null,
-      "text": "Son las 5 de la tarde. Ayla recoge sus cosas para salir de la biblioteca.",
-      "next": "n_a4_sol_chat_01"
-    },
-    {
-      "id": "n_a4_sol_chat_01",
-      "type": "chat",
-      "character": "soledad",
-      "text": "Hola, ya he llegado.",
-      "next": "n_a4_ethan_chat_01",
-      "isGroup": true
-    },
-    {
-      "id": "n_a4_ethan_chat_01",
-      "type": "chat",
-      "character": "ethan",
-      "text": "Pero si habíamos quedado a y media.",
-      "next": "n_a4_ayla_01",
-      "isGroup": true
-    },
-    {
-      "id": "n_a4_ayla_01",
-      "type": "dialogue",
-      "character": null,
-      "text": "Estoy en la Biblioteca ahora voy de camino y os aviso cuando esté allí.",
-      "next": "n_a4_ayla_02"
-    },
-    {
-      "id": "n_a4_ayla_02",
-      "type": "dialogue",
-      "character": null,
-      "text": "Hola Soledad, ¿donde estás?",
-      "next": "n_a4_sol_chat_02"
-    },
-    {
-      "id": "n_a4_sol_chat_02",
-      "type": "chat",
-      "character": "soledad",
-      "text": "En la entrada de la universidad.",
-      "next": "n_a4_ayla_03"
-    },
-    {
-      "id": "n_a4_ayla_03",
-      "type": "dialogue",
-      "character": null,
-      "text": "Dame 10 minutos que ahí estoy.",
-      "next": "n_a4_02"
-    },
-    {
-      "id": "n_a4_02",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla siente que no está sola. Se gira y ve una cabellera negra larga entre las estanterías: una chica que la observa fijamente. Le suena de algo.",
-      "next": "n_a4_03"
-    },
-    {
-      "id": "n_a4_03",
-      "type": "narration",
-      "character": null,
-      "text": "La chica pestañea y empieza a caminar muy rápido hacia el fondo de la biblioteca, sale por una puerta trasera de madera, cruza el parking, la zona de jardín y parece salir de los terrenos de la universidad.",
-      "next": "n_a4_04"
-    },
-    {
-      "id": "n_a4_04",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla la sigue, pero antes llama a Soledad.",
-      "next": "n_a4_ayla_04"
-    },
-    {
-      "id": "n_a4_ayla_04",
-      "type": "dialogue",
-      "character": null,
-      "text": "Creo que he visto a la chica que me dijiste tú, la estoy siguiendo.",
-      "protagonistExpression": "neutral",
-      "next": "n_a4_sol_01"
-    },
-    {
-      "id": "n_a4_sol_01",
-      "type": "phone",
-      "character": "soledad",
-      "text": "¡Ostras! ¿En serio? ¿La que tenía el pelo negro? Es super enigmática. ¿Y donde está?",
-      "next": "n_a4_ayla_05",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a4_ayla_05",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Te paso ubicación y vienes?",
-      "next": "n_a4_sol_02"
-    },
-    {
-      "id": "n_a4_sol_02",
-      "type": "phone",
-      "character": "soledad",
-      "text": "Vale porque a mi también se me quedó mirando el otro día. Pásame ubicación.",
-      "next": "n_a4_sol_02_b",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a4_sol_02_b",
-      "type": "phone",
-      "character": "soledad",
-      "text": "Pero creo que deberíamos avisar a Ethan.",
-      "next": "n_a4_ayla_06"
-    },
-    {
-      "id": "n_a4_ayla_06",
-      "type": "dialogue",
-      "character": null,
-      "text": "No lo sé, es que la chica se va, la estoy siguiendo. Pero si le quieres avisar, avísale.",
-      "next": "n_a4_sol_03"
-    },
-    {
-      "id": "n_a4_sol_03",
-      "type": "phone",
-      "character": "soledad",
-      "text": "Vale, a ver si puedes compartir ubicación en tiempo real.",
-      "next": "n_a4_ayla_07",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a4_ayla_07",
-      "type": "dialogue",
-      "character": null,
-      "text": "Voy, voy, te la comparto.",
-      "next": "n_a4_05"
-    },
-    {
-      "id": "n_a4_05",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla le cuelga y le comparte ubicación.",
-      "next": "n_a4_06"
-    },
-    {
-      "id": "n_a4_06",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla sigue a la chica por callejuelas de la zona antigua de Guadalajara. Cuando gira la esquina, la chica ha desaparecido.",
-      "background": "callejones_guadalajara_dia",
-      "next": "n_a5_01"
-    },
-    {
-      "id": "n_a5_01",
-      "type": "narration",
-      "character": null,
-      "text": "Soledad llega caminando hasta la ubicación de Ayla. Se encuentran las dos, agotadas, en la misma calle.",
-      "next": "n_a5_sol_01"
-    },
-    {
-      "id": "n_a5_sol_01",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "¿Qué tal has podido ver a la chica? ¿Sabes su nombre?",
-      "next": "n_a5_ayla_01",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_ayla_01",
-      "type": "dialogue",
-      "character": null,
-      "text": "Que va, que va, ha girado ella en la calle y cuando he girado yo ya ha desaparecido.",
-      "protagonistExpression": "neutral",
-      "next": "n_a5_sol_02"
-    },
-    {
-      "id": "n_a5_sol_02",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "Que raro, yo justo acabo de escribir a Ethan para decirle que vamos un poco más tarde,",
-      "next": "n_a5_sol_02_b",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_sol_02_b",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "porque he visto la ubicación que estaba lejísimos.",
-      "next": "n_a5_sol_02b"
-    },
-    {
-      "id": "n_a5_sol_02b",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "También le he compartido a Ethan mi ubicación.",
-      "next": "n_a5_ayla_02"
-    },
-    {
-      "id": "n_a5_ayla_02",
-      "type": "dialogue",
-      "character": null,
-      "text": "Pues gracias.",
-      "next": "n_a5_02",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a5_02",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla le cuenta lo que pasó realmente: que estaba recogiendo en la biblioteca cuando vio a la persona de pelo negro mirándola fijamente, la misma persona que se le quedó mirando ayer a Soledad.",
-      "next": "n_a5_ayla_03"
-    },
-    {
-      "id": "n_a5_ayla_03",
-      "type": "dialogue",
-      "character": null,
-      "text": "He estado investigando una cosa, pero no le digamos nada a Ethan de momento.",
-      "next": "n_a5_sol_03",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a5_sol_03",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "¿Y que has visto?",
-      "next": "n_a5_ayla_04a",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_ayla_04a",
-      "type": "dialogue",
-      "character": null,
-      "text": "He encontrado un artículo del club de periodismo de la uni, hablando sobre que el año pasado en el club paranormal había muchos accidentes de los miembros del club, que iba a cerrar porque nadie entendía por qué sucedían tantas cosas.",
-      "next": "n_a5_ayla_04b",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a5_ayla_04b",
-      "type": "dialogue",
-      "character": null,
-      "text": "Luego ha pasado lo de la chica... no se si tiene algo que ver pero la chica nos miraba por algo.",
-      "next": "n_a5_sol_04"
-    },
-    {
-      "id": "n_a5_sol_04",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "¿Solo has visto el artículo, no has visto nada más?",
-      "next": "n_a5_ayla_05",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_ayla_05",
-      "type": "dialogue",
-      "character": null,
-      "text": "Sí, había unas fotos de varios miembros pero no estaba Ethan, entonces por eso no sé si decirle o no. Luego había un símbolo, que te puedo pasar la foto.",
-      "next": "n_a5_sol_05",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a5_sol_05",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "Si me lo puedes pasar te lo agradezco y así podemos investigarlo por nuestra cuenta.",
-      "next": "n_a5_03",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_03",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla le pasa la foto del símbolo que es como una luna. Deciden que le pueden preguntar a Ethan por encima esto o que les cuente lo que él sepa de la historia del club.",
-      "next": "n_a5_04"
-    },
-    {
-      "id": "n_a5_04",
-      "type": "narration",
-      "character": null,
-      "text": "Suena el teléfono de Soledad: es Ethan. Soledad contesta.",
-      "next": "n_a5_ethan_01"
-    },
-    {
-      "id": "n_a5_ethan_01",
-      "type": "narration",
-      "character": null,
-      "text": "Por el auricular se oye la voz apresurada de Ethan: «Llevo media hora en esta ubicación. ¿Dónde estáis?»",
-      "next": "n_a5_sol_06"
-    },
-    {
-      "id": "n_a5_sol_06",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "¿Cómo? (Se dirige a Ayla) Dice que está encima. Ayla, ¿tú lo ves? Yo no lo veo.",
-      "next": "n_a5_manoslibres",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_manoslibres",
-      "type": "narration",
-      "character": null,
-      "text": "Soledad activa el manos libres para que Ayla pueda oír a Ethan también.",
-      "next": "n_a5_ayla_06"
-    },
-    {
-      "id": "n_a5_ayla_06",
-      "type": "dialogue",
-      "character": null,
-      "text": "No, yo tampoco lo veo. No entiendo nada.",
-      "protagonistExpression": "neutral",
-      "next": "n_a5_ethan_02"
-    },
-    {
-      "id": "n_a5_ethan_02",
-      "type": "phone",
-      "character": "ethan",
-      "phoneTheme": "soledad",
-      "text": "Chicas, no os veo.",
-      "next": "n_a5_sol_07"
-    },
-    {
-      "id": "n_a5_sol_07",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "¿Cómo vas vestido?",
-      "next": "n_a5_ethan_03",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_ethan_03",
-      "type": "phone",
-      "character": "ethan",
-      "phoneTheme": "soledad",
-      "text": "Pues, a ver, llevo vaqueros, una sudadera verde oscura, unas zapatillas.",
-      "next": "n_a5_ethan_03_b"
-    },
-    {
-      "id": "n_a5_ethan_03_b",
-      "type": "phone",
-      "character": "ethan",
-      "phoneTheme": "soledad",
-      "text": "¿Dónde estáis? Aquí no hay nadie.",
-      "next": "n_a5_sol_08"
-    },
-    {
-      "id": "n_a5_sol_08",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "Estamos en la misma calle.",
-      "next": "n_a5_ethan_04",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_ethan_04",
-      "type": "phone",
-      "character": "ethan",
-      "phoneTheme": "soledad",
-      "text": "Sí, en la esquina, que enfrente hay una barbería,",
-      "next": "n_a5_ethan_04_b"
-    },
-    {
-      "id": "n_a5_ethan_04_b",
-      "type": "phone",
-      "character": "ethan",
-      "phoneTheme": "soledad",
-      "text": "y está el edificio este antiguo de la fábrica de harina. ¿Dónde estáis?",
-      "next": "n_a5_sol_09"
-    },
-    {
-      "id": "n_a5_sol_09",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "Pues no te vemos, ¿es una broma?",
-      "next": "n_a5_ethan_05",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a5_ethan_05",
-      "type": "phone",
-      "character": "ethan",
-      "phoneTheme": "soledad",
-      "text": "Yo no estoy bromeando la verdad. Las que parecéis bromear sois vosotras.",
-      "next": "n_a5_05"
-    },
-    {
-      "id": "n_a5_05",
-      "type": "narration",
-      "character": null,
-      "text": "Ninguno puede ver al otro, pese a estar en la misma ubicación. Deciden encontrarse en la universidad. La llamada empieza a tener interferencias y se corta.",
-      "protagonistExpression": "surprised",
-      "next": "n_a5_06"
-    },
-    {
-      "id": "n_a5_06",
-      "type": "narration",
-      "character": null,
-      "text": "Miran alrededor: vuelven a ver a la chica de pelo negro entrando en la fábrica de harina. Al mismo tiempo, sienten un leve dolor de cabeza.",
-      "background": "fabrica_abandonada_dia",
-      "next": "n_a5_ayla_07"
-    },
-    {
-      "id": "n_a5_ayla_07",
-      "type": "dialogue",
-      "character": null,
-      "text": "La acabo de ver.",
-      "next": "n_a5_sol_10",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a5_sol_10",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "¿Le hacemos una foto?",
-      "next": "n_a5_ayla_08",
-      "expression": "surprised"
-    },
-    {
-      "id": "n_a5_ayla_08",
-      "type": "dialogue",
-      "character": null,
-      "text": "No se si te va a dar tiempo, la chica se está metiendo por la puerta.",
-      "next": "n_a5_07",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a5_07",
-      "type": "narration",
-      "character": null,
-      "text": "La chica ya ha entrado. Ayla la sigue. Soledad la acompaña.",
-      "background": "interior_fabrica_harina",
-      "next": "n_a5_08"
-    },
-    {
-      "id": "n_a5_08",
-      "type": "narration",
-      "character": null,
-      "text": "Dentro hay escombros, maquinaria vieja destrozada. Ven una cabellera negra al fondo, pasando unos escombros y bajando a algún lugar.",
-      "next": "n_a5_09"
-    },
-    {
-      "id": "n_a5_09",
-      "type": "narration",
-      "character": null,
-      "text": "Soledad intenta mandar un mensaje a Ethan, pero aparece el relojito: no se envía. Ayla intenta lo mismo. Tampoco funciona.",
-      "next": "n_a5_sol_11"
-    },
-    {
-      "id": "n_a5_sol_11",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "Otra vez. Esta mañana me pasó igual con mi hermana.",
-      "next": "n_a5_sol_11_b",
-      "expression": "sad"
-    },
-    {
-      "id": "n_a5_sol_11_b",
-      "type": "dialogue",
-      "character": "soledad",
-      "text": "Voy a salir un momento fuera a ver si hay cobertura.",
-      "next": "n_a5_10"
-    },
-    {
-      "id": "n_a5_10",
-      "type": "narration",
-      "character": null,
-      "text": "Soledad sale de la fábrica.",
-      "next": "n_a6_01"
-    },
-    {
-      "id": "n_a6_01",
-      "type": "narration",
-      "character": null,
-      "text": "Pasan los minutos y Soledad no vuelve. Ayla va a la puerta: está cerrada.",
-      "next": "n_a6_02"
-    },
-    {
-      "id": "n_a6_02",
-      "type": "narration",
-      "character": null,
-      "text": "Intenta llamar a Soledad: tiene cobertura, pero nadie responde.",
-      "next": "n_a6_03"
-    },
-    {
-      "id": "n_a6_03",
-      "type": "narration",
-      "character": null,
-      "text": "Se mueve por los escombros y encuentra la zona donde la chica de pelo negro había desaparecido. El suelo tiene una hendidura, como una palanca.",
-      "next": "n_a6_04"
-    },
-    {
-      "id": "n_a6_04",
-      "type": "narration",
-      "character": null,
-      "text": "Al accionarla, el suelo se desliza y revela unas escaleras que bajan a la oscuridad. Enciende la linterna del móvil y baja notando humedad.",
-      "next": "n_a6_05"
-    },
-    {
-      "id": "n_a6_05",
-      "type": "narration",
-      "character": null,
-      "text": "Las escaleras giran. Escucha un sonido: la trampilla de arriba se ha cerrado.",
-      "protagonistExpression": "surprised",
-      "next": "n_a6_06"
-    },
-    {
-      "id": "n_a6_06",
-      "type": "narration",
-      "character": null,
-      "text": "Sube de vuelta y encuentra un interruptor en la pared. La trampilla se abre de nuevo. Sale y respira aliviada.",
-      "next": "n_a6_choice"
-    },
-    {
-      "id": "n_a6_choice",
-      "type": "choice",
-      "character": null,
-      "text": null,
-      "choices": [
-        {
-          "label": "Empieza a gritar pidiendo ayuda.",
-          "affinityChanges": {},
-          "next": "n_a6_grita_01"
-        },
-        {
-          "label": "Entra en pánico y se pone a rezar.",
-          "affinityChanges": {},
-          "next": "n_a6_reza_01"
-        }
-      ]
-    },
-    {
-      "id": "n_a6_grita_01",
-      "type": "dialogue",
-      "character": null,
-      "text": "¡Hola! ¿Hay alguien?",
-      "protagonistExpression": "sad",
-      "next": "n_a6_07"
-    },
-    {
-      "id": "n_a6_07",
-      "type": "narration",
-      "character": null,
-      "text": "De repente escucha una voz suave, masculina.",
-      "next": "n_a6_frey_01"
-    },
-    {
-      "id": "n_a6_frey_01",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Te oigo.",
-      "next": "n_a6_conversacion"
-    },
-    {
-      "id": "n_a6_reza_01",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla entra en pánico y se pone a rezar en voz baja, los ojos cerrados con fuerza.",
-      "protagonistExpression": "sad",
-      "next": "n_a6_08"
-    },
-    {
-      "id": "n_a6_08",
-      "type": "narration",
-      "character": null,
-      "text": "De la nada, siente que ya no está sola. Una voz suave, masculina, le habla desde algún lugar cercano.",
-      "next": "n_a6_frey_02"
-    },
-    {
-      "id": "n_a6_frey_02",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Te oigo. No hace falta que reces, ya casi estoy.",
-      "next": "n_a6_conversacion"
-    },
-    {
-      "id": "n_a6_conversacion",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Quién eres? Soy Ayla, de la Universidad Somnia. Me he quedado encerrada aquí. ¿Tú quién eres y dónde estás?",
-      "protagonistExpression": "sad",
-      "next": "n_a6_frey_03"
-    },
-    {
-      "id": "n_a6_frey_03",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Me llamo Frey. Sigue hablando. Estoy llegando.",
-      "next": "n_a6_ayla_09"
-    },
-    {
-      "id": "n_a6_ayla_09",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Por dónde llegas? No entiendo.",
-      "protagonistExpression": "neutral",
-      "next": "n_a6_frey_04"
-    },
-    {
-      "id": "n_a6_frey_04",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "No voy a entrar, no te preocupes. Sé dónde estás, creo. Tú sigue hablando.",
-      "next": "n_a6_ayla_10"
-    },
-    {
-      "id": "n_a6_ayla_10",
-      "type": "dialogue",
-      "character": null,
-      "text": "Vale, te cuento por qué he llegado aquí. Estaba en la biblioteca y una chica de pelo negro se me quedó mirando. He salido corriendo detrás de ella y hemos acabado aquí. Vas a pensar que estoy loca.",
-      "protagonistExpression": "sad",
-      "next": "n_a6_frey_05"
-    },
-    {
-      "id": "n_a6_frey_05",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "No me pareces loca, no. ¿Cuánto tiempo llevas aquí?",
-      "next": "n_a6_ayla_11"
-    },
-    {
-      "id": "n_a6_ayla_11",
-      "type": "dialogue",
-      "character": null,
-      "text": "No sé ni qué hora es.",
-      "protagonistExpression": "neutral",
-      "next": "n_a6_frey_06"
-    },
-    {
-      "id": "n_a6_frey_06",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Son las 9 de la noche.",
-      "next": "n_a6_ayla_12"
-    },
-    {
-      "id": "n_a6_ayla_12",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Las 9? Salí corriendo a las 5. ¿Cuánto tiempo llevo aquí? Madre mía.",
-      "protagonistExpression": "sad",
-      "next": "n_a6_09"
-    },
-    {
-      "id": "n_a6_09",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla oye un sonido: «shhhh». Frente a ella aparece una línea blanca que cruza el aire, como una grieta.",
-      "next": "n_a6_10"
-    },
-    {
-      "id": "n_a6_10",
-      "type": "narration",
-      "character": null,
-      "text": "Se abre y sale un chico rubio con una cazadora con capucha, ojos de un amarillo brillante, un piercing y pelo rubio. La grieta se cierra tras él.",
-      "next": "n_a6_frey_07"
-    },
-    {
-      "id": "n_a6_frey_07",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Hola, te he encontrado.",
-      "expression": "happy",
-      "next": "n_a6_ayla_13"
-    },
-    {
-      "id": "n_a6_ayla_13",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Cómo has abierto eso?",
-      "protagonistExpression": "neutral",
-      "next": "n_a6_frey_08"
-    },
-    {
-      "id": "n_a6_frey_08",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Tengo algún truco. Mejor que no pienses mucho en ello. ¿Estás bien? ¿Herida?",
-      "next": "n_a6_ayla_14",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a6_ayla_14",
-      "type": "dialogue",
-      "character": null,
-      "text": "No, no, nada. Solo quiero salir de aquí.",
-      "next": "n_a6_frey_09",
-      "protagonistExpression": "neutral"
-    },
-    {
-      "id": "n_a6_frey_09",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "¿Confías en mí? Dame la mano. Prometo no hacer nada raro.",
-      "next": "n_a6_ayla_confia",
-      "expression": "blush"
-    },
-    {
-      "id": "n_a6_ayla_confia",
-      "type": "dialogue",
-      "character": null,
-      "text": "No te conozco de nada... pero tampoco es que tenga muchas más opciones. Vale, confío en ti.",
-      "protagonistExpression": "blush",
-      "next": "n_a6_11"
-    },
-    {
-      "id": "n_a6_11",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla le da la mano. Frey se la aprieta con suavidad y le pide que cierre los ojos.",
-      "protagonistExpression": "blush",
-      "next": "n_a6_12"
-    },
-    {
-      "id": "n_a6_12",
-      "type": "narration",
-      "character": null,
-      "text": "Siente que la atrae hacia él, su pecho contra el suyo, una presión extraña en el estómago... y de repente una brisa suave le acaricia el cuello y le mueve el pelo.",
-      "next": "n_a6_frey_10"
-    },
-    {
-      "id": "n_a6_frey_10",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Ya puedes abrir los ojos.",
-      "expression": "blush",
-      "next": "n_a6_13"
-    },
-    {
-      "id": "n_a6_13",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla abre los ojos: está en el balcón de su habitación, en la residencia. Todo sigue exactamente donde lo dejó, como si nunca se hubiera ido.",
-      "background": "residencia_habitacion_noche",
-      "unlockImage": "frey_ayla_rescate",
-      "next": "n_a6_ayla_15"
-    },
-    {
-      "id": "n_a6_ayla_15",
-      "type": "dialogue",
-      "character": null,
-      "text": "¿Cómo has hecho esto? Hace un segundo estábamos en la fábrica y ahora... esto es mi habitación.",
-      "protagonistExpression": "happy",
-      "next": "n_a6_frey_11"
-    },
-    {
-      "id": "n_a6_frey_11",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Ya te lo dije: tengo mis trucos. Es más fácil de lo que parece cuando llevas tiempo practicando.",
-      "expression": "happy",
-      "next": "n_a7_01"
-    },
-    {
-      "id": "n_a7_01",
-      "type": "narration",
-      "character": null,
-      "text": "Frey le explica lo ocurrido. Le da dos opciones: borrarle los recuerdos o contarle la verdad a cambio de que guarde el secreto.",
-      "next": "n_a7_frey_01"
-    },
-    {
-      "id": "n_a7_frey_01",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Puedo llamar a alguien que te suplante los recuerdos.",
-      "expression": "neutral",
-      "next": "n_a7_frey_01_b"
-    },
-    {
-      "id": "n_a7_frey_01_b",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "O puedo explicarte y tú mantenerlo en secreto. Pero eso conlleva que te tendré vigilada.",
-      "next": "n_a7_ayla_01"
-    },
-    {
-      "id": "n_a7_ayla_01",
-      "type": "dialogue",
-      "character": null,
-      "text": "Prefiero que me expliques. No me gusta lo de suplantar recuerdos. He visto las consecuencias que tiene en la gente.",
-      "protagonistExpression": "neutral",
-      "next": "n_a7_02"
-    },
-    {
-      "id": "n_a7_02",
-      "type": "narration",
-      "character": null,
-      "text": "Frey se sienta a su lado y le explica: Ayla cayó en una fisura, un cruce accidental entre dimensiones. El mismo mundo, los mismos edificios, pero otro plano: mundos hechos de recuerdos y sueños de personas.",
-      "next": "n_a7_03"
-    },
-    {
-      "id": "n_a7_03",
-      "type": "narration",
-      "character": null,
-      "text": "Algunas personas adquieren habilidades especiales. Frey puede ver y cruzar esas fisuras, por eso la encontró. La fábrica de harina es uno de los lugares más peligrosos de Guadalajara por una antigua calamidad.",
-      "next": "n_a7_frey_02"
-    },
-    {
-      "id": "n_a7_frey_02",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Simplemente intenta mantener tu vida normal. No te acerques a ciertos sitios.",
-      "next": "n_a7_frey_02_b",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a7_frey_02_b",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Intercambiemos teléfonos por si necesito contactarte.",
-      "next": "n_a7_ayla_02"
-    },
-    {
-      "id": "n_a7_ayla_02",
-      "type": "dialogue",
-      "character": null,
-      "text": "Gracias por salvarme. Y por no borrarme la memoria.",
-      "protagonistExpression": "happy",
-      "next": "n_a7_frey_03"
-    },
-    {
-      "id": "n_a7_frey_03",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Espero que guardes el secreto.",
-      "next": "n_a7_frey_03_b",
-      "expression": "neutral"
-    },
-    {
-      "id": "n_a7_frey_03_b",
-      "type": "dialogue",
-      "character": "frey",
-      "text": "Si sale a la luz, te la tendremos que borrar a ti y a todos los que lo sepan.",
-      "next": "n_a7_04"
-    },
-    {
-      "id": "n_a7_04",
-      "type": "narration",
-      "character": null,
-      "text": "Frey sale por el balcón y desaparece al vacío. Entra Lydia por la puerta.",
-      "next": "n_a7_lydia_01"
-    },
-    {
-      "id": "n_a7_lydia_01",
-      "type": "dialogue",
-      "character": "lydia",
-      "text": "Hola, no sabía que ya habías llegado.",
-      "expression": "happy",
-      "next": "n_a7_ayla_03"
-    },
-    {
-      "id": "n_a7_ayla_03",
-      "type": "dialogue",
-      "character": null,
-      "text": "Sí, tenía dolor de cabeza y quería dormir un poco.",
-      "protagonistExpression": "neutral",
-      "next": "n_a7_05"
-    },
-    {
-      "id": "n_a7_05",
-      "type": "narration",
-      "character": null,
-      "text": "Ayla le cuenta la versión oficial: se metió en la fábrica, la sacó la policía y la interrogaron.",
-      "next": "n_a7_06"
-    },
-    {
-      "id": "n_a7_06",
-      "type": "narration",
-      "character": null,
-      "text": "Lydia le prepara una manzanilla y le deja galletas que ha horneado.",
-      "endEpisode": true,
-      "next": null
-    }
+    { "id": "a1_01", "type": "narration", "character": null, "background": "residencia_habitacion_dia", "text": "Ayla duerme en una cama que se le hace extraña: pequeña, con los muelles del somier chirriando de toda la gente que ha pasado por ahí. El colchón, en cambio, parece nuevo. Aun así ha dormido profundamente.", "next": "a1_02" },
+    { "id": "a1_02", "type": "narration", "character": null, "text": "Al despertar ve una lucecita encendida en el escritorio de Lydia, apuntando a una planta. Lydia está de espaldas, concentrada.", "next": "a1_03" },
+    { "id": "a1_03", "type": "narration", "character": null, "text": "Con unas tijeras va cortando ramas y hojas. De ellas extrae una savia rojiza en la que Ayla cree ver motas doradas, como purpurina, aunque no está segura. La va vertiendo en botecitos de cristal de laboratorio, pequeños, cerrados con corcho.", "next": "a1_04" },
+    { "id": "a1_04", "type": "narration", "character": null, "activeCharacter": "lydia", "text": "Lydia se da cuenta de que Ayla está despierta. Guarda los botecitos en un cajón, lo cierra, sigue cuidando la plantita y se gira sonriendo.", "next": "a1_05" },
+    { "id": "a1_05", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Buenos días. Ya estás despierta. No quería hacer ruido. ¿Te he despertado?", "next": "a1_06" },
+    { "id": "a1_06", "type": "dialogue", "character": null, "text": "Qué va, qué va. Estaba muy cansada y ahora estoy descansada. No he escuchado nada.", "next": "a1_d01" },
+    { "id": "a1_d01", "type": "choice", "character": null, "text": "Has visto cómo guardaba los botecitos. ¿Preguntas?", "choices": [
+      { "label": "«¿Qué es esa planta? Parecía que sacabas algo de ella.»", "affinityChanges": { "lydia": 10 }, "next": "a1_d01a1" },
+      { "label": "Hacer como que no has visto nada y desperezarte.", "affinityChanges": {}, "next": "a1_d01b1" },
+      { "label": "«¿Qué escondes en ese cajón?»", "affinityChanges": { "lydia": -10 }, "next": "a1_d01c1" }
+    ] },
+    { "id": "a1_d01a1", "type": "dialogue", "character": "lydia", "text": "Es una planta. Digamos que su savia funciona como un betadine.", "next": "a1_d01a2" },
+    { "id": "a1_d01a2", "type": "dialogue", "character": "lydia", "text": "Tiene la savia roja y la misma función, pero más natural. Sirve para untarla en heridas.", "next": "a1_d01a3" },
+    { "id": "a1_d01a3", "type": "dialogue", "character": null, "text": "Interesante. ¿Y lo has probado en ti misma?", "next": "a1_d01a4" },
+    { "id": "a1_d01a4", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Sí, por supuesto. Hay plantas con un montón de propiedades curativas.", "next": "a1_d01a5" },
+    { "id": "a1_d01a5", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Así que a veces me gusta utilizarlas.", "next": "a1_12_01" },
+    { "id": "a1_d01b1", "type": "narration", "character": null, "text": "Lydia recoge las tijeras sin decir nada más y aparta la lámpara de la planta.", "next": "a1_12_01" },
+    { "id": "a1_d01c1", "type": "dialogue", "character": "lydia", "expression": "surprised", "text": "¿En el cajón? Material de clase. Estoy en Medicina, Ayla.", "next": "a1_d01c2" },
+    { "id": "a1_d01c2", "type": "narration", "character": null, "text": "Lo dice sonriendo, pero cierra el cajón con llave. La llave se la guarda en el bolsillo.", "next": "a1_d01c3" },
+    { "id": "a1_d01c3", "type": "thought", "character": null, "protagonistExpression": "sad", "text": "Vale. Mal empezamos.", "next": "a1_12_01" },
+    { "id": "a1_12_01", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Por cierto, ¿quieres una infusión? Tengo un hervidor. Puedo prepararte un té.", "next": "a1_d02" },
+    { "id": "a1_d02", "type": "choice", "character": null, "text": "¿Aceptas el té?", "choices": [
+      { "label": "«Vale, si me preparas uno así lo pruebo.»", "affinityChanges": { "lydia": 15 }, "next": "a1_d02a1" },
+      { "label": "«No, gracias, prefiero un café.»", "affinityChanges": {}, "next": "a1_d02b1" },
+      { "label": "«Mejor no. Prefiero no tomar nada que no haya abierto yo.»", "affinityChanges": { "lydia": -10 }, "next": "a1_d02c1" }
+    ] },
+    { "id": "a1_d02a1", "type": "narration", "character": null, "text": "Junto al escritorio hay una mesilla con un hervidor enchufado. Lydia saca un juego de té de porcelana precioso, con dibujos de flores, y le ofrece los sobrecitos abiertos en la palma de la mano.", "next": "a1_d03" },
+    { "id": "a1_d03", "type": "choice", "character": null, "text": "¿Cuál eliges?", "choices": [
+      { "label": "Frutos rojos.", "affinityChanges": {}, "next": "a1_d03a1" },
+      { "label": "Manzanilla.", "affinityChanges": {}, "next": "a1_d03bc1" },
+      { "label": "Té negro.", "affinityChanges": {}, "next": "a1_d03bc1" }
+    ] },
+    { "id": "a1_d03a1", "type": "narration", "character": null, "text": "El agua coge un tinte rojizo, denso, casi opaco. El de Lydia queda amarillento y transparente.", "next": "a1_d03a2" },
+    { "id": "a1_d03a2", "type": "thought", "character": null, "protagonistExpression": "surprised", "text": "…Es el mismo color que la savia.", "next": "a1_d03a3" },
+    { "id": "a1_d03a3", "type": "narration", "character": null, "text": "Ayla mira la taza un segundo de más. Luego bebe.", "next": "a1_conv01" },
+    { "id": "a1_d03bc1", "type": "narration", "character": null, "text": "El agua coge un tono claro y limpio, casi igual que el de Lydia.", "next": "a1_conv01" },
+    { "id": "a1_conv01", "type": "narration", "character": null, "unlockImage": "lydia_ayla_desayuno", "text": "Lydia le tiende la taza con su platito y una tarrina de azúcar.", "next": "a1_conv02" },
+    { "id": "a1_conv02", "type": "dialogue", "character": null, "text": "¿Hoy tienes clase o qué tienes que hacer?", "next": "a1_conv03" },
+    { "id": "a1_conv03", "type": "dialogue", "character": "lydia", "text": "Hoy tengo club. Los martes y los jueves todos tenemos club.", "next": "a1_conv04" },
+    { "id": "a1_conv04", "type": "dialogue", "character": null, "text": "Es cierto. Hasta que me acostumbre al horario va a costar un poco.", "next": "a1_conv05" },
+    { "id": "a1_conv05", "type": "dialogue", "character": "lydia", "text": "¿Y hasta la hora del club qué vas a hacer?", "next": "a1_conv06" },
+    { "id": "a1_conv06", "type": "dialogue", "character": "lydia", "text": "Nos podemos mover por el edificio: la zona común, la cocina, la sala de estudio…", "next": "a1_conv07" },
+    { "id": "a1_conv07", "type": "dialogue", "character": null, "protagonistExpression": "happy", "text": "Pues te iba a proponer que me lo enseñaras todo. No conozco nada.", "next": "a1_conv08" },
+    { "id": "a1_conv08", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Claro, encantada. ¿Quieres ver la universidad o la residencia?", "next": "a1_conv09" },
+    { "id": "a1_conv09", "type": "dialogue", "character": null, "text": "Todo. Primero la residencia y luego la universidad.", "next": "a1_conv10" },
+    { "id": "a1_conv10", "type": "narration", "character": null, "activeCharacter": "lydia", "text": "Lydia se ríe disimuladamente mientras recoge las cosas del té.", "next": "a1_conv11" },
+    { "id": "a1_conv11", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Vale, pero tal vez te gustaría darte una ducha y ponerte otra ropa primero.", "next": "a1_13_01" },
+    { "id": "a1_d02b1", "type": "narration", "character": null, "text": "Lydia se levanta a por un café soluble de la zona común. Vuelve con una taza normal, sin platito, y guarda el juego de porcelana sin abrirlo.", "next": "a1_d02b2" },
+    { "id": "a1_d02b2", "type": "dialogue", "character": "lydia", "text": "Otro día, entonces.", "next": "a1_13_01" },
+    { "id": "a1_d02c1", "type": "narration", "character": null, "text": "Lydia se queda un segundo con el sobrecito en la mano. Luego lo deja en la mesa y sonríe.", "next": "a1_d02c2" },
+    { "id": "a1_d02c2", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Claro. Lo entiendo.", "next": "a1_13_01" },
+    { "id": "a1_13_01", "type": "narration", "character": null, "background": "campus_dia", "text": "Ayla se ducha, se viste y prepara la bandolera: cartera con el DNI y dinero, llaves, móvil, cuaderno, boli y, a última hora, el portátil.", "next": "a1_13_02" },
+    { "id": "a1_13_02", "type": "dialogue", "character": "lydia", "text": "Mira, esta es la planta de las chicas. La escalera está en el centro.", "next": "a1_13_03" },
+    { "id": "a1_13_03", "type": "dialogue", "character": "lydia", "text": "Las del fondo son individuales; las nuestras, compartidas. Arriba están los chicos.", "next": "a1_13_04" },
+    { "id": "a1_13_04", "type": "dialogue", "character": "lydia", "text": "A veces pasa un profesor a comprobar que nadie se ha cambiado de habitación.", "next": "a1_13_05" },
+    { "id": "a1_13_05", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "¿Pero nos dan algo de libertad?", "next": "a1_13_06" },
+    { "id": "a1_13_06", "type": "dialogue", "character": "lydia", "text": "Si has salido, no pasa nada, pero tienes que notificarlo.", "next": "a1_13_07" },
+    { "id": "a1_13_07", "type": "dialogue", "character": "lydia", "text": "Lo que no puede ser es que estés en la residencia y no estés en tu cuarto ni en la zona común.", "next": "a1_13_08" },
+    { "id": "a1_13_08", "type": "dialogue", "character": "lydia", "text": "En la planta baja está la zona audiovisual, la de ocio, la cocina, un gimnasio pequeño y la piscina.", "next": "a1_13_09" },
+    { "id": "a1_13_09", "type": "dialogue", "character": "lydia", "text": "Y el trastero, que suele estar cerrado. Ahí guardan las tumbonas y las maletas.", "next": "a2_01" },
+
+    { "id": "a2_01", "type": "narration", "character": null, "background": "campus_dia", "text": "Caminan hacia el edificio de la universidad. Son tres edificios, todos conectados por pasarelas. Lydia la mira de reojo.", "next": "a2_02" },
+    { "id": "a2_02", "type": "dialogue", "character": "lydia", "text": "¿Y cómo te ves, preparada para la universidad?", "next": "a2_d04" },
+    { "id": "a2_d04", "type": "choice", "character": null, "text": "¿Qué le contestas?", "choices": [
+      { "label": "«Tengo ganas. Este ya es mi tercer año, estoy deseando acabarlo.»", "affinityChanges": { "lydia": 10 }, "next": "a2_d04a1" },
+      { "label": "«Solo quiero acabar y largarme de aquí.»", "affinityChanges": {}, "next": "a2_d05" },
+      { "label": "«Preferiría no estar aquí, la verdad.»", "affinityChanges": { "lydia": -5 }, "next": "a2_d05" }
+    ] },
+    { "id": "a2_d04a1", "type": "dialogue", "character": null, "text": "Tengo ganas. Además este ya es el tercer año, así que estoy deseando acabarlo.", "next": "a2_d04a2" },
+    { "id": "a2_d04a2", "type": "dialogue", "character": "lydia", "text": "Al final es toda una experiencia. Pueden pasar muchas cosas en un año.", "next": "a2_d04a3" },
+    { "id": "a2_d04a3", "type": "dialogue", "character": "lydia", "text": "Yo quiero acabar Medicina y trabajar en el hospital de aquí.", "next": "a2_d04a4" },
+    { "id": "a2_d04a4", "type": "dialogue", "character": "lydia", "text": "La mayoría se va al extranjero porque pagan mejor, pero…", "next": "a2_d04a5" },
+    { "id": "a2_d04a5", "type": "dialogue", "character": null, "text": "Tú prefieres quedarte.", "next": "a2_d04a6" },
+    { "id": "a2_d04a6", "type": "dialogue", "character": "lydia", "text": "Guadalajara es pequeño. Cruzas un paso de cebra y ya te has topado con tu primo segundo.", "next": "a2_d04a7" },
+    { "id": "a2_d04a7", "type": "dialogue", "character": "lydia", "text": "Somos todos muy cercanos. Y el hospital también merece tener buenos médicos.", "next": "a2_d04a8" },
+    { "id": "a2_d04a8", "type": "dialogue", "character": null, "text": "Esa sensación la conozco. De donde vengo también es pequeño y conocen a mi familia.", "next": "a2_d04a9" },
+    { "id": "a2_d04a9", "type": "dialogue", "character": "lydia", "text": "A veces es bueno y a veces no tanto.", "next": "a2_d05" },
+    { "id": "a2_d05", "type": "choice", "character": null, "text": "¿Cuánto te abres sobre tu familia?", "choices": [
+      { "label": "«Yo no lo veo bueno. Prefiero que no sepan quién soy.»", "affinityChanges": { "lydia": 10 }, "next": "a2_d05a1" },
+      { "label": "«Tiene su parte buena. Todo el mundo se ayuda.»", "affinityChanges": { "lydia": 5 }, "next": "a2_d05bc1" },
+      { "label": "Contarle algo concreto de tu familia.", "affinityChanges": { "lydia": 5 }, "next": "a2_d05bc1" }
+    ] },
+    { "id": "a2_d05a1", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Yo no lo veo bueno. Prefiero que no sepan quién soy.", "next": "a2_d05a2" },
+    { "id": "a2_d05a2", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Yo, depende. Hubo una época en la que no me gustaba nada. Era por mi abuelita.", "next": "a2_d05a3" },
+    { "id": "a2_d05a3", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Todo el mundo la conocía porque tenía una panadería. Después de misa pasaban todos por allí.", "next": "a2_d05a4" },
+    { "id": "a2_d05a4", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Yo siempre estaba sentada detrás de la barra mientras mi abuelo preparaba el café.", "next": "a2_d05a5" },
+    { "id": "a2_d05a5", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Pero murió en el hospital de una enfermedad. Y mi abuelo murió a los pocos días.", "next": "a2_d05a6" },
+    { "id": "a2_d05a6", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Una depresión. No soportó quedarse solo. Parecía perdido, como que no sabía qué hacer sin ella.", "next": "a2_d05a7" },
+    { "id": "a2_d05a7", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Y después, por la calle, siempre era «vaya, hola, ¿cómo lo llevas?».", "next": "a2_d05a8" },
+    { "id": "a2_d05a8", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Siempre era la pobrecita niña que había perdido a sus abuelos.", "next": "a2_d06" },
+    { "id": "a2_d05bc1", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Bueno, era una historia un poco triste. Tenía que decir algo bueno.", "next": "a2_d05bc2" },
+    { "id": "a2_d05bc2", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Por eso tengo el pelo violeta. Pensé que a lo mejor me reconocían menos.", "next": "a2_22_01" },
+    { "id": "a2_d06", "type": "choice", "character": null, "text": "Lydia acaba de contarte lo de sus abuelos. ¿Qué le dices?", "choices": [
+      { "label": "«¿Es por ellos por lo que estudias Medicina?»", "affinityChanges": { "lydia": 15 }, "next": "a2_d06a1" },
+      { "label": "«Lo siento mucho.»", "affinityChanges": { "lydia": 5 }, "next": "a2_d06bc1" },
+      { "label": "Cambiar de tema. Es demasiada intimidad para un día de conocerse.", "affinityChanges": { "lydia": -5 }, "next": "a2_d06bc1" }
+    ] },
+    { "id": "a2_d06a1", "type": "dialogue", "character": "lydia", "text": "Sí. Me gustaría ayudar a la gente. Me da pena que haya tantas causas que puedan matarte.", "next": "a2_d06a2" },
+    { "id": "a2_d06a2", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "Fíjate: mi abuelo estaba bien de salud, pero la depresión pudo con él.", "next": "a2_d06a3" },
+    { "id": "a2_d06a3", "type": "dialogue", "character": "lydia", "expression": "sad", "text": "De repente no podía ni mover las manos, ni levantarse. Y no tenía nada físico.", "next": "a2_d06a4" },
+    { "id": "a2_d06a4", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Es triste. Pero también demuestra que se querían mucho.", "next": "a2_d06a5" },
+    { "id": "a2_d06a5", "type": "dialogue", "character": "lydia", "text": "Sin el uno el otro no vivía. Es una forma de amar que creo que es de las mejores.", "next": "a2_d06a6" },
+    { "id": "a2_d06a6", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Cuando encuentras a una persona y la amas de verdad, creo que podrías luchar contra el mundo.", "next": "a2_d06a7" },
+    { "id": "a2_d06a7", "type": "dialogue", "character": null, "text": "Bueno, no sé. Depende.", "next": "a2_d06a8" },
+    { "id": "a2_d06a8", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Lo sé, pero es una forma bonita de pensarlo.", "next": "a2_d06a9" },
+    { "id": "a2_d06a9", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Por cierto, por eso tengo el pelo violeta. Pensé que así me reconocerían menos.", "next": "a2_d06a10" },
+    { "id": "a2_d06a10", "type": "dialogue", "character": null, "text": "¿Y te ha funcionado?", "next": "a2_d06a11" },
+    { "id": "a2_d06a11", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Nadie me reconoce de espaldas. Muchos no se han dado cuenta de que la niña ya no es una niña.", "next": "a2_22_01" },
+    { "id": "a2_d06bc1", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Bueno, era una historia un poco triste. Tenía que decir algo bueno.", "next": "a2_d06bc2" },
+    { "id": "a2_d06bc2", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Por eso tengo el pelo violeta. Pensé que a lo mejor me reconocían menos.", "next": "a2_22_01" },
+    { "id": "a2_22_01", "type": "narration", "character": null, "background": "cafeteria_universidad_dia", "text": "Han recorrido el primer edificio mientras hablaban. Es la una y media: se les ha ido la mañana entera.", "next": "a2_22_02" },
+    { "id": "a2_22_02", "type": "dialogue", "character": "lydia", "text": "Estando en la residencia, el comedor entra en la matrícula. La cafetería no.", "next": "a2_22_03" },
+    { "id": "a2_22_03", "type": "dialogue", "character": null, "text": "Pues vamos al comedor.", "next": "a2_22_04" },
+    { "id": "a2_22_04", "type": "narration", "character": null, "text": "Se ponen en la fila con una bandeja de madera cada una. Ayla lleva sin comer desde que salió el día anterior. La cocinera del comedor las saluda con una sonrisa: «Hola, corazón. ¿Qué te pongo? ¿Sopa o arroz?».", "next": "a2_22_05" },
+    { "id": "a2_22_05", "type": "dialogue", "character": null, "text": "El consomé, por favor. Y de segundo, pescado.", "next": "a2_22_06" },
+    { "id": "a2_22_06", "type": "narration", "character": null, "text": "De postre hay fruta o flan. Ayla coge fruta; Lydia el flan, con cara de emoción. Se sientan entre estudiantes. Lydia habla poco: se le ha gastado la voz explicando. Ayla come concentrada, dándose cuenta de que con todo lo que ha pasado se le había olvidado comer.", "next": "a2_22_07" },
+    { "id": "a2_22_07", "type": "dialogue", "character": "lydia", "text": "Son las cuatro y media. ¿Qué tienes pensado hacer ahora?", "next": "a2_22_08" },
+    { "id": "a2_22_08", "type": "dialogue", "character": null, "text": "Voy a dar una vuelta hasta las cinco, que he quedado con Ethan para lo del Club Paranormal.", "next": "a2_22_09" },
+    { "id": "a2_22_09", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Pues yo voy al trastero, a por las herramientas de jardinería para mi club.", "next": "a2_22_10" },
+    { "id": "a2_22_10", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Te aconsejo que veas las zonas que vayas a usar más: la biblioteca, algún laboratorio.", "next": "a2_22_11" },
+    { "id": "a2_22_11", "type": "dialogue", "character": null, "protagonistExpression": "happy", "text": "Muchas gracias por la visita turística.", "next": "a2_22_12" },
+    { "id": "a2_22_12", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Es lo menos. Luego te veo.", "next": "a2_22_13" },
+    { "id": "a2_22_13", "type": "narration", "character": null, "text": "Se despide con la manita, superfeliz, y se va.", "next": "a3_01" },
+
+    { "id": "a3_01", "type": "narration", "character": null, "background": "biblioteca_universidad", "text": "Ayla entra en la biblioteca. No ve a nadie a primera vista. Se sienta en la zona de escritorios, separada de los ordenadores de mesa, y abre el portátil.", "next": "a3_02" },
+    { "id": "a3_02", "type": "narration", "character": null, "text": "Revisa el mensaje de su madre: una lista de encargos. Buscar una fecha, algo de un cuadro. Un montón de detalles que ya ha hecho muchas veces y que le da una pereza terrible repetir.", "next": "a3_d07" },
+    { "id": "a3_d07", "type": "choice", "character": null, "text": "Tu madre te ha mandado deberes. ¿Qué haces?", "choices": [
+      { "label": "Dejarlo. Buscar información sobre el Club Paranormal.", "affinityChanges": {}, "next": "a3_32_01" },
+      { "label": "Hacer lo de tu madre primero. Es media hora.", "affinityChanges": {}, "next": "a3_32_01" },
+      { "label": "Hacer lo mínimo para que parezca hecho y luego buscar lo del club.", "affinityChanges": {}, "next": "a3_32_01" }
+    ] },
+    { "id": "a3_32_01", "type": "narration", "character": null, "text": "En las tres ramas, Ayla acaba buscando «Club Paranormal Universidad Somnia».", "next": "a3_32_02" },
+    { "id": "a3_32_02", "type": "narration", "character": null, "text": "El primer enlace es el blog del periódico de la universidad. El archivo es enorme y está dividido en secciones tan enrevesadas que encuentra las cosas de milagro. Pero da con un artículo del año pasado.", "next": "a3_32_03" },
+    { "id": "a3_32_03", "type": "narration", "character": null, "text": "El Club Paranormal estuvo a punto de cerrar por los accidentes que hubo entre sus miembros: heridos, gente que terminó en el hospital, y situaciones de las que ni siquiera ellos querían hablar o que no recordaban. La universidad les dio un ultimátum. Los miembros decidieron no dar explicaciones y abandonaron el club. Quedó en el olvido hasta que Ethan lo reabrió hace poco.", "next": "a3_32_04" },
+    { "id": "a3_32_04", "type": "thought", "character": null, "protagonistExpression": "surprised", "text": "¿Qué les pasó realmente?", "next": "a3_32_05" },
+    { "id": "a3_32_05", "type": "narration", "character": null, "text": "En la página hay imágenes: una foto de todos los miembros juntos —ninguno es Ethan—, otra posando delante de un edificio antiguo, otra recibiendo un diploma. Y un símbolo que le llama la atención y que no sabe identificar. Parece una media luna. Hace captura de todo.", "next": "a3_32_06" },
+    { "id": "a3_32_06", "type": "narration", "character": null, "text": "Pulsa la imagen del diploma y llega a la web del Ayuntamiento: se lo dieron por avisar de un problema en la estructura de unos pasadizos antiguos de la guerra, lo que permitió sacar a la gente antes de que se derrumbaran.", "next": "a3_32_07" },
+    { "id": "a3_32_07", "type": "narration", "character": null, "text": "Queda el símbolo. La media luna. Ayla lo tiene en pantalla, ampliado.", "next": "a3_d08" },
+    { "id": "a3_d08", "type": "choice", "character": null, "text": "¿Investigas el símbolo?", "choices": [
+      { "label": "Buscarlo por imagen.", "affinityChanges": {}, "next": "a3_d08a1" },
+      { "label": "Buscarlo junto al nombre de Ethan.", "affinityChanges": {}, "next": "a3_d08b1" },
+      { "label": "Guardarte la captura y dejarlo. Ya llegas tarde.", "affinityChanges": {}, "next": "a3_d08c1" }
+    ] },
+    { "id": "a3_d08a1", "type": "narration", "character": null, "text": "Salen un montón de dibujos parecidos. Lunas de tatuaje, lunas de logotipo, lunas de nada. Ninguna es exactamente esa.", "next": "a3_conv01" },
+    { "id": "a3_d08b1", "type": "narration", "character": null, "text": "Vuelve a salir el mismo blog. Solo el mismo blog. Como si el símbolo y Ethan no existieran juntos en ninguna otra parte de internet.", "next": "a3_d08b2" },
+    { "id": "a3_d08b2", "type": "thought", "character": null, "protagonistExpression": "surprised", "text": "O no tiene nada que ver con él… o alguien se ha ocupado de que no lo parezca.", "next": "a3_conv01" },
+    { "id": "a3_d08c1", "type": "narration", "character": null, "text": "Cierra el portátil. La captura se queda en la galería, sin mirar.", "next": "a3_conv01" },
+    { "id": "a3_conv01", "type": "narration", "character": null, "text": "Son las cinco.", "next": "a3_msg1" },
+    { "id": "a3_msg1", "type": "chat", "character": "soledad", "isGroup": true, "text": "Hola, ya he llegado.", "next": "a3_msg2" },
+    { "id": "a3_msg2", "type": "chat", "character": "ethan", "isGroup": true, "text": "Pero si habíamos quedado a y media.", "next": "a3_msg3" },
+    { "id": "a3_msg3", "type": "dialogue", "character": null, "text": "Estoy en la Biblioteca, ahora voy de camino y os aviso cuando esté allí.", "next": "a3_msg4" },
+    { "id": "a3_msg4", "type": "chat", "character": "ethan", "isGroup": true, "text": "Yo estoy terminando unas cosas y ahora voy. Nos vemos en el club. ¿Sabéis llegar?", "next": "a3_msg5" },
+    { "id": "a3_msg5", "type": "dialogue", "character": null, "text": "Hola Soledad, ¿dónde estás?", "next": "a3_msg6" },
+    { "id": "a3_msg6", "type": "chat", "character": "soledad", "text": "En la entrada de la universidad.", "next": "a3_msg7" },
+    { "id": "a3_msg7", "type": "dialogue", "character": null, "text": "Dame 10 minutos que ahí estoy.", "next": "a3_33_01" },
+    { "id": "a3_33_01", "type": "narration", "character": null, "text": "Ayla termina de recoger el ordenador. Justo cuando va a salir se siente observada. Totalmente observada. Antes tenía la sensación de estar sola en la biblioteca; ahora tiene exactamente la contraria.", "next": "a3_33_02" },
+    { "id": "a3_33_02", "type": "narration", "character": null, "activeCharacter": "grace", "text": "Se gira. Entre las estanterías hay una chica de cabellera negra y larga, de pie, mirándola fijamente. La ve perfectamente. Le suena de algo, aunque no sabría decir de qué.", "next": "a3_33_03" },
+    { "id": "a3_33_03", "type": "dialogue", "character": "grace", "expression": "neutral", "text": "…", "next": "a3_33_04" },
+    { "id": "a3_33_04", "type": "narration", "character": null, "text": "Ayla pestañea. La chica se da la vuelta y empieza a caminar muy deprisa hacia el fondo de la biblioteca.", "next": "a3_d09" },
+    { "id": "a3_d09", "type": "choice", "character": null, "text": "Se está yendo. ¿Qué haces?", "choices": [
+      { "label": "Seguirla, y llamar a Soledad por el camino.", "affinityChanges": { "soledad": 5 }, "next": "a3_d09a1" },
+      { "label": "Seguirla sin avisar a nadie.", "affinityChanges": { "soledad": -5 }, "next": "a3_d09bc1" },
+      { "label": "Dejarla ir e irte al club.", "affinityChanges": {}, "next": "a3_d09bc1" }
+    ] },
+    { "id": "a3_d09a1", "type": "narration", "character": null, "background": "parking_universidad_tarde", "text": "La chica no corre, pero lleva un paso rapidísimo. Abre una puerta pequeña de madera oscura, como una trasera, y la cruza: da al parking de la universidad. Cruza el parking, la zona de árboles y jardín, y sale de los terrenos hacia la carretera.", "next": "a3_d09a2" },
+    { "id": "a3_d09a2", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "Creo que he visto a la chica que me dijiste tú. La estoy siguiendo.", "next": "a3_d09a3" },
+    { "id": "a3_d09a3", "type": "phone", "character": "soledad", "expression": "surprised", "text": "¡Ostras! ¿En serio? ¿La que tenía el pelo negro? Es súper enigmática. ¿Y dónde está?", "next": "a3_d09a4" },
+    { "id": "a3_d09a4", "type": "dialogue", "character": null, "text": "¿Te paso ubicación y vienes?", "next": "a3_d09a5" },
+    { "id": "a3_d09a5", "type": "phone", "character": "soledad", "text": "Vale, porque a mí también se me quedó mirando el otro día. Pásame ubicación.", "next": "a3_d09a6" },
+    { "id": "a3_d09a6", "type": "phone", "character": "soledad", "text": "Pero creo que deberíamos avisar a Ethan.", "next": "a3_d09a7" },
+    { "id": "a3_d09a7", "type": "dialogue", "character": null, "text": "No lo sé, es que la chica se va, la estoy siguiendo. Pero si le quieres avisar, avísale.", "next": "a3_d09a8" },
+    { "id": "a3_d09a8", "type": "phone", "character": "soledad", "text": "Vale, a ver si puedes compartir ubicación en tiempo real.", "next": "a3_d09a9" },
+    { "id": "a3_d09a9", "type": "dialogue", "character": null, "text": "Voy, voy, te la comparto.", "next": "a3_34_01" },
+    { "id": "a3_d09bc1", "type": "narration", "character": null, "background": "parking_universidad_tarde", "text": "Decide seguirla sin avisar a nadie. Cruza el parking, la zona de árboles y jardín, y sale de los terrenos hacia la carretera, sola.", "next": "a3_34_01" },
+    { "id": "a3_34_01", "type": "narration", "character": null, "background": "callejones_guadalajara_dia", "text": "La chica se mueve por las calles y entra en una zona de callejuelas antiguas, de piedra. No pasa nada raro: simplemente no se detiene. Dobla una esquina.", "next": "a3_34_02" },
+    { "id": "a3_34_02", "type": "narration", "character": null, "text": "Cuando Ayla gira, la chica ya no está.", "next": "a3_34_03" },
+    { "id": "a3_34_03", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "…¿Qué?", "next": "a3_34_04" },
+    { "id": "a3_34_04", "type": "narration", "character": null, "text": "No hay portales abiertos. No hay bocacalles. No hay nada.", "next": "a4_01" },
+
+    { "id": "a4_01", "type": "narration", "character": null, "background": "callejones_guadalajara_dia", "text": "Después de una caminata larguísima, Soledad llega hasta donde está Ayla. Las dos igual de fatigadas.", "next": "a4_02" },
+    { "id": "a4_02", "type": "dialogue", "character": "soledad", "text": "¿Qué tal, has podido ver a la chica? ¿Sabes su nombre?", "next": "a4_03" },
+    { "id": "a4_03", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Qué va. Ha girado en la calle y cuando yo iba a girar, ya había desaparecido.", "next": "a4_04" },
+    { "id": "a4_04", "type": "dialogue", "character": "soledad", "text": "Qué raro. Yo justo acabo de escribir a Ethan para decirle que llegamos más tarde.", "next": "a4_05" },
+    { "id": "a4_05", "type": "dialogue", "character": "soledad", "text": "Es que vi la ubicación y estaba lejísimos. También le he compartido la mía.", "next": "a4_06" },
+    { "id": "a4_06", "type": "dialogue", "character": null, "text": "Pues gracias.", "next": "a4_d10" },
+    { "id": "a4_d10", "type": "choice", "character": null, "text": "Has encontrado un artículo inquietante sobre el club. ¿Se lo cuentas?", "choices": [
+      { "label": "Contárselo todo, pero pedirle que no se lo digan a Ethan de momento.", "affinityChanges": { "soledad": 10, "ethan": -5 }, "next": "a4_d10a1" },
+      { "label": "Contárselo y proponerle preguntarle a Ethan directamente.", "affinityChanges": { "soledad": 5, "ethan": 5 }, "next": "a4_43_01" },
+      { "label": "Callártelo. No la conoces de nada.", "affinityChanges": { "soledad": -5 }, "next": "a4_d10c1" }
+    ] },
+    { "id": "a4_d10a1", "type": "dialogue", "character": null, "text": "He estado investigando una cosa, pero no le digamos nada a Ethan de momento.", "next": "a4_d10a2" },
+    { "id": "a4_d10a2", "type": "dialogue", "character": "soledad", "expression": "surprised", "text": "¿Y qué has visto?", "next": "a4_d10a3" },
+    { "id": "a4_d10a3", "type": "dialogue", "character": null, "text": "Un artículo del club de periodismo de la uni.", "next": "a4_d10a4" },
+    { "id": "a4_d10a4", "type": "dialogue", "character": null, "text": "El año pasado hubo muchos accidentes entre los miembros del Club Paranormal.", "next": "a4_d10a5" },
+    { "id": "a4_d10a5", "type": "dialogue", "character": null, "text": "Heridos, gente en el hospital. Iba a cerrar porque nadie entendía por qué pasaba.", "next": "a4_d10a6" },
+    { "id": "a4_d10a6", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Y luego lo de la chica… No sé si tiene que ver, pero nos mira por algo.", "next": "a4_d10a7" },
+    { "id": "a4_d10a7", "type": "dialogue", "character": "soledad", "text": "¿Solo has visto el artículo, no has visto nada más?", "next": "a4_d10a8" },
+    { "id": "a4_d10a8", "type": "dialogue", "character": null, "text": "Había fotos de varios miembros, pero Ethan no estaba en ninguna.", "next": "a4_d10a9" },
+    { "id": "a4_d10a9", "type": "dialogue", "character": null, "text": "Por eso no sé si decírselo. Y luego había un símbolo. Te paso la foto.", "next": "a4_d10a10" },
+    { "id": "a4_d10a10", "type": "narration", "character": null, "text": "Le manda la captura del símbolo: una media luna.", "next": "a4_d10a11" },
+    { "id": "a4_d10a11", "type": "dialogue", "character": "soledad", "text": "Podemos preguntarle sobre el club, que nos cuente su historia. Así, por encima.", "next": "a4_d10a12" },
+    { "id": "a4_d10a12", "type": "dialogue", "character": null, "text": "Me parece buena idea. En algún hueco le preguntamos cómo se creó y si tiene símbolo.", "next": "a4_43_01" },
+    { "id": "a4_d10c1", "type": "narration", "character": null, "text": "Ayla se guarda el móvil. La captura del símbolo sigue en su galería, sin enviar.", "next": "a4_43_01" },
+    { "id": "a4_43_01", "type": "narration", "character": null, "text": "Suena el teléfono de Soledad. Es Ethan. Pone el altavoz.", "next": "a4_43_call1" },
+    { "id": "a4_43_call1", "type": "phone", "character": "ethan", "phoneTheme": "soledad", "text": "Llevo media hora en esta ubicación. ¿Dónde estáis?", "next": "a4_43_call2" },
+    { "id": "a4_43_call2", "type": "dialogue", "character": "soledad", "expression": "surprised", "text": "¿Cómo?", "next": "a4_43_02" },
+    { "id": "a4_43_02", "type": "narration", "character": null, "text": "Se dirige a Ayla, tapando el micrófono.", "next": "a4_43_03" },
+    { "id": "a4_43_03", "type": "dialogue", "character": "soledad", "text": "Dice que está encima. Ayla, ¿tú lo ves? Yo no lo veo.", "next": "a4_43_04" },
+    { "id": "a4_43_04", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "No, yo tampoco lo veo. No entiendo nada.", "next": "a4_43_call3" },
+    { "id": "a4_43_call3", "type": "phone", "character": "ethan", "phoneTheme": "soledad", "text": "Chicas, no os veo.", "next": "a4_43_05" },
+    { "id": "a4_43_05", "type": "dialogue", "character": "soledad", "text": "¿Cómo vas vestido?", "next": "a4_43_call4" },
+    { "id": "a4_43_call4", "type": "phone", "character": "ethan", "phoneTheme": "soledad", "text": "Vaqueros, una sudadera verde oscura, unas zapatillas.", "next": "a4_43_call5" },
+    { "id": "a4_43_call5", "type": "phone", "character": "ethan", "phoneTheme": "soledad", "text": "¿Dónde estáis? Aquí no hay nadie.", "next": "a4_43_06" },
+    { "id": "a4_43_06", "type": "dialogue", "character": "soledad", "text": "Estamos en la misma calle.", "next": "a4_43_call6" },
+    { "id": "a4_43_call6", "type": "phone", "character": "ethan", "phoneTheme": "soledad", "text": "Sí, en la esquina, que enfrente hay una barbería.", "next": "a4_43_call7" },
+    { "id": "a4_43_call7", "type": "phone", "character": "ethan", "phoneTheme": "soledad", "text": "Y está el edificio antiguo este de la fábrica de harina. ¿Dónde estáis?", "next": "a4_43_07" },
+    { "id": "a4_43_07", "type": "narration", "character": null, "text": "Están exactamente ahí. Están viendo exactamente lo mismo que él.", "next": "a4_43_08" },
+    { "id": "a4_43_08", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "A mí lo único que se me ocurre es irnos a otra ubicación.", "next": "a4_43_call8" },
+    { "id": "a4_43_call8", "type": "phone", "character": "ethan", "phoneTheme": "soledad", "text": "Vale. Si queréis volver a la universidad, de acuerdo. Vuelvo y os espero en la entrada.", "next": "a4_43_09" },
+    { "id": "a4_43_09", "type": "narration", "character": null, "text": "Empiezan a escuchar interferencias. La voz de Ethan llega de lejos, entrecortada. Se corta la llamada.", "next": "a4_43b_01" },
+    { "id": "a4_43b_01", "type": "narration", "character": null, "background": "fabrica_abandonada_dia", "activeCharacter": "grace", "expression": "silueta", "text": "Miran alrededor. Vuelven a ver a la chica de pelo negro, entrando en un edificio antiguo bastante deteriorado. Las dos sienten a la vez un leve dolor de cabeza.", "next": "a4_43b_02" },
+    { "id": "a4_43b_02", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "La acabo de ver.", "next": "a4_43b_03" },
+    { "id": "a4_43b_03", "type": "dialogue", "character": "soledad", "expression": "surprised", "text": "¿Le hacemos una foto?", "next": "a4_d11" },
+    { "id": "a4_d11", "type": "choice", "character": null, "text": "Grace está a diez metros y a punto de entrar. ¿Foto?", "choices": [
+      { "label": "«No sé si te va a dar tiempo, se está metiendo por la puerta.»", "affinityChanges": {}, "next": "a4_d11_direct" },
+      { "label": "Sacar tú el móvil y disparar sin apuntar.", "affinityChanges": { "soledad": 5 }, "next": "a4_d11b1" },
+      { "label": "Dejar el móvil. Correr y alcanzarla antes de que entre.", "affinityChanges": { "soledad": -5 }, "next": "a4_d11c1" }
+    ] },
+    { "id": "a4_d11b1", "type": "narration", "character": null, "text": "Ayla levanta el móvil y dispara tres veces mientras camina. Cuando mira las fotos, en dos no hay nadie. En la tercera hay una figura oscura, movida, imposible de identificar — y una línea blanca fina cruzando el aire justo detrás de ella.", "next": "a4_d11b2" },
+    { "id": "a4_d11b2", "type": "thought", "character": null, "protagonistExpression": "surprised", "text": "¿Qué es eso?", "next": "a4_d11_direct" },
+    { "id": "a4_d11c1", "type": "narration", "character": null, "text": "Ayla echa a correr. Llega a la puerta tres segundos tarde y se queda con la mano en el metal frío, sin nada. Soledad la alcanza sin aliento.", "next": "a4_d11c2" },
+    { "id": "a4_d11c2", "type": "dialogue", "character": "soledad", "expression": "sad", "text": "Podríamos haberle hecho la foto.", "next": "a4_d11_direct" },
+    { "id": "a4_d11_direct", "type": "dialogue", "character": null, "text": "No sé si te va a dar tiempo, se está metiendo por la puerta.", "next": "a4_43c_01" },
+    { "id": "a4_43c_01", "type": "narration", "character": null, "background": "interior_fabrica_harina", "text": "Está medianamente oscuro, pero por las grietas, las paredes medio caídas y los cristales rotos entran ráfagas de luz. Piedras, mesas grandes, una amasadora destrozada. Entienden dónde están: la antigua fábrica de harina de Guadalajara.", "next": "a4_43c_02" },
+    { "id": "a4_43c_02", "type": "narration", "character": null, "text": "Al fondo ven la cabellera negra pasar unos escombros y bajar hacia algún sitio. Solo ven desaparecer su cabeza.", "next": "a4_43c_03" },
+    { "id": "a4_43c_03", "type": "narration", "character": null, "text": "Soledad manda un mensaje a Ethan. Aparece el relojito: no se envía. Ayla lo intenta también. Tampoco.", "next": "a4_43c_04" },
+    { "id": "a4_43c_04", "type": "dialogue", "character": "soledad", "expression": "sad", "text": "Otra vez. Esta mañana me pasó igual con mi hermana.", "next": "a4_43c_05" },
+    { "id": "a4_43c_05", "type": "dialogue", "character": null, "text": "Igual es que no hay cobertura aquí dentro.", "next": "a4_43c_06" },
+    { "id": "a4_43c_06", "type": "dialogue", "character": "soledad", "text": "Voy a salir un momento fuera a ver.", "next": "a4_d12" },
+    { "id": "a4_d12", "type": "choice", "character": null, "text": "Soledad sale a buscar cobertura. ¿Tú qué haces?", "choices": [
+      { "label": "Quedarte dentro. No quieres perder a la chica después de perseguirla tanto.", "affinityChanges": {}, "next": "a5_01" },
+      { "label": "«Espera, salgo contigo.»", "affinityChanges": { "soledad": 5 }, "next": "a5_01" },
+      { "label": "Bajar tú sola por donde ha bajado la chica, ahora que estás sin testigos.", "affinityChanges": { "soledad": -5 }, "next": "a5_02_direct" }
+    ] },
+
+    { "id": "a5_01", "type": "narration", "character": null, "background": "interior_fabrica_harina", "text": "Pasan los minutos. Soledad no vuelve. Ayla va hacia la puerta a buscarla.", "next": "a5_02" },
+    { "id": "a5_02", "type": "narration", "character": null, "text": "Está cerrada. Lo intenta otra vez: cerrada. Y le extraña, porque hace un momento no lo estaba. Además ahora se da cuenta de que es de metal.", "next": "a5_03" },
+    { "id": "a5_03", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "¿Soledad?", "next": "a5_04" },
+    { "id": "a5_04", "type": "narration", "character": null, "text": "Llama a Soledad. El teléfono marca cobertura. Llama, y nadie responde.", "next": "a5_05" },
+    { "id": "a5_05", "type": "narration", "character": null, "text": "Los muros son piedra grande de construcción; no hay nada que romper. Aguza el oído: solo escucha pequeños golpes muy de fondo, ruiditos de sitio abandonado. Quizá algún animal. No sabe si es su imaginación.", "next": "a5_06" },
+    { "id": "a5_06", "type": "thought", "character": null, "text": "Piensa. Ha bajado por algún sitio. Si ella ha bajado, hay una salida.", "next": "a5_11" },
+    { "id": "a5_02_direct", "type": "narration", "character": null, "background": "interior_fabrica_harina", "text": "Baja corriendo por donde ha desaparecido la chica, sin decir nada. Cuando llega a la zona de escombros, la trampilla ya está cerrada.", "next": "a5_11" },
+    { "id": "a5_11", "type": "narration", "character": null, "text": "Va hacia donde desapareció la chica. Es una zona más despejada de escombros. En el suelo hay una hendidura donde la piedra se hunde un poco, como si se pudiera meter la mano y hacer palanca.", "next": "a5_12" },
+    { "id": "a5_12", "type": "narration", "character": null, "text": "Ayla lo intenta. El suelo tiembla, se desliza y revela unas escaleras que bajan a la oscuridad.", "next": "a5_d13" },
+    { "id": "a5_d13", "type": "choice", "character": null, "text": "Hay unas escaleras que bajan. ¿Bajas?", "choices": [
+      { "label": "Bajar con la linterna del móvil.", "affinityChanges": {}, "next": "a5_d13a1" },
+      { "label": "No bajar. Buscar otra salida arriba.", "affinityChanges": {}, "next": "a5_d13b1" }
+    ] },
+    { "id": "a5_d13a1", "type": "narration", "character": null, "background": "interior_fabrica_harina", "text": "Ayla enciende la linterna del móvil y empieza a bajar. La piedra es la misma que la de arriba y según baja nota humedad. Baja y baja y aquello no tiene fin; las escaleras van girando.", "next": "a5_d13a2" },
+    { "id": "a5_d13a2", "type": "narration", "character": null, "text": "Y entonces escucha un sonido arriba.", "next": "a5_d13a3" },
+    { "id": "a5_d13a3", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "No. No, no, no.", "next": "a5_d13a4" },
+    { "id": "a5_d13a4", "type": "narration", "character": null, "text": "La trampilla se ha cerrado.", "next": "a5_d13a5" },
+    { "id": "a5_d13a5", "type": "thought", "character": null, "protagonistExpression": "sad", "text": "Sola. A oscuras. Con la salida cerrada encima de mí y la batería gastándose.", "next": "a5_d13a6" },
+    { "id": "a5_d13a6", "type": "narration", "character": null, "text": "Palpando la pared encuentra algo parecido a un interruptor. Lo pulsa. La compuerta se vuelve a abrir. Sube y sale a la fábrica, y respira.", "next": "a5_53_01" },
+    { "id": "a5_d13b1", "type": "narration", "character": null, "text": "Cierra la trampilla con el pie y se aparta de ella, como si pudiera abrirse sola.", "next": "a5_53_01" },
+    { "id": "a5_53_01", "type": "narration", "character": null, "text": "Ayla se queda de pie en mitad de la nave, con el móvil en la mano y la batería bajando. Hay ventanales de cristal altísimos, grietas en los muros, y unas escaleras que suben a otra planta medio destruida.", "next": "a5_d14" },
+    { "id": "a5_d14", "type": "choice", "character": null, "text": "¿Qué intentas?", "choices": [
+      { "label": "Lanzar una piedra contra los ventanales para que te oigan.", "affinityChanges": {}, "next": "a5_d14a1" },
+      { "label": "Golpear la puerta de metal con lo que encuentres.", "affinityChanges": {}, "next": "a5_d14b1" },
+      { "label": "Subir por las escaleras a la planta de arriba.", "affinityChanges": {}, "next": "a5_d14c1" }
+    ] },
+    { "id": "a5_d14a1", "type": "narration", "character": null, "text": "Coge una piedra del suelo, calcula la altura y lanza con todas sus fuerzas.", "next": "a5_d14a2" },
+    { "id": "a5_d14a2", "type": "narration", "character": null, "text": "La piedra no llega ni a la mitad. Cae entre los escombros con un ruido seco y ridículo.", "next": "a5_d14a3" },
+    { "id": "a5_d14a3", "type": "thought", "character": null, "protagonistExpression": "sad", "text": "Ni siquiera llego a la ventana.", "next": "a5_d15" },
+    { "id": "a5_d14b1", "type": "narration", "character": null, "text": "Encuentra un trozo de tubería y golpea la puerta. El metal suena grave, denso, y el sonido no sale: se queda dentro, como si la nave se lo tragara. Golpea hasta que le duele el brazo.", "next": "a5_d15" },
+    { "id": "a5_d14c1", "type": "narration", "character": null, "text": "Pone un pie en el primer escalón y la estructura entera cruje. El suelo de arriba es el mismo que se derrumbó abajo. Retrocede.", "next": "a5_d14c2" },
+    { "id": "a5_d14c2", "type": "thought", "character": null, "protagonistExpression": "sad", "text": "No. Si eso cae conmigo encima, no me encuentra nadie.", "next": "a5_d15" },
+    { "id": "a5_d15", "type": "choice", "character": null, "text": "¿Qué haces?", "choices": [
+      { "label": "Gritar. «¡Hola! ¿Hay alguien?»", "affinityChanges": { "frey": 10 }, "next": "a5_d15a1" },
+      { "label": "Entrar en pánico y ponerte a rezar en voz baja.", "affinityChanges": { "frey": 5 }, "next": "a5_d15b1" },
+      { "label": "Sentarte a esperar. Alguien vendrá a buscarte.", "affinityChanges": {}, "next": "a5_d15c1" }
+    ] },
+    { "id": "a5_d15a1", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "¡Hola! ¿Hay alguien?", "next": "a5_d15a2" },
+    { "id": "a5_d15a2", "type": "narration", "character": null, "text": "De repente le llega una voz. Suave, masculina, muy cerca y muy lejos al mismo tiempo.", "next": "a5_d15a3" },
+    { "id": "a5_d15a3", "type": "dialogue", "character": "frey", "text": "Te oigo.", "next": "a5_55_01" },
+    { "id": "a5_d15b1", "type": "narration", "character": null, "text": "Ayla se sienta contra un pilar y cierra los ojos con fuerza. Reza en voz baja, muy deprisa, sin pensar en las palabras. De la nada, siente que ya no está sola.", "next": "a5_d15b2" },
+    { "id": "a5_d15b2", "type": "dialogue", "character": "frey", "text": "Te oigo. No hace falta que reces, ya casi estoy.", "next": "a5_55_01" },
+    { "id": "a5_d15c1", "type": "narration", "character": null, "text": "Se sienta en un bloque de piedra y apaga la pantalla para ahorrar batería. Pasa el tiempo. Mucho tiempo. Y entonces, en el silencio, alguien habla.", "next": "a5_d15c2" },
+    { "id": "a5_d15c2", "type": "dialogue", "character": "frey", "text": "¿Hay alguien ahí? Me ha parecido oír algo.", "next": "a5_55_01" },
+    { "id": "a5_55_01", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "¿Quién eres? Soy Ayla, de la Universidad Somnia. Me he quedado encerrada aquí.", "next": "a5_55_02" },
+    { "id": "a5_55_02", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "¿Y tú quién eres? ¿Dónde estás?", "next": "a5_55_03" },
+    { "id": "a5_55_03", "type": "dialogue", "character": "frey", "text": "Me llamo Frey. Sigue hablando. Estoy llegando.", "next": "a5_55_04" },
+    { "id": "a5_55_04", "type": "dialogue", "character": null, "text": "¿Pero por dónde llegas? No entiendo.", "next": "a5_55_05" },
+    { "id": "a5_55_05", "type": "dialogue", "character": "frey", "text": "Tú sígueme hablando, ¿vale? Lo que sea, simplemente habla.", "next": "a5_55_06" },
+    { "id": "a5_55_06", "type": "dialogue", "character": "frey", "text": "Sé dónde estás, creo. ¿Estás en la fábrica de harina?", "next": "a5_55_07" },
+    { "id": "a5_55_07", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Sí. Te cuento por qué he llegado hasta aquí y así te voy hablando.", "next": "a5_55_08" },
+    { "id": "a5_55_08", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Estaba en la biblioteca y una chica de pelo negro se me quedó mirando fijamente.", "next": "a5_55_09" },
+    { "id": "a5_55_09", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "He salido corriendo detrás de ella y hemos acabado aquí. Vas a pensar que estoy loca.", "next": "a5_55_10" },
+    { "id": "a5_55_10", "type": "dialogue", "character": "frey", "text": "No me pareces loca, no. No tenías que haber entrado ahí.", "next": "a5_55_11" },
+    { "id": "a5_55_11", "type": "dialogue", "character": null, "text": "Llevo un día que no entiendo nada. ¿Qué hora es?", "next": "a5_55_12" },
+    { "id": "a5_55_12", "type": "dialogue", "character": "frey", "text": "Ahora mismo te diría que son las nueve de la noche.", "next": "a5_55_13" },
+    { "id": "a5_55_13", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "¿Las nueve? Pero si yo salí corriendo a las cinco.", "next": "a5_55_14" },
+    { "id": "a5_55_14", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "¿Cuánto tiempo llevo aquí? Madre mía.", "next": "a6_01" },
+
+    { "id": "a6_01", "type": "narration", "character": null, "background": "interior_fabrica_harina", "text": "Ayla escucha un sonido extraño, como un siseo. Justo frente a ella aparece una línea blanca que cruza el aire, como una grieta abierta en el vacío.", "next": "a6_02" },
+    { "id": "a6_02", "type": "narration", "character": null, "text": "La grieta se abre y de ella sale un chico. Saca un pie, luego el otro, y en cuanto está fuera la grieta se cierra detrás de él.", "next": "a6_03" },
+    { "id": "a6_03", "type": "narration", "character": null, "activeCharacter": "frey", "text": "Es rubio, con un piercing, cazadora con capucha, camiseta, vaqueros y zapatillas. Tiene los ojos de un ámbar amarillo tan brillante que Ayla no ha visto nunca un color así.", "next": "a6_04" },
+    { "id": "a6_04", "type": "dialogue", "character": "frey", "expression": "happy", "text": "Hola. Te he encontrado.", "next": "a6_05" },
+    { "id": "a6_05", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "¿Cómo has abierto eso?", "next": "a6_06" },
+    { "id": "a6_06", "type": "dialogue", "character": "frey", "text": "Tengo algún truco. Mejor que no pienses mucho en ello.", "next": "a6_07" },
+    { "id": "a6_07", "type": "dialogue", "character": "frey", "text": "¿Te encuentras bien? ¿Estás herida?", "next": "a6_08" },
+    { "id": "a6_08", "type": "dialogue", "character": null, "text": "No, no, nada. Estoy cansada. Solo quiero salir de aquí y no sé cómo.", "next": "a6_09" },
+    { "id": "a6_09", "type": "dialogue", "character": "frey", "expression": "blush", "text": "¿Puedes darme la mano? Prometo no hacer nada malo.", "next": "a6_d16" },
+    { "id": "a6_d16", "type": "choice", "character": null, "text": "Un desconocido que ha salido de una grieta te tiende la mano.", "choices": [
+      { "label": "«Me fío. Te doy la mano.»", "affinityChanges": { "frey": 15 }, "next": "a6_d16a1" },
+      { "label": "«Antes explícame qué eres.»", "affinityChanges": { "frey": 5 }, "next": "a6_d16b1" },
+      { "label": "Retroceder. No pensáis salir de aquí por ahí.", "affinityChanges": { "frey": -10 }, "next": "a6_d16c1" }
+    ] },
+    { "id": "a6_d16a1", "type": "dialogue", "character": "frey", "expression": "blush", "text": "Cierra los ojos. Puede marear un poco.", "next": "a6_d16a2" },
+    { "id": "a6_d16a2", "type": "narration", "character": null, "protagonistExpression": "blush", "text": "Ayla cierra los ojos y nota cómo la atrae hacia él, pegada a su pecho. Siente una presión.", "next": "a6_62_01" },
+    { "id": "a6_d16b1", "type": "dialogue", "character": "frey", "text": "Ahora mismo lo que soy es tu única salida. Lo demás te lo cuento fuera.", "next": "a6_d16b2" },
+    { "id": "a6_d16b2", "type": "narration", "character": null, "text": "Le tiende la mano otra vez. Ayla la coge sin cerrar los ojos, y el mareo la deja pálida y sin aire durante casi un minuto.", "next": "a6_62_01" },
+    { "id": "a6_d16c1", "type": "dialogue", "character": "frey", "expression": "surprised", "text": "Vale. Entiendo.", "next": "a6_d16c2" },
+    { "id": "a6_d16c2", "type": "narration", "character": null, "text": "Frey se sienta en un bloque de piedra a esperar, sin insistir, hasta que a Ayla se le acaba la batería del móvil y la nave se queda completamente a oscuras. Entonces ella le tiende la mano a él.", "next": "a6_d16c3" },
+    { "id": "a6_d16c3", "type": "thought", "character": null, "protagonistExpression": "sad", "text": "Media hora. He tardado media hora en aceptar la única ayuda que tenía.", "next": "a6_62_01" },
+    { "id": "a6_62_01", "type": "narration", "character": null, "background": "residencia_habitacion_noche", "text": "La presión desaparece. Y de repente una brisa suave le acaricia el cuello y le mueve el pelo.", "next": "a6_62_02" },
+    { "id": "a6_62_02", "type": "narration", "character": null, "unlockImage": "frey_ayla_rescate", "text": "Ayla sigue con los ojos cerrados. Sigue agarrada a él. Pero ya no huele a polvo ni a piedra húmeda: huele a noche, a calle, a la manta de su cama.", "next": "a6_62_03" },
+    { "id": "a6_62_03", "type": "dialogue", "character": "frey", "expression": "blush", "text": "Ya puedes abrir los ojos.", "next": "a6_62_04" },
+    { "id": "a6_62_04", "type": "narration", "character": null, "text": "Ayla los abre. Están en el balcón de su habitación de la residencia.", "next": "a6_62_05" },
+    { "id": "a6_62_05", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "¿Cómo has hecho esto?", "next": "a6_62_06" },
+    { "id": "a6_62_06", "type": "dialogue", "character": "frey", "text": "Tengo algún truco, pero será mejor que no pienses en ello.", "next": "a6_62_07" },
+    { "id": "a6_62_07", "type": "dialogue", "character": null, "text": "¿Pero cómo no voy a pensar en ello?", "next": "a6_62_08" },
+    { "id": "a6_62_08", "type": "narration", "character": null, "text": "Ayla se lo cuenta todo desde el principio: la chica de la biblioteca, la persecución, la esquina donde desapareció, la reaparición, la fábrica, la puerta que se cerró, la compañera que salió y no volvió.", "next": "a6_62_09" },
+    { "id": "a6_62_09", "type": "dialogue", "character": "frey", "text": "Básicamente estabas en otra dimensión. Estabas en otro lado, y te encontraron.", "next": "a6_62_10" },
+    { "id": "a6_62_10", "type": "dialogue", "character": "frey", "text": "Por eso necesitaba que hablaras: se entrecortaba.", "next": "a6_62_11" },
+    { "id": "a6_62_11", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "Tiene sentido. Le mandamos la ubicación a un chico, Ethan, y él estaba ahí y no nos veía.", "next": "a6_62_12" },
+    { "id": "a6_62_12", "type": "dialogue", "character": "frey", "text": "Lo único que no sé es por qué habéis podido cruzar.", "next": "a6_62_13" },
+    { "id": "a6_62_13", "type": "dialogue", "character": "frey", "text": "Quizá habéis caído en alguna fisura, pero es raro. Creía que habíamos cerrado todas las de la universidad.", "next": "a6_62_14" },
+    { "id": "a6_62_14", "type": "dialogue", "character": "frey", "expression": "surprised", "text": "Te veo muy confundida y estás pálida. ¿Quieres entrar y sentarte?", "next": "a6_d17" },
+    { "id": "a6_d17", "type": "choice", "character": null, "text": "Frey te da a elegir: borrarte los recuerdos o saber la verdad.", "choices": [
+      { "label": "«Prefiero que me expliques. No me gusta lo de suplantar recuerdos.»", "affinityChanges": { "frey": 15 }, "next": "a6_d17a1" },
+      { "label": "«Explícamelo, pero no quiero que me vigiles.»", "affinityChanges": { "frey": 5 }, "next": "a6_63_01" },
+      { "label": "«Bórramelo. No quiero saber nada.»", "affinityChanges": { "frey": -5 }, "next": "a6_d17c1" }
+    ] },
+    { "id": "a6_d17a1", "type": "dialogue", "character": "frey", "text": "Por lo general, en estos casos solemos borrar la mente.", "next": "a6_d17a2" },
+    { "id": "a6_d17a2", "type": "dialogue", "character": "frey", "text": "Bueno, no puedo borrarla yo, pero puedo llamar a alguien. Ni siquiera es borrar: es suplantar recuerdos.", "next": "a6_d17a3" },
+    { "id": "a6_d17a3", "type": "dialogue", "character": "frey", "text": "O puedo explicártelo y tú lo mantienes en secreto. Pero eso conlleva que tendré que tenerte vigilada.", "next": "a6_d17a4" },
+    { "id": "a6_d17a4", "type": "dialogue", "character": null, "text": "Prefiero que me expliques. No me gusta lo de suplantar recuerdos.", "next": "a6_d17a5" },
+    { "id": "a6_d17a5", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "He visto lo que le hace a la gente. Tiene consecuencias.", "next": "a6_d17a6" },
+    { "id": "a6_d17a6", "type": "dialogue", "character": "frey", "text": "Vale. Sin querer caíste en una fisura, que lo que hace es llevarte a otra dimensión.", "next": "a6_d17a7" },
+    { "id": "a6_d17a7", "type": "dialogue", "character": "frey", "text": "Has cruzado a otro plano. Es el mismo mundo, los mismos edificios, todo igual. Pero cambia.", "next": "a6_d17a8" },
+    { "id": "a6_d17a8", "type": "dialogue", "character": "frey", "text": "Por lo general son mundos de sueño. Lugares que alguien imaginó, o que viven en los recuerdos de la gente.", "next": "a6_d17a9" },
+    { "id": "a6_d17a9", "type": "dialogue", "character": "frey", "text": "Dimensiones que mezclan los recuerdos y los sueños de varias personas.", "next": "a6_d17a10" },
+    { "id": "a6_d17a10", "type": "dialogue", "character": "frey", "text": "Algunas personas pueden viajar a través de ellos. Otras adquieren habilidades. Como yo.", "next": "a6_d17a11" },
+    { "id": "a6_d17a11", "type": "dialogue", "character": "frey", "text": "Yo veo las fisuras. Por eso pude encontrarte. Y también puedo cruzarlas cuando quiera.", "next": "a6_d17a12" },
+    { "id": "a6_d17a12", "type": "dialogue", "character": "frey", "text": "La fábrica es uno de los recuerdos más peligrosos que hay en Guadalajara. Hubo una calamidad.", "next": "a6_d17a13" },
+    { "id": "a6_d17a13", "type": "dialogue", "character": "frey", "text": "Por eso se pide que nadie se acerque. Hay rumores que creamos nosotros. Pero hay gente curiosa que cae.", "next": "a6_d17a14" },
+    { "id": "a6_d17a14", "type": "dialogue", "character": null, "text": "En nuestro caso no teníamos ni idea. Yo soy nueva en la ciudad. No sabía que no se podía.", "next": "a6_d17a15" },
+    { "id": "a6_d17a15", "type": "dialogue", "character": "frey", "text": "Entonces te ha tocado la lotería. Lo siento por ti.", "next": "a6_d17a16" },
+    { "id": "a6_d17a16", "type": "dialogue", "character": "frey", "text": "Simplemente intenta mantener tu vida normal. No te acerques a ciertos sitios.", "next": "a6_d17a17" },
+    { "id": "a6_d17a17", "type": "dialogue", "character": null, "text": "Quizá la chica de pelo negro también tenga algún poder.", "next": "a6_d17a18" },
+    { "id": "a6_d17a18", "type": "dialogue", "character": "frey", "expression": "surprised", "text": "Puede ser. Pero sería demasiada información para ti ahora mismo.", "next": "a6_d17a19" },
+    { "id": "a6_d17a19", "type": "dialogue", "character": "frey", "text": "Confórmate con saber que hay otras dimensiones y que has caído en una fisura.", "next": "a6_63_01" },
+    { "id": "a6_d17c1", "type": "narration", "character": null, "text": "Frey asiente, saca el móvil y marca. Luego lo baja sin llamar.", "next": "a6_d17c2" },
+    { "id": "a6_d17c2", "type": "dialogue", "character": "frey", "expression": "sad", "text": "Puedo hacerlo. Pero antes quiero que sepas una cosa: no es reversible.", "next": "a6_d17c3" },
+    { "id": "a6_d17c3", "type": "dialogue", "character": "frey", "expression": "sad", "text": "Y he visto lo que les hace a la gente. Piénsatelo esta noche. Mañana te llamo.", "next": "a6_63_01" },
+    { "id": "a6_63_01", "type": "dialogue", "character": "frey", "text": "¿Te importa si soy algo precavido? Como policía tiendo a serlo.", "next": "a6_63_02" },
+    { "id": "a6_63_02", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "¿Eres policía?", "next": "a6_63_03" },
+    { "id": "a6_63_03", "type": "dialogue", "character": "frey", "text": "Inspector. Y sí, soy algo mayor que tú. Eres estudiante; yo no.", "next": "a6_d18" },
+    { "id": "a6_d18", "type": "choice", "character": null, "text": "¿Le preguntas cuántos años tiene?", "choices": [
+      { "label": "«Yo tengo veintiuno. ¿Y tú?»", "affinityChanges": { "frey": 10 }, "next": "a6_d18a1" },
+      { "label": "Esperar a ver si lo dice él.", "affinityChanges": { "frey": 5 }, "next": "a6_d18b1" },
+      { "label": "No preguntar. No es asunto tuyo.", "affinityChanges": {}, "next": "a6_d18c1" }
+    ] },
+    { "id": "a6_d18a1", "type": "dialogue", "character": null, "text": "Yo tengo veintiuno. ¿Y tú?", "next": "a6_d18a2" },
+    { "id": "a6_d18a2", "type": "dialogue", "character": "frey", "expression": "blush", "text": "Tal vez. Solo tal vez. Un poquito mayor.", "next": "a6_d18a3" },
+    { "id": "a6_d18a3", "type": "dialogue", "character": null, "protagonistExpression": "surprised", "text": "Eso no es un número.", "next": "a6_d18a4" },
+    { "id": "a6_d18a4", "type": "dialogue", "character": "frey", "text": "Veintisiete.", "next": "a6_63b_01" },
+    { "id": "a6_d18b1", "type": "narration", "character": null, "text": "Frey la mira esperando la pregunta. Ayla no la hace. Él se encoge de hombros y sigue a lo suyo.", "next": "a6_d18b2" },
+    { "id": "a6_d18b2", "type": "dialogue", "character": "frey", "text": "Veintisiete, por si te lo estabas preguntando.", "next": "a6_63b_01" },
+    { "id": "a6_d18c1", "type": "narration", "character": null, "text": "Ayla no dice nada. Frey tampoco.", "next": "a6_63b_01" },
+    { "id": "a6_63b_01", "type": "dialogue", "character": "frey", "text": "¿Me das tu número para llamarte de vez en cuando?", "next": "a6_63b_02" },
+    { "id": "a6_63b_02", "type": "narration", "character": null, "text": "Intercambian los números.", "next": "a6_63b_03" },
+    { "id": "a6_63b_03", "type": "dialogue", "character": "frey", "text": "No voy a tenerte en vigilancia constante ni voy a ponerte un micrófono.", "next": "a6_63b_04" },
+    { "id": "a6_63b_04", "type": "dialogue", "character": "frey", "text": "Simplemente sé consciente de que si esto sale a la luz puede ser un caos.", "next": "a6_63b_05" },
+    { "id": "a6_63b_05", "type": "dialogue", "character": null, "text": "¿Y qué les digo a mis compañeros, que habían venido a buscarnos?", "next": "a6_63b_06" },
+    { "id": "a6_63b_06", "type": "dialogue", "character": "frey", "text": "Puedo encargarme. Puedo haberte encontrado yo: la policía rondaba cerca.", "next": "a6_63b_07" },
+    { "id": "a6_63b_07", "type": "dialogue", "character": "frey", "text": "Digamos que estabas en comisaría explicando por qué te habías metido en un lugar abandonado.", "next": "a6_63b_08" },
+    { "id": "a6_63b_08", "type": "dialogue", "character": null, "protagonistExpression": "happy", "text": "Gracias por salvarme. Y por no borrarme la memoria.", "next": "a6_63b_09" },
+    { "id": "a6_63b_09", "type": "dialogue", "character": "frey", "text": "Espero que guardes el secreto.", "next": "a6_63b_10" },
+    { "id": "a6_63b_10", "type": "dialogue", "character": "frey", "text": "Si sale a la luz, tendremos que borrártela a ti y a todos los que lo sepan.", "next": "a6_63b_11" },
+    { "id": "a6_63b_11", "type": "dialogue", "character": "frey", "text": "Tal vez debería irme, creo que viene alguien. Descansa, Ayla. Un placer.", "next": "a6_63b_12" },
+    { "id": "a6_63b_12", "type": "narration", "character": null, "text": "Sale por el balcón, cae al vacío y desaparece.", "next": "a7_01" },
+
+    { "id": "a7_01", "type": "narration", "character": null, "background": "residencia_habitacion_noche", "text": "Se abre la puerta y entra Lydia.", "next": "a7_02" },
+    { "id": "a7_02", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Hola, no sabía que ya habías llegado.", "next": "a7_03" },
+    { "id": "a7_03", "type": "dialogue", "character": null, "text": "Sí, tenía dolor de cabeza y quería dormir un poco. Me encontraba muy mal.", "next": "a7_04" },
+    { "id": "a7_04", "type": "dialogue", "character": "lydia", "text": "¿Quieres una infusión? Por cierto, es muy tarde. ¿Qué tal el día con el club?", "next": "a7_d19" },
+    { "id": "a7_d19", "type": "choice", "character": null, "text": "¿Qué le cuentas a Lydia?", "choices": [
+      { "label": "La versión policial: entraste, te sacó la policía, te interrogaron.", "affinityChanges": { "lydia": 10 }, "next": "a7_d19a1" },
+      { "label": "La verdad. Lo de la grieta, lo de Frey, todo.", "affinityChanges": { "frey": -15, "lydia": 15 }, "next": "a7_d19b1" },
+      { "label": "«Nada. Dolor de cabeza. Me voy a dormir.»", "affinityChanges": { "lydia": -5 }, "next": "a7_d19c1" }
+    ] },
+    { "id": "a7_d19a1", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Hemos tenido un contratiempo. Me he metido con una compañera en la fábrica de harina.", "next": "a7_d19a2" },
+    { "id": "a7_d19a2", "type": "dialogue", "character": "lydia", "expression": "surprised", "text": "¿Por qué habéis entrado a la fábrica de harina?", "next": "a7_d19a3" },
+    { "id": "a7_d19a3", "type": "dialogue", "character": null, "text": "Me ha sacado la policía. Me han interrogado, claro. Y me han dicho que no puedo pasar.", "next": "a7_d19a4" },
+    { "id": "a7_d19a4", "type": "dialogue", "character": "lydia", "text": "No, no puedes. Todos lo tenemos claro. No sabía que Ethan os iba a llevar ahí.", "next": "a7_d19a5" },
+    { "id": "a7_d19a5", "type": "dialogue", "character": null, "text": "No ha sido él. He sido yo. He visto algo y he decidido meterme.", "next": "a7_d19a6" },
+    { "id": "a7_d19a6", "type": "dialogue", "character": "lydia", "text": "Pues deberías plantearte mejor dónde te metes.", "next": "a7_d19a7" },
+    { "id": "a7_d19a7", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Aunque los del Club Paranormal estéis un poco pirados siempre.", "next": "a7_d19a8" },
+    { "id": "a7_d19a8", "type": "dialogue", "character": null, "text": "La próxima vez tendré más cuidado. Ya me lo ha dejado claro la poli.", "next": "a7_d19a9" },
+    { "id": "a7_d19a9", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Entiendo. ¿Una manzanilla?", "next": "a7_d19a10" },
+    { "id": "a7_d19a10", "type": "dialogue", "character": null, "protagonistExpression": "happy", "text": "Sí, gracias. A ver si se me pasa el dolor de cabeza.", "next": "a7_d19a11" },
+    { "id": "a7_d19a11", "type": "dialogue", "character": "lydia", "expression": "happy", "text": "Tengo galletas que he horneado. Te las dejo por si te da hambre.", "next": "a7_end1" },
+    { "id": "a7_d19b1", "type": "narration", "character": null, "text": "Ayla se lo cuenta todo. La grieta, el chico de los ojos amarillos, las dimensiones, el nombre de Frey.", "next": "a7_d19b2" },
+    { "id": "a7_d19b2", "type": "narration", "character": null, "text": "Lydia la escucha entera, sin interrumpir ni una sola vez. Cuando termina, no se ríe ni le lleva la contraria.", "next": "a7_d19b3" },
+    { "id": "a7_d19b3", "type": "dialogue", "character": "lydia", "text": "Descansa, Ayla. Mañana lo vemos con otra cabeza.", "next": "a7_d19b4" },
+    { "id": "a7_d19b4", "type": "narration", "character": null, "text": "Y va a preparar la manzanilla. No parece sorprendida. En ningún momento ha parecido sorprendida.", "next": "a7_d19b5" },
+    { "id": "a7_d19b5", "type": "thought", "character": null, "protagonistExpression": "surprised", "text": "¿Por qué no me ha preguntado nada?", "next": "a7_end1" },
+    { "id": "a7_d19c1", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Nada. Dolor de cabeza. Me voy a dormir.", "next": "a7_d19c2" },
+    { "id": "a7_d19c2", "type": "narration", "character": null, "text": "Lydia asiente y deja las galletas en la mesilla sin decir nada más. Se acuesta de espaldas.", "next": "a7_end1" },
+    { "id": "a7_end1", "type": "narration", "character": null, "text": "Deja las galletas tapadas en la mesilla. Son las once de la noche.", "next": "a7_end2" },
+    { "id": "a7_end2", "type": "dialogue", "character": null, "text": "Estoy bien, me rescató la policía. Mañana hablamos. Gracias por avisarme de lo de Ethan, y siento haberos preocupado.", "next": "a7_end3" },
+    { "id": "a7_end3", "type": "chat", "character": "soledad", "text": "Justo me quedé más tranquila porque también me llamó la policía. Fuimos con Ryan a denunciar el caso. Ethan ya se encontraba mejor.", "next": "a7_end4" },
+    { "id": "a7_end4", "type": "narration", "character": null, "text": "Ayla le escribe también a Ethan: que está bien, que la encontró la policía, que lo siente mucho porque ha sido culpa suya y que mañana irá a verle. El mensaje se queda con una sola rayita. No le llega.", "next": "a7_end5" },
+    { "id": "a7_end5", "type": "narration", "character": null, "text": "Se come una galleta, se toma la manzanilla, se desmaquilla y se mete en la cama. Es casi medianoche.", "next": "a7_end6" },
+    { "id": "a7_end6", "type": "dialogue", "character": null, "protagonistExpression": "neutral", "endEpisode": true, "text": "Fin — Episodio 2 · Camino de Ayla.", "next": null }
   ]
 }

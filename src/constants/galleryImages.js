@@ -21,7 +21,7 @@ export const GALLERY_IMAGES = [
     episode: 1,
   },
   {
-    id: 'lydia_ayla_desayunoResidencia',
+    id: 'lydia_ayla_desayuno',
     title: 'Desayuno con Lydia',
     subtitle: 'en la residencia',
     routes: ['ayla'],

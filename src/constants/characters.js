@@ -7,7 +7,7 @@ export const PROTAGONISTS = [
     description: 'Joven de apariencia tranquila que retoma sus estudios en la Universidad Somnia. Observa más de lo que deja ver.',
     landingBio: 'He vuelto a la Universidad Somnia para terminar lo que dejé a medias. Dicen que soy tranquila, pero es solo que prefiero observar antes de hablar. Hay caras conocidas por aquí... y no todas me alegran igual.',
     creator: 'saramarillo',
-    avatar: '/assets/avatars/Soledad_peloLargo.png',
+    avatar: '/assets/sprites/soledad/arc1_happy.png',
     color: 'var(--color-soledad)',
     available: true,
     looks: [
