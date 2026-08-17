@@ -1,6 +1,7 @@
 import { useGameStore } from '../../store/gameStore'
 import { NPC_CHARACTERS, PROTAGONISTS } from '../../constants/characters'
 import { AFFINITY_MAX } from '../../constants/affinity'
+import { ROUTE_THEME } from '../../constants/theme'
 import styles from './AffinityReport.module.css'
 
 /** Enmascara el nombre: "Et***" si no han sido conocidos */
@@ -23,6 +24,7 @@ export default function AffinityReport({ onClose }) {
   const affinitiesAll   = useGameStore((s) => s.affinities)
   const encounteredAll  = useGameStore((s) => s.encounteredNPCs)
   const protagonistId   = useGameStore((s) => s.protagonistId)
+  const theme            = ROUTE_THEME[protagonistId] ?? ROUTE_THEME.ayla
 
   // Solo la ruta activa
   const affinities      = affinitiesAll[protagonistId] ?? {}
@@ -76,7 +78,7 @@ export default function AffinityReport({ onClose }) {
 
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.panel} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.panel} data-theme={theme.mode} onClick={(e) => e.stopPropagation()}>
 
         {/* Cabecera */}
         <div className={styles.header}>

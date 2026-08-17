@@ -15,6 +15,7 @@
 }
 
 .panel {
+  position: relative;
   width: 700px;
   max-height: 600px;
   background: rgba(8, 5, 18, 0.98);
@@ -190,4 +191,149 @@
   padding: 12px 24px 18px;
   border-top: 1px solid rgba(255,255,255,0.06);
   flex-shrink: 0;
+}
+
+/* ── Ayla · ajustes de cámara ─────────────────────────────── */
+.panel[data-theme='camara'] {
+  background: #101314;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0;
+}
+
+.panel[data-theme='camara']::before,
+.panel[data-theme='camara']::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+.panel[data-theme='camara']::before { left: 33.33%; }
+.panel[data-theme='camara']::after  { left: 66.66%; }
+
+.panel[data-theme='camara'] .header { border-bottom-color: rgba(255, 255, 255, 0.1); }
+
+.panel[data-theme='camara'] .route {
+  font-family: var(--font-mono);
+  letter-spacing: 0.2em;
+  color: #8fe3a8;
+}
+
+.panel[data-theme='camara'] .title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f3f6f4;
+}
+
+.panel[data-theme='camara'] .closeBtn {
+  font-family: var(--font-mono);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.panel[data-theme='camara'] .closeBtn:hover { color: #8fe3a8; background: rgba(143, 227, 168, 0.08); }
+
+.panel[data-theme='camara'] .active { background: rgba(255, 255, 255, 0.04); }
+.panel[data-theme='camara'] .active:hover { background: rgba(143, 227, 168, 0.06); }
+
+.panel[data-theme='camara'] .avatar { border-radius: 2px; }
+
+.panel[data-theme='camara'] .npcName {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.panel[data-theme='camara'] .role {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panel[data-theme='camara'] .barTrack,
+.panel[data-theme='camara'] .barFill { border-radius: 0; }
+
+.panel[data-theme='camara'] .pct { font-family: var(--font-mono); }
+
+.panel[data-theme='camara'] .note {
+  font-family: var(--font-mono);
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Soledad · hoja de diario ─────────────────────────────── */
+.panel[data-theme='diario'] {
+  background: linear-gradient(180deg, #fbf5e6, #f6ecd8);
+  border: 1px solid rgba(122, 90, 52, 0.25);
+  border-radius: 3px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+
+.panel[data-theme='diario']::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(180deg, transparent 0 35px, rgba(150, 110, 60, 0.14) 35px 36px);
+  pointer-events: none;
+}
+
+.panel[data-theme='diario'] .header { border-bottom-color: rgba(122, 90, 52, 0.2); }
+
+.panel[data-theme='diario'] .route {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: rgba(122, 90, 52, 0.65);
+}
+
+.panel[data-theme='diario'] .title {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 2.4rem;
+  letter-spacing: 0.01em;
+  color: var(--color-soledad);
+}
+
+.panel[data-theme='diario'] .closeBtn {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: rgba(227, 142, 31, 0.6);
+}
+.panel[data-theme='diario'] .closeBtn:hover { color: var(--color-soledad); background: none; text-decoration: underline; }
+
+.panel[data-theme='diario'] .active { background: rgba(255, 255, 255, 0.32); }
+.panel[data-theme='diario'] .active:hover { background: rgba(255, 255, 255, 0.5); }
+
+.panel[data-theme='diario'] .avatar { border-style: dashed; font-family: var(--font-hand); font-size: 1.15rem; }
+
+.panel[data-theme='diario'] .npcName {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+}
+
+.panel[data-theme='diario'] .role { font-family: var(--font-body); }
+
+.panel[data-theme='diario'] .barTrack { background: rgba(122, 90, 52, 0.12); }
+
+.panel[data-theme='diario'] .pct { font-family: var(--font-hand); font-weight: 700; font-size: 1rem; }
+
+.panel[data-theme='diario'] .note {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgba(122, 90, 52, 0.55);
+  border-top-color: rgba(122, 90, 52, 0.15);
 }
