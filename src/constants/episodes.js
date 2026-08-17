@@ -5,7 +5,10 @@ export const AVAILABLE_EPISODES = [1, 2]
 export const EPISODES = {
   1: {
     title: 'Nueva Etapa Universitaria',
-    synopsis: 'Has vuelto a la ciudad en tu último año de facultad y te reencuentras con viejos rostros. No todos te alegran por igual… y una vieja historia parece haber vuelto contigo.',
+    synopsis: {
+      soledad: 'He vuelto a la Universidad Somnia para mi último año, decidida a pasar desapercibida. Pero en secretaría me han apuntado, sin preguntar, al único club que quedaba libre: el Club Paranormal. Al menos no voy sola — ahí he conocido a Ayla, y a un chico que parece llevar semanas esperando a alguien con quien compartir ese sitio.',
+      ayla: 'Nuevo campus, nueva ciudad, otra oportunidad para pasar desapercibida. El club de fotografía tenía lista de espera, y en secretaría no me han dejado elegir: el único con plazas es el Club Paranormal. Allí he conocido a Soledad, y a Ethan, que se ha alegrado más de lo esperado de tenernos cerca.',
+    },
     firstScene: {
       soledad: 'sol_scene_01_campus',
       ayla:    'ayla_scene_01_campus',
@@ -14,7 +17,10 @@ export const EPISODES = {
   },
   2: {
     title: 'Todo se complica',
-    synopsis: 'Os habéis separado deprisa después de esa conversación… pero esta noche vuelve a aparecer en el umbral de tu puerta. ¿Preparada para revivir la emoción de empezar otra vez?',
+    synopsis: {
+      soledad: 'Me quedé sin luz, sin llaves y sin batería… y acabé durmiendo en casa de un desconocido que resultó no serlo tanto. Debería haber sido un día tranquilo, pero los mensajes de mi hermana desaparecieron del móvil, Ayla se perdió siguiendo a una chica que nadie más parece ver, y Ethan acabó con media fábrica encima. Ryan y yo terminamos en comisaría antes de que anocheciera.',
+      ayla: 'Debía ser un día de visitas guiadas y té con Lydia, pero encontré un artículo sobre unos accidentes que nadie en el Club Paranormal quiere explicar. Después seguí a una chica que nadie más parecía ver, hasta quedarme encerrada sola en una fábrica abandonada. Y entonces apareció Frey, de un sitio que no debería existir, con un secreto que ahora también es mío.',
+    },
     firstScene: {
       soledad: 'sol_ep2',
       ayla:    'ayla_ep2',
@@ -25,6 +31,10 @@ export const EPISODES = {
 
 export function getFirstScene(epNum, protagonistId) {
   return EPISODES[epNum]?.firstScene?.[protagonistId] ?? 'scene_01_campus'
+}
+
+export function getSynopsis(epNum, protagonistId) {
+  return EPISODES[epNum]?.synopsis?.[protagonistId] ?? ''
 }
 
 /** Portada de cada episodio: el fondo que más aparece en las escenas de esa ruta. */

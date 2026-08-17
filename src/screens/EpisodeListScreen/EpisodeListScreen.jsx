@@ -1,6 +1,6 @@
 import { useGameStore } from '../../store/gameStore'
 import { PROTAGONISTS } from '../../constants/characters'
-import { AVAILABLE_EPISODES, TOTAL_EPISODES, EPISODES, EPISODE_COVERS, getFirstScene } from '../../constants/episodes'
+import { AVAILABLE_EPISODES, TOTAL_EPISODES, EPISODES, EPISODE_COVERS, getFirstScene, getSynopsis } from '../../constants/episodes'
 import { ROUTE_THEME } from '../../constants/theme'
 import RouteNav from '../../components/RouteNav/RouteNav'
 import styles from './EpisodeListScreen.module.css'
@@ -44,7 +44,7 @@ export default function EpisodeListScreen() {
           <div className={styles.epHeading}>
             <span className={styles.epNumber}>Episodio {ep}</span> · {meta?.title}
           </div>
-          <p className={styles.epSynopsis}>{meta?.synopsis}</p>
+          <p className={styles.epSynopsis}>{getSynopsis(ep, protagonistId)}</p>
           <div className={styles.epProgressRow}>
             <div className={styles.progressTrack}>
               <div className={styles.progressFill} style={{ width: isCompleted ? '100%' : '0%' }} />
@@ -81,7 +81,7 @@ export default function EpisodeListScreen() {
         <div className={styles.diarioHeading}>
           <span className={styles.diarioNumber}>Episodio {ep}</span> · {meta?.title}
         </div>
-        <p className={styles.diarioSynopsis}>{meta?.synopsis}</p>
+        <p className={styles.diarioSynopsis}>{getSynopsis(ep, protagonistId)}</p>
         <div className={styles.epProgressRow}>
           <div className={styles.progressTrack}>
             <div className={styles.progressFill} style={{ width: isCompleted ? '100%' : '0%' }} />
