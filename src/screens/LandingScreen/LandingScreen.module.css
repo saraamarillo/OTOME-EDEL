@@ -178,12 +178,12 @@
 
 .photoWrap { flex-shrink: 0; position: relative; transform: rotate(2.5deg); }
 
-.photoCard { width: 320px; padding: 16px 16px 42px; background: #fffdf8; box-shadow: 0 22px 44px rgba(90, 60, 30, 0.22); border-radius: 3px; }
+.photoCard { width: 250px; padding: 14px 14px 36px; background: #fffdf8; box-shadow: 0 22px 44px rgba(90, 60, 30, 0.22); border-radius: 3px; }
 
-.photoImg { width: 288px; height: 380px; display: block; object-fit: cover; object-position: top center; }
+.photoImg { width: 222px; height: 222px; display: block; object-fit: cover; object-position: top center; }
 
 .caption { margin-top: 12px; text-align: center; font-family: var(--font-hand); font-weight: 600; font-size: 20px; color: #7a6a4e; }
 
-.tape { position: absolute; width: 58px; height: 24px; background: rgba(230, 210, 180, 0.75); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); }
-.tapeA { top: -14px; left: 32px; transform: rotate(-6deg); }
-.tapeB { top: -12px; right: 28px; transform: rotate(8deg); }
+.tape { position: absolute; width: 54px; height: 22px; background: rgba(230, 210, 180, 0.75); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); }
+.tapeA { top: -13px; left: 20px; transform: rotate(-6deg); }
+.tapeB { top: -11px; right: 18px; transform: rotate(8deg); }

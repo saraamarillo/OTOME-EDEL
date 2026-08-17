@@ -389,3 +389,33 @@
 .screen[data-theme='diario'] .tabActive { color: #fff; }
 
 .screen[data-theme='diario'] .epBadge { font-family: var(--font-hand); font-size: 1.7rem; }
+.screen[data-theme='diario'] .cardTitle { font-family: var(--font-hand); font-weight: 700; font-size: 1.1rem; color: #4a3620; }
+.screen[data-theme='diario'] .cardSub { font-family: var(--font-body); }
+
+.screen[data-theme='diario'] .card { position: relative; }
+.screen[data-theme='diario'] .card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 50px;
+  height: 20px;
+  background: rgba(230, 210, 180, 0.75);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+.screen[data-theme='diario'] .lockedCard { position: relative; }
+.screen[data-theme='diario'] .lockedCard::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 50px;
+  height: 20px;
+  background: rgba(230, 210, 180, 0.75);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
