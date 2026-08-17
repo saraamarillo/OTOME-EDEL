@@ -1,198 +1,189 @@
 .screen {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  background:
-    linear-gradient(180deg, rgba(251,247,242,0.93), rgba(244,238,246,0.93)),
-    url('/assets/backgrounds/campus_noche.png') center center / cover no-repeat;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
-.content {
-  flex: 1;
-  display: flex;
-  align-items: stretch;
-  padding: 20px 56px 40px;
-  gap: 40px;
-}
+.screenCamara { background: #101314; }
+.screenDiario { background: linear-gradient(180deg, #fbf5e6, #f6ecd8); }
 
-.textCol {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  padding-top: 10px;
-}
-
-.routeLabel {
-  font-family: var(--font-ui);
-  font-weight: 800;
-  font-size: 0.8rem;
-  letter-spacing: 0.24em;
-  color: #d4af37;
-  margin: 0 0 10px;
-}
-
-.routeName {
-  margin: 0 0 18px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 4.2rem;
-  line-height: 1;
-  color: #182449;
-}
-
-.iconWrap {
+/* ── Ayla · cámara ────────────────────────────────────────── */
+.contentCamara {
   position: absolute;
-  top: -6px;
-  right: 40px;
-  width: 74px;
-  height: 74px;
-  opacity: 0.55;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding: 0 60px;
 }
 
-.icon {
-  width: 100%;
-  height: 100%;
+.viewfinder { position: relative; width: 340px; height: 340px; flex-shrink: 0; }
+
+.viewfinderImg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+.tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(30, 90, 60, 0.12), rgba(10, 20, 15, 0.35));
+  mix-blend-mode: multiply;
 }
 
-.bio {
-  margin: 0 0 26px;
-  max-width: 480px;
+.bracket { position: absolute; width: 32px; height: 32px; border-color: #8fe3a8; }
+.bracketTl { top: 0; left: 0; border-top: 3px solid; border-left: 3px solid; }
+.bracketTr { top: 0; right: 0; border-top: 3px solid; border-right: 3px solid; }
+.bracketBl { bottom: 0; left: 0; border-bottom: 3px solid; border-left: 3px solid; }
+.bracketBr { bottom: 0; right: 0; border-bottom: 3px solid; border-right: 3px solid; }
+
+.reticle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(143, 227, 168, 0.6);
+  border-radius: 50%;
+}
+
+.textColCamara { max-width: 420px; display: flex; flex-direction: column; gap: 14px; }
+
+.pillCamara {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 14px;
+  background: rgba(143, 227, 168, 0.14);
+  border: 1px solid rgba(143, 227, 168, 0.5);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #8fe3a8;
+  text-transform: uppercase;
+}
+
+.h1Camara {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: #f3f6f4;
+  text-transform: uppercase;
+}
+
+.quoteCamara {
+  margin: 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.5;
+  color: #cfe6d8;
+}
+
+.ctaCamara {
+  align-self: flex-start;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.ctaCamara:hover { opacity: 0.85; }
+
+.shutter { width: 52px; height: 52px; border-radius: 50%; border: 2px solid #8fe3a8; display: flex; align-items: center; justify-content: center; }
+.shutterDot { width: 38px; height: 38px; border-radius: 50%; background: #8fe3a8; }
+
+.ctaLabelCamara {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: #f3f6f4;
+  text-transform: uppercase;
+}
+
+/* ── Soledad · diario ─────────────────────────────────────── */
+.contentDiario {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 90px 0 150px;
+  gap: 50px;
+}
+
+.doodleLeaf { position: absolute; top: 60px; left: 150px; width: 58px; height: 58px; color: #c9a06a; opacity: 0.45; transform: rotate(-8deg); pointer-events: none; }
+.doodleHeart { position: absolute; bottom: 110px; left: 150px; color: #d98a9e; font-size: 26px; opacity: 0.5; transform: rotate(-10deg); pointer-events: none; }
+
+.textColDiario { max-width: 460px; display: flex; flex-direction: column; gap: 12px; }
+
+.pillDiario {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 18px;
+  border-radius: 4px;
+  background: rgba(224, 149, 46, 0.14);
+  border: 1px dashed rgba(224, 149, 46, 0.5);
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 17px;
+  color: #a9762f;
+}
+
+.h1Diario {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 104px;
+  line-height: 0.9;
+  color: #4a3620;
+  transform: rotate(-1.5deg);
+}
+
+.quoteDiario {
+  margin: 6px 0 0;
   font-family: var(--font-hand);
   font-weight: 600;
-  font-size: 1.9rem;
-  line-height: 1.35;
-  color: #3a3226;
+  font-size: 27px;
+  line-height: 1.4;
+  color: #6a5236;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-}
-
-.pill {
-  padding: 15px 30px;
+.ctaDiario {
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 12px 6px;
   border: none;
-  border-radius: 999px;
+  background: transparent;
   cursor: pointer;
-  font-family: var(--font-ui);
-  font-weight: 800;
-  font-size: 0.94rem;
-  color: #fff;
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
-  transition: filter 0.2s;
-}
-
-.pill:hover {
-  filter: brightness(1.06);
-}
-
-.heartBtn {
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 30px;
+  color: #c9647e;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: #fff;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
-  font-size: 24px;
+  gap: 8px;
   transition: transform 0.2s;
 }
 
-.heartBtn:hover {
-  transform: scale(1.06);
-}
+.ctaDiario:hover { transform: translateX(4px); }
+.ctaArrow { width: 40px; height: 16px; }
 
-.portraitWrap {
-  position: relative;
-  flex-shrink: 0;
-  width: 480px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
+.photoWrap { flex-shrink: 0; position: relative; transform: rotate(2.5deg); }
 
-.portraitGlow {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 45%;
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 0 0 24px 24px;
-}
+.photoCard { width: 320px; padding: 16px 16px 42px; background: #fffdf8; box-shadow: 0 22px 44px rgba(90, 60, 30, 0.22); border-radius: 3px; }
 
-.portrait {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  max-height: 700px;
-  object-fit: contain;
-  object-position: bottom;
-  filter: drop-shadow(0 20px 40px rgba(90, 60, 120, 0.25));
-}
+.photoImg { width: 288px; height: 380px; display: block; object-fit: cover; object-position: top center; }
 
-/* ── Modal de copyright ─────────────────────────────────────── */
-.copyOverlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 10, 18, 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 30;
-}
+.caption { margin-top: 12px; text-align: center; font-family: var(--font-hand); font-weight: 600; font-size: 20px; color: #7a6a4e; }
 
-.copyCard {
-  position: relative;
-  width: 460px;
-  padding: 40px 40px 34px;
-  border-radius: 4px;
-  background: repeating-linear-gradient(180deg, #fbf6ea 0 27px, #f5efe0 27px 28px);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
-  transform: rotate(-1deg);
-  font-family: var(--font-body);
-  color: #4a3f2e;
-}
-
-.copyHeart {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 14px;
-}
-
-.copyText {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.7;
-  text-align: center;
-}
-
-.copyClose {
-  margin: 22px auto 0;
-  display: block;
-  padding: 10px 28px;
-  border: 1px solid rgba(74, 63, 46, 0.3);
-  border-radius: 999px;
-  background: transparent;
-  cursor: pointer;
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: 13px;
-  color: #4a3f2e;
-  transition: background 0.2s;
-}
-
-.copyClose:hover {
-  background: rgba(74, 63, 46, 0.08);
-}
+.tape { position: absolute; width: 58px; height: 24px; background: rgba(230, 210, 180, 0.75); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); }
+.tapeA { top: -14px; left: 32px; transform: rotate(-6deg); }
+.tapeB { top: -12px; right: 28px; transform: rotate(8deg); }

@@ -27,15 +27,6 @@ export const PROTAGONISTS = [
     color: 'var(--color-ayla)',
     available: true,
   },
-  {
-    id: 'maven',
-    name: 'Maven',
-    description: '???',
-    landingBio: 'Escucho más de lo que hablo. No porque no tenga nada que decir, sino porque casi todos los secretos se cuentan solos si sabes esperar.',
-    avatar: '/assets/avatars/Maven.png',
-    color: 'var(--color-maven)',
-    available: false,
-  },
 ]
 
 export const NPC_CHARACTERS = [

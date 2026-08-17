@@ -1,40 +1,265 @@
-.nav {
+@keyframes recBlink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.18; transform: scale(0.94); } }
+
+/* ── Ayla · cámara ────────────────────────────────────────── */
+.camaraChrome { position: relative; z-index: 5; }
+
+.gridV { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255, 255, 255, 0.14); pointer-events: none; }
+.gridH { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255, 255, 255, 0.14); pointer-events: none; }
+
+.hudLeft {
+  position: absolute;
+  top: 26px;
+  left: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 26px 56px 0;
-  flex-shrink: 0;
-}
-
-.logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
-  color: #182449;
-}
-
-.links {
-  display: flex;
-  gap: 30px;
-}
-
-.link {
+  gap: 10px;
   background: none;
   border: none;
   padding: 0;
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: 0.88rem;
-  color: #7d5cc8;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: #8fe3a8;
+  cursor: pointer;
+}
+
+.recDot { width: 8px; height: 8px; border-radius: 50%; background: #ff5c5c; animation: recBlink 1.4s infinite; }
+
+.changeBtnCamara {
+  position: absolute;
+  top: 54px;
+  left: 40px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
   transition: color 0.2s;
 }
 
-.link:hover {
-  color: #5c3fa8;
+.changeBtnCamara:hover { color: rgba(255, 255, 255, 0.75); text-decoration: underline; }
+
+.hudRight {
+  position: absolute;
+  top: 26px;
+  right: 90px;
+  display: flex;
+  gap: 18px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.active {
-  color: #182449;
+.heartBtnCamara {
+  position: absolute;
+  top: 18px;
+  right: 40px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  color: #ff9ec4;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.heartBtnCamara:hover { background: rgba(255, 255, 255, 0.08); }
+
+.dialNav {
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dialItem {
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.dialItem:hover { border-color: #8fe3a8; color: #8fe3a8; }
+.dialActive { border-color: #8fe3a8; color: #8fe3a8; }
+
+/* ── Soledad · diario ─────────────────────────────────────── */
+.diarioChrome { position: relative; z-index: 5; }
+
+.ruled {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(180deg, transparent 0 35px, rgba(150, 110, 60, 0.14) 35px 36px);
+  pointer-events: none;
+}
+
+.marginLine { position: absolute; top: 0; bottom: 0; left: 108px; width: 1px; background: rgba(196, 90, 90, 0.32); pointer-events: none; }
+
+.logoDiario {
+  position: absolute;
+  top: 34px;
+  left: 40px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 26px;
+  color: #7a5a34;
+  transform: rotate(-3deg);
+  cursor: pointer;
+}
+
+.changeBtnDiario {
+  position: absolute;
+  top: 70px;
+  left: 42px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 15px;
+  color: rgba(122, 90, 52, 0.6);
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  transform: rotate(-1deg);
+  cursor: pointer;
+}
+
+.changeBtnDiario:hover { color: #a9762f; }
+
+.heartBtnDiario {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  border: 1px dashed rgba(122, 90, 52, 0.5);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  color: #c9647e;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heartBtnDiario:hover { background: rgba(122, 90, 52, 0.08); }
+
+.tabsDiario {
+  position: absolute;
+  top: 130px;
+  right: -1px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.tabDiario {
+  padding: 8px 20px 8px 26px;
+  border-radius: 10px 0 0 10px;
+  background: #fdf8ee;
+  box-shadow: -4px 4px 10px rgba(122, 90, 52, 0.14);
+  border: 1px solid rgba(122, 90, 52, 0.18);
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 19px;
+  color: #a9762f;
+  cursor: pointer;
+}
+
+.tabDiario:hover { background: #fff; }
+.tabDiario:nth-child(1) { transform: rotate(-1.5deg); }
+.tabDiario:nth-child(2) { transform: rotate(1deg); }
+.tabDiario:nth-child(3) { transform: rotate(-1deg); }
+
+.tabActive { background: #fff; color: #c9647e; border-color: rgba(201, 100, 126, 0.4); }
+
+/* ── Modal de créditos ────────────────────────────────────── */
+.creditsOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 18, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.creditsCard {
+  position: relative;
+  width: 460px;
+  padding: 40px 40px 34px;
+  border-radius: 4px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+  transform: rotate(-1deg);
+}
+
+.creditsCardDiario {
+  background: repeating-linear-gradient(180deg, #fbf6ea 0 27px, #f5efe0 27px 28px);
+  font-family: var(--font-body);
+  color: #4a3f2e;
+}
+
+.creditsCardCamara {
+  background: #181c1d;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: var(--font-mono);
+  color: #f3f6f4;
+  transform: rotate(0deg);
+}
+
+.creditsHeart { text-align: center; font-size: 26px; margin-bottom: 14px; }
+
+.creditsText { margin: 0; font-size: 15px; line-height: 1.7; text-align: center; }
+
+.creditsCardCamara .creditsText { font-size: 13px; line-height: 1.8; }
+.creditsCardCamara .creditsHeart { color: #ff9ec4; }
+
+.creditsClose {
+  margin: 22px auto 0;
+  display: block;
+  padding: 10px 28px;
+  border: 1px solid rgba(74, 63, 46, 0.3);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  color: #4a3f2e;
+  transition: background 0.2s;
+}
+
+.creditsCardDiario .creditsClose:hover { background: rgba(74, 63, 46, 0.08); }
+
+.creditsCardCamara .creditsClose {
+  border-color: rgba(143, 227, 168, 0.4);
+  color: #8fe3a8;
+  font-family: var(--font-mono);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+}
+
+.creditsCardCamara .creditsClose:hover { background: rgba(143, 227, 168, 0.1); }

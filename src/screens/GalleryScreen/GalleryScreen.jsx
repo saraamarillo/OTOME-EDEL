@@ -3,7 +3,7 @@ import { useGameStore } from '../../store/gameStore'
 import { PROTAGONISTS } from '../../constants/characters'
 import { EPISODES, getFirstScene } from '../../constants/episodes'
 import { GALLERY_IMAGES as ALL_IMAGES } from '../../constants/galleryImages'
-import { ROUTE_BG } from '../../constants/theme'
+import { ROUTE_THEME } from '../../constants/theme'
 import RouteNav from '../../components/RouteNav/RouteNav'
 import styles from './GalleryScreen.module.css'
 
@@ -16,6 +16,7 @@ export default function GalleryScreen() {
   const playCountsAll      = useGameStore((s) => s.episodePlayCounts)
   const protagonistId      = useGameStore((s) => s.protagonistId)
   const protagonist        = PROTAGONISTS.find((p) => p.id === protagonistId)
+  const theme               = ROUTE_THEME[protagonistId] ?? ROUTE_THEME.ayla
   const [viewing, setViewing] = useState(null)
   const [showLocked, setShowLocked] = useState(false)
 
@@ -106,18 +107,17 @@ export default function GalleryScreen() {
   }
 
   return (
-    <div className={styles.screen} style={{ background: ROUTE_BG[protagonistId], '--accent': protagonist?.color }}>
+    <div className={styles.screen} data-theme={theme.mode} style={{ background: theme.bg, '--accent': theme.accent }}>
       <RouteNav active="gallery" />
 
-      <div className={styles.body}>
+      <div className={`${styles.body} ${theme.mode === 'camara' ? styles.bodyCamara : styles.bodyDiario}`}>
         <div className={styles.topRow}>
           <h2 className={styles.title}>Mis recuerdos</h2>
           <div className={styles.tabs}>
             {PROTAGONISTS.map((p) => (
               <button
                 key={p.id}
-                className={styles.tab}
-                style={{ background: p.id === protagonistId ? p.color : 'rgba(150,150,160,0.5)' }}
+                className={`${styles.tab} ${p.id === protagonistId ? styles.tabActive : ''}`}
                 disabled={!p.available}
                 onClick={() => selectProtagonist(p.id)}
               >

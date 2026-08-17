@@ -3,13 +3,17 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .body {
   flex: 1;
-  padding: 20px 56px 48px;
+  padding: 0 56px 48px;
+  overflow-y: auto;
 }
+
+.bodyCamara { padding-top: 190px; }
+.bodyDiario { padding-top: 300px; }
 
 .topRow {
   display: flex;
@@ -33,18 +37,21 @@
 
 .tab {
   padding: 8px 20px;
-  border: none;
+  border: 1px solid rgba(150, 150, 160, 0.4);
   border-radius: 999px;
+  background: transparent;
   font-family: var(--font-ui);
   font-weight: 800;
   font-size: 0.9rem;
-  color: #fff;
+  color: inherit;
   cursor: pointer;
-  transition: filter 0.2s;
+  transition: filter 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
 }
 
 .tab:hover:not(:disabled) { filter: brightness(1.1); }
 .tab:disabled { cursor: not-allowed; opacity: 0.6; }
+
+.tabActive { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 .epHeader {
   display: flex;
@@ -82,6 +89,7 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -319,3 +327,65 @@
 }
 
 .lockedModalBtn:hover { filter: brightness(1.06); }
+
+/* ── Ayla · cámara ────────────────────────────────────────── */
+.screen[data-theme='camara'] .title { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.8rem; }
+.screen[data-theme='camara'] .tab { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; color: rgba(255, 255, 255, 0.7); }
+.screen[data-theme='camara'] .tabActive { color: #101314; }
+
+.screen[data-theme='camara'] .epBadge { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; border-radius: 2px; font-size: 1.05rem; }
+.screen[data-theme='camara'] .epCount { font-family: var(--font-mono); background: rgba(255, 255, 255, 0.08); border-radius: 2px; }
+
+.screen[data-theme='camara'] .card {
+  background: #181c1d;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0;
+  transform: none !important;
+  box-shadow: none;
+}
+
+.screen[data-theme='camara'] .unlocked:hover { transform: translateY(-4px) !important; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4); }
+
+.screen[data-theme='camara'] .thumb,
+.screen[data-theme='camara'] .placeholder { border-radius: 0; }
+
+.screen[data-theme='camara'] .placeholder { background: rgba(255, 255, 255, 0.05); }
+.screen[data-theme='camara'] .lock { color: rgba(255, 255, 255, 0.25); }
+
+.screen[data-theme='camara'] .cardTitle { font-family: var(--font-mono); color: #f3f6f4; letter-spacing: 0.02em; }
+.screen[data-theme='camara'] .cardSub { color: rgba(255, 255, 255, 0.4); font-style: normal; }
+
+.screen[data-theme='camara'] .replayBtn,
+.screen[data-theme='camara'] .lockedModalBtn { font-family: var(--font-mono); border-radius: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+.screen[data-theme='camara'] .playCount { color: rgba(255, 255, 255, 0.4); font-family: var(--font-mono); }
+
+.screen[data-theme='camara'] .lockedCard { background: rgba(255, 255, 255, 0.05); box-shadow: none; border: 1px solid rgba(255, 255, 255, 0.14); }
+.screen[data-theme='camara'] .lockedHeart { color: rgba(255, 255, 255, 0.2); }
+.screen[data-theme='camara'] .lockedIcon { color: rgba(255, 255, 255, 0.3); }
+
+.screen[data-theme='camara'] .lockedModal { background: #181c1d; border: 1px solid rgba(255, 255, 255, 0.14); }
+.screen[data-theme='camara'] .lockedModalIcon { background: rgba(255, 255, 255, 0.06); color: rgba(255, 255, 255, 0.4); }
+.screen[data-theme='camara'] .lockedModalTitle { font-family: var(--font-mono); color: #f3f6f4; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 0.04em; }
+.screen[data-theme='camara'] .lockedModalText { color: rgba(255, 255, 255, 0.4); }
+
+/* corner brackets on unlocked/locked thumbnails */
+.screen[data-theme='camara'] .card { position: relative; }
+.screen[data-theme='camara'] .card::before,
+.screen[data-theme='camara'] .card::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: #8fe3a8;
+  pointer-events: none;
+}
+.screen[data-theme='camara'] .card::before { top: 8px; left: 8px; border-top: 2px solid; border-left: 2px solid; }
+.screen[data-theme='camara'] .card::after { bottom: 34px; right: 8px; border-bottom: 2px solid; border-right: 2px solid; }
+
+/* ── Soledad · diario ─────────────────────────────────────── */
+.screen[data-theme='diario'] .title { font-family: var(--font-hand); font-size: 3rem; transform: rotate(-1deg); }
+.screen[data-theme='diario'] .tab { font-family: var(--font-hand); font-weight: 700; font-size: 1.05rem; border-style: dashed; }
+.screen[data-theme='diario'] .tabActive { color: #fff; }
+
+.screen[data-theme='diario'] .epBadge { font-family: var(--font-hand); font-size: 1.7rem; }

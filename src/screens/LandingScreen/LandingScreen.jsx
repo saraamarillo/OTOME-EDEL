@@ -1,95 +1,101 @@
-import { useState } from 'react'
 import { useGameStore } from '../../store/gameStore'
 import { PROTAGONISTS } from '../../constants/characters'
+import { ROUTE_THEME } from '../../constants/theme'
 import RouteNav from '../../components/RouteNav/RouteNav'
 import { useProtagonistFace } from '../../hooks/useProtagonistFace'
 import styles from './LandingScreen.module.css'
 
-const ROUTE_ICONS = {
-  soledad: (
-    <svg viewBox="0 0 120 120" className={styles.icon} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-      <circle cx="60" cy="60" r="16" />
-      <path d="M60 26v-14 M60 108v-14 M26 60h-14 M108 60h-14 M37 37l-10-10 M93 37l10-10 M37 83l-10 10 M93 83l10 10" />
-    </svg>
-  ),
-  ayla: (
-    <svg viewBox="0 0 120 100" className={styles.icon} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="14" y="30" width="92" height="58" rx="8" />
-      <path d="M42 30l8-14h20l8 14" />
-      <circle cx="60" cy="60" r="20" />
-      <circle cx="92" cy="42" r="3" />
-    </svg>
-  ),
-}
-
 export default function LandingScreen() {
   const setScreen = useGameStore((s) => s.setScreen)
   const protagonistId = useGameStore((s) => s.protagonistId)
-  const [showCopyright, setShowCopyright] = useState(false)
 
   const protagonist = PROTAGONISTS.find((p) => p.id === protagonistId)
   const face = useProtagonistFace(protagonistId, 'neutral', protagonist?.avatar)
   if (!protagonist) return null
 
+  const theme = ROUTE_THEME[protagonistId] ?? ROUTE_THEME.ayla
+  const isCamara = theme.mode === 'camara'
+
   return (
-    <div className={styles.screen}>
-      <RouteNav active="landing" showLinks={false} />
+    <div className={`${styles.screen} ${isCamara ? styles.screenCamara : styles.screenDiario}`}>
+      <RouteNav active="landing" />
 
-      <div className={styles.content}>
-        <div className={styles.textCol}>
-          <p className={styles.routeLabel}>RUTA · {protagonist.name}</p>
-          <h1 className={styles.routeName}>{protagonist.name.split(' ')[0]}</h1>
+      {isCamara ? (
+        <CamaraHero protagonist={protagonist} face={face} setScreen={setScreen} />
+      ) : (
+        <DiarioHero protagonist={protagonist} face={face} setScreen={setScreen} />
+      )}
+    </div>
+  )
+}
 
-          {ROUTE_ICONS[protagonist.id] && (
-            <div className={styles.iconWrap} style={{ color: protagonist.color }}>
-              {ROUTE_ICONS[protagonist.id]}
-            </div>
-          )}
+function CamaraHero({ protagonist, face, setScreen }) {
+  return (
+    <div className={styles.contentCamara}>
+      <div className={styles.viewfinder}>
+        <img
+          className={styles.viewfinderImg}
+          src={face.src}
+          alt={protagonist.name}
+          draggable={false}
+          onError={face.onError}
+        />
+        <div className={styles.tint} />
+        <div className={`${styles.bracket} ${styles.bracketTl}`} />
+        <div className={`${styles.bracket} ${styles.bracketTr}`} />
+        <div className={`${styles.bracket} ${styles.bracketBl}`} />
+        <div className={`${styles.bracket} ${styles.bracketBr}`} />
+        <div className={styles.reticle} />
+      </div>
 
-          <p className={styles.bio} style={{ color: protagonist.color }}>{protagonist.landingBio ?? protagonist.description}</p>
+      <div className={styles.textColCamara}>
+        <div className={styles.pillCamara}>Ruta · {protagonist.name}</div>
+        <h1 className={styles.h1Camara}>{protagonist.name.split(' ')[0]}</h1>
+        <p className={styles.quoteCamara}>{protagonist.landingBio ?? protagonist.description}</p>
+        <button className={styles.ctaCamara} onClick={() => setScreen('episodeList')}>
+          <span className={styles.shutter}><span className={styles.shutterDot} /></span>
+          <span className={styles.ctaLabelCamara}>Comenzar</span>
+        </button>
+      </div>
+    </div>
+  )
+}
 
-          <div className={styles.actions}>
-            <button className={styles.pill} style={{ background: protagonist.color }} onClick={() => setScreen('episodeList')}>Episodios</button>
-            <button className={styles.pill} style={{ background: protagonist.color }} onClick={() => setScreen('characters')}>Personajes</button>
-            <button className={styles.pill} style={{ background: protagonist.color }} onClick={() => setScreen('gallery')}>Galería</button>
-            <button
-              className={styles.heartBtn}
-              style={{ color: protagonist.color }}
-              onClick={() => setShowCopyright(true)}
-              title="Créditos"
-            >♥</button>
-          </div>
-        </div>
+function DiarioHero({ protagonist, face, setScreen }) {
+  return (
+    <div className={styles.contentDiario}>
+      <svg viewBox="0 0 120 120" className={styles.doodleLeaf} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+        <path d="M20 90 Q40 40 70 55 Q95 66 80 30" />
+        <path d="M78 26 l6 10 l-13 2" />
+      </svg>
+      <div className={styles.doodleHeart}>♥</div>
 
-        <div className={styles.portraitWrap}>
-          <div
-            className={styles.portraitGlow}
-            style={{ background: `linear-gradient(to top, color-mix(in srgb, ${protagonist.color} 65%, black) 0%, transparent 60%)` }}
-          />
+      <div className={styles.textColDiario}>
+        <div className={styles.pillDiario}>Ruta · {protagonist.name}</div>
+        <h1 className={styles.h1Diario}>{protagonist.name.split(' ')[0]}</h1>
+        <p className={styles.quoteDiario}>{protagonist.landingBio ?? protagonist.description}</p>
+        <button className={styles.ctaDiario} onClick={() => setScreen('episodeList')}>
+          Comenzar
+          <svg viewBox="0 0 40 16" className={styles.ctaArrow} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+            <path d="M2 8h34M28 2l8 6-8 6" />
+          </svg>
+        </button>
+      </div>
+
+      <div className={styles.photoWrap}>
+        <div className={styles.photoCard}>
           <img
-            className={styles.portrait}
+            className={styles.photoImg}
             src={face.src}
             alt={protagonist.name}
             draggable={false}
             onError={face.onError}
           />
+          <div className={styles.caption}>{protagonist.age ? `verano, ${protagonist.age}` : protagonist.name}</div>
         </div>
+        <div className={`${styles.tape} ${styles.tapeA}`} />
+        <div className={`${styles.tape} ${styles.tapeB}`} />
       </div>
-
-      {showCopyright && (
-        <div className={styles.copyOverlay} onClick={() => setShowCopyright(false)}>
-          <div className={styles.copyCard} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.copyHeart} style={{ color: protagonist.color }}>♥</div>
-            <p className={styles.copyText}>
-              Esta novela visual interactiva está inspirada en la campaña de rol «EDEL»<br />
-              {protagonist.creator && <>Personaje creado por: {protagonist.creator}<br /></>}
-              Diseño y adaptación interactiva por saramarillo<br />
-              Historia original creada y dirigida por cadia.ink
-            </p>
-            <button className={styles.copyClose} onClick={() => setShowCopyright(false)}>Cerrar</button>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

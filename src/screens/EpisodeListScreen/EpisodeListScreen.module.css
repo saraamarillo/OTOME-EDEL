@@ -3,13 +3,17 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .body {
   flex: 1;
-  padding: 20px 56px 48px;
+  padding: 0 56px 48px;
+  overflow-y: auto;
 }
+
+.bodyCamara { padding-top: 190px; }
+.bodyDiario { padding-top: 300px; }
 
 .topRow {
   display: flex;
@@ -25,14 +29,15 @@
 
 .tab {
   padding: 8px 20px;
-  border: none;
+  border: 1px solid rgba(150, 150, 160, 0.4);
   border-radius: 999px;
+  background: transparent;
   font-family: var(--font-ui);
   font-weight: 800;
   font-size: 0.9rem;
-  color: #fff;
+  color: inherit;
   cursor: pointer;
-  transition: filter 0.2s;
+  transition: filter 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
 }
 
 .tab:hover:not(:disabled) {
@@ -43,6 +48,8 @@
   cursor: not-allowed;
   opacity: 0.6;
 }
+
+.tabActive { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 .userRow {
   display: flex;
@@ -270,3 +277,45 @@
   font-size: 1rem;
   color: #7a7f8c;
 }
+
+/* ── Ayla · cámara ────────────────────────────────────────── */
+.screen[data-theme='camara'] .tab { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; color: rgba(255, 255, 255, 0.7); }
+.screen[data-theme='camara'] .tabActive { color: #101314; }
+.screen[data-theme='camara'] .userName { color: rgba(255, 255, 255, 0.6); font-family: var(--font-mono); }
+.screen[data-theme='camara'] .logoutBtn { border-color: rgba(255, 255, 255, 0.25); font-family: var(--font-mono); }
+.screen[data-theme='camara'] .logoutBtn:hover { background: rgba(255, 255, 255, 0.08); }
+
+.screen[data-theme='camara'] .sectionLabel { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; border-radius: 2px; font-size: 1.1rem; }
+
+.screen[data-theme='camara'] .epImageCard { background: #181c1d; border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: none; transform: none; border-radius: 0; position: relative; }
+.screen[data-theme='camara'] .epImageTape { border-bottom-color: rgba(255, 255, 255, 0.14); }
+.screen[data-theme='camara'] .epImageCard::before,
+.screen[data-theme='camara'] .epImageCard::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #8fe3a8;
+  pointer-events: none;
+}
+.screen[data-theme='camara'] .epImageCard::before { top: 8px; left: 8px; border-top: 2px solid; border-left: 2px solid; }
+.screen[data-theme='camara'] .epImageCard::after { bottom: 8px; right: 8px; border-bottom: 2px solid; border-right: 2px solid; }
+
+.screen[data-theme='camara'] .epInfo { background: #181c1d; border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: none; border-radius: 0; }
+.screen[data-theme='camara'] .epHeading { font-family: var(--font-mono); color: #f3f6f4; text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.3rem; }
+.screen[data-theme='camara'] .epSynopsis { color: rgba(255, 255, 255, 0.55); }
+.screen[data-theme='camara'] .progressTrack { background: rgba(255, 255, 255, 0.08); border-radius: 2px; }
+.screen[data-theme='camara'] .progressPct { font-family: var(--font-mono); }
+.screen[data-theme='camara'] .playBtn { font-family: var(--font-mono); border-radius: 2px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; }
+.screen[data-theme='camara'] .playCount { color: rgba(255, 255, 255, 0.4); font-family: var(--font-mono); }
+.screen[data-theme='camara'] .emptyIcon { background: rgba(255, 255, 255, 0.06); }
+.screen[data-theme='camara'] .emptyTitle { font-family: var(--font-mono); color: #f3f6f4; text-transform: uppercase; font-size: 1.3rem; }
+.screen[data-theme='camara'] .emptyText { color: rgba(255, 255, 255, 0.45); }
+
+/* ── Soledad · diario ─────────────────────────────────────── */
+.screen[data-theme='diario'] .tab { font-family: var(--font-hand); font-weight: 700; font-size: 1.05rem; border-style: dashed; }
+.screen[data-theme='diario'] .tabActive { color: #fff; }
+.screen[data-theme='diario'] .userName { font-family: var(--font-hand); font-weight: 700; font-size: 1rem; }
+.screen[data-theme='diario'] .sectionLabel { font-family: var(--font-hand); font-size: 1.7rem; }
+.screen[data-theme='diario'] .epHeading { font-family: var(--font-hand); font-size: 2rem; }
+.screen[data-theme='diario'] .emptyTitle { font-family: var(--font-hand); font-size: 2.2rem; }

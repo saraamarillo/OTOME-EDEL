@@ -3,14 +3,20 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #fbf7f2, #f4eef6);
-  overflow-y: auto;
+  overflow: hidden;
 }
+
+.screenCamara { background: #101314; }
+.screenDiario { background: linear-gradient(180deg, #fbf5e6, #f6ecd8); }
 
 .body {
   flex: 1;
-  padding: 20px 56px 48px;
+  padding: 0 56px 48px;
+  overflow-y: auto;
 }
+
+.bodyCamara { padding-top: 190px; }
+.bodyDiario { padding-top: 300px; }
 
 .header {
   display: flex;
@@ -19,112 +25,181 @@
   gap: 16px;
 }
 
-.title {
+.titleCamara {
   margin: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 2.4rem;
-  color: #182449;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #f3f6f4;
 }
 
-.hint {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  color: #9a8fae;
+.hintCamara {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.empty {
+.emptyCamara {
   margin-top: 40px;
   font-family: var(--font-body);
   font-style: italic;
-  color: #8a7fa0;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+.titleDiario {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: #4a3620;
+  transform: rotate(-1deg);
+}
+
+.hintDiario {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(122, 90, 52, 0.6);
+}
+
+.emptyDiario {
+  margin-top: 40px;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: rgba(122, 90, 52, 0.6);
   text-align: center;
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 26px;
+  gap: 28px;
   margin-top: 30px;
-}
-
-.card {
-  width: 300px;
-  border-radius: 20px;
-  background: #ffffff;
-  box-shadow: 0 14px 34px rgba(90, 60, 120, 0.14);
-  overflow: hidden;
-  border-top: 5px solid;
-  padding: 22px 22px 22px;
-}
-
-.cardHead {
-  display: flex;
-  gap: 16px;
-}
-
-.avatarClip {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.avatarClip img {
-  width: 100%;
-  height: 155%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-}
-
-.name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #182449;
-}
-
-.role {
-  font-family: var(--font-ui);
-  font-weight: 800;
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 2px;
 }
 
 .affinityRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 18px 0 6px;
+  margin: 14px 0 6px;
 }
 
-.affinityLabel {
-  font-family: var(--font-ui);
-  font-weight: 800;
-  font-size: 0.66rem;
+/* ── Ayla · cámara ────────────────────────────────────────── */
+.cardCamara {
+  width: 260px;
+  background: #181c1d;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.cardCamaraPhoto { position: relative; width: 100%; height: 180px; overflow: hidden; }
+
+.cardCamaraPhoto img { width: 100%; height: 155%; object-fit: cover; object-position: top center; display: block; }
+
+.miniBracket { position: absolute; width: 18px; height: 18px; border-color: #8fe3a8; }
+.miniBracketTl { top: 8px; left: 8px; border-top: 2px solid; border-left: 2px solid; }
+.miniBracketBr { bottom: 8px; right: 8px; border-bottom: 2px solid; border-right: 2px solid; }
+
+.cardCamaraBody { padding: 16px 18px 20px; }
+
+.nameCamara {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #f3f6f4;
+}
+
+.roleCamara {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.62rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #9aa0ac;
+  margin-top: 4px;
 }
 
-.affinityPct {
-  font-family: var(--font-ui);
-  font-weight: 800;
-  font-size: 0.8rem;
+.affinityLabelCamara {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.barTrack {
-  height: 10px;
-  border-radius: 999px;
-  background: #eceaf2;
+.affinityPctCamara {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.barTrackCamara {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
   overflow: hidden;
 }
 
-.barFill {
-  height: 100%;
-  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+/* ── Soledad · diario ─────────────────────────────────────── */
+.cardDiario {
+  position: relative;
+  width: 240px;
+  padding: 14px 14px 20px;
+  background: #fffdf8;
+  box-shadow: 0 16px 32px rgba(90, 60, 30, 0.18);
+  border-radius: 2px;
 }
+
+.tapeSmall {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 50px;
+  height: 20px;
+  background: rgba(230, 210, 180, 0.75);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.cardDiarioPhoto { width: 100%; height: 170px; overflow: hidden; }
+
+.cardDiarioPhoto img { width: 100%; height: 155%; object-fit: cover; object-position: top center; display: block; }
+
+.nameDiario {
+  margin-top: 12px;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #4a3620;
+}
+
+.roleDiario {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.78rem;
+  margin-top: -2px;
+}
+
+.affinityLabelDiario {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgba(122, 90, 52, 0.6);
+}
+
+.affinityPctDiario {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.barTrackDiario {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(122, 90, 52, 0.14);
+  overflow: hidden;
+}
+
+.barFill { height: 100%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1); }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useGameStore } from '../../store/gameStore'
+import { ROUTE_THEME } from '../../constants/theme'
 import AffinityReport from '../../components/AffinityReport/AffinityReport'
 import styles from './EpisodeEndScreen.module.css'
 
@@ -9,6 +10,9 @@ export default function EpisodeEndScreen() {
   const saveProgress      = useGameStore((s) => s.saveProgress)
   const userId            = useGameStore((s) => s.userId)
   const selectedEpisode   = useGameStore((s) => s.selectedEpisode)
+  const protagonistId     = useGameStore((s) => s.protagonistId)
+  const theme              = ROUTE_THEME[protagonistId] ?? ROUTE_THEME.ayla
+  const isCamara            = theme.mode === 'camara'
   const [showAffinity, setShowAffinity] = useState(false)
 
   useEffect(() => {
@@ -16,33 +20,41 @@ export default function EpisodeEndScreen() {
     saveProgress()
   }, [])
 
+  const btnClass = isCamara ? styles.btnCamara : styles.btnDiario
+
   return (
-    <div className={styles.screen}>
+    <div className={`${styles.screen} ${isCamara ? styles.screenCamara : styles.screenDiario}`}>
+      {isCamara && (
+        <>
+          <div className={styles.gridV} style={{ left: '33.33%' }} />
+          <div className={styles.gridV} style={{ left: '66.66%' }} />
+          <div className={styles.gridH} style={{ top: '33.33%' }} />
+          <div className={styles.gridH} style={{ top: '66.66%' }} />
+        </>
+      )}
+      {!isCamara && <div className={styles.ruled} />}
+
       <div className={styles.content}>
-        <p className={styles.label}>Episodio {selectedEpisode}</p>
-        <h1 className={styles.title}>Fin</h1>
-        <p className={styles.subtitle}>Universidad Somnia · Guadalajara</p>
+        <p className={isCamara ? styles.labelCamara : styles.labelDiario}>Episodio {selectedEpisode}</p>
+        <h1 className={isCamara ? styles.titleCamara : styles.titleDiario}>Fin</h1>
+        <p className={isCamara ? styles.subtitleCamara : styles.subtitleDiario}>Universidad Somnia · Guadalajara</p>
 
         <div className={styles.buttons}>
-          <button className={styles.btn} onClick={() => setShowAffinity(true)}>
-            ♥ Ver vínculos
-          </button>
-          <button className={styles.btn} onClick={() => setScreen('gallery')}>
-            Ver galería
-          </button>
+          <button className={btnClass} onClick={() => setShowAffinity(true)}>♥ Ver vínculos</button>
+          <button className={btnClass} onClick={() => setScreen('gallery')}>Ver galería</button>
           {userId ? (
-            <button className={styles.btn} onClick={() => setScreen('episodeList')}>
-              Lista de episodios
-            </button>
+            <button className={btnClass} onClick={() => setScreen('episodeList')}>Lista de episodios</button>
           ) : (
-            <button className={styles.btn} onClick={() => setScreen('comingSoon')}>
-              Episodio {selectedEpisode + 1}
-            </button>
+            <button className={btnClass} onClick={() => setScreen('comingSoon')}>Episodio {selectedEpisode + 1}</button>
           )}
-          <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={() => setScreen('protagonistSelect')}>
-            Elegir protagonista
-          </button>
         </div>
+
+        <button
+          className={isCamara ? styles.changeCamara : styles.changeDiario}
+          onClick={() => setScreen('protagonistSelect')}
+        >
+          Cambiar protagonista
+        </button>
       </div>
 
       {showAffinity && <AffinityReport onClose={() => setShowAffinity(false)} />}

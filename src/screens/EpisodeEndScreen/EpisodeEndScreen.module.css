@@ -4,83 +4,155 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(120% 100% at 50% 20%, rgba(255,190,220,0.14), rgba(90,50,110,0.35) 55%, rgba(18,12,28,0.92)),
-    url('/assets/backgrounds/home.png') center center / cover no-repeat,
-    #0a0d16;
+  overflow: hidden;
+}
+
+.screenCamara { background: #101314; }
+.screenDiario { background: linear-gradient(180deg, #fbf5e6, #f6ecd8); }
+
+.gridV { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255, 255, 255, 0.1); }
+.gridH { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255, 255, 255, 0.1); }
+
+.ruled {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(180deg, transparent 0 35px, rgba(150, 110, 60, 0.14) 35px 36px);
+  pointer-events: none;
 }
 
 .content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   text-align: center;
 }
 
-.label {
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
+/* ── Ayla · cámara ────────────────────────────────────────── */
+.labelCamara {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #ff9ec4;
+  color: #8fe3a8;
 }
 
-.title {
-  font-family: var(--font-display);
+.titleCamara {
+  margin: 0;
+  font-family: var(--font-mono);
   font-size: 5rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #fdf3f7;
-  text-shadow: 0 4px 30px rgba(255,120,180,0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f3f6f4;
 }
 
-.subtitle {
+.subtitleCamara {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.btnCamara {
+  padding: 14px 32px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #101314;
+  background: #8fe3a8;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.btnCamara:hover { filter: brightness(1.08); }
+
+.changeCamara {
+  margin-top: 18px;
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.changeCamara:hover { color: rgba(255, 255, 255, 0.75); text-decoration: underline; }
+
+/* ── Soledad · diario ─────────────────────────────────────── */
+.labelDiario {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: #a9762f;
+}
+
+.titleDiario {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 0.9;
+  color: #4a3620;
+  transform: rotate(-1.5deg);
+}
+
+.subtitleDiario {
+  margin: 0;
   font-family: var(--font-body);
   font-style: italic;
   font-size: 0.95rem;
-  color: rgba(255, 224, 238, 0.55);
-  letter-spacing: 0.06em;
+  color: rgba(122, 90, 52, 0.6);
 }
+
+.btnDiario {
+  padding: 13px 32px;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #4a3620;
+  background: #fdf8ee;
+  border: 1px solid rgba(122, 90, 52, 0.3);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(122, 90, 52, 0.14);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btnDiario:hover { background: #fff; transform: translateY(-2px); }
+
+.changeDiario {
+  margin-top: 18px;
+  background: none;
+  border: none;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(122, 90, 52, 0.55);
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  cursor: pointer;
+}
+
+.changeDiario:hover { color: #c9647e; }
 
 .buttons {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 24px;
-  width: 260px;
-}
-
-.btn {
-  padding: 14px 32px;
-  font-family: var(--font-ui);
-  font-size: 0.88rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: #fff;
-  background: linear-gradient(180deg, #ff89b6, #e85a92);
-  border: none;
-  border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(232, 90, 146, 0.4);
-  cursor: pointer;
-  transition: filter 0.2s;
-}
-
-.btn:hover {
-  filter: brightness(1.08);
-}
-
-.btnSecondary {
-  background: transparent;
-  border: 1px solid rgba(255, 224, 238, 0.25);
-  border-radius: 999px;
-  color: rgba(255, 224, 238, 0.65);
-  box-shadow: none;
-}
-
-.btnSecondary:hover {
-  background: rgba(255, 158, 196, 0.08);
-  border-color: rgba(255, 158, 196, 0.5);
-  filter: none;
+  width: 280px;
 }

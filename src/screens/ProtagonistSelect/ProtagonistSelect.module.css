@@ -5,108 +5,70 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 36px;
-  background: #0a0d16;
-  overflow: hidden;
+  gap: 48px;
+  background: #101012;
 }
 
-.screen::before {
-  content: '';
-  position: absolute;
-  inset: -20px;
-  background: url('/assets/backgrounds/campus_noche.png') center center / cover no-repeat;
-  filter: blur(8px);
-  z-index: 0;
-}
-
-.screen::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(120% 100% at 50% 40%, rgba(160,90,150,0.3), rgba(12,9,18,0.92));
-  z-index: 1;
-}
-
-.screen > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* ── Botón volver ────────────────────────────────────────── */
 .backBtn {
   position: absolute;
-  top: 20px;
-  left: 24px;
+  top: 28px;
+  left: 32px;
   background: none;
   border: none;
-  color: rgba(255, 224, 238, 0.55);
+  color: rgba(240, 240, 245, 0.4);
   font-family: var(--font-ui);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-  padding: 6px 0;
+  transition: color 0.2s;
 }
 
-.backBtn:hover {
-  opacity: 1;
-}
+.backBtn:hover { color: rgba(240, 240, 245, 0.75); }
 
 .heading {
   font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #fdf3f7;
+  font-weight: 600;
+  font-size: 1.7rem;
+  letter-spacing: 0.02em;
+  color: rgba(245, 243, 248, 0.9);
   margin: 0;
 }
 
 .cards {
   display: flex;
-  gap: 52px;
-  align-items: flex-start;
+  gap: 40px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  width: 230px;
+  gap: 12px;
+  width: 220px;
   background: none;
   border: none;
-  color: var(--ui-text);
+  color: inherit;
   text-align: center;
-  transition: transform 0.2s ease;
-  position: relative;
   cursor: pointer;
   padding: 0;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
 }
 
-.card:hover:not(:disabled) {
-  transform: translateY(-6px);
-}
-
-.active .portrait {
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.6), 0 16px 40px rgba(0,0,0,0.55);
-}
-
-.locked {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
+.card:hover { opacity: 0.85; }
+.active { opacity: 1; }
 
 .portrait {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  border: 4px solid;
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
+
+.active .portrait { border-color: var(--tint); box-shadow: 0 0 0 1px var(--tint), 0 18px 40px rgba(0, 0, 0, 0.45); }
 
 .portraitImg {
   width: 100%;
@@ -115,114 +77,59 @@
   object-position: top center;
 }
 
-.portraitFallback {
-  width: 100%;
-  height: 100%;
-}
-
 .name {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 4px 0 0;
-  letter-spacing: 0.02em;
-}
-
-.meta {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  color: rgba(255, 224, 238, 0.5);
-  margin: -6px 0 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.01em;
 }
 
 .desc {
+  margin: -6px 0 0;
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.88rem;
-  color: #e6d3df;
+  font-size: 0.78rem;
   line-height: 1.5;
-}
-
-.soon {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-family: var(--font-ui);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 224, 238, 0.65);
-  background: rgba(255,255,255,0.08);
-  border-radius: 999px;
-  padding: 3px 10px;
+  color: rgba(240, 240, 245, 0.55);
 }
 
 .confirmBtn {
-  padding: 16px 56px;
+  padding: 13px 48px;
   font-family: var(--font-ui);
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: #fff;
-  background: linear-gradient(180deg, #ff89b6, #e85a92);
-  border: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 243, 248, 0.9);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(232, 90, 146, 0.45);
-  transition: filter 0.2s, opacity 0.2s;
   cursor: pointer;
+  transition: opacity 0.2s, border-color 0.2s;
 }
 
-.confirmBtn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-  animation: none;
-  filter: none;
-}
+.confirmBtn:disabled { opacity: 0.25; cursor: not-allowed; }
 
-.confirmBtn:not(:disabled):hover {
-  filter: brightness(1.08);
-}
+.confirmBtn:not(:disabled):hover { border-color: rgba(255, 255, 255, 0.7); }
 
-/* ── Créditos de personajes ─────────────────────────────── */
-.characterCredits {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-  max-width: 480px;
-}
-
-.creditsNote {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: 0.72rem;
-  color: rgba(255, 224, 238, 0.3);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.creditsList {
+.credits {
+  position: absolute;
+  bottom: 24px;
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .creditItem {
   font-family: var(--font-body);
-  font-size: 0.74rem;
-  color: rgba(255, 224, 238, 0.38);
+  font-size: 0.7rem;
+  color: rgba(240, 240, 245, 0.28);
 }
 
 .link {
-  color: rgba(255, 158, 196, 0.7);
+  color: rgba(240, 240, 245, 0.4);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.link:hover {
-  color: #ff9ec4;
-  text-decoration: underline;
-}
+.link:hover { color: rgba(240, 240, 245, 0.7); text-decoration: underline; }
