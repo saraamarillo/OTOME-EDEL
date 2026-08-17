@@ -24,6 +24,12 @@
   vertical-align: bottom;
 }
 
+/* Ethan, Ryan, Frey, padre: tamaño completo, sin la reducción del 20% */
+.full .sprite {
+  max-height: 680px;
+  max-width: 600px;
+}
+
 /* Apolo y criaturas pequeñas */
 .small .sprite {
   max-height: 220px;

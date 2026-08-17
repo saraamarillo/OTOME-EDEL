@@ -7,6 +7,9 @@ import styles from './CharacterSprite.module.css'
 /** Expresión de repuesto si ni siquiera el retrato base (neutral) existe para ese look. */
 const NEUTRAL_SUBSTITUTE = 'happy'
 
+/** Personajes cuyo sprite se muestra a tamaño completo, sin la reducción del 20% general. */
+const FULL_SIZE_IDS = ['ethan', 'ryan', 'frey', 'padre']
+
 /**
  * Muestra el sprite centrado del personaje activo.
  *
@@ -51,9 +54,10 @@ export default function CharacterSprite({ characterId, visible = true }) {
   if (stage >= 2) src = avatarSrc ?? bareSrc
 
   const isSmall = charData?.spriteSize === 'small'
+  const isFullSize = FULL_SIZE_IDS.includes(characterId)
 
   return (
-    <div className={`${styles.wrapper} ${visible ? styles.visible : styles.hidden} ${isSmall ? styles.small : ''}`}>
+    <div className={`${styles.wrapper} ${visible ? styles.visible : styles.hidden} ${isSmall ? styles.small : ''} ${isFullSize ? styles.full : ''}`}>
       <img
         className={styles.sprite}
         src={src}
