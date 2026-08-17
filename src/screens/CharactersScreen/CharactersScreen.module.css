@@ -96,17 +96,9 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.cardCamaraPhoto {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
+.cardCamaraPhoto { position: relative; width: 100%; height: 180px; overflow: hidden; }
 
-.cardCamaraPhoto img { width: auto; height: 80%; object-fit: contain; display: block; }
+.cardCamaraPhoto img { width: 100%; height: 155%; object-fit: cover; object-position: top center; display: block; }
 
 .miniBracket { position: absolute; width: 18px; height: 18px; border-color: #8fe3a8; }
 .miniBracketTl { top: 8px; left: 8px; border-top: 2px solid; border-left: 2px solid; }
@@ -171,16 +163,9 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
-.cardDiarioPhoto {
-  width: 100%;
-  height: 170px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
+.cardDiarioPhoto { width: 100%; height: 170px; overflow: hidden; }
 
-.cardDiarioPhoto img { width: auto; height: 80%; object-fit: contain; display: block; }
+.cardDiarioPhoto img { width: 100%; height: 155%; object-fit: cover; object-position: top center; display: block; }
 
 .nameDiario {
   margin-top: 12px;
