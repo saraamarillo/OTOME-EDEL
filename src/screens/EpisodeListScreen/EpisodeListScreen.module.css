@@ -395,10 +395,11 @@
 
 .diarioSynopsis {
   margin: 6px 0 12px;
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  line-height: 1.45;
-  color: #6a5236;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: #1a1512;
 }
 
 .diarioPlayBtn {
