@@ -372,7 +372,7 @@
       "type": "thought",
       "character": null,
       "text": "¿Ojos ámbar? ¿Eso existe? Porque parece sacado de Pinterest.",
-      "protagonistExpression": "blush",
+      "protagonistExpression": "neutral",
       "next": "n_ethan_pres"
     },
     {

@@ -4,16 +4,19 @@ import { useGameStore } from '../../store/gameStore'
 import { NPC_CHARACTERS, PROTAGONISTS } from '../../constants/characters'
 import styles from './CharacterSprite.module.css'
 
-/** Expresión usada como sustituto cuando no hay retrato "neutral" para ese look. */
+/** Expresión de repuesto si ni siquiera el retrato base (neutral) existe para ese look. */
 const NEUTRAL_SUBSTITUTE = 'happy'
 
 /**
  * Muestra el sprite centrado del personaje activo.
  *
  * Ruta del sprite: /assets/sprites/<id>/<look>_<expression>.png
- * Cadena de fallback (por si el look no tiene retrato neutro, p. ej. Soledad):
- *   1. <look>_<expression>.png (o <look>_happy.png si expression es "neutral")
- *   2. <look>.png (retrato base sin expresión)
+ * "neutral" (o cualquier expresión sin retrato propio) usa <look>.png, el
+ * retrato base serio/neutro que ahora tiene cada personaje.
+ * Cadena de fallback:
+ *   1. <look>_<expression>.png (o <look>.png si expression es "neutral")
+ *   2. <look>.png — si faltaba una emoción concreta, cae al neutral;
+ *      <look>_happy.png — si ni el neutral existe
  *   3. avatar genérico del personaje
  *
  * lookChanges en los nodos JSON cambian el look via gameStore.
@@ -29,7 +32,7 @@ export default function CharacterSprite({ characterId, visible = true }) {
   const [stage, setStage] = useState(0)
 
   const isNeutral   = expression === 'neutral'
-  const primarySrc  = characterId ? `/assets/sprites/${characterId}/${look}${isNeutral ? `_${NEUTRAL_SUBSTITUTE}` : `_${expression}`}.png` : null
+  const primarySrc  = characterId ? `/assets/sprites/${characterId}/${look}${isNeutral ? '' : `_${expression}`}.png` : null
 
   useEffect(() => { setStage(0) }, [characterId, look, expression])
 
@@ -39,11 +42,12 @@ export default function CharacterSprite({ characterId, visible = true }) {
 
   if (charData?.protagonistOnly && charData.protagonistOnly !== protagonistId) return null
 
-  const bareSrc   = `/assets/sprites/${characterId}/${look}.png`
-  const avatarSrc = charData?.avatar ?? null
+  const bareSrc      = `/assets/sprites/${characterId}/${look}.png`
+  const substituteSrc = `/assets/sprites/${characterId}/${look}_${NEUTRAL_SUBSTITUTE}.png`
+  const avatarSrc    = charData?.avatar ?? null
 
   let src = primarySrc
-  if (stage === 1) src = bareSrc
+  if (stage === 1) src = isNeutral ? substituteSrc : bareSrc
   if (stage >= 2) src = avatarSrc ?? bareSrc
 
   const isSmall = charData?.spriteSize === 'small'

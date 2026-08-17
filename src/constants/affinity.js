@@ -8,9 +8,8 @@ export const AFFINITY_DEFAULT = 0
  * El sprite que se carga es: /assets/sprites/<id>/<expression>.png
  */
 // sad y angry solo se activan manualmente por nodo ("expression": "sad")
-// La afinidad solo cambia el sprite entre neutral / happy / blush
+// La afinidad solo cambia el sprite entre neutral / happy
 export const AFFINITY_THRESHOLDS = {
-  veryHigh: { min: 80, expression: 'blush' },
   high:     { min: 60, expression: 'happy' },
   neutral:  { min: 0,  expression: 'neutral' },
 }
