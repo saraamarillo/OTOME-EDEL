@@ -23,7 +23,7 @@ export const PROTAGONISTS = [
     description: 'Estudiante de arte y arqueología. Porte elegante, mirada serena y un ligero acento nórdico.',
     landingBio: 'Estudio arte y arqueología, aunque a veces siento que investigo más a las personas que a las piedras. Vengo de lejos, pero esta ciudad empieza a sentirse menos extraña de lo que esperaba.',
     creator: 'isaweakness',
-    avatar: '/assets/avatars/Ayla.png',
+    avatar: '/assets/sprites/ayla/arc1_happy.png',
     color: 'var(--color-ayla)',
     available: true,
   },
