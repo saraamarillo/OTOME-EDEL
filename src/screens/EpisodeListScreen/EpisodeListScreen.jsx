@@ -31,7 +31,7 @@ export default function EpisodeListScreen() {
     setScreen('game')
   }
 
-  function renderCard(ep, { completed: isCompleted }) {
+  function renderCamaraCard(ep, { completed: isCompleted }) {
     const meta = EPISODES[ep]
     const timesPlayed = playCounts[ep] ?? 0
     return (
@@ -69,6 +69,40 @@ export default function EpisodeListScreen() {
     )
   }
 
+  function renderDiarioCard(ep, { completed: isCompleted }) {
+    const meta = EPISODES[ep]
+    const timesPlayed = playCounts[ep] ?? 0
+    return (
+      <div key={ep} className={styles.diarioCard}>
+        <div className={styles.diarioTape} />
+        <div className={styles.diarioPhoto}>
+          <img src={EPISODE_COVERS[protagonistId]?.[ep] ?? EPISODE_COVERS.default[ep]} alt="" />
+        </div>
+        <div className={styles.diarioHeading}>
+          <span className={styles.diarioNumber}>Episodio {ep}</span> · {meta?.title}
+        </div>
+        <p className={styles.diarioSynopsis}>{meta?.synopsis}</p>
+        <div className={styles.epProgressRow}>
+          <div className={styles.progressTrack}>
+            <div className={styles.progressFill} style={{ width: isCompleted ? '100%' : '0%' }} />
+          </div>
+          <span className={styles.progressPct}>{isCompleted ? '100 %' : '0 %'}</span>
+        </div>
+        <button className={styles.diarioPlayBtn} onClick={() => handlePlay(ep)}>
+          {isCompleted ? 'Volver a jugar el episodio' : 'Comenzar episodio'}
+        </button>
+        {isCompleted && (
+          <span className={styles.diarioPlayCount}>
+            Jugado {timesPlayed} {timesPlayed === 1 ? 'vez' : 'veces'}
+          </span>
+        )}
+      </div>
+    )
+  }
+
+  const isDiario = theme.mode === 'diario'
+  const renderEpisode = isDiario ? renderDiarioCard : renderCamaraCard
+
   return (
     <div className={styles.screen} data-theme={theme.mode} style={{ background: theme.bg, '--accent': theme.accent }}>
       <RouteNav active="episodeList" />
@@ -96,7 +130,13 @@ export default function EpisodeListScreen() {
         {pendingList.length > 0 && (
           <>
             <div className={styles.sectionLabel}>Episodios disponibles</div>
-            {pendingList.map((ep) => renderCard(ep, { completed: false }))}
+            {isDiario ? (
+              <div className={styles.grid}>
+                {pendingList.map((ep) => renderEpisode(ep, { completed: false }))}
+              </div>
+            ) : (
+              pendingList.map((ep) => renderEpisode(ep, { completed: false }))
+            )}
           </>
         )}
 
@@ -111,7 +151,13 @@ export default function EpisodeListScreen() {
         {completedList.length > 0 && (
           <>
             <div className={styles.sectionLabel} style={{ marginTop: 34 }}>Episodios terminados</div>
-            {completedList.map((ep) => renderCard(ep, { completed: true }))}
+            {isDiario ? (
+              <div className={styles.grid}>
+                {completedList.map((ep) => renderEpisode(ep, { completed: true }))}
+              </div>
+            ) : (
+              completedList.map((ep) => renderEpisode(ep, { completed: true }))
+            )}
           </>
         )}
       </div>

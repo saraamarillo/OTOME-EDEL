@@ -384,13 +384,75 @@
 .screen[data-theme='camara'] .card::after { bottom: 34px; right: 8px; border-bottom: 2px solid; border-right: 2px solid; }
 
 /* ── Soledad · diario ─────────────────────────────────────── */
-.screen[data-theme='diario'] .title { font-family: var(--font-hand); font-size: 3rem; transform: rotate(-1deg); }
-.screen[data-theme='diario'] .tab { font-family: var(--font-hand); font-weight: 700; font-size: 1.05rem; border-style: dashed; }
-.screen[data-theme='diario'] .tabActive { color: #fff; }
+.screen[data-theme='diario'] .title { font-family: var(--font-hand); font-size: 3rem; color: var(--color-soledad); transform: rotate(-1deg); }
+.screen[data-theme='diario'] .tab {
+  border: none;
+  border-radius: 0;
+  background: none;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: rgba(227, 142, 31, 0.65);
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+.screen[data-theme='diario'] .tab:hover:not(:disabled) { color: var(--color-soledad); filter: none; }
+.screen[data-theme='diario'] .tabActive { background: none; color: var(--color-soledad); text-decoration-style: solid; }
 
-.screen[data-theme='diario'] .epBadge { font-family: var(--font-hand); font-size: 1.7rem; }
+.screen[data-theme='diario'] .epBadge {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  font-family: var(--font-hand);
+  font-size: 1.8rem;
+  color: var(--color-soledad);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.screen[data-theme='diario'] .epCount { background: none; font-family: var(--font-hand); font-weight: 600; }
 .screen[data-theme='diario'] .cardTitle { font-family: var(--font-hand); font-weight: 700; font-size: 1.1rem; color: #4a3620; }
 .screen[data-theme='diario'] .cardSub { font-family: var(--font-body); }
+
+.screen[data-theme='diario'] .replayBtn {
+  background: none;
+  box-shadow: none;
+  padding: 4px 2px;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-soledad);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.screen[data-theme='diario'] .replayBtn:hover { filter: none; opacity: 0.7; }
+.screen[data-theme='diario'] .replayBtnDisabled {
+  background: none;
+  box-shadow: none;
+  padding: 4px 2px;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: rgba(122, 90, 52, 0.4);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.screen[data-theme='diario'] .playCount { font-family: var(--font-body); }
+.screen[data-theme='diario'] .playCount b { color: var(--color-soledad); }
+
+.screen[data-theme='diario'] .lockedModalBtn {
+  background: none;
+  box-shadow: none;
+  padding: 4px 2px;
+  border-radius: 0;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-soledad);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.screen[data-theme='diario'] .lockedModalBtn:hover { filter: none; opacity: 0.7; }
+.screen[data-theme='diario'] .lockedModalTitle { font-family: var(--font-hand); color: #4a3620; }
 
 .screen[data-theme='diario'] .card { position: relative; }
 .screen[data-theme='diario'] .card::before {

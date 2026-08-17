@@ -136,14 +136,14 @@
   font-family: var(--font-hand);
   font-weight: 600;
   font-size: 15px;
-  color: rgba(122, 90, 52, 0.6);
+  color: rgba(227, 142, 31, 0.65);
   text-decoration: underline;
   text-decoration-style: dashed;
   transform: rotate(-1deg);
   cursor: pointer;
 }
 
-.changeBtnDiario:hover { color: #a9762f; }
+.changeBtnDiario:hover { color: var(--color-soledad); }
 
 .heartBtnDiario {
   position: absolute;
@@ -155,7 +155,7 @@
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
-  color: #c9647e;
+  color: var(--color-soledad);
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -183,7 +183,7 @@
   font-family: var(--font-hand);
   font-weight: 700;
   font-size: 19px;
-  color: #a9762f;
+  color: var(--color-soledad);
   cursor: pointer;
 }
 
@@ -192,7 +192,7 @@
 .tabDiario:nth-child(2) { transform: rotate(1deg); }
 .tabDiario:nth-child(3) { transform: rotate(-1deg); }
 
-.tabActive { background: #fff; color: #c9647e; border-color: rgba(201, 100, 126, 0.4); }
+.tabActive { background: #fff; color: var(--color-soledad); border-color: rgba(227, 142, 31, 0.4); text-decoration: underline; }
 
 /* ── Modal de créditos ────────────────────────────────────── */
 .creditsOverlay {

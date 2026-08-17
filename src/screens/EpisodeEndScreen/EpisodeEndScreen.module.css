@@ -97,7 +97,7 @@
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.06em;
-  color: #a9762f;
+  color: var(--color-soledad);
 }
 
 .titleDiario {
@@ -119,20 +119,20 @@
 }
 
 .btnDiario {
-  padding: 13px 32px;
+  padding: 4px 2px;
   font-family: var(--font-hand);
   font-weight: 700;
-  font-size: 1.1rem;
-  color: #4a3620;
-  background: #fdf8ee;
-  border: 1px solid rgba(122, 90, 52, 0.3);
-  border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(122, 90, 52, 0.14);
+  font-size: 1.3rem;
+  color: var(--color-soledad);
+  background: none;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition: opacity 0.2s;
 }
 
-.btnDiario:hover { background: #fff; transform: translateY(-2px); }
+.btnDiario:hover { opacity: 0.7; }
 
 .changeDiario {
   margin-top: 18px;
@@ -141,13 +141,13 @@
   font-family: var(--font-hand);
   font-weight: 600;
   font-size: 1rem;
-  color: rgba(122, 90, 52, 0.55);
+  color: rgba(227, 142, 31, 0.65);
   text-decoration: underline;
   text-decoration-style: dashed;
   cursor: pointer;
 }
 
-.changeDiario:hover { color: #c9647e; }
+.changeDiario:hover { color: var(--color-soledad); }
 
 .buttons {
   display: flex;

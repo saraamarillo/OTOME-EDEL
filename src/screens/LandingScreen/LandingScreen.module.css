@@ -134,7 +134,7 @@
   font-family: var(--font-hand);
   font-weight: 700;
   font-size: 17px;
-  color: #a9762f;
+  color: var(--color-soledad);
 }
 
 .h1Diario {
@@ -143,7 +143,7 @@
   font-weight: 700;
   font-size: 104px;
   line-height: 0.9;
-  color: #4a3620;
+  color: var(--color-soledad);
   transform: rotate(-1.5deg);
 }
 
@@ -166,7 +166,9 @@
   font-family: var(--font-hand);
   font-weight: 700;
   font-size: 30px;
-  color: #c9647e;
+  color: var(--color-soledad);
+  text-decoration: underline;
+  text-underline-offset: 5px;
   display: flex;
   align-items: center;
   gap: 8px;
