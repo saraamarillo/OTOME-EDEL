@@ -377,7 +377,7 @@
     { "id": "s8_d17c4", "type": "narration", "character": null, "text": "Y no dice nada más. Pero toma nota.", "next": "s8_conv07" },
     { "id": "s8_conv07", "type": "dialogue", "character": "ryan", "text": "Buenas. Venimos a preguntar si se sabe algo de una chica que ha desaparecido cerca de la fábrica de harina.", "next": "s8_conv08" },
     { "id": "s8_conv08", "type": "dialogue", "character": "policia", "text": "¿Y por qué estabais en la fábrica de harina?", "next": "s8_conv09" },
-    { "id": "s8_conv09", "type": "thought", "character": null, "protagonistExpression": "neutral", "text": "Madre mía qué guapo es este policía… céntrate, Sol, has venido por Ayla. Menos mal que Ryan ha hablado primero.", "next": "s8_conv10" },
+    { "id": "s8_conv09", "type": "thought", "character": null, "protagonistExpression": "neutral", "text": "Nunca había estado en una comisaría. Céntrate, Sol, has venido por Ayla. Menos mal que Ryan ha hablado primero.", "next": "s8_conv10" },
     { "id": "s8_conv10", "type": "dialogue", "character": "ryan", "text": "Hemos pasado cerca y nuestra amiga ha desaparecido.", "next": "s8_conv11" },
     { "id": "s8_conv11", "type": "dialogue", "character": null, "protagonistExpression": "sad", "text": "Sí, y luego hemos escuchado voces, pero no se podía pasar.", "next": "s8_conv12" },
     { "id": "s8_conv12", "type": "dialogue", "character": "policia", "text": "Aquí no sabemos nada de ninguna chica. ¿Cómo es?", "next": "s8_conv13" },
