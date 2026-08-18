@@ -91,6 +91,7 @@ export default function GameScreen() {
         {/* ── Hamburger (top-left) ──────────────────────────── */}
         <button
           className={styles.hamburgerBtn}
+          data-theme={routeTheme.mode}
           title="Menú"
           onClick={(e) => { e.stopPropagation(); setMenuOpen((o) => !o); setVolumeOpen(false) }}
         >
@@ -120,7 +121,7 @@ export default function GameScreen() {
             className={styles.menuOverlay}
             onClick={(e) => { e.stopPropagation(); setMenuOpen(false) }}
           >
-            <nav className={styles.menuDrawer} onClick={(e) => e.stopPropagation()}>
+            <nav className={styles.menuDrawer} data-theme={routeTheme.mode} onClick={(e) => e.stopPropagation()}>
               <p className={styles.drawerLogo}>EDEL</p>
               <button
                 className={styles.drawerItem}
@@ -198,7 +199,7 @@ export default function GameScreen() {
       {/* ── Diálogo de confirmación de salida ─────────────── */}
       {confirmMenu && (
         <div className={styles.confirmOverlay} onClick={(e) => e.stopPropagation()}>
-          <div className={styles.confirmBox}>
+          <div className={styles.confirmBox} data-theme={routeTheme.mode}>
             <p className={styles.confirmText}>
               {confirmMenu === 'protagonistSelect'
                 ? '¿Volver a elegir protagonista?'
