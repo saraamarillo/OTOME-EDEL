@@ -10,6 +10,8 @@ export default function EpisodeListScreen() {
   const setScene            = useGameStore((s) => s.setScene)
   const setSelectedEpisode  = useGameStore((s) => s.setSelectedEpisode)
   const selectProtagonist   = useGameStore((s) => s.selectProtagonist)
+  const snapshotAffinityForEpisode = useGameStore((s) => s.snapshotAffinityForEpisode)
+  const restoreAffinityForEpisode  = useGameStore((s) => s.restoreAffinityForEpisode)
   const protagonistId       = useGameStore((s) => s.protagonistId)
   const protagonist         = PROTAGONISTS.find((p) => p.id === protagonistId)
   const theme                = ROUTE_THEME[protagonistId] ?? ROUTE_THEME.ayla
@@ -26,6 +28,11 @@ export default function EpisodeListScreen() {
   const noMoreEpisodes  = pendingList.length === 0 && AVAILABLE_EPISODES.length < TOTAL_EPISODES
 
   function handlePlay(ep) {
+    if (completed.includes(ep)) {
+      restoreAffinityForEpisode(ep)
+    } else {
+      snapshotAffinityForEpisode(ep)
+    }
     setSelectedEpisode(ep)
     setScene(getFirstScene(ep, protagonistId))
     setScreen('game')

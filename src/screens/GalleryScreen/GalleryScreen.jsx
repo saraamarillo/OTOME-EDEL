@@ -14,18 +14,27 @@ export default function GalleryScreen() {
   const selectProtagonist  = useGameStore((s) => s.selectProtagonist)
   const unlockedAll        = useGameStore((s) => s.unlockedImages)
   const playCountsAll      = useGameStore((s) => s.episodePlayCounts)
+  const completedAll       = useGameStore((s) => s.completedEpisodes)
   const protagonistId      = useGameStore((s) => s.protagonistId)
   const protagonist        = PROTAGONISTS.find((p) => p.id === protagonistId)
   const theme               = ROUTE_THEME[protagonistId] ?? ROUTE_THEME.ayla
+  const snapshotAffinityForEpisode = useGameStore((s) => s.snapshotAffinityForEpisode)
+  const restoreAffinityForEpisode  = useGameStore((s) => s.restoreAffinityForEpisode)
   const [viewing, setViewing] = useState(null)
   const [showLocked, setShowLocked] = useState(false)
 
   const unlockedImages = unlockedAll[protagonistId] ?? []
   const playCounts     = playCountsAll[protagonistId] ?? {}
+  const completed      = completedAll[protagonistId] ?? []
 
   const items = ALL_IMAGES.filter((img) => img.routes.includes(protagonistId))
 
   function handlePlayEpisode(ep) {
+    if (completed.includes(ep)) {
+      restoreAffinityForEpisode(ep)
+    } else {
+      snapshotAffinityForEpisode(ep)
+    }
     setSelectedEpisode(ep)
     setScene(getFirstScene(ep, protagonistId))
     setScreen('game')

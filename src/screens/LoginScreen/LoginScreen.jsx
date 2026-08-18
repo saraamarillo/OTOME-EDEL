@@ -4,7 +4,6 @@ import styles from './LoginScreen.module.css'
 
 export default function LoginScreen() {
   const login = useGameStore((s) => s.login)
-  const loginAsGuest = useGameStore((s) => s.loginAsGuest)
   const setScreen = useGameStore((s) => s.setScreen)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -56,10 +55,6 @@ export default function LoginScreen() {
             Entrar
           </button>
         </form>
-
-        <button className={styles.back} onClick={loginAsGuest}>
-          Jugar como invitada
-        </button>
 
         <button className={styles.back} onClick={() => setScreen('title')}>
           ← Volver

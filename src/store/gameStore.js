@@ -73,6 +73,11 @@ const migratePlayCounts = (raw) => {
   return buildRoutePlayCounts()
 }
 
+const migrateAffinitySnapshots = (raw) => {
+  if (!raw) return { soledad: {}, ayla: {}, maven: {} }
+  return { soledad: raw.soledad ?? {}, ayla: raw.ayla ?? {}, maven: raw.maven ?? {} }
+}
+
 export const useGameStore = create((set, get) => ({
   // ── Sesión de usuario (cuenta única fija, guardado en localStorage) ─
   userId: null,
@@ -91,6 +96,7 @@ export const useGameStore = create((set, get) => ({
       episodePlayCounts: migratePlayCounts(save?.episodePlayCounts),
       affinities:      migrateAffinities(save?.affinities),
       encounteredNPCs: migrateEncountered(save?.encounteredNPCs),
+      affinitySnapshots: migrateAffinitySnapshots(save?.affinitySnapshots),
     })
   },
 
@@ -114,18 +120,6 @@ export const useGameStore = create((set, get) => ({
     return { status: 'ok' }
   },
 
-  /** Modo invitado: juega sin guardar el progreso. */
-  loginAsGuest: () => set({
-    userId: null,
-    userName: 'Invitada',
-    completedEpisodes: buildRouteEpisodes(),
-    episodePlayCounts: buildRoutePlayCounts(),
-    unlockedImages: buildRouteEpisodes(),
-    affinities: buildRouteAffinities(),
-    encounteredNPCs: buildRouteEncountered(),
-    currentScreen: 'protagonistSelect',
-  }),
-
   logout: () => {
     localStorage.removeItem(AUTH_KEY)
     set({
@@ -137,6 +131,7 @@ export const useGameStore = create((set, get) => ({
       affinities: buildRouteAffinities(), characterLooks: {},
       visitedScenes: [], unlockedImages: buildRouteEpisodes(), imageReveal: null,
       encounteredNPCs: buildRouteEncountered(),
+      affinitySnapshots: { soledad: {}, ayla: {}, maven: {} },
     })
   },
 
@@ -164,6 +159,7 @@ export const useGameStore = create((set, get) => ({
       unlockedImages: state.unlockedImages,
       affinities: state.affinities,
       encounteredNPCs: state.encounteredNPCs,
+      affinitySnapshots: state.affinitySnapshots,
     })
   },
 
@@ -241,6 +237,34 @@ export const useGameStore = create((set, get) => ({
   getAffinity: (characterId) => {
     const { protagonistId, affinities } = get()
     return affinities[protagonistId]?.[characterId] ?? AFFINITY_DEFAULT
+  },
+
+  // ── Foto de las afinidades justo antes de jugar un episodio por
+  // primera vez, para poder resetearlas si se vuelve a jugar ──────
+  affinitySnapshots: { soledad: {}, ayla: {}, maven: {} },
+  /** Guarda la afinidad actual como punto de partida de epNum, solo si aún no existe. */
+  snapshotAffinityForEpisode: (epNum) => {
+    const pid = get().protagonistId
+    if (!pid) return
+    set((state) => {
+      const routeSnapshots = state.affinitySnapshots[pid] ?? {}
+      if (routeSnapshots[epNum]) return state
+      return {
+        affinitySnapshots: {
+          ...state.affinitySnapshots,
+          [pid]: { ...routeSnapshots, [epNum]: { ...state.affinities[pid] } },
+        },
+      }
+    })
+  },
+  /** Al rejugar un episodio, vuelve la afinidad al punto justo antes de jugarlo la primera vez. */
+  restoreAffinityForEpisode: (epNum) => {
+    const pid = get().protagonistId
+    if (!pid) return
+    const snapshot = get().affinitySnapshots[pid]?.[epNum]
+    if (!snapshot) return
+    set((state) => ({ affinities: { ...state.affinities, [pid]: { ...snapshot } } }))
+    get().saveProgress()
   },
 
   // ── Looks de personaje (cambian según el arco) ─────────────
