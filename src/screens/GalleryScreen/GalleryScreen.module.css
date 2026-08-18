@@ -244,12 +244,61 @@
   cursor: pointer;
 }
 
+.lightboxCard {
+  position: relative;
+  max-width: 90vw;
+  max-height: 78vh;
+  cursor: default;
+}
+
 .lightboxImg {
-  max-width: 90%;
-  max-height: 80%;
+  display: block;
+  max-width: 90vw;
+  max-height: 78vh;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 0;
+}
+
+/* ── Ayla · ajustes de cámara ─────────────────────────────── */
+.lightboxCard[data-theme='camara'] {
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 60px rgba(255, 255, 255, 0.06);
+}
+.lightboxCard[data-theme='camara']::before,
+.lightboxCard[data-theme='camara']::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: #8fe3a8;
+  pointer-events: none;
+  z-index: 2;
+}
+.lightboxCard[data-theme='camara']::before { top: 8px; left: 8px; border-top: 3px solid; border-left: 3px solid; }
+.lightboxCard[data-theme='camara']::after  { bottom: 8px; right: 8px; border-bottom: 3px solid; border-right: 3px solid; }
+
+/* ── Soledad · hoja de diario ─────────────────────────────── */
+.lightboxCard[data-theme='diario'] {
+  padding: 18px 18px 24px;
+  background: #fffdf8;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transform: rotate(-1deg);
+}
+.lightboxCard[data-theme='diario'] .lightboxImg {
+  max-width: calc(90vw - 36px);
+  max-height: calc(78vh - 42px);
+}
+.lightboxCard[data-theme='diario']::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 34px;
+  width: 62px;
+  height: 26px;
+  background: rgba(230, 210, 180, 0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: rotate(-8deg);
+  z-index: 2;
 }
 
 .lightboxHint {

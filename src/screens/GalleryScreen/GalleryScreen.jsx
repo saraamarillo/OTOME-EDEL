@@ -18,8 +18,7 @@ export default function GalleryScreen() {
   const protagonistId      = useGameStore((s) => s.protagonistId)
   const protagonist        = PROTAGONISTS.find((p) => p.id === protagonistId)
   const theme               = ROUTE_THEME[protagonistId] ?? ROUTE_THEME.ayla
-  const snapshotAffinityForEpisode = useGameStore((s) => s.snapshotAffinityForEpisode)
-  const restoreAffinityForEpisode  = useGameStore((s) => s.restoreAffinityForEpisode)
+  const resetRouteAffinity  = useGameStore((s) => s.resetRouteAffinity)
   const [viewing, setViewing] = useState(null)
   const [showLocked, setShowLocked] = useState(false)
 
@@ -31,9 +30,7 @@ export default function GalleryScreen() {
 
   function handlePlayEpisode(ep) {
     if (completed.includes(ep)) {
-      restoreAffinityForEpisode(ep)
-    } else {
-      snapshotAffinityForEpisode(ep)
+      resetRouteAffinity()
     }
     setSelectedEpisode(ep)
     setScene(getFirstScene(ep, protagonistId))
@@ -141,7 +138,9 @@ export default function GalleryScreen() {
 
       {viewing && (
         <div className={styles.lightbox} onClick={() => setViewing(null)}>
-          <img src={`/assets/gallery/${ALL_IMAGES.find((i) => i.id === viewing)?.file}`} alt={viewing} className={styles.lightboxImg} />
+          <div className={styles.lightboxCard} data-theme={theme.mode} onClick={(e) => e.stopPropagation()}>
+            <img src={`/assets/gallery/${ALL_IMAGES.find((i) => i.id === viewing)?.file}`} alt={viewing} className={styles.lightboxImg} />
+          </div>
           <p className={styles.lightboxHint}>Toca para cerrar</p>
         </div>
       )}

@@ -2,6 +2,7 @@ import { useGameStore } from '../../store/gameStore'
 import { NPC_CHARACTERS, PROTAGONISTS } from '../../constants/characters'
 import { AFFINITY_MAX } from '../../constants/affinity'
 import { ROUTE_THEME } from '../../constants/theme'
+import { getSoledadNote } from '../../constants/characterNotes'
 import RouteNav from '../../components/RouteNav/RouteNav'
 import styles from './CharactersScreen.module.css'
 
@@ -90,6 +91,7 @@ function CamaraCard({ ch }) {
 }
 
 function DiarioCard({ ch, index }) {
+  const note = getSoledadNote(ch.id, ch.affinity)
   return (
     <div className={styles.cardDiario} style={{ transform: `rotate(${index % 2 === 0 ? -1.6 : 1.8}deg)` }}>
       <div className={styles.tapeSmall} />
@@ -105,6 +107,7 @@ function DiarioCard({ ch, index }) {
       <div className={styles.barTrackDiario}>
         <div className={styles.barFill} style={{ width: `${ch.affinity}%`, background: ch.color }} />
       </div>
+      {note && <p className={styles.noteDiario}>«{note}»</p>}
     </div>
   )
 }
