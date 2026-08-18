@@ -111,8 +111,8 @@
 
 .protagImg {
   width: 100%;
-  height: 100%;
+  height: 200%;
   object-fit: cover;
-  object-position: center 14%;
+  object-position: top center;
   display: block;
 }

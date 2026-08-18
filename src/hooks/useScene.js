@@ -53,7 +53,10 @@ export function useScene(sceneId) {
   useEffect(() => {
     const spriteChar   = currentNode?.activeCharacter ?? null
     const dialogueChar = currentNode?.character ?? null
-    setActiveCharacter(spriteChar ?? dialogueChar ?? null)
+    // hideSprite: el personaje habla (nombre y bocadillo normales) pero su
+    // sprite no se muestra todavía (voz sin cuerpo en pantalla, p. ej. Frey
+    // hablando a través de la grieta antes de aparecer).
+    setActiveCharacter(currentNode?.hideSprite ? null : (spriteChar ?? dialogueChar ?? null))
 
     if (spriteChar)   markNpcEncountered(spriteChar)
     if (dialogueChar) markNpcEncountered(dialogueChar)
