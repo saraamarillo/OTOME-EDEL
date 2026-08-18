@@ -345,12 +345,13 @@
 }
 
 .revealCard {
+  position: relative;
   width: 680px;
   padding: 28px 28px 22px;
   border-radius: 26px;
   text-align: center;
   background: linear-gradient(180deg, #2a1c2e, #1c1422);
-  border: 1px solid var(--accent, rgba(255, 158, 196, 0.45));
+  border: 1px solid rgba(255, 158, 196, 0.45);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -363,14 +364,14 @@
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--accent, #ff9ec4);
+  color: #ff9ec4;
 }
 
 .revealImgWrap {
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  border: 3px solid var(--accent, rgba(255, 158, 196, 0.75));
+  border: 3px solid rgba(255, 158, 196, 0.75);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -422,7 +423,7 @@
   font-weight: 800;
   font-size: 0.95rem;
   color: #fff;
-  background: var(--accent, #e85a92);
+  background: #e85a92;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   transition: filter 0.2s;
 }
@@ -441,6 +442,154 @@
   color: #fdf3f7;
   transition: background 0.2s;
 }
+
+/* ── Ayla · ajustes de cámara ─────────────────────────────── */
+.revealCard[data-theme='camara'] {
+  background: #101314;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+}
+
+.revealCard[data-theme='camara'] .revealLabel {
+  font-family: var(--font-mono);
+  letter-spacing: 0.2em;
+  color: #8fe3a8;
+}
+
+.revealCard[data-theme='camara'] .revealImgWrap {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.revealCard[data-theme='camara'] .revealImgWrap::before,
+.revealCard[data-theme='camara'] .revealImgWrap::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-color: #8fe3a8;
+  z-index: 2;
+  pointer-events: none;
+}
+.revealCard[data-theme='camara'] .revealImgWrap::before { top: 10px; left: 10px; border-top: 3px solid; border-left: 3px solid; }
+.revealCard[data-theme='camara'] .revealImgWrap::after  { bottom: 10px; right: 10px; border-bottom: 3px solid; border-right: 3px solid; }
+
+.revealCard[data-theme='camara'] .revealCaptionTitle {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.revealCard[data-theme='camara'] .revealCaptionSub {
+  font-family: var(--font-mono);
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.revealCard[data-theme='camara'] .revealBtn {
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #8fe3a8;
+  color: #101314;
+  box-shadow: none;
+}
+.revealCard[data-theme='camara'] .revealBtn:hover { filter: brightness(1.05); }
+
+.revealCard[data-theme='camara'] .revealBtnGhost {
+  border-radius: 2px;
+  border-color: rgba(255, 255, 255, 0.3);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.75);
+}
+.revealCard[data-theme='camara'] .revealBtnGhost:hover { background: rgba(255, 255, 255, 0.08); }
+
+/* ── Soledad · hoja de diario ─────────────────────────────── */
+.revealCard[data-theme='diario'] {
+  background: linear-gradient(180deg, #fbf5e6, #f6ecd8);
+  border: 1px solid rgba(122, 90, 52, 0.25);
+  border-radius: 4px;
+}
+
+.revealCard[data-theme='diario']::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background-image: repeating-linear-gradient(180deg, transparent 0 35px, rgba(150, 110, 60, 0.14) 35px 36px);
+  pointer-events: none;
+}
+
+.revealCard[data-theme='diario'] .revealLabel {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: var(--color-soledad);
+}
+
+.revealCard[data-theme='diario'] .revealImgWrap {
+  border: none;
+  box-shadow: 0 14px 30px rgba(90, 60, 30, 0.3);
+  transform: rotate(-1deg);
+}
+
+.revealCard[data-theme='diario'] .revealImgWrap::before,
+.revealCard[data-theme='diario'] .revealImgWrap::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  width: 54px;
+  height: 22px;
+  background: rgba(230, 210, 180, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+.revealCard[data-theme='diario'] .revealImgWrap::before { left: 24px; transform: rotate(-6deg); }
+.revealCard[data-theme='diario'] .revealImgWrap::after  { right: 24px; transform: rotate(6deg); }
+
+.revealCard[data-theme='diario'] .revealCaptionTitle {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.revealCard[data-theme='diario'] .revealCaptionSub {
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.revealCard[data-theme='diario'] .revealBtn {
+  padding: 6px 4px;
+  background: none;
+  box-shadow: none;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-soledad);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.revealCard[data-theme='diario'] .revealBtn:hover { filter: none; opacity: 0.7; }
+
+.revealCard[data-theme='diario'] .revealBtnGhost {
+  padding: 6px 4px;
+  border: none;
+  background: none;
+  font-family: var(--font-hand);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: rgba(227, 142, 31, 0.65);
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+.revealCard[data-theme='diario'] .revealBtnGhost:hover { background: none; color: var(--color-soledad); }
 
 .revealBtnGhost:hover { background: rgba(255, 255, 255, 0.08); }
 

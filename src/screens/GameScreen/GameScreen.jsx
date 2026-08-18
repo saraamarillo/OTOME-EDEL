@@ -11,6 +11,7 @@ import PhoneCallOverlay, { PhoneIcon } from '../../components/PhoneCallOverlay/P
 import ChatMessageOverlay, { ChatIcon } from '../../components/ChatMessageOverlay/ChatMessageOverlay'
 import { getGalleryImage } from '../../constants/galleryImages'
 import { PROTAGONISTS } from '../../constants/characters'
+import { ROUTE_THEME } from '../../constants/theme'
 import styles from './GameScreen.module.css'
 
 export default function GameScreen() {
@@ -27,6 +28,7 @@ export default function GameScreen() {
   const chatActive         = useGameStore((s) => s.chatActive)
   const protagonistId      = useGameStore((s) => s.protagonistId)
   const accent             = PROTAGONISTS.find((p) => p.id === protagonistId)?.color ?? '#e38e1f'
+  const routeTheme         = ROUTE_THEME[protagonistId] ?? ROUTE_THEME.ayla
 
   const [confirmMenu, setConfirmMenu] = useState(null)   // 'protagonistSelect' | 'episodeList'
   const [menuOpen,    setMenuOpen]    = useState(false)
@@ -222,13 +224,16 @@ export default function GameScreen() {
       {/* ── Imagen desbloqueada ───────────────────────────── */}
       {imageReveal && (() => {
         const meta = getGalleryImage(imageReveal)
+        const isCamara = routeTheme.mode === 'camara'
         return (
           <div className={styles.imageReveal} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.revealCard} style={{ '--accent': accent }}>
-              <p className={styles.revealLabel}>♥ Recuerdo desbloqueado ♥</p>
+            <div className={styles.revealCard} data-theme={routeTheme.mode}>
+              <p className={styles.revealLabel}>
+                {isCamara ? '◆ RECUERDO CAPTURADO ◆' : '♥ Recuerdo desbloqueado ♥'}
+              </p>
               <div className={styles.revealImgWrap}>
                 <img
-                  src={`/assets/gallery/${imageReveal}.png`}
+                  src={`/assets/gallery/${meta?.file}`}
                   alt=""
                   className={styles.revealImg}
                 />

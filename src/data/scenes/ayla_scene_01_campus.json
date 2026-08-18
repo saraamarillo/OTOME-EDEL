@@ -508,7 +508,7 @@
       "character": null,
       "text": "Bueno... al menos parece buena persona.",
       "next": "n_caf_01",
-      "background": "cafeteria_universidad_dia"
+      "background": "cafeteria_universidad_noche"
     },
     {
       "id": "n_caf_01",
@@ -542,7 +542,7 @@
       "character": null,
       "text": "Ayla apoya la botella de agua sobre la mesa. La luz cálida de la cafetería les envuelve a los tres.",
       "next": "n_cg_thought",
-      "unlockImage": "ethan_cafeteria"
+      "unlockImage": "ethan_cafeteria_ayla"
     },
     {
       "id": "n_cg_thought",

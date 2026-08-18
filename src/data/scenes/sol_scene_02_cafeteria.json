@@ -100,7 +100,7 @@
       "text": "Las dos tazas de chocolate caliente humeantes sobre la mesa. Soledad tiene que admitir que el ambiente resulta más acogedor de lo esperado.",
       "protagonistExpression": "happy",
       "next": "n_pausa_01",
-      "unlockImage": "ethan_cafeteria"
+      "unlockImage": "ethan_cafeteria_soledad"
     },
     {
       "id": "n_otra_bebida",

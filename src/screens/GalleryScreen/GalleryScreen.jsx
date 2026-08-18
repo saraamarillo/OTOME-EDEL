@@ -81,7 +81,7 @@ export default function GalleryScreen() {
                 onClick={() => (unlocked ? setViewing(item.id) : setShowLocked(true))}
               >
                 {unlocked ? (
-                  <img src={`/assets/gallery/${item.id}.png`} alt={item.title} className={styles.thumb} />
+                  <img src={`/assets/gallery/${item.file}`} alt={item.title} className={styles.thumb} />
                 ) : (
                   <div className={styles.placeholder}>
                     <span className={styles.lock}>?</span>
@@ -132,7 +132,7 @@ export default function GalleryScreen() {
 
       {viewing && (
         <div className={styles.lightbox} onClick={() => setViewing(null)}>
-          <img src={`/assets/gallery/${viewing}.png`} alt={viewing} className={styles.lightboxImg} />
+          <img src={`/assets/gallery/${ALL_IMAGES.find((i) => i.id === viewing)?.file}`} alt={viewing} className={styles.lightboxImg} />
           <p className={styles.lightboxHint}>Toca para cerrar</p>
         </div>
       )}
