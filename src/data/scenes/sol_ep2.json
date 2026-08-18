@@ -33,13 +33,13 @@
     { "id": "s1_d01c3", "type": "thought", "character": null, "protagonistExpression": "sad", "text": "Y ahora tengo que sostener esto durante quién sabe cuánto.", "next": "s1_conv01" },
     { "id": "s1_conv01", "type": "phone", "character": "madre", "text": "Vale, vale. Dale las gracias de mi parte, pero ven a casa enseguida.", "next": "s1_conv02" },
     { "id": "s1_conv02", "type": "phone", "character": "madre", "text": "Y compárteme la ubicación, anda, cariño.", "next": "s1_conv03" },
-    { "id": "s1_conv03", "type": "narration", "character": null, "text": "Soledad cuelga. La sudadera enorme que Ryan le prestó anoche está doblada a los pies de la cama.", "next": "s1_d02" },
+    { "id": "s1_conv03", "type": "narration", "character": null, "text": "Soledad cuelga. El pijama enorme que Ryan le prestó anoche está doblado a los pies de la cama.", "next": "s1_d02" },
     { "id": "s1_d02", "type": "choice", "character": null, "text": "¿Qué haces antes de vestirte?", "choices": [
-      { "label": "Hacer la cama y doblar la sudadera antes de nada.", "affinityChanges": { "ryan": 10 }, "next": "s1_d02a1" },
+      { "label": "Hacer la cama y doblar el pijama antes de nada.", "affinityChanges": { "ryan": 10 }, "next": "s1_d02a1" },
       { "label": "Vestirse deprisa y salir sin tocar nada.", "affinityChanges": {}, "next": "s1_d02b1" },
       { "label": "Abrir los cajones a ver quién es este chico en realidad.", "affinityChanges": { "ryan": -10 }, "next": "s1_d02c1" }
     ] },
-    { "id": "s1_d02a1", "type": "narration", "character": null, "text": "Estira la colcha, coloca la almohada y deja la sudadera doblada sobre la silla, como si nunca hubiera dormido ahí.", "next": "s1_d02a2" },
+    { "id": "s1_d02a1", "type": "narration", "character": null, "text": "Estira la colcha, coloca la almohada y deja el pijama doblado sobre la silla, como si nunca hubiera dormido ahí.", "next": "s1_d02a2" },
     { "id": "s1_d02a2", "type": "thought", "character": null, "protagonistExpression": "neutral", "text": "Lo mínimo que puedo hacer.", "next": "s1_conv04" },
     { "id": "s1_d02b1", "type": "narration", "character": null, "text": "Se pone la misma ropa de ayer —no tiene otra— y se arregla como puede delante del espejo.", "next": "s1_conv04" },
     { "id": "s1_d02c1", "type": "narration", "character": null, "text": "Abre el primer cajón. Cargadores, un blíster de ibuprofeno, un llavero de una marca de moto. Lo cierra de golpe, con la cara ardiendo.", "next": "s1_d02c2" },
