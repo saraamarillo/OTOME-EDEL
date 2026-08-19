@@ -198,4 +198,20 @@ export const NPC_CHARACTERS = [
     color: 'var(--color-policia)',
     expressions: ['neutral'],
   },
+  {
+    id: 'silueta_hombre',
+    name: 'Policía',
+    role: 'NPC de paso',
+    avatar: '/assets/sprites/silueta_hombre/arc1.png',
+    color: 'var(--color-policia)',
+    expressions: ['neutral'],
+  },
+  {
+    id: 'silueta_mujer',
+    name: 'Comisaria',
+    role: 'Comisaría de Guadalajara',
+    avatar: '/assets/sprites/silueta_mujer/arc1.png',
+    color: 'var(--color-policia)',
+    expressions: ['neutral'],
+  },
 ]

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useGameStore } from '../../store/gameStore'
 import { PROTAGONISTS } from '../../constants/characters'
+import Episode3Popup from '../../components/Episode3Popup/Episode3Popup'
 import styles from './ProtagonistSelect.module.css'
 
 /** Créditos de autora por personaje */
@@ -21,6 +22,7 @@ const CREATOR_CREDITS = {
  */
 export default function ProtagonistSelect() {
   const [selected, setSelected] = useState(null)
+  const [showEp3Popup, setShowEp3Popup] = useState(true)
   const selectProtagonist  = useGameStore((s) => s.selectProtagonist)
   const setScreen          = useGameStore((s) => s.setScreen)
 
@@ -67,6 +69,8 @@ export default function ProtagonistSelect() {
       <button className={styles.confirmBtn} disabled={!selected} onClick={handleConfirm}>
         Continuar
       </button>
+
+      {showEp3Popup && <Episode3Popup onClose={() => setShowEp3Popup(false)} />}
     </div>
   )
 }

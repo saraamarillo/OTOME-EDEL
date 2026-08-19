@@ -10,6 +10,7 @@ import GameScreen from './screens/GameScreen/GameScreen'
 import EpisodeEndScreen from './screens/EpisodeEndScreen/EpisodeEndScreen'
 import ComingSoonScreen from './screens/ComingSoonScreen/ComingSoonScreen'
 import GalleryScreen from './screens/GalleryScreen/GalleryScreen'
+import Episode3Intro from './screens/Episode3Intro/Episode3Intro'
 import styles from './App.module.css'
 
 const MUSIC_SRC = '/assets/music/OTOME EDEL.mp3'
@@ -28,6 +29,7 @@ const SCREENS = {
   episodeEnd: EpisodeEndScreen,
   comingSoon: ComingSoonScreen,
   gallery: GalleryScreen,
+  episode3Intro: Episode3Intro,
 }
 
 export default function App() {
@@ -69,7 +71,7 @@ export default function App() {
   useEffect(() => {
     function applyScale() {
       if (!ref.current) return
-      const scale = Math.max(window.innerWidth / GAME_W, window.innerHeight / GAME_H)
+      const scale = Math.min(window.innerWidth / GAME_W, window.innerHeight / GAME_H)
       const offsetX = (window.innerWidth - GAME_W * scale) / 2
       const offsetY = (window.innerHeight - GAME_H * scale) / 2
       ref.current.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`

@@ -1,0 +1,123 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #101012;
+}
+
+.coverImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(10, 10, 14, 0.55), rgba(8, 7, 10, 0.92));
+}
+
+.screen[data-theme='diario'] .scrim {
+  background: radial-gradient(circle at 50% 40%, rgba(60, 42, 20, 0.45), rgba(30, 20, 10, 0.85));
+}
+
+.backBtn {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  z-index: 2;
+  background: none;
+  border: none;
+  color: rgba(240, 240, 245, 0.5);
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.backBtn:hover { color: rgba(240, 240, 245, 0.85); }
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 640px;
+  padding: 0 32px;
+  text-align: center;
+}
+
+.wordmark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5em;
+  color: rgba(245, 243, 248, 0.55);
+}
+
+.epLabel {
+  margin: 6px 0 0;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ep3-accent, #8fe3a8);
+}
+
+.title {
+  margin: 6px 0 4px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: #f5f3f8;
+}
+
+.synopsis {
+  margin: 0 0 30px;
+  font-family: var(--font-scene);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(240, 240, 245, 0.78);
+}
+
+.startBtn {
+  padding: 13px 48px;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 243, 248, 0.9);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.startBtn:hover { border-color: rgba(255, 255, 255, 0.7); }
+
+/* ── Ayla — cámara ─────────────────────────────────────────── */
+.screen[data-theme='camara'] .epLabel { color: #8fe3a8; }
+.screen[data-theme='camara'] .title,
+.screen[data-theme='camara'] .wordmark { font-family: 'Space Mono', monospace; letter-spacing: 0.15em; }
+
+/* ── Soledad — diario ──────────────────────────────────────── */
+.screen[data-theme='diario'] .epLabel { color: #e38e1f; }
+.screen[data-theme='diario'] .title { font-family: 'Caveat', cursive; font-size: 3.6rem; }
+.screen[data-theme='diario'] .wordmark { font-family: 'Caveat', cursive; letter-spacing: 0.3em; }
+.screen[data-theme='diario'] .synopsis { color: rgba(250, 240, 224, 0.82); }
+.screen[data-theme='diario'] .startBtn { border-color: rgba(227, 142, 31, 0.5); }
+.screen[data-theme='diario'] .startBtn:hover { border-color: rgba(227, 142, 31, 0.9); }

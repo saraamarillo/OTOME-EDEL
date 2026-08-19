@@ -1,5 +1,5 @@
 export const TOTAL_EPISODES = 20
-export const AVAILABLE_EPISODES = [1, 2]
+export const AVAILABLE_EPISODES = [1, 2, 3]
 
 /** Metadata y escena de inicio por episodio, por protagonista. */
 export const EPISODES = {
@@ -27,6 +27,18 @@ export const EPISODES = {
       maven:   'maven_ep2',     // pendiente de crear
     },
   },
+  3: {
+    title: 'Nos vamos de fiesta',
+    synopsis: {
+      soledad: 'Los días antes de la fiesta pasan tranquilos: clases, el vestido amarillo que Luna me dejó guardado, un casco nuevo que Ryan insiste en regalarme. Pero esa noche, en el Fuerte de San Francisco, todo se tuerce de golpe.',
+      ayla: 'Entre la culpa por lo de Ethan, las plantas enfermas de Lydia y los mensajes de madrugada con Frey, llega la fiesta que todo el club lleva semanas preparando. En el Fuerte de San Francisco nada sale como debería.',
+    },
+    firstScene: {
+      soledad: 'sol_ep3',
+      ayla:    'ayla_ep3',
+      maven:   'maven_ep3',     // pendiente de crear
+    },
+  },
 }
 
 export function getFirstScene(epNum, protagonistId) {
@@ -42,13 +54,16 @@ export const EPISODE_COVERS = {
   default: {
     1: '/assets/backgrounds/campus_dia.png',
     2: '/assets/backgrounds/residencia_habitacion_noche.png',
+    3: '/assets/backgrounds/fuerte_exterior_noche.png',
   },
   soledad: {
     1: '/assets/backgrounds/campus_dia.png',
     2: '/assets/backgrounds/comisaria_tarde.png',
+    3: '/assets/backgrounds/discoteca_planta1.png',
   },
   ayla: {
     1: '/assets/backgrounds/campus_dia.png',
     2: '/assets/backgrounds/interior_fabrica_harina.png',
+    3: '/assets/backgrounds/discoteca_planta2.png',
   },
 }

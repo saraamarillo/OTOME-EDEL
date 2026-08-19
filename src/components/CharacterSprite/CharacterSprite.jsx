@@ -8,7 +8,7 @@ import styles from './CharacterSprite.module.css'
 const NEUTRAL_SUBSTITUTE = 'happy'
 
 /** Personajes cuyo sprite se muestra a tamaño completo, sin la reducción del 20% general. */
-const FULL_SIZE_IDS = ['ethan', 'ryan', 'frey', 'padre']
+const FULL_SIZE_IDS = ['ethan', 'ryan', 'frey', 'padre', 'policia', 'silueta_hombre']
 
 /**
  * Muestra el sprite centrado del personaje activo.
