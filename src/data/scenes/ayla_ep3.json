@@ -8,14 +8,15 @@
     { "id": "s1_03", "type": "narration", "character": null, "text": "Mira el móvil. No hay respuesta de Ethan. Los mensajes ni siquiera figuran como leídos.", "next": "s1_04" },
     { "id": "s1_04", "type": "thought", "character": null, "protagonistExpression": "sad", "text": "No he dormido nada. Ethan está herido y en el hospital por mi culpa.", "next": "s1_d01" },
     { "id": "s1_d01", "type": "choice", "character": null, "text": "¿Qué haces con la culpa?", "choices": [
-      { "label": "Escribir a Soledad y preguntarle si sabe algo de él.", "affinityChanges": { "soledad": 10 }, "next": "s1_d01a1" },
+      { "label": "Escribir a Soledad y preguntarle si sabe algo de él.", "affinityChanges": { "soledad": 10 }, "next": "s1_d01a0" },
       { "label": "Volver a escribir a Ethan, aunque no conteste.", "affinityChanges": { "ethan": 5 }, "next": "s2_01" },
       { "label": "Dejar el móvil boca abajo y bajar a desayunar.", "affinityChanges": { "ethan": -5, "soledad": -5 }, "next": "s2_01" }
     ] },
+    { "id": "s1_d01a0", "type": "narration", "character": null, "text": "Le escribe a Soledad.", "next": "s1_d01a1" },
     { "id": "s1_d01a1", "type": "dialogue", "character": null, "text": "Buenos días. ¿Sabes algo de Ethan? No me contesta y los mensajes ni salen como leídos.", "next": "s1_d01a2" },
     { "id": "s1_d01a2", "type": "narration", "character": null, "text": "Baja a la cafetería a desayunar algo mientras espera la respuesta.", "next": "s2_01" },
 
-    { "id": "s2_01", "type": "narration", "character": null, "background": "cafeteria_universidad_dia", "text": "Café y mensajes.", "next": "s2_02" },
+    { "id": "s2_01", "type": "narration", "character": null, "background": "cafeteria_universidad_dia", "text": "Recibe dos mensajes de Soledad.", "next": "s2_02" },
     { "id": "s2_02", "type": "chat", "character": "soledad", "text": "No sé nada de Ethan, no me ha contestado todavía.", "next": "s2_03" },
     { "id": "s2_03", "type": "chat", "character": "soledad", "text": "Oye, he visto una noticia: ha habido un apagón cerca de la universidad. ¿A ti te ha afectado?", "next": "s2_04" },
     { "id": "s2_04", "type": "dialogue", "character": null, "text": "Yo estaba con la luz apagada en mi habitación. ¿Cómo me voy a enterar?", "next": "s2_05" },
@@ -63,7 +64,7 @@
     { "id": "s4_a3", "type": "narration", "character": null, "text": "Entre el calentamiento, los largos y el cambiarse, se le va hora y media. Al salir tiene hambre.", "next": "s4_2_01" },
     { "id": "s4_2_01", "type": "narration", "character": null, "background": "cafeteria_universidad_dia", "text": "Como está alojada en la residencia, va al comedor, donde el menú del día entra dentro de la matrícula. Come de todo un poco, sola, en una mesa junto a la ventana.", "next": "s5_01" },
 
-    { "id": "s5_01", "type": "narration", "character": null, "background": "campus_dia", "text": "El reencuentro.", "next": "s5_02" },
+    { "id": "s5_01", "type": "narration", "character": null, "background": "campus_dia", "text": "Recibe un mensaje de Soledad.", "next": "s5_02" },
     { "id": "s5_02", "type": "chat", "character": "soledad", "text": "Hola, ya voy camino del club. ¿Te apetece si quedamos en la entrada?", "next": "s5_03" },
     { "id": "s5_03", "type": "chat", "character": "soledad", "text": "No me acuerdo muy bien de cómo se iba. Sé que era el edificio antiguo, pero no exactamente cómo llegar.", "next": "s5_04" },
     { "id": "s5_04", "type": "dialogue", "character": null, "text": "Vale, ahora nos vemos. Ya voy de camino.", "next": "s5_05" },
@@ -336,7 +337,7 @@
     { "id": "s12_a3", "type": "dialogue", "character": null, "text": "Mi compañera y yo nos hemos caído y hemos visto cosas raras todo el tiempo. Como que si eso pasa es por algo. Habría que investigar por qué caemos nosotras.", "next": "s12_a4" },
     { "id": "s12_a4", "type": "chat", "character": "frey", "text": "Será mejor que hablemos de ello en otro momento.", "next": "s12_a5" },
     { "id": "s12_a5", "type": "thought", "character": null, "protagonistExpression": "sad", "text": "«En otro momento». Siempre en otro momento.", "next": "s12_2_01" },
-    { "id": "s12_2_01", "type": "chat", "character": "ayla", "text": "Hoy hay una fiesta. Te invitaría, pero eres demasiado mayor.", "next": "s12_2_02" },
+    { "id": "s12_2_01", "type": "dialogue", "character": null, "text": "Hoy hay una fiesta. Te invitaría, pero eres demasiado mayor.", "next": "s12_2_02" },
     { "id": "s12_2_02", "type": "chat", "character": "frey", "text": "¿Tan mayor te parezco?", "next": "s12_2_03" },
     { "id": "s12_2_03", "type": "dialogue", "character": null, "text": "Qué va, yo te veo bastante bien.", "next": "s12_2_04" },
     { "id": "s12_2_04", "type": "chat", "character": "frey", "text": "Me lo tomaré como un cumplido.", "next": "s12_2_05" },

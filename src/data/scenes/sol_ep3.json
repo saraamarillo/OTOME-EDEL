@@ -21,7 +21,8 @@
     { "id": "s2_02", "type": "narration", "character": null, "text": "Entra en redes sociales. Hay una notificación de Ayla esperando, pero primero cotillea el Instagram de sus amigos y de su hermana. Después abre otra red distinta, más de noticias, y busca si ha ocurrido algo reciente en Guadalajara.", "next": "s2_03" },
     { "id": "s2_03", "type": "narration", "character": null, "text": "Una avalancha de titulares irrelevantes: el panadero que sube el precio del pan, un bar que abre este fin de semana, una discoteca que inaugura temporada.", "next": "s2_04" },
     { "id": "s2_04", "type": "narration", "character": null, "text": "Y entre todos ellos, uno que no lo es.", "next": "s2_05" },
-    { "id": "s2_05", "type": "thought", "character": null, "protagonistExpression": "surprised", "text": "Otro apagón. Dos horas sin luz esta noche. Dos zonas: el barrio de al lado… y una que está pegada a la universidad.", "next": "s2_06" },
+    { "id": "s2_05", "type": "thought", "character": null, "protagonistExpression": "surprised", "text": "Otro apagón. Dos horas sin luz esta noche. Dos zonas: el barrio de al lado… y una que está pegada a la universidad.", "next": "s2_05b" },
+    { "id": "s2_05b", "type": "narration", "character": null, "text": "Recibe un mensaje de Ayla.", "next": "s2_06" },
     { "id": "s2_06", "type": "chat", "character": "ayla", "text": "Buenos días. ¿Sabes algo de Ethan? No me contesta y los mensajes ni salen como leídos.", "next": "s2_d02" },
     { "id": "s2_d02", "type": "choice", "character": null, "text": "¿Le cuentas a Ayla lo del apagón?", "choices": [
       { "label": "«No sé nada de Ethan todavía. Oye, he visto una noticia: ha habido un apagón cerca de la universidad. ¿A ti te afectó?»", "affinityChanges": { "ayla": 10 }, "next": "s2_d02a1" },
