@@ -197,6 +197,7 @@ export const NPC_CHARACTERS = [
     avatar: '/assets/sprites/policia/arc1.png',
     color: 'var(--color-policia)',
     expressions: ['neutral'],
+    hideFromList: true,
   },
   {
     id: 'silueta_hombre',
@@ -205,6 +206,7 @@ export const NPC_CHARACTERS = [
     avatar: '/assets/sprites/silueta_hombre/arc1.png',
     color: 'var(--color-policia)',
     expressions: ['neutral'],
+    hideFromList: true,
   },
   {
     id: 'silueta_mujer',
@@ -213,5 +215,6 @@ export const NPC_CHARACTERS = [
     avatar: '/assets/sprites/silueta_mujer/arc1.png',
     color: 'var(--color-policia)',
     expressions: ['neutral'],
+    hideFromList: true,
   },
 ]

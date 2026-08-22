@@ -25,7 +25,7 @@ export default function CharactersScreen() {
     : null
 
   const visibleNPCs = NPC_CHARACTERS.filter(
-    (npc) => !npc.protagonistOnly || npc.protagonistOnly === protagonistId
+    (npc) => (!npc.protagonistOnly || npc.protagonistOnly === protagonistId) && !npc.hideFromList
   )
 
   const companionEntry = companion
